@@ -16,29 +16,29 @@ jobs:
         with:
           python-version: "3.12"
       - name: Check Python syntax
-        run: python -m py_compile tools/*.py deepeval/*.py ragas/*.py
+        run: python -m py_compile tools/*.py reference/deepeval/*.py reference/ragas/*.py
       - name: Test normalized result contract
         run: python -m unittest tools/test_result_schema.py
       - name: Validate gold dataset
         run: >-
-          python -c "import json; data=json.load(open('data/gold_cases.json'));
+          python -c "import json; data=json.load(open('reference/data/gold_cases.json'));
           assert len(data) >= 1 and all(c.get('expected_pass') is not None and
           c.get('review_status') == 'pending_clinician_review' and c.get('claims')
           for c in data)"
       - name: Validate gold prediction join
         run: |
-          python -c 'import json; from tools.gold_accuracy import join_predictions; gold=json.load(open("data/demo_gold_cases.json")); result=[{"cases": [{"case_id": "grounded", "passed": True}, {"case_id": "hallucinated", "passed": False}]}]; assert join_predictions(gold, result)'
+          python -c 'import json; from tools.gold_accuracy import join_predictions; gold=json.load(open("reference/data/demo_gold_cases.json")); result=[{"cases": [{"case_id": "grounded", "passed": True}, {"case_id": "hallucinated", "passed": False}]}]; assert join_predictions(gold, result)'
       - name: Validate retrieval dataset and metrics
-        run: python tools/retrieval_correctness.py data/metric_cases.json
+        run: python tools/retrieval_correctness.py reference/data/metric_cases.json
       - name: Validate comparison tool
-        run: python tools/compare_results.py data/demo_results.json
+        run: python tools/compare_results.py reference/data/demo_results.json
       - name: Validate metadata utilities
         run: >-
           python -c "from tools.run_metadata import summarize_metadata;
           assert summarize_metadata([{'model': 'test', 'latency_ms': 1,
           'estimated_cost_usd': 0.01}])['total_latency_ms'] == 1"
       - name: Validate HTML report generator
-        run: python tools/html_report.py data/demo_results.json /tmp/faithfulness-report.html
+        run: python tools/html_report.py reference/data/demo_results.json /tmp/faithfulness-report.html
       - name: Validate provider usage utilities
         run: >-
           python -c "from tools.provider_usage import extract_usage, estimate_cost;
@@ -47,15 +47,15 @@ jobs:
       - name: Validate workflow safeguards
         run: python tools/validate_workflows.py .github/workflows
       - name: Validate Promptfoo adapter
-        run: python tools/promptfoo_results.py data/promptfoo_result_fixture.json /tmp/promptfoo-result.json
+        run: python tools/promptfoo_results.py reference/data/promptfoo_result_fixture.json /tmp/promptfoo-result.json
       - name: Check regression baseline
-        run: python tools/regression.py data/regression_baseline.json data/regression_current.json
+        run: python tools/regression.py reference/data/regression_baseline.json reference/data/regression_current.json
       - name: Validate reliability analysis
-        run: python tools/reliability.py data/reliability_fixture.json
+        run: python tools/reliability.py reference/data/reliability_fixture.json
       - name: Compare multi-judge fixture
-        run: python tools/reliability.py data/multi_judge_fixture.json
+        run: python tools/reliability.py reference/data/multi_judge_fixture.json
       - name: Check gold regression accuracy
-        run: python tools/gold_accuracy.py data/gold_predictions.json --min-accuracy 0.90
+        run: python tools/gold_accuracy.py reference/data/gold_predictions.json --min-accuracy 0.90
       - name: Validate schema migration
         run: >-
           python -c "from tools.schema_migrations import migrate_result;
@@ -63,8 +63,53 @@ jobs:
           'cases': []})['schema_version'] == 1"
       - name: Scan checked-in evaluation data
         run: |
-          for file in data/*.json; do
+          for file in reference/data/*.json; do
             python tools/privacy_scan.py "$file"
           done
+      - name: Install Maestro dependencies
+        run: python -m pip install -r requirements-maestro.txt
+      - name: Check Maestro Python syntax
+        run: python -m py_compile maestro/*.py maestro/checks/*.py maestro/golden/*.py maestro/judge/*.py maestro/generation/*.py
+      - name: Test Maestro question checks
+        run: python -m unittest maestro/test_maestro.py
+      - name: Smoke test Maestro CLI on example data
+        run: python maestro/runner.py maestro/examples/sample_question.json --config maestro/examples/sample_config.json
+      - name: Test Maestro golden-set and review-pool tooling
+        run: python -m unittest maestro/test_golden.py
+      - name: Smoke test Maestro generate -> grade -> import loop
+        run: |
+          mkdir -p /tmp/maestro-review-pools
+          python maestro/golden/generate_pool.py \
+            --batch maestro/examples/sample_golden_batch.jsonl --seed 42 \
+            --out-xlsx /tmp/maestro-review-pools/ci_smoke.xlsx \
+            --out-mapping /tmp/maestro-review-pools/ci_smoke.mapping.json
+          python -c "
+          import openpyxl
+          wb = openpyxl.load_workbook('/tmp/maestro-review-pools/ci_smoke.xlsx')
+          ws = wb.active
+          headers = [c.value for c in ws[1]]
+          grade_col, reviewer_col = headers.index('grade') + 1, headers.index('reviewer_id') + 1
+          for row in range(2, ws.max_row + 1):
+              ws.cell(row=row, column=grade_col).value = 'approve'
+              ws.cell(row=row, column=reviewer_col).value = 'ci-smoke'
+          wb.save('/tmp/maestro-review-pools/ci_smoke.xlsx')
+          "
+          python maestro/golden/import_pool.py \
+            --graded-xlsx /tmp/maestro-review-pools/ci_smoke.xlsx \
+            --mapping /tmp/maestro-review-pools/ci_smoke.mapping.json \
+            --golden-dir /tmp/maestro-review-pools/golden_out
+      - name: Validate committed golden datasets parse
+        run: >-
+          python -c "
+          import glob, json;
+          from maestro.golden.models import load_golden_example;
+          paths = glob.glob('maestro/golden_data/*.jsonl');
+          [load_golden_example(json.loads(line)) for p in paths for line in open(p, encoding='utf-8') if line.strip()];
+          print(f'Validated {len(paths)} golden data file(s).')
+          "
+      - name: Test Maestro judge (offline only - no ANTHROPIC_API_KEY here, no live model calls)
+        run: python -m unittest maestro/test_judge.py
+      - name: Test Maestro generation payload and revision-loop checks
+        run: python -m unittest maestro/test_generation.py
       - name: Check patch formatting
         run: git diff --check

@@ -34,7 +34,7 @@ jobs:
       - name: Require API key
         run: test -n "$ANTHROPIC_API_KEY"
       - name: Enforce test budget
-        working-directory: promptfoo
+        working-directory: reference/promptfoo
         env:
           SUITE: ${{ inputs.suite }}
           MAX_TESTS: ${{ inputs.max_tests }}
@@ -42,7 +42,7 @@ jobs:
           count=$(grep -Ec '^  - description:' "$SUITE")
           test "$count" -le "$MAX_TESTS"
       - name: Run selected evaluation
-        working-directory: promptfoo
+        working-directory: reference/promptfoo
         run: |
           set +e
           npx --yes promptfoo@latest eval -c "${{ inputs.suite }}" --no-cache
@@ -52,15 +52,15 @@ jobs:
           # includes adversarial cases that must fail.
           test "$status" -eq 0 -o "$status" -eq 100
       - name: Normalize Promptfoo result
-        working-directory: promptfoo
-        run: python ../tools/promptfoo_results.py .promptfoo/output.json ../promptfoo-result.json
+        working-directory: reference/promptfoo
+        run: python ../../tools/promptfoo_results.py .promptfoo/output.json ../../promptfoo-result.json
       - name: Upload Promptfoo artifacts
         uses: actions/upload-artifact@v4
         with:
           name: promptfoo-results
           path: |
-            promptfoo/.promptfoo/
-            promptfoo/*.json
+            reference/promptfoo/.promptfoo/
+            reference/promptfoo/*.json
             promptfoo-result.json
           include-hidden-files: true
           if-no-files-found: ignore
@@ -80,7 +80,7 @@ jobs:
       - name: Install pinned dependencies
         run: python -m pip install -r requirements-deepeval.txt
       - name: Run and save DeepEval result
-        run: python deepeval/faithfulness_demo.py --json > deepeval-result.json
+        run: python reference/deepeval/faithfulness_demo.py --json > deepeval-result.json
       - name: Upload DeepEval result
         uses: actions/upload-artifact@v4
         with:
@@ -102,7 +102,7 @@ jobs:
       - name: Install pinned dependencies
         run: python -m pip install -r requirements-ragas.txt
       - name: Run and save RAGAS result
-        run: python ragas/ragas_faithfulness.py --json > ragas-result.json
+        run: python reference/ragas/ragas_faithfulness.py --json > ragas-result.json
       - name: Upload RAGAS result
         uses: actions/upload-artifact@v4
         with:
