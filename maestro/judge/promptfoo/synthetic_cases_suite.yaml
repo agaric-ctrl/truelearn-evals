@@ -1,0 +1,82 @@
+# Third Tier 3 judge (rubric-based) over the exact same 6 cases run_gold_suite.py (deepeval) and
+# run_gold_suite_ragas.py (ragas) grade - see ../fixtures/synthetic_cases.json, the shared source of
+# truth for these cases. Content here is hand-copied from that fixture; keep the two in sync by hand
+# if it ever changes (small and stable: 6 cases).
+#
+# Uses the `echo` provider so no model generates; we test the JUDGE only - same discipline as
+# reference/promptfoo/01_faithfulness_pass_fail.yaml, applied to Maestro's own content shape
+# (explanation_header + explanation_footer, HTML, unstripped - the exact text the Python judges
+# see via build_actual_output(), joined the same way with a blank line).
+#
+# PLACEHOLDER: content below is hand-written synthetic clinical-QA content mirrored from
+# maestro/judge/fixtures/synthetic_cases.json - not TrueLearn content, not clinician-reviewed. See
+# that fixture's own _placeholder notes.
+#
+# Test descriptions are set to the exact same case_id used in synthetic_cases.json (not a
+# human-readable label) so this suite's normalized output can be fed into
+# maestro/judge/compare_gold_suites.py alongside deepeval's and ragas's output on the same case_ids.
+#
+# Run (requires Node 24 and ANTHROPIC_API_KEY - the echo provider skips generation, but the
+# llm-rubric assertion still calls Claude to grade):
+#   cd maestro/judge/promptfoo
+#   npx promptfoo@latest eval -c synthetic_cases_suite.yaml --no-cache
+#   npx promptfoo@latest view
+#
+# Then normalize and compare against the other two judges' saved --json output:
+#   python3 ../../../tools/promptfoo_results.py .promptfoo/output.json promptfoo_result.json
+#   python3 ../compare_gold_suites.py deepeval_result.json ragas_result.json promptfoo_result.json
+description: "Maestro Tier 3 faithfulness - third judge (rubric-based) over the 6 synthetic cases in judge/fixtures/synthetic_cases.json"
+
+prompts:
+  - "{{answer_under_test}}"
+
+providers:
+  - id: echo
+
+defaultTest:
+  assert:
+    - type: llm-rubric
+      provider: anthropic:claude-sonnet-5
+      value: |
+        SOURCE MATERIAL: "{{source}}"
+        Evaluate whether EVERY medical claim in the output is supported by the
+        SOURCE MATERIAL above. PASS only if all claims are grounded in the source.
+        FAIL if the output introduces any medical claim not present in the source,
+        or contradicts it.
+
+tests:
+  # expected_pass: true
+  - description: "grounded_anaphylaxis"
+    vars:
+      source: "Epinephrine is the first-line treatment for anaphylaxis and should be administered intramuscularly without delay."
+      answer_under_test: "<p>The correct treatment is intramuscular epinephrine.</p>\n\n<p>Epinephrine is first-line for anaphylaxis and should not be delayed for other interventions.</p>"
+
+  # expected_pass: false
+  - description: "hallucinated_anaphylaxis_contradiction"
+    vars:
+      source: "Epinephrine is the first-line treatment for anaphylaxis and should be administered intramuscularly without delay."
+      answer_under_test: "<p>The correct treatment is intramuscular epinephrine.</p>\n\n<p>Antihistamines should be given first, with epinephrine reserved for cases where symptoms persist beyond 30 minutes.</p>"
+
+  # expected_pass: true
+  - description: "grounded_hyponatremia"
+    vars:
+      source: "A serum sodium below 135 mEq/L is classified as hyponatremia."
+      answer_under_test: "<p>This patient's serum sodium of 128 mEq/L meets the definition of hyponatremia.</p>\n\n<p>Hyponatremia is defined as a serum sodium below 135 mEq/L.</p>"
+
+  # expected_pass: false
+  - description: "hallucinated_hyponatremia_unsupported_addition"
+    vars:
+      source: "A serum sodium below 135 mEq/L is classified as hyponatremia."
+      answer_under_test: "<p>This patient's serum sodium of 128 mEq/L meets the definition of hyponatremia.</p>\n\n<p>Hyponatremia is defined as a serum sodium below 135 mEq/L, and all cases should be treated urgently with hypertonic saline regardless of symptoms.</p>"
+
+  # expected_pass: true
+  - description: "grounded_beta_blocker"
+    vars:
+      source: "Metoprolol is a beta-1 selective adrenergic antagonist that decreases heart rate and myocardial oxygen demand by blocking beta-1 receptors in the heart."
+      answer_under_test: "<p>Metoprolol selectively blocks beta-1 adrenergic receptors in the heart.</p>\n\n<p>This reduces heart rate and myocardial oxygen demand.</p>"
+
+  # expected_pass: false
+  - description: "hallucinated_beta_blocker_wrong_attribution"
+    vars:
+      source: "Metoprolol is a beta-1 selective adrenergic antagonist that decreases heart rate and myocardial oxygen demand by blocking beta-1 receptors in the heart."
+      answer_under_test: "<p>Metoprolol selectively blocks beta-2 adrenergic receptors in the heart.</p>\n\n<p>This reduces heart rate and myocardial oxygen demand.</p>"

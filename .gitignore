@@ -2,6 +2,7 @@
 venv/
 .venv-ragas/
 .venv-maestro/
+.venv-maestro-ragas/
 __pycache__/
 *.pyc
 .env

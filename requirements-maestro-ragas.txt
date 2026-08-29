@@ -1,0 +1,18 @@
+# Python dependencies for maestro/judge/faithfulness_ragas.py and run_gold_suite_ragas.py - the
+# RAGAS-variant Tier 3 judge. Kept OUT of requirements-maestro.txt deliberately: ragas's
+# langchain-anthropic dependency upgrades click past what deepeval allows (same conflict documented
+# in the root requirements-deepeval.txt / requirements-ragas.txt). Use a separate venv:
+#
+#   python3 -m venv .venv-maestro-ragas
+#   .venv-maestro-ragas/bin/pip install -r requirements-maestro-ragas.txt
+#   .venv-maestro-ragas/bin/python -m unittest maestro/test_judge_ragas.py
+#
+# NOTE: the root requirements-ragas.txt pins langchain-anthropic==1.5.4, which does not exist on
+# PyPI (max published version found here is 0.3.22) - that looks like a pre-existing typo/stale pin
+# in that file, not something this file should copy. Verified by actually installing into a venv:
+# ragas==0.4.3 + langchain-anthropic==0.3.22 + langchain-community==0.3.31 resolve and import
+# cleanly together with no conflicts.
+ragas==0.4.3
+langchain-anthropic==0.3.22
+langchain-community==0.3.31
+anthropic==0.121.0

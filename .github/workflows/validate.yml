@@ -69,7 +69,7 @@ jobs:
       - name: Install Maestro dependencies
         run: python -m pip install -r requirements-maestro.txt
       - name: Check Maestro Python syntax
-        run: python -m py_compile maestro/*.py maestro/checks/*.py maestro/golden/*.py maestro/judge/*.py maestro/generation/*.py
+        run: python -m py_compile maestro/*.py maestro/checks/*.py maestro/golden/*.py maestro/judge/*.py maestro/generation/*.py maestro/ingestion/*.py
       - name: Test Maestro question checks
         run: python -m unittest maestro/test_maestro.py
       - name: Smoke test Maestro CLI on example data
@@ -111,5 +111,36 @@ jobs:
         run: python -m unittest maestro/test_judge.py
       - name: Test Maestro generation payload and revision-loop checks
         run: python -m unittest maestro/test_generation.py
+      - name: Test Maestro candidate-ingestion seam
+        run: python -m unittest maestro/test_ingestion.py
+      - name: Compare Tier 3 judges (offline fixture, no live calls)
+        run: python -m unittest maestro/test_judge_compare.py
+      - name: Validate Promptfoo third-judge suite matches its fixture (no Node/live call needed)
+        run: python -m unittest maestro/test_judge_promptfoo_suite.py
+      - name: Smoke test Maestro ingest_batch --mock -> generate_pool loop
+        run: |
+          mkdir -p /tmp/maestro-review-pools
+          python maestro/ingestion/ingest_batch.py \
+            --mock --out /tmp/maestro-review-pools/mock_ingested_batch.jsonl
+          python maestro/golden/generate_pool.py \
+            --batch /tmp/maestro-review-pools/mock_ingested_batch.jsonl --seed 42 \
+            --out-xlsx /tmp/maestro-review-pools/ingestion_smoke.xlsx \
+            --out-mapping /tmp/maestro-review-pools/ingestion_smoke.mapping.json
       - name: Check patch formatting
         run: git diff --check
+
+  maestro-ragas-judge:
+    # Separate job/venv, not folded into offline-validation: ragas and deepeval conflict on the
+    # click dependency (see requirements-maestro-ragas.txt), so this can't install alongside
+    # requirements-maestro.txt in the same environment. Offline only, same as test_judge.py above -
+    # no ANTHROPIC_API_KEY here, no live model calls, every test injects a fake scorer.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Maestro RAGAS-judge dependencies
+        run: python -m pip install -r requirements-maestro-ragas.txt
+      - name: Test Maestro judge, RAGAS variant (offline only - no ANTHROPIC_API_KEY here, no live model calls)
+        run: python -m unittest maestro/test_judge_ragas.py

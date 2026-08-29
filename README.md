@@ -67,7 +67,9 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
 - **Where does golden-set data actually come from?** Right now `maestro/golden_data/` is empty of
   real records. Is there an existing corpus (editorial may already rate generated questions against
   reference/Claude output) that could seed it, or does every record start from a fresh SME review
-  pool?
+  pool? A converter now exists (`maestro/ingestion/`, below) for turning real Maestro generation
+  output into `GoldenExample`-shaped candidates once there's a real answer to *this* question and to
+  the Payload API question below.
 - **Who are the real SME reviewers per exam bank (USMLE/COMLEX/COMAT)?** `maestro/golden_data/sme_roster.json`
   ships with all three unassigned.
 - **What are Maestro's real Payload API endpoint contracts?** Not finalized as of this writing —
@@ -92,13 +94,17 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
 │   ├── golden/                          # Tier 2: golden-set schema + review-pool generate/import CLIs
 │   ├── golden_data/                     # committed Tier 2 data - currently a roster placeholder only
 │   ├── review_pools/                    # gitignored scratch output, never committed
-│   ├── judge/                           # Tier 3: experimental LLM-judge faithfulness scorer
+│   ├── judge/                           # Tier 3: 3 experimental judges (deepeval/RAGAS/Promptfoo) + comparison CLI
 │   ├── generation/                      # real Maestro payload model + revision-loop checks
 │   │   ├── payload.py                   # GenerationPayload - honest confirmed/unconfirmed split
 │   │   └── checks.py                    # check_generation_payload() - reuses Tier 1 per history[] entry
+│   ├── ingestion/                       # candidate-ingestion seam, up to the Payload API boundary
+│   │   ├── payload_api.py               # PayloadApiConfig + fetch_raw_candidates() (NotImplementedError)
+│   │   ├── candidates.py                # GenerationPayload -> GoldenExample-shaped candidate
+│   │   └── ingest_batch.py              # CLI: raw records -> candidate batch JSONL
 │   ├── docs/
 │   │   └── REVIEW_GUIDE.md              # Maestro's SME review-pool workflow guide
-│   └── test_maestro.py / test_golden.py / test_judge.py / test_generation.py
+│   └── test_maestro.py / test_golden.py / test_judge.py / test_generation.py / test_ingestion.py
 ├── reference/                            # supporting faithfulness-eval reference methodology
 │   ├── promptfoo/ , deepeval/ , ragas/  # three implementations of the same judge-testing idea
 │   ├── data/                             # reference methodology's own example fixtures
@@ -106,6 +112,7 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
 │       └── CLINICAL_REVIEW_GUIDE.md      # reference methodology's reviewer-workflow guide
 ├── tools/                                # shared, project-agnostic infrastructure
 ├── requirements.txt / requirements-deepeval.txt / requirements-ragas.txt / requirements-maestro.txt
+│   / requirements-maestro-ragas.txt
 ├── LICENSE
 └── README.md                             # this file - the only README in the repo
 ```
@@ -130,14 +137,20 @@ Three tiers, built in order: deterministic checks (Tier 1) → golden-set schema
 the open question above about why it was built anyway).
 
 **Status:** Tier 1 complete — 6 checks, 42 tests. Tier 2 complete — golden-set schema, review-pool
-generator + importer, 20 tests. Tier 3 built — LLM-judge faithfulness, validated only against 6
-hand-crafted synthetic cases (not real SME data), off by default, wired into nothing, 10 tests. 72
-tests total, all passing.
+generator + importer, 20 tests. Tier 3 built — three independently-implemented LLM-judges (deepeval,
+RAGAS, and a Promptfoo rubric), validated only against the same 6 hand-crafted synthetic cases (not
+real SME data), off by default, wired into nothing, 13 + 5 + 6 tests (the RAGAS 5 need a separate
+venv — see below; the Promptfoo 6 verify the suite matches its fixture, not a live Node run — also
+below), plus 5 offline tests for the cross-judge comparison CLI. Generation payload + revision-loop
+checks built, offline-tested, unwired, 15 tests. Candidate-ingestion seam built, offline-tested,
+unwired, 12 tests. 118 tests total, all passing.
 
 ```bash
 python3 -m venv .venv-maestro
 .venv-maestro/bin/pip install -r requirements-maestro.txt
-python -m unittest maestro/test_maestro.py maestro/test_golden.py maestro/test_judge.py
+python -m unittest maestro/test_maestro.py maestro/test_golden.py maestro/test_judge.py \
+  maestro/test_generation.py maestro/test_ingestion.py maestro/test_judge_compare.py \
+  maestro/test_judge_promptfoo_suite.py
 ```
 
 ## Running a check
@@ -186,9 +199,25 @@ file's placeholder disclaimer instead.
 - `review_pools/` — gitignored scratch space for generator/importer output (`.xlsx`, mapping,
   blocked-side files). Never committed.
 - `test_golden.py` — stdlib `unittest`, one `TestCase` class per Tier 2 module.
-- `judge/` — Tier 3, **experimental** (see below): `faithfulness.py` (`judge_faithfulness()`),
-  `fixtures/synthetic_cases.json` (6 hand-crafted placeholder cases), `run_gold_suite.py` (the CLI).
+- `judge/` — Tier 3, **experimental** (see below): `shared.py` (framework-agnostic
+  `build_actual_output()`/`build_retrieval_context_from_references()`/`EXPERIMENTAL_LABEL`, used by
+  every judge below, zero deepeval/ragas imports), `faithfulness.py` (`judge_faithfulness()`, the
+  deepeval judge, re-exports `shared.py`'s names for backward compatibility),
+  `faithfulness_ragas.py` (`judge_faithfulness_ragas()`, a second, independently-implemented judge —
+  see "RAGAS: a second judge" below), `promptfoo/synthetic_cases_suite.yaml` (a third,
+  rubric-based judge — see "Promptfoo: a third judge" below), `compare_gold_suites.py` (CLI: diffs
+  any two or more judges' verdicts on the same cases — see "Comparing judges" below),
+  `fixtures/synthetic_cases.json` (6 hand-crafted placeholder cases, the single source of truth all
+  three judges grade), `run_gold_suite.py` / `run_gold_suite_ragas.py` (the two Python judge CLIs).
 - `test_judge.py` — stdlib `unittest`, offline-only (never calls the real judge).
+- `test_judge_ragas.py` — stdlib `unittest`, offline-only, same discipline — **requires the
+  separate ragas venv to even run** (see "RAGAS: a second judge" below), not part of the default
+  Quickstart test command.
+- `test_judge_compare.py` — stdlib `unittest`, offline-only, no extra deps; part of the default
+  Quickstart test command.
+- `test_judge_promptfoo_suite.py` — stdlib `unittest`, offline-only; verifies the Promptfoo suite's
+  hand-transcribed content exactly matches `fixtures/synthetic_cases.json` and that the rubric
+  actually injects `{{source}}` — see "Promptfoo: a third judge" below for why that check exists.
 - `docs/REVIEW_GUIDE.md` — the SME-facing workflow for grading a review pool.
 
 ## What's implemented vs. stubbed
@@ -309,6 +338,111 @@ Scope note: this covers faithfulness only, not the full "faithfulness / non-cont
 completeness" list from the original brief — those are a natural follow-up once this one has
 actually been run and read by a human, not bundled in alongside the first-ever Maestro model call.
 
+### RAGAS: a second judge (new)
+
+`faithfulness.py`'s deepeval judge is now one of two. `faithfulness_ragas.py` wraps RAGAS's own
+`Faithfulness` metric (`ChatAnthropic` as the judge, via `LangchainLLMWrapper` — reusing
+`reference/ragas/ragas_faithfulness.py`'s exact mechanism) as a second, independently-implemented
+judge over the identical Maestro content shape. `run_gold_suite_ragas.py` runs it against the same
+`fixtures/synthetic_cases.json` `run_gold_suite.py` uses, so the two verdicts on the same cases can
+be compared with `tools/reliability.py` or `tools/compare_results.py`.
+
+This exists to extend the same "test the judge before trusting it" discipline `reference/` already
+teaches: one judge agreeing with itself proves nothing about whether "faithfulness judge" is a sound
+concept for this content; two mechanically-different judges (deepeval's claim-decomposition vs
+ragas's own statement-level scoring) agreeing on the same synthetic cases is a mild confidence
+signal, and disagreeing is itself the finding — it flags exactly where the judge concept is shaky,
+before either verdict is ever treated as evidence against real SME grading. Neither judge is
+evidence yet; this only tests judge-vs-judge agreement, not judge-vs-SME agreement.
+
+**Kept in a separate module and a separate venv on purpose:** ragas's `langchain-anthropic`
+dependency upgrades `click` past what deepeval allows (same conflict `requirements-deepeval.txt`/
+`requirements-ragas.txt` already document for `reference/`), so it cannot live in
+`requirements-maestro.txt` alongside deepeval. `shared.py` was split out of `faithfulness.py`
+specifically so both judge modules can share `build_actual_output()`/
+`build_retrieval_context_from_references()` without either one requiring the other's conflicting
+dependency just to import.
+
+```bash
+python3 -m venv .venv-maestro-ragas
+.venv-maestro-ragas/bin/pip install -r requirements-maestro-ragas.txt
+
+# Offline, no API key, no live calls:
+.venv-maestro-ragas/bin/python -m unittest maestro/test_judge_ragas.py
+
+# Requires ANTHROPIC_API_KEY and makes real, paid model calls:
+.venv-maestro-ragas/bin/python maestro/judge/run_gold_suite_ragas.py
+```
+
+Note: `requirements-ragas.txt` (root, used by `reference/ragas/`) pins `langchain-anthropic==1.5.4`,
+which does not exist on PyPI as of this writing (latest published is `0.3.22`) — that looks like a
+pre-existing stale/typo pin in that file, left untouched here since `reference/` is out of this
+change's scope. `requirements-maestro-ragas.txt` pins `langchain-anthropic==0.3.22` instead,
+verified by an actual clean install.
+
+Same guardrails as the deepeval judge: off by default, wired into nothing, not part of any CI gate,
+5 tests (`test_judge_ragas.py`), offline-only, run by hand. `maestro-ragas-judge` in
+`.github/workflows/validate.yml` runs those 5 offline tests in their own job/venv on every push/PR
+(no `ANTHROPIC_API_KEY`, no live calls) — same treatment as the deepeval judge's offline tests, just
+isolated from the click conflict.
+
+### Promptfoo: a third judge (new)
+
+`judge/promptfoo/synthetic_cases_suite.yaml` is a third, mechanically-different judge over the same
+6 cases: a Promptfoo config using the `echo` provider (so nothing generates — only the rubric judge
+is under test, same discipline as `reference/promptfoo/01_faithfulness_pass_fail.yaml`) with an
+`llm-rubric` assertion grading whether every claim in `answer_under_test` is supported by `source`.
+Test `description`s are set to the exact same `case_id` strings `synthetic_cases.json` uses, so its
+normalized output lines up with the other two judges' in `compare_gold_suites.py` (below).
+
+**Honesty note on what's actually verified here.** This sandbox has no Node/npx available, so this
+config could not be run against a real Promptfoo eval to confirm it scores correctly — that step is
+still genuinely unverified and requires Node 24 + `ANTHROPIC_API_KEY` to check by hand. What
+*could* be verified without Node, and is (`test_judge_promptfoo_suite.py`, 6 tests): the YAML's
+`source`/`answer_under_test` vars are transcribed byte-for-byte from `fixtures/synthetic_cases.json`
+(via `build_actual_output()`, the same function the other two judges call) — the exact class of
+copy/paste mistake most likely in a hand-transcribed file — and, more importantly, that the rubric
+actually injects `{{source}}` into its text. That second check exists because this repo already
+documents exactly this failure mode happening once before (see "Framework comparison" below): an
+earlier rubric that never injected `{{source}}` left the judge unable to see the source material at
+all, silently defeating the whole point of a faithfulness check.
+
+```bash
+# Requires Node 24 and ANTHROPIC_API_KEY (echo skips generation, but the rubric still calls Claude):
+cd maestro/judge/promptfoo
+npx promptfoo@latest eval -c synthetic_cases_suite.yaml --no-cache
+npx promptfoo@latest view
+python3 ../../../tools/promptfoo_results.py .promptfoo/output.json promptfoo_result.json
+```
+
+Not wired into any CI job, live or offline — running the eval always calls the rubric judge (a real
+model call), so unlike its own offline consistency test, the eval itself is manual-only, same as
+every other live-model path in this repo.
+
+### Comparing judges (new)
+
+`judge/compare_gold_suites.py` feeds two or more already-saved `--json` `EvaluationResult` files
+(deepeval's, ragas's, and/or Promptfoo's normalized output, above) into `tools/compare_results.py`
+and reports, per `case_id`, whether the judges agree and how far their scores spread. It has no
+model-calling dependency of its own — pure post-processing over files a human already produced by
+running the judges — so it works in any venv, or none at all.
+
+```bash
+python3 maestro/judge/run_gold_suite.py --json > deepeval_result.json
+.venv-maestro-ragas/bin/python maestro/judge/run_gold_suite_ragas.py --json > ragas_result.json
+
+python3 maestro/judge/compare_gold_suites.py deepeval_result.json ragas_result.json
+```
+
+**Why this matters more than the judges themselves right now:** one judge agreeing with itself
+proves nothing about whether "faithfulness judge" is even a sound concept for this content. Two or
+three independently-implemented judges agreeing on the same synthetic cases is a mild confidence
+signal; disagreeing is itself the finding, flagging exactly where the judge concept is shaky —
+*before* any of them is ever treated as evidence against real SME grading, which none of them are
+yet. 5 offline tests (`test_judge_compare.py`), part of the default Quickstart command and CI
+`offline-validation` job (hand-built fixture `EvaluationResult` JSON, no real judge output needed to
+test the comparison logic itself).
+
 ### Not in this drop
 
 - Non-contradiction and completeness LLM-judge scoring (Tier 3's remaining scope — see above).
@@ -353,6 +487,51 @@ python3 maestro/generation/checks.py path/to/generation_payload.json --config ma
 ```
 
 Not wired into any CI workflow or gate, same as Tier 3 — run by hand.
+
+## Candidate-ingestion seam (new)
+
+Nothing previously converted real Maestro output into the harness's `GeneratedQuestion`/
+`GoldenExample` candidate-batch shape — `maestro/examples/sample_golden_batch.jsonl`'s own
+`_placeholder` note names this exact gap ("no real pipeline yet for turning actual
+Maestro-generated questions into candidates like this one"). `maestro/ingestion/` builds that
+converter up to, and deliberately stopping at, the `[UNCONFIRMED]` Payload API boundary:
+
+- `payload_api.py` — `PayloadApiConfig` (`base_url`, `auth_token_env`, both unconfirmed/`None` by
+  default, same convention as `EvalConfig`/`SmeRoster`) and `fetch_raw_candidates()`, which raises
+  `NotImplementedError` **unconditionally**, even when a config's `base_url` is filled in — the real
+  endpoint, auth scheme, and pagination contract are unconfirmed, and a guessed HTTP call could
+  silently hit the wrong URL or send a malformed request against a real system. Implementing the
+  real call is left as a documented `TODO` for once that contract is confirmed.
+  `mock_fetch_raw_candidates()` is the offline substitute — hand-written placeholder raw records,
+  not real Maestro output — used by tests and `--mock` dry runs.
+- `candidates.py` — `generation_payload_to_candidate()` reuses `generation.payload`'s own
+  `history_entry_as_generated_question()` to convert a `GenerationPayload`'s `history[0]` into a
+  `GoldenExample`, returning `None` (not a partially-guessed candidate) on empty/unparseable
+  history, same convention as the function it wraps. Everything about *how* a batch is assembled —
+  candidate id, exam bank, topic-vs-edit `source_type`, and `input` — is unconfirmed at the Payload
+  API level, so it's taken as explicit caller-supplied `CandidateMetadata` rather than guessed out of
+  the raw payload. `ingest_candidate_batch()` runs this over a list of (payload, metadata) pairs and
+  returns `(candidates, skipped_example_ids)` — a record that fails to convert is reported, never
+  silently dropped, matching `import_pool.py`'s "nothing vanishes" convention.
+- `ingest_batch.py` — the CLI that closes the loop: converts either a JSONL file of
+  `{"payload": ..., "metadata": ...}` raw records (`--in`) or the offline mock source (`--mock`)
+  into a `GoldenExample`-shaped candidate batch JSONL, ready to feed straight into
+  `golden/generate_pool.py --batch`.
+
+```bash
+# Offline dry run - no live Payload API call exists yet, so this exercises the full pipeline
+# against hand-written mock data instead:
+python3 maestro/ingestion/ingest_batch.py --mock --out maestro/review_pools/mock_ingested_batch.jsonl
+
+python3 maestro/golden/generate_pool.py \
+  --batch maestro/review_pools/mock_ingested_batch.jsonl --seed 20260829 \
+  --out-xlsx maestro/review_pools/mock_batch.xlsx \
+  --out-mapping maestro/review_pools/mock_batch.mapping.json
+```
+
+**Status:** built, offline-tested only (12 tests, `test_ingestion.py`), not wired into any gate.
+Real usage is blocked on the same open question as everywhere else in this section: Maestro's real
+Payload API endpoint/auth contract.
 
 ---
 
@@ -886,6 +1065,12 @@ shaped a decision in Maestro's Tier 3 (above) rather than staying abstract:
 - Maestro Tier 1 (deterministic checks), Tier 2 (golden set + review pool), Tier 3 (experimental judge)
 - Repo reorganized into `maestro/` (project) + `reference/` (supporting methodology) + `tools/`
   (shared infrastructure), so future evaluation projects have an obvious place to land
+- Maestro's real system-architecture briefing incorporated: `generation/` (real payload model +
+  revision-loop checks) and `ingestion/` (candidate-ingestion seam up to the Payload API boundary)
+- Maestro Tier 3 given a second and third, independently-implemented judge (RAGAS and a Promptfoo
+  rubric, alongside the existing deepeval one) and `judge/compare_gold_suites.py` to diff any of
+  their verdicts on the same cases — `judge/shared.py` split out to make the second/third judge
+  possible without a dependency conflict
 
 ### Near term
 
@@ -898,6 +1083,15 @@ shaped a decision in Maestro's Tier 3 (above) rather than staying abstract:
   retrieval omissions.
 - Add adjudication fields and a disagreement workflow for reviewer decisions.
 - Measure Maestro Tier 3's real agreement against SME grading once real golden data exists.
+- Run `run_gold_suite.py`, `run_gold_suite_ragas.py`, and the Promptfoo suite live, then feed all
+  three's saved `--json` output into `judge/compare_gold_suites.py` to see whether the three judges
+  actually agree on the synthetic cases — not done yet, since all three make real paid model calls.
+- **Actually run the Promptfoo suite once Node 24 is available.** `judge/promptfoo/synthetic_cases_suite.yaml`
+  is only verified for content-correctness against its fixture (`test_judge_promptfoo_suite.py`) —
+  whether it scores as expected under a real Promptfoo eval is still unconfirmed.
+- Fix or confirm the stale `langchain-anthropic==1.5.4` pin in the root `requirements-ragas.txt`
+  (does not resolve on PyPI as of this writing; `requirements-maestro-ragas.txt` uses `0.3.22`
+  instead) — left as-is since `reference/` is out of this change's scope.
 
 ### Longer term
 

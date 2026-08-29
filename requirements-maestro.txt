@@ -17,3 +17,8 @@ openpyxl==3.1.5
 # only known conflict in this repo is deepeval-vs-ragas, over click; maestro doesn't use ragas).
 deepeval==4.1.5
 anthropic==0.121.0
+
+# pyyaml: test_judge_promptfoo_suite.py only - parses judge/promptfoo/synthetic_cases_suite.yaml to
+# verify its content matches judge/fixtures/synthetic_cases.json (no live Promptfoo/Node run is
+# needed to check this). Not used by any runtime code path.
+pyyaml==6.0.3

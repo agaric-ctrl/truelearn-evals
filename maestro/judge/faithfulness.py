@@ -5,6 +5,12 @@ verdicts are exactly what that status applies to.
 What gets judged for a Maestro GeneratedQuestion: the explanation content (explanation_header +
 explanation_footer + optional bottom_line), never question_text - the stem poses a problem, it
 isn't a claim about the world, so there's nothing in it to fact-check.
+
+See faithfulness_ragas.py for a second, independently-implemented judge over the same content
+shape - kept in its own module (not here) because deepeval and ragas conflict on the click
+dependency and must live in separate venvs. build_actual_output/build_retrieval_context_from_references
+live in shared.py, framework-agnostic, so both judge modules use the exact same conversion logic;
+re-exported here unchanged for backward compatibility with existing imports of this module.
 """
 
 from __future__ import annotations
@@ -15,18 +21,21 @@ from deepeval.metrics import FaithfulnessMetric
 from deepeval.models import AnthropicModel
 from deepeval.test_case import LLMTestCase
 
-from maestro.generation.payload import ReferencesPayload
+from maestro.judge.shared import (
+    EXPERIMENTAL_LABEL,
+    build_actual_output,
+    build_retrieval_context_from_references,
+)
 from tools.eval_result import CaseResult
 from tools.provider_usage import usage_from_objects
 from tools.retry import retry_call
 
-EXPERIMENTAL_LABEL = "[EXPERIMENTAL - NOT VALIDATED AGAINST REAL SME AGREEMENT] "
-
-
-def build_actual_output(
-    explanation_header: str, explanation_footer: str, bottom_line: str | None = None,
-) -> str:
-    return "\n\n".join(part for part in (explanation_header, explanation_footer, bottom_line) if part)
+__all__ = [
+    "EXPERIMENTAL_LABEL",
+    "build_actual_output",
+    "build_retrieval_context_from_references",
+    "judge_faithfulness",
+]
 
 
 def judge_faithfulness(
@@ -72,31 +81,3 @@ def judge_faithfulness(
     )
     usage_sources = (metric, judge) if judge is not None else (metric,)
     return result, usage_from_objects(*usage_sources)
-
-
-def build_retrieval_context_from_references(references: ReferencesPayload) -> list[str] | None:
-    """None (never []) when no result carries captured text - an empty list would read downstream
-    as "valid but zero-length context", not "nothing gradable exists yet". Whether the real
-    Maestro payload ever populates ReferenceResult.text is UNCONFIRMED; this returns None until it
-    does.
-
-    Caller-facing rule: a None return means the caller MUST Skip the judge call entirely, never
-    pass an empty/meaningless retrieval_context into judge_faithfulness - deepeval's
-    FaithfulnessMetric treats retrieval_context as real evidence to check claims against, and a
-    non-empty-but-content-free list would silently produce a meaningless score instead of an
-    honest Skip.
-
-    Partial availability (some results have text, some don't) includes only the ones that do,
-    rather than nulling out the whole set - a judge can meaningfully grade against partial source
-    material; only the fully-empty case has nothing to grade against.
-
-    TODO(once ReferenceResult.text availability is confirmed): a real caller belongs in
-    maestro/generation/ - e.g. judge_history_head(payload, topic) would do
-    `context = build_retrieval_context_from_references(payload.history[0].references)`, Skip if
-    None, otherwise call judge_faithfulness(..., source=context, ...). Not built now - live
-    URL-fetching to backfill missing text is explicitly out of scope, and this helper is not wired
-    into any gate, script, or CI job by this change.
-    """
-
-    texts = [result.text for result in references.results if result.text]
-    return texts or None
