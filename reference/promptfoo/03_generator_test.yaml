@@ -1,0 +1,63 @@
+# Testing the GENERATOR: real models write answers live, the trusted judge grades them.
+# Roles flip vs the echo suite: judge is now the fixed instrument, models are on trial.
+# Multiple providers = the contestants; the single llm-rubric provider = the judge.
+# NOTE: sparse sources here make capable models fail by adding TRUE-but-unsourced detail.
+# PLACEHOLDER: the source/question pairs below are hand-written synthetic clinical-QA
+# content - not TrueLearn content, not clinician-reviewed.
+# Run: npx promptfoo@latest eval -c 03_generator_test.yaml && npx promptfoo@latest view
+description: "Testing multiple GENERATORS - one judge grades faithfulness across all"
+
+prompts:
+  - |
+    You are writing an explanation for a medical board exam question.
+    Use ONLY the source material below. Do not add facts beyond it.
+
+    SOURCE MATERIAL: "{{source}}"
+    QUESTION: {{question}}
+
+    Write a concise 2-3 sentence explanation.
+
+# ---- THE CONTESTANTS: models being tested ----
+providers:
+  - id: anthropic:messages:claude-sonnet-5
+    config:
+      max_tokens: 1024
+  - id: anthropic:messages:claude-haiku-4-5
+    config:
+      max_tokens: 1024
+  - id: anthropic:messages:claude-opus-4-8
+    config:
+      max_tokens: 1024
+
+defaultTest:
+  assert:
+    # ---- THE JUDGE: one referee, grades every contestant above ----
+    - type: llm-rubric
+      provider: anthropic:claude-sonnet-5
+      value: |
+        SOURCE MATERIAL: "{{source}}"
+        Evaluate whether EVERY medical claim in the output is supported by the
+        SOURCE MATERIAL above. PASS only if all claims are grounded in the source.
+        FAIL if the output introduces any medical claim not present in the source,
+        or contradicts it.
+
+tests:
+  - description: "inferior MI"
+    vars:
+      question: "A 55-year-old has chest pain and ST elevation in II, III, aVF. Diagnosis and cause?"
+      source: "ST elevation in leads II, III, and aVF indicates an inferior wall MI, most commonly caused by occlusion of the right coronary artery (RCA)."
+
+  - description: "hyperkalemia"
+    vars:
+      question: "What ECG changes are seen with high potassium?"
+      source: "Hyperkalemia produces characteristic ECG changes including peaked T waves and a widened QRS."
+
+  - description: "anaphylaxis"
+    vars:
+      question: "What is the first-line treatment for anaphylaxis?"
+      source: "The first-line treatment for anaphylaxis is intramuscular epinephrine."
+
+  - description: "DKA"
+    vars:
+      question: "How is diabetic ketoacidosis managed?"
+      source: "Diabetic ketoacidosis is managed with intravenous fluids, insulin, and electrolyte correction."

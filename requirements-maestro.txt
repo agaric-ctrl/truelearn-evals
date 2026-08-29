@@ -1,0 +1,19 @@
+# Python dependencies for maestro/ (Maestro generated-question checks).
+#
+# lxml: only needed for maestro/checks/html_well_formed.py (strict HTML syntax-error detection via
+# lxml.etree.HTMLParser(recover=False)) and maestro/checks/tables_no_duplicates.py (table/row/cell
+# tree traversal, reusing the same dependency).
+#
+# openpyxl: only needed for maestro/golden/generate_pool.py and import_pool.py (SME review-pool
+# spreadsheet generation/import - locked cells, frozen header, dropdown validation).
+#
+# No known conflict between the two, or with requirements-deepeval.txt / requirements-ragas.txt, so
+# maestro does not need its own venv.
+lxml==6.1.1
+openpyxl==3.1.5
+
+# deepeval + anthropic: Tier 3 judge only (maestro/judge/). Confirmed to install and import
+# cleanly alongside lxml/openpyxl in one venv - no conflict, so no separate venv is needed (the
+# only known conflict in this repo is deepeval-vs-ragas, over click; maestro doesn't use ragas).
+deepeval==4.1.5
+anthropic==0.121.0

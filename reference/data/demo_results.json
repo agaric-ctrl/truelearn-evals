@@ -1,0 +1,20 @@
+[
+  {
+    "framework": "deepeval",
+    "metric": "faithfulness",
+    "_placeholder": "Synthetic demo output, hand-written for the reference methodology. Not a real evaluation run.",
+    "cases": [
+      {"case_id": "grounded", "score": 1.0, "passed": true},
+      {"case_id": "hallucinated", "score": 0.5, "passed": false}
+    ]
+  },
+  {
+    "framework": "ragas",
+    "metric": "faithfulness",
+    "_placeholder": "Synthetic demo output, hand-written for the reference methodology. Not a real evaluation run.",
+    "cases": [
+      {"case_id": "grounded", "score": 1.0, "passed": true},
+      {"case_id": "hallucinated", "score": 0.333, "passed": false}
+    ]
+  }
+]

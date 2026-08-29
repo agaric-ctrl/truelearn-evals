@@ -1,4 +1,4 @@
-# Python dependency references for the deepeval/ and ragas/ scripts.
+# Python dependency references for the reference/deepeval/ and reference/ragas/ scripts.
 # Promptfoo is a Node tool, run via `npx promptfoo@latest` (no pip needed).
 #
 # NOTE: deepeval and ragas have a known `click` version conflict when installed
@@ -8,3 +8,8 @@
 #   pip install -r requirements-ragas.txt
 #
 # The files intentionally remain separate; do not merge them into one venv.
+#
+# maestro/ (the primary body of work in this repo - see README.md) has its own dependency,
+# with no conflict against the above, so it does not need its own venv:
+#
+#   pip install -r requirements-maestro.txt

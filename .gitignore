@@ -1,10 +1,13 @@
 .venv/
 venv/
 .venv-ragas/
+.venv-maestro/
 __pycache__/
 *.pyc
 .env
 .promptfoo/
+.deepeval/
 node_modules/
 .DS_Store
 results/
+maestro/review_pools/

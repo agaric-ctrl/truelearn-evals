@@ -1,0 +1,5 @@
+{
+  "_placeholder": "Example EvalConfig for the CI smoke test - not a real, confirmed TrueLearn config. Real values for require_bottom_line, table_placement, reference_style_pattern, and allowed_question_formats_by_type are all still open questions (see the root README).",
+  "require_bottom_line": true,
+  "existing_unique_names": ["Cardio_MI_000", "Pulm_PE_004"]
+}

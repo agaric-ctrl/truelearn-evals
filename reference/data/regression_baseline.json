@@ -1,0 +1,6 @@
+{
+  "accuracy": 1.0,
+  "latency_ms": 1000,
+  "estimated_cost_usd": 0.05,
+  "_placeholder": "Synthetic starter baseline. Not a reviewed production benchmark - see the roadmap in the root README."
+}

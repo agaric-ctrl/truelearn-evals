@@ -1,0 +1,29 @@
+[
+  {
+    "framework": "judge-sonnet",
+    "model": "claude-sonnet-4-6",
+    "_placeholder": "Synthetic multi-judge fixture. Not a real comparison run - see the 'open questions' section of the root README for what a real multi-judge setup would need.",
+    "cases": [
+      {"case_id": "grounded", "score": 1.0, "passed": true},
+      {"case_id": "borderline", "score": 0.6, "passed": false}
+    ]
+  },
+  {
+    "framework": "judge-haiku",
+    "model": "claude-haiku-4-5",
+    "_placeholder": "Synthetic multi-judge fixture. Not a real comparison run.",
+    "cases": [
+      {"case_id": "grounded", "score": 1.0, "passed": true},
+      {"case_id": "borderline", "score": 0.8, "passed": true}
+    ]
+  },
+  {
+    "framework": "judge-opus",
+    "model": "claude-opus-4-8",
+    "_placeholder": "Synthetic multi-judge fixture. Not a real comparison run.",
+    "cases": [
+      {"case_id": "grounded", "score": 1.0, "passed": true},
+      {"case_id": "borderline", "score": 0.7, "passed": false}
+    ]
+  }
+]

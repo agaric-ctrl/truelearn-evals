@@ -1,0 +1,34 @@
+# Two-case judge test: one grounded (PASS), one hallucinated (FAIL).
+# Uses the `echo` provider so no model generates; we test the JUDGE only.
+# PLACEHOLDER: the source/answer text below is hand-written synthetic clinical-QA content
+# for exercising the judge mechanism - not TrueLearn content, not clinician-reviewed.
+# Run: npx promptfoo@latest eval -c 01_faithfulness_pass_fail.yaml && npx promptfoo@latest view
+description: "Faithfulness pass vs fail - medical"
+
+prompts:
+  - "{{answer_under_test}}"
+
+providers:
+  - id: echo
+
+defaultTest:
+  assert:
+    - type: llm-rubric
+      provider: anthropic:claude-sonnet-5
+      value: |
+        SOURCE MATERIAL: "{{source}}"
+        Evaluate whether EVERY medical claim in the output is supported by the
+        SOURCE MATERIAL above. PASS only if all claims are grounded in the source.
+        FAIL if the output introduces any medical claim not present in the source,
+        or contradicts it.
+
+tests:
+  - description: "Grounded answer (should PASS)"
+    vars:
+      source: "ST elevation in leads II, III, and aVF indicates an inferior wall MI, most commonly caused by occlusion of the right coronary artery (RCA)."
+      answer_under_test: "This is an inferior wall myocardial infarction. The ST elevation in II, III, and aVF localizes to the inferior wall, most commonly caused by occlusion of the right coronary artery."
+
+  - description: "Hallucinated answer (should FAIL)"
+    vars:
+      source: "ST elevation in leads II, III, and aVF indicates an inferior wall MI, most commonly caused by occlusion of the right coronary artery (RCA)."
+      answer_under_test: "This is an inferior wall MI, most commonly caused by occlusion of the left anterior descending (LAD) artery. Treat immediately with thrombolytics within 90 minutes; troponin is always above 5.0."

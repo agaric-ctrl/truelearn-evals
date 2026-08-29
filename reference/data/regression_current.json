@@ -1,0 +1,6 @@
+{
+  "accuracy": 1.0,
+  "latency_ms": 1100,
+  "estimated_cost_usd": 0.05,
+  "_placeholder": "Synthetic starter comparison value. Not a real evaluation run."
+}

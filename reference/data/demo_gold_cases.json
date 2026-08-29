@@ -1,0 +1,12 @@
+[
+  {
+    "case_id": "grounded",
+    "expected_pass": true,
+    "_placeholder": "Synthetic example, hand-written for the reference methodology. Not TrueLearn content."
+  },
+  {
+    "case_id": "hallucinated",
+    "expected_pass": false,
+    "_placeholder": "Synthetic example, hand-written for the reference methodology. Not TrueLearn content."
+  }
+]

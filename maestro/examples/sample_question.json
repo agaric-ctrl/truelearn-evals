@@ -1,0 +1,12 @@
+{
+  "unique_name": "Cardio_MI_001",
+  "question_text": "<p>A 58-year-old man presents with crushing substernal chest pain radiating to the left arm.</p>",
+  "explanation_header": "<p>The correct answer is B: ST-elevation myocardial infarction.</p>",
+  "explanation_footer": "<p>Reviewed 2026.</p>",
+  "bottom_line": "<p>Recognize classic MI presentation and initiate the STEMI protocol.</p>",
+  "main_topic": "Cardiology",
+  "modifier": "Adult",
+  "question_type": "single question",
+  "question_format": "Text",
+  "references": []
+}

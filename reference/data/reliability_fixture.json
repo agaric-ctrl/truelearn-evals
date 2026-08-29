@@ -1,0 +1,18 @@
+[
+  {
+    "framework": "deepeval",
+    "_placeholder": "Synthetic repeated-run fixture. Not real reliability data.",
+    "cases": [
+      {"case_id": "grounded", "score": 1.0, "passed": true},
+      {"case_id": "borderline", "score": 0.6, "passed": false}
+    ]
+  },
+  {
+    "framework": "deepeval",
+    "_placeholder": "Synthetic repeated-run fixture. Not real reliability data.",
+    "cases": [
+      {"case_id": "grounded", "score": 1.0, "passed": true},
+      {"case_id": "borderline", "score": 0.8, "passed": true}
+    ]
+  }
+]

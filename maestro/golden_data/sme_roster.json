@@ -1,0 +1,5 @@
+{
+  "USMLE": {"reviewer_id": null, "backup_reviewer_id": null, "_placeholder": "OPEN QUESTION: who is the real SME reviewer for USMLE content?"},
+  "COMLEX": {"reviewer_id": null, "backup_reviewer_id": null, "_placeholder": "OPEN QUESTION: who is the real SME reviewer for COMLEX content?"},
+  "COMAT": {"reviewer_id": null, "backup_reviewer_id": null, "_placeholder": "OPEN QUESTION: who is the real SME reviewer for COMAT content?"}
+}

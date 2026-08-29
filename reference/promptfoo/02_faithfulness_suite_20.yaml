@@ -1,0 +1,177 @@
+# 30-case judge-validation suite: 15 grounded (PASS), 15 adversarial (FAIL).
+# Each adversarial case is a DIFFERENT hallucination type. `echo` provider = judge test.
+# A ~50% pass rate is BY DESIGN. Read rows 01-15 as green, 16-30 as red.
+# PLACEHOLDER: every source/answer pair below is hand-written synthetic clinical-QA
+# content for exercising the judge mechanism - not TrueLearn content, not clinician-reviewed.
+# Run: npx promptfoo@latest eval -c 02_faithfulness_suite_20.yaml && npx promptfoo@latest view
+description: "Faithfulness suite - 30 medical cases (15 grounded, 15 adversarial)"
+
+prompts:
+  - "{{answer_under_test}}"
+
+providers:
+  - id: echo
+
+defaultTest:
+  assert:
+    - type: llm-rubric
+      provider: anthropic:claude-sonnet-5
+      value: |
+        SOURCE MATERIAL: "{{source}}"
+        Evaluate whether EVERY medical claim in the output is supported by the
+        SOURCE MATERIAL above. PASS only if all claims are grounded in the source.
+        FAIL if the output introduces any medical claim not present in the source,
+        or contradicts it.
+
+tests:
+  # ---------- GROUNDED: should PASS (green) ----------
+  - description: "01 EXPECT-PASS grounded: inferior MI / RCA"
+    vars:
+      source: "ST elevation in leads II, III, and aVF indicates an inferior wall MI, most commonly caused by occlusion of the right coronary artery (RCA)."
+      answer_under_test: "The findings indicate an inferior wall MI, most commonly due to occlusion of the right coronary artery."
+
+  - description: "02 EXPECT-PASS grounded: hyperkalemia ECG"
+    vars:
+      source: "Hyperkalemia produces characteristic ECG changes including peaked T waves, widened QRS, and in severe cases a sine-wave pattern."
+      answer_under_test: "Peaked T waves, a widened QRS, and in severe cases a sine-wave pattern are characteristic ECG findings of hyperkalemia."
+
+  - description: "03 EXPECT-PASS grounded: warfarin / vitamin K"
+    vars:
+      source: "Warfarin inhibits vitamin K-dependent clotting factors; its anticoagulant effect is monitored with the INR and reversed with vitamin K."
+      answer_under_test: "Warfarin inhibits vitamin K-dependent clotting factors, is monitored with the INR, and can be reversed with vitamin K."
+
+  - description: "04 EXPECT-PASS grounded: DKA management"
+    vars:
+      source: "Diabetic ketoacidosis is managed with intravenous fluids, insulin, and correction of electrolytes such as potassium."
+      answer_under_test: "Management of DKA includes IV fluids, insulin, and correcting electrolytes like potassium."
+
+  - description: "05 EXPECT-PASS grounded: strep pharyngitis"
+    vars:
+      source: "Group A streptococcal pharyngitis is treated with penicillin or amoxicillin in patients who are not allergic."
+      answer_under_test: "Strep throat is treated with penicillin or amoxicillin in non-allergic patients."
+
+  - description: "06 EXPECT-PASS grounded: anaphylaxis epinephrine"
+    vars:
+      source: "The first-line treatment for anaphylaxis is intramuscular epinephrine."
+      answer_under_test: "First-line treatment for anaphylaxis is intramuscular epinephrine."
+
+  - description: "07 EXPECT-PASS grounded: COPD airflow"
+    vars:
+      source: "Chronic obstructive pulmonary disease is characterized by persistent airflow limitation that is usually progressive."
+      answer_under_test: "COPD is marked by persistent, usually progressive airflow limitation."
+
+  - description: "08 EXPECT-PASS grounded: iron deficiency anemia"
+    vars:
+      source: "Iron deficiency anemia typically presents as a microcytic, hypochromic anemia with low ferritin."
+      answer_under_test: "Iron deficiency anemia is typically microcytic and hypochromic with a low ferritin."
+
+  - description: "09 EXPECT-PASS grounded: acetaminophen / NAC"
+    vars:
+      source: "Acetaminophen overdose can cause hepatotoxicity and is treated with N-acetylcysteine."
+      answer_under_test: "Acetaminophen overdose can cause liver toxicity and is treated with N-acetylcysteine."
+
+  - description: "10 EXPECT-PASS grounded: atrial fibrillation"
+    vars:
+      source: "Atrial fibrillation produces an irregularly irregular rhythm with no distinct P waves on ECG."
+      answer_under_test: "Atrial fibrillation shows an irregularly irregular rhythm without distinct P waves."
+
+  - description: "11 EXPECT-PASS grounded: negation"
+    vars:
+      source: "Patients with a true penicillin allergy should not receive penicillin."
+      answer_under_test: "Patients with a true penicillin allergy should not receive penicillin."
+
+  - description: "12 EXPECT-PASS grounded: numeric threshold"
+    vars:
+      source: "A serum sodium below 135 mEq/L is classified as hyponatremia."
+      answer_under_test: "Hyponatremia is defined here as a serum sodium below 135 mEq/L."
+
+  - description: "13 EXPECT-PASS grounded: multi-sentence source"
+    vars:
+      source: "Asthma causes reversible airway obstruction. Symptoms commonly include wheezing and cough."
+      answer_under_test: "Asthma causes reversible airway obstruction and commonly causes wheezing and cough."
+
+  - description: "14 EXPECT-PASS grounded: conditional treatment"
+    vars:
+      source: "In patients with bacterial meningitis, empiric antibiotics should be started promptly after blood cultures are obtained."
+      answer_under_test: "For bacterial meningitis, start empiric antibiotics promptly after obtaining blood cultures."
+
+  - description: "15 EXPECT-PASS grounded: source limitation"
+    vars:
+      source: "This source describes aspirin as an antiplatelet medication."
+      answer_under_test: "The source describes aspirin as an antiplatelet medication."
+
+  # ---------- ADVERSARIAL: should FAIL (red) ----------
+  - description: "16 EXPECT-FAIL contradiction: artery swap RCA->LAD"
+    vars:
+      source: "ST elevation in leads II, III, and aVF indicates an inferior wall MI, most commonly caused by occlusion of the right coronary artery (RCA)."
+      answer_under_test: "The findings indicate an inferior wall MI, most commonly due to occlusion of the left anterior descending (LAD) artery."
+
+  - description: "17 EXPECT-FAIL fabricated addition: invented treatment + numbers"
+    vars:
+      source: "Hyperkalemia produces characteristic ECG changes including peaked T waves and a widened QRS."
+      answer_under_test: "Hyperkalemia causes peaked T waves and a widened QRS, and is always treated with exactly 10 units of insulin and dialysis within 30 minutes."
+
+  - description: "18 EXPECT-FAIL overgeneralization: always/cure"
+    vars:
+      source: "Beta-blockers can reduce mortality in patients with heart failure with reduced ejection fraction."
+      answer_under_test: "Beta-blockers always cure heart failure in every patient."
+
+  - description: "19 EXPECT-FAIL wrong drug: epinephrine -> diphenhydramine"
+    vars:
+      source: "The first-line treatment for anaphylaxis is intramuscular epinephrine."
+      answer_under_test: "The first-line treatment for anaphylaxis is intramuscular diphenhydramine."
+
+  - description: "20 EXPECT-FAIL invented dose: fabricated INR target"
+    vars:
+      source: "Warfarin's anticoagulant effect is monitored with the INR."
+      answer_under_test: "Warfarin is monitored with the INR, with a target INR of exactly 5.0 for all patients."
+
+  - description: "21 EXPECT-FAIL invented mechanism: membrane rupture"
+    vars:
+      source: "Acetaminophen overdose can cause hepatotoxicity and is treated with N-acetylcysteine."
+      answer_under_test: "Acetaminophen overdose causes hepatotoxicity by directly rupturing hepatocyte cell membranes, and is treated with N-acetylcysteine."
+
+  - description: "22 EXPECT-FAIL swapped labs: micro/low -> macro/high"
+    vars:
+      source: "Iron deficiency anemia typically presents as a microcytic anemia with low ferritin."
+      answer_under_test: "Iron deficiency anemia typically presents as a macrocytic anemia with high ferritin."
+
+  - description: "23 EXPECT-FAIL unsupported absolute: no side effects"
+    vars:
+      source: "Group A streptococcal pharyngitis is treated with penicillin in patients who are not allergic."
+      answer_under_test: "Strep throat is treated with penicillin, which is completely safe and has no side effects in any patient."
+
+  - description: "24 EXPECT-FAIL conflated conditions: AFib vs flutter"
+    vars:
+      source: "Atrial fibrillation produces an irregularly irregular rhythm with no distinct P waves."
+      answer_under_test: "Atrial fibrillation produces a regular rhythm with sawtooth flutter waves."
+
+  - description: "25 EXPECT-FAIL out-of-scope fabrication: CABG for DKA"
+    vars:
+      source: "Diabetic ketoacidosis is managed with intravenous fluids, insulin, and electrolyte correction."
+      answer_under_test: "DKA is managed with IV fluids, insulin, electrolyte correction, and immediate coronary artery bypass surgery."
+
+  - description: "26 EXPECT-FAIL negation reversal"
+    vars:
+      source: "Patients with a true penicillin allergy should not receive penicillin."
+      answer_under_test: "Patients with a true penicillin allergy should receive penicillin."
+
+  - description: "27 EXPECT-FAIL numeric alteration"
+    vars:
+      source: "A serum sodium below 135 mEq/L is classified as hyponatremia."
+      answer_under_test: "Hyponatremia is defined as a serum sodium below 125 mEq/L."
+
+  - description: "28 EXPECT-FAIL partial support plus fabrication"
+    vars:
+      source: "Asthma causes reversible airway obstruction. Symptoms commonly include wheezing and cough."
+      answer_under_test: "Asthma causes reversible airway obstruction, wheezing, cough, and permanent lung scarring."
+
+  - description: "29 EXPECT-FAIL conditionality removed"
+    vars:
+      source: "In patients with bacterial meningitis, empiric antibiotics should be started promptly after blood cultures are obtained."
+      answer_under_test: "Everyone should receive empiric antibiotics immediately, without waiting for blood cultures."
+
+  - description: "30 EXPECT-FAIL unsupported source conclusion"
+    vars:
+      source: "This source describes aspirin as an antiplatelet medication."
+      answer_under_test: "Aspirin is an antiplatelet medication that prevents all heart attacks and has no bleeding risk."
