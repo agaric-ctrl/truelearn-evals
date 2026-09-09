@@ -22,3 +22,17 @@ anthropic==0.121.0
 # verify its content matches judge/fixtures/synthetic_cases.json (no live Promptfoo/Node run is
 # needed to check this). Not used by any runtime code path.
 pyyaml==6.0.3
+
+# py-readability-metrics + nltk: maestro/checks/readability.py only (Flesch-Kincaid grade-level
+# scoring, per docs/qa-context/TIER1_CHECKS_TASK.md's explicit direction to use a real readability
+# library, not a hand-rolled formula). nltk's sentence tokenizer normally fetches its data
+# (punkt_tab) over the network on first use - verified directly by triggering that failure - which
+# would break offline CI; maestro/checks/data/nltk_data/ bundles the English-only data (~244KB) so
+# this never happens. Confirmed no conflict with deepeval/click in this same venv (`pip check`).
+py-readability-metrics==1.4.5
+nltk==3.9.2
+
+# pymarkdownlnt: maestro/checks/markdown_structural_compatibility.py only - a Python markdown
+# linter (same rule set as the Node markdownlint tool named in the task doc), used to catch stray/
+# leaked markdown syntax in an HTML field. Confirmed no conflict with deepeval/click in this venv.
+pymarkdownlnt==0.9.33

@@ -8,5 +8,9 @@
   "modifier": "Adult",
   "question_type": "single question",
   "question_format": "Text",
-  "references": []
+  "references": [
+    "Smith J, et al. Circulation. 2023.",
+    "Doe R, et al. JAMA Cardiology. 2022.",
+    "Lee K, et al. NEJM. 2021."
+  ]
 }

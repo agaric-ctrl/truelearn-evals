@@ -15,12 +15,19 @@ import unittest
 from pathlib import Path
 
 from maestro.check_result import CheckResult, QuestionCheckReport, Status, render_summary
+from maestro.checks.arrow_style import arrow_style
+from maestro.checks.case_numbering import case_numbering
+from maestro.checks.density_redundancy import density_redundancy
 from maestro.checks.field_constraints import field_constraints
 from maestro.checks.html_well_formed import html_well_formed
+from maestro.checks.markdown_structural_compatibility import markdown_structural_compatibility
+from maestro.checks.readability_check import readability
 from maestro.checks.references_format import references_format
 from maestro.checks.required_fields_present import required_fields_present
+from maestro.checks.table_abbreviation_footnotes import table_abbreviation_footnotes
 from maestro.checks.tables_no_duplicates import tables_no_duplicates
 from maestro.checks.tables_placement_valid import tables_placement_valid
+from maestro.checks.teaching_case_standard import teaching_case_standard
 from maestro.models import EvalConfig, GeneratedQuestion, TablePlacementConfig
 from maestro.runner import run_checks
 
@@ -343,26 +350,122 @@ class TablesPlacementValidTests(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# references_format.py - new coverage, no C# test file existed for this stub
+# references_format.py - originally a Skip-only stub (style_pattern sub-check only); the Tier 1
+# checks task filled in reference_count, reverse_chronological_order, citation_type_caps, and
+# excluded_sources as new sub-checks alongside it. Behavior change worth calling out: an empty
+# references list used to be a blanket PASS (there was no real rule yet); now it correctly FAILs
+# reference_count (0 is outside the required 3-5), since that's now a real, stated rule.
 # ---------------------------------------------------------------------------
 
 class ReferencesFormatTests(unittest.TestCase):
-    def test_skipped_when_pattern_unset(self):
-        question = GeneratedQuestion(references=["Smith et al., 2020"])
-        results = references_format(question, EvalConfig())
-        self.assertEqual(len(results), 1)
-        self.assertEqual(results[0].status, Status.SKIPPED)
+    @staticmethod
+    def _question(references: list[str]) -> GeneratedQuestion:
+        return GeneratedQuestion(references=references)
 
-    def test_passes_when_no_references(self):
-        config = EvalConfig(reference_style_pattern=r"[A-Z][a-z]+ et al\., \d{4}")
-        results = references_format(GeneratedQuestion(references=[]), config)
-        self.assertEqual(len(results), 1)
-        self.assertEqual(results[0].status, Status.PASS)
+    def test_count_in_range_passes(self):
+        question = self._question([
+            "Smith J. Journal A. 2022.", "Doe R. Journal B. 2021.", "Lee K. Journal C. 2020.",
+        ])
+        result = _single(references_format(question, EvalConfig()), sub_check="reference_count")
+        self.assertEqual(result.status, Status.PASS)
 
-    def test_each_reference_checked_independently(self):
+    def test_too_few_references_fails(self):
+        question = self._question(["Smith J. Journal A. 2022."])
+        result = _single(references_format(question, EvalConfig()), sub_check="reference_count")
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_too_many_references_fails(self):
+        question = self._question([f"Author {i}. Journal. 202{i}." for i in range(6)])
+        result = _single(references_format(question, EvalConfig()), sub_check="reference_count")
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_reverse_chronological_order_passes(self):
+        question = self._question([
+            "Smith J. Journal A. 2022.", "Doe R. Journal B. 2021.", "Lee K. Journal C. 2020.",
+        ])
+        result = _single(
+            references_format(question, EvalConfig()), sub_check="reverse_chronological_order",
+        )
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_out_of_order_years_fails(self):
+        question = self._question([
+            "Smith J. Journal A. 2020.", "Doe R. Journal B. 2022.", "Lee K. Journal C. 2021.",
+        ])
+        result = _single(
+            references_format(question, EvalConfig()), sub_check="reverse_chronological_order",
+        )
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_ordering_skipped_with_fewer_than_two_dated_references(self):
+        question = self._question(["No year here.", "Also no year."])
+        result = _single(
+            references_format(question, EvalConfig()), sub_check="reverse_chronological_order",
+        )
+        self.assertEqual(result.status, Status.SKIPPED)
+
+    def test_citation_type_caps_skipped_when_unconfigured(self):
+        question = self._question(["Smith J. Journal A. 2022."])
+        result = _single(references_format(question, EvalConfig()), sub_check="citation_type_caps")
+        self.assertEqual(result.status, Status.SKIPPED)
+
+    def test_citation_type_cap_exceeded_fails(self):
+        config = EvalConfig(
+            reference_citation_type_patterns={"guideline": r"Guideline"},
+            max_per_citation_type={"guideline": 1},
+        )
+        question = self._question([
+            "ACC/AHA Guideline 2022.", "ESC Guideline 2021.", "Smith J. Journal. 2020.",
+        ])
+        result = _single(references_format(question, config), sub_check="citation_type_caps")
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_citation_type_cap_within_limit_passes(self):
+        config = EvalConfig(
+            reference_citation_type_patterns={"guideline": r"Guideline"},
+            max_per_citation_type={"guideline": 2},
+        )
+        question = self._question(["ACC/AHA Guideline 2022.", "Smith J. Journal. 2020."])
+        result = _single(references_format(question, config), sub_check="citation_type_caps")
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_excluded_sources_skipped_when_unconfigured(self):
+        question = self._question(["Wikipedia. Some topic. 2022."])
+        result = _single(references_format(question, EvalConfig()), sub_check="excluded_sources")
+        self.assertEqual(result.status, Status.SKIPPED)
+
+    def test_excluded_source_found_fails(self):
+        config = EvalConfig(excluded_reference_sources={"Wikipedia"})
+        question = self._question(["Wikipedia. Some topic. 2022.", "Smith J. Journal. 2020."])
+        result = _single(references_format(question, config), sub_check="excluded_sources")
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_excluded_source_absent_passes(self):
+        config = EvalConfig(excluded_reference_sources={"Wikipedia"})
+        question = self._question(["Smith J. Journal. 2020."])
+        result = _single(references_format(question, config), sub_check="excluded_sources")
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_style_pattern_skipped_when_unset(self):
+        question = self._question(["Smith et al., 2020"])
+        result = _single(references_format(question, EvalConfig()), sub_check="style_pattern")
+        self.assertEqual(result.status, Status.SKIPPED)
+
+    def test_style_pattern_produces_no_rows_when_no_references(self):
         config = EvalConfig(reference_style_pattern=r"[A-Z][a-z]+ et al\., \d{4}")
-        question = GeneratedQuestion(references=["Smith et al., 2020", "not styled correctly"])
-        results = references_format(question, config)
+        results = [
+            result for result in references_format(self._question([]), config)
+            if result.sub_check == "style_pattern"
+        ]
+        self.assertEqual(results, [])
+
+    def test_each_reference_checked_independently_against_style_pattern(self):
+        config = EvalConfig(reference_style_pattern=r"[A-Z][a-z]+ et al\., \d{4}")
+        question = self._question(["Smith et al., 2020", "not styled correctly"])
+        results = [
+            result for result in references_format(question, config)
+            if result.sub_check == "style_pattern"
+        ]
         self.assertEqual(len(results), 2)
         with self.subTest(reference=0):
             self.assertEqual(results[0].status, Status.PASS)
@@ -419,6 +522,9 @@ class RunnerTests(unittest.TestCase):
             {
                 "required_fields_present", "field_constraints", "html_well_formed",
                 "tables_no_duplicates", "tables_placement_valid", "references_format",
+                "table_abbreviation_footnotes", "teaching_case_standard", "case_numbering",
+                "readability", "markdown_structural_compatibility", "density_redundancy",
+                "arrow_style",
             },
         )
 
@@ -429,6 +535,312 @@ class RunnerTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0)
         self.assertIn("usage", result.stdout.lower())
+
+
+# ---------------------------------------------------------------------------
+# table_abbreviation_footnotes.py - new (docs/qa-context/TIER1_CHECKS_TASK.md)
+# ---------------------------------------------------------------------------
+
+class TableAbbreviationFootnotesTests(unittest.TestCase):
+    def test_no_tables_skipped(self):
+        question = GeneratedQuestion(question_text="<p>No table here.</p>")
+        results = table_abbreviation_footnotes(question, EvalConfig())
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].status, Status.SKIPPED)
+
+    def test_abbreviation_defined_in_footnote_passes(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><th>Test</th></tr><tr><td>COPD</td></tr>"
+            "<tr><td>COPD = chronic obstructive pulmonary disease</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_abbreviation_missing_from_footnote_fails(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><th>Test</th></tr><tr><td>COPD</td></tr>"
+            "<tr><td>Unrelated footnote text</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.FAIL)
+        self.assertIn("COPD", result.message)
+
+    def test_no_abbreviations_in_table_passes(self):
+        question = GeneratedQuestion(explanation_footer="<table><tr><td>plain text</td></tr></table>")
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS)
+
+    # False-positive fixes named in the task doc - verified against the exact failure patterns
+    # (chemical-formula fragments, letter+number labels), not just the plain "COPD" happy path.
+
+    def test_chemical_formula_fragment_not_flagged_as_abbreviation(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><td>CO2 level elevated</td></tr>"
+            "<tr><td>No abbreviations defined here</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS, result.message)
+
+    def test_letter_number_label_not_flagged_as_abbreviation(self):
+        """e.g. "CD4 count" - a real medical letter+digit label, not an undefined abbreviation."""
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><td>CD4 count low</td></tr>"
+            "<tr><td>No abbreviations defined here</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS, result.message)
+
+    def test_allowlisted_abbreviation_not_flagged(self):
+        config = EvalConfig(abbreviation_allowlist={"DNA"})
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><td>DNA test</td></tr><tr><td>No footnote needed</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, config))
+        self.assertEqual(result.status, Status.PASS, result.message)
+
+
+# ---------------------------------------------------------------------------
+# teaching_case_standard.py - new (docs/qa-context/TIER1_CHECKS_TASK.md)
+# ---------------------------------------------------------------------------
+
+class TeachingCaseStandardTests(unittest.TestCase):
+    def test_no_cases_skipped(self):
+        question = GeneratedQuestion(question_text="<p>No case sections here.</p>")
+        results = teaching_case_standard(question, EvalConfig())
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].status, Status.SKIPPED)
+
+    def test_case_within_sentence_limit_and_inline_key_teaching_passes(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<p>Case 1: A patient presents with fever. "
+            "<strong>Key teaching:</strong> Treat the underlying infection promptly.</p>"
+        ))
+        results = teaching_case_standard(question, EvalConfig())
+        self.assertTrue(results)
+        self.assertTrue(all(result.status == Status.PASS for result in results), results)
+
+    def test_case_exceeding_sentence_limit_fails(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<p>Case 1: One. Two. Three. Four. "
+            "<strong>Key teaching:</strong> Some point.</p>"
+        ))
+        result = _single(teaching_case_standard(question, EvalConfig()), sub_check="sentence_ceiling")
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_missing_key_teaching_fails(self):
+        question = GeneratedQuestion(
+            explanation_footer="<p>Case 1: A patient presents with fever.</p>",
+        )
+        result = _single(
+            teaching_case_standard(question, EvalConfig()), sub_check="key_teaching_present",
+        )
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_key_teaching_starting_its_own_paragraph_fails(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<p>Case 1: A patient presents with fever.</p>"
+            "<p><strong>Key teaching:</strong> Treat promptly.</p>"
+        ))
+        result = _single(
+            teaching_case_standard(question, EvalConfig()), sub_check="key_teaching_inline",
+        )
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_key_teaching_not_bolded_counts_as_missing(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<p>Case 1: A patient presents with fever. Key teaching: treat promptly.</p>"
+        ))
+        result = _single(
+            teaching_case_standard(question, EvalConfig()), sub_check="key_teaching_present",
+        )
+        self.assertEqual(result.status, Status.FAIL)
+
+
+# ---------------------------------------------------------------------------
+# case_numbering.py - new (docs/qa-context/TIER1_CHECKS_TASK.md)
+# ---------------------------------------------------------------------------
+
+class CaseNumberingTests(unittest.TestCase):
+    def test_no_cases_skipped(self):
+        question = GeneratedQuestion(question_text="<p>No cases here.</p>")
+        results = case_numbering(question, EvalConfig())
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0].status, Status.SKIPPED)
+
+    def test_sequential_numbering_passes(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<p>Case 1: First.</p><p>Case 2: Second.</p><p>Case 3: Third.</p>"
+        ))
+        result = _single(case_numbering(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_gap_in_numbering_fails(self):
+        question = GeneratedQuestion(
+            explanation_footer="<p>Case 1: First.</p><p>Case 3: Third.</p>",
+        )
+        result = _single(case_numbering(question, EvalConfig()))
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_numbering_not_starting_at_one_fails(self):
+        question = GeneratedQuestion(
+            explanation_footer="<p>Case 2: Second.</p><p>Case 3: Third.</p>",
+        )
+        result = _single(case_numbering(question, EvalConfig()))
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_cases_combined_across_fields(self):
+        question = GeneratedQuestion(
+            explanation_header="<p>Case 1: First.</p>",
+            explanation_footer="<p>Case 2: Second.</p>",
+        )
+        result = _single(case_numbering(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS)
+
+
+# ---------------------------------------------------------------------------
+# readability.py - new (docs/qa-context/TIER1_CHECKS_TASK.md). PLACEHOLDER threshold - see the
+# module docstring. Long repeated-sentence fixtures below exist only to clear
+# py-readability-metrics' 100-word minimum, not because the content is meaningful prose.
+# ---------------------------------------------------------------------------
+
+class ReadabilityTests(unittest.TestCase):
+    _LONG_TEXT = "<p>" + ("This is a plain, simple sentence for testing purposes. " * 20) + "</p>"
+
+    def test_empty_field_skipped(self):
+        result = _single(readability(GeneratedQuestion(), EvalConfig()), field_name="question_text")
+        self.assertEqual(result.status, Status.SKIPPED)
+
+    def test_short_text_skipped_not_scored(self):
+        question = GeneratedQuestion(question_text="<p>Too short to score.</p>")
+        result = _single(readability(question, EvalConfig()), field_name="question_text")
+        self.assertEqual(result.status, Status.SKIPPED)
+        self.assertIn("Not enough text", result.message)
+
+    def test_skipped_when_range_unconfigured_but_score_still_reported(self):
+        question = GeneratedQuestion(question_text=self._LONG_TEXT)
+        result = _single(readability(question, EvalConfig()), field_name="question_text")
+        self.assertEqual(result.status, Status.SKIPPED)
+        self.assertIn("flesch_kincaid_grade_level", result.details)
+
+    def test_in_range_passes_when_configured(self):
+        question = GeneratedQuestion(question_text=self._LONG_TEXT)
+        config = EvalConfig(readability_grade_level_range=(0.0, 100.0))
+        result = _single(readability(question, config), field_name="question_text")
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_out_of_range_fails_when_configured(self):
+        question = GeneratedQuestion(question_text=self._LONG_TEXT)
+        config = EvalConfig(readability_grade_level_range=(-100.0, -50.0))
+        result = _single(readability(question, config), field_name="question_text")
+        self.assertEqual(result.status, Status.FAIL)
+
+
+# ---------------------------------------------------------------------------
+# markdown_structural_compatibility.py - new (docs/qa-context/TIER1_CHECKS_TASK.md)
+# ---------------------------------------------------------------------------
+
+class MarkdownStructuralCompatibilityTests(unittest.TestCase):
+    def test_empty_field_skipped(self):
+        result = _single(
+            markdown_structural_compatibility(GeneratedQuestion(), EvalConfig()),
+            field_name="question_text",
+        )
+        self.assertEqual(result.status, Status.SKIPPED)
+
+    def test_clean_html_passes(self):
+        question = GeneratedQuestion(question_text="<p>A patient presents with <strong>fever</strong>.</p>")
+        result = _single(
+            markdown_structural_compatibility(question, EvalConfig()), field_name="question_text",
+        )
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_html_tags_alone_do_not_false_positive(self):
+        """Regression test for the false positive this check would otherwise have: pymarkdownlnt's
+        MD033 (no inline HTML) fires on every field if run against raw HTML, since HTML is this
+        field's confirmed, expected shape, not a defect. Stripping tags first (see this check's
+        module docstring) is what avoids it - verified directly against a real MD033 false-positive
+        found while building this check, not assumed."""
+        question = GeneratedQuestion(explanation_header="<p>Header text.</p>")
+        result = _single(
+            markdown_structural_compatibility(question, EvalConfig()),
+            field_name="explanation_header",
+        )
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_hard_tab_detected(self):
+        question = GeneratedQuestion(question_text="Some text.\n\tTab-indented line.")
+        results = [
+            result for result in markdown_structural_compatibility(question, EvalConfig())
+            if result.field_name == "question_text"
+        ]
+        self.assertTrue(any(result.status == Status.FAIL for result in results), results)
+
+    def test_excess_blank_lines_detected(self):
+        question = GeneratedQuestion(question_text="Para one.\n\n\n\nPara two.")
+        results = [
+            result for result in markdown_structural_compatibility(question, EvalConfig())
+            if result.field_name == "question_text"
+        ]
+        self.assertTrue(any(result.status == Status.FAIL for result in results), results)
+
+
+# ---------------------------------------------------------------------------
+# density_redundancy.py - new (docs/qa-context/TIER1_CHECKS_TASK.md). PLACEHOLDER threshold - see
+# the module docstring. Overlap ratios below were verified directly (not assumed) before being
+# hardcoded into these fixtures.
+# ---------------------------------------------------------------------------
+
+class DensityRedundancyTests(unittest.TestCase):
+    def test_fewer_than_two_sentences_skipped(self):
+        question = GeneratedQuestion(question_text="<p>Just one sentence here.</p>")
+        result = _single(density_redundancy(question, EvalConfig()), field_name="question_text")
+        self.assertEqual(result.status, Status.SKIPPED)
+
+    def test_skipped_when_threshold_unconfigured_but_pairs_still_reported(self):
+        question = GeneratedQuestion(question_text=(
+            "<p>The patient has a fever. The patient has a high fever today.</p>"
+        ))
+        result = _single(density_redundancy(question, EvalConfig()), field_name="question_text")
+        self.assertEqual(result.status, Status.SKIPPED)
+        self.assertIn("pairs", result.details)
+
+    def test_highly_overlapping_sentences_fail_when_configured(self):
+        question = GeneratedQuestion(question_text=(
+            "<p>The patient has a high fever today. The patient has a high fever currently.</p>"
+        ))
+        config = EvalConfig(max_ngram_overlap_ratio=0.3)
+        result = _single(density_redundancy(question, config), field_name="question_text")
+        self.assertEqual(result.status, Status.FAIL)
+
+    def test_distinct_sentences_pass_when_configured(self):
+        question = GeneratedQuestion(question_text=(
+            "<p>The patient has a fever. Blood pressure is elevated significantly today.</p>"
+        ))
+        config = EvalConfig(max_ngram_overlap_ratio=0.3)
+        result = _single(density_redundancy(question, config), field_name="question_text")
+        self.assertEqual(result.status, Status.PASS)
+
+
+# ---------------------------------------------------------------------------
+# arrow_style.py - new (docs/qa-context/TIER1_CHECKS_TASK.md)
+# ---------------------------------------------------------------------------
+
+class ArrowStyleTests(unittest.TestCase):
+    def test_no_arrow_passes(self):
+        question = GeneratedQuestion(question_text="<p>No typed arrow here.</p>")
+        result = _single(arrow_style(question, EvalConfig()), field_name="question_text")
+        self.assertEqual(result.status, Status.PASS)
+
+    def test_typed_arrow_fails(self):
+        question = GeneratedQuestion(question_text="<p>A -> B progression.</p>")
+        result = _single(arrow_style(question, EvalConfig()), field_name="question_text")
+        self.assertEqual(result.status, Status.FAIL)
+        self.assertEqual(result.details["count"], 1)
+
+    def test_real_arrow_character_passes(self):
+        question = GeneratedQuestion(question_text="<p>A → B progression.</p>")
+        result = _single(arrow_style(question, EvalConfig()), field_name="question_text")
+        self.assertEqual(result.status, Status.PASS)
 
 
 if __name__ == "__main__":

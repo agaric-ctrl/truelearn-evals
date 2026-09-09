@@ -40,6 +40,11 @@ def _generated_question_dict(unique_name: str, **overrides) -> dict:
         "modifier": "Adult",
         "question_type": "single question",
         "question_format": "Text",
+        # 3 references: satisfies references_format's reference_count sub-check (new since the
+        # Tier 1 checks task filled that stub in) - keeps this fixture actually clean by default.
+        "references": [
+            "Smith J. Journal A. 2022.", "Doe R. Journal B. 2021.", "Lee K. Journal C. 2020.",
+        ],
     }
     base.update(overrides)
     return base
@@ -139,7 +144,19 @@ class CheckGenerationPayloadTests(unittest.TestCase):
         broken_failures = [r for r in report.results if r.status == Status.FAIL and r.field_name and r.field_name.startswith("history[1]")]
         self.assertTrue(broken_failures, "expected at least one FAIL located at history[1].*")
 
-        other_failures = [r for r in report.results if r.status == Status.FAIL and r.field_name and not r.field_name.startswith("history[1]")]
+        # references_format's reference_count sub-check (new since the Tier 1 checks task filled
+        # that stub in) genuinely, correctly FAILs on every history entry here, not just history[1]
+        # - payload.py's history_entry_as_generated_question() deliberately never carries a raw
+        # entry's "references" key into GeneratedQuestion.references (that key means something
+        # different in a real Maestro payload - see that function's own docstring), so every parsed
+        # entry has an empty references list regardless of what the raw fixture dict contains. That
+        # is not this test's concern (locating a genuinely broken revision), so it's excluded here
+        # rather than silently disappearing an otherwise-real "unexpected failure" signal.
+        other_failures = [
+            r for r in report.results
+            if r.status == Status.FAIL and r.field_name and not r.field_name.startswith("history[1]")
+            and r.check_name != "references_format"
+        ]
         self.assertEqual(other_failures, [], f"unexpected FAILs outside history[1]: {other_failures}")
 
     def test_report_unique_name_matches_history_head(self):
