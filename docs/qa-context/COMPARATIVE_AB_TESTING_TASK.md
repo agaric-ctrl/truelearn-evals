@@ -2,7 +2,7 @@
 
 Read `docs/qa-context/MAESTRO_QA_FINDINGS.md` Section 2 first. This task exists because the Data Science lead stated directly that testing scope "needs to center on" comparing architectural variants (prompt-merging vs. a hypothetical RAG approach, structured vs. unstructured output, short vs. long chat history, single-step vs. multi-step generation, sequential vs. draft-review-rewrite loop) — not just grading one pipeline's output against an absolute rubric. That's a stronger signal than "someday, maybe" and this repo currently has no mechanism for it at all.
 
-**What this task is not**: a decision on whether comparative testing replaces or runs alongside the existing length/depth/density/style calibration work. That specific question was asked directly by the QA lead in the strategy doc's comment thread and never answered — still genuinely open. This task builds the *mechanism*, which is needed either way, without pre-deciding that question.
+**Update, Sep 9: this question is now answered.** The QA lead asked directly whether this replaces or runs alongside calibration checks; Data Science confirmed: "these two are complementary... we need another subsection for [A/B testing]." Build both — this is no longer a hedge against an open question, it's confirmed scope. Given the same-day conflict over whether RAG-style retrieval has actually shipped (see `CLAUDE.md`'s URGENT section), **prompt-merging vs. RAG is now the single highest-priority variant pair to build toward** once real generation variants exist to compare — not a hypothetical example among several.
 
 ## Why this is buildable now
 

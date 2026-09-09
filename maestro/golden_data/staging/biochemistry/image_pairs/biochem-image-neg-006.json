@@ -1,0 +1,33 @@
+{
+  "example_id": "biochem-image-neg-006",
+  "source_type": "image_selection",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "image_url": "https://d2vrujxrqm3l5p.cloudfront.net/86e469b2-2650-4919-a39d-56ad3245570f.png",
+    "candidate_topics": [
+      "Genetic Inheritance",
+      "Autosomal Codominance",
+      "COMLEX Level 1"
+    ]
+  },
+  "expected": {
+    "relevant": false,
+    "note": "constructed negative - topics borrowed from a different image (https://d2vrujxrqm3l5p.cloudfront.net/7dd68382-aebd-4039-aedd-d5d309ade238.jpg)"
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "pair:constructed_negative"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

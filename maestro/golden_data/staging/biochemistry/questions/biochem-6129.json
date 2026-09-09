@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-6129",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Secondary Lactase Deficiency: Result Of Destruction Of Intestinal Brush Border"
+  },
+  "expected": {
+    "unique_name": "L1_BIOCHEM_006ECM",
+    "question_text": "<p>A 10-year-old male presents to the office with diarrhea. One month ago, he had a brief illness with nausea, vomiting, and diarrhea, which his mother says he \"caught\" from some classmates. He recovered from this illness within 24 hours but has had intermittent episodes of diarrhea, abdominal pain, and bloating ever since. The symptoms begin approximately 15\u201320 minutes after eating and occur mostly after consuming ice cream, cheese, chocolate, and milk. The mechanism of the likely underlying disorder is</p>",
+    "explanation_header": "<p>The correct answer is destruction of the intestinal brush border.</p>",
+    "explanation_footer": "<p>This patient likely has lactose malabsorption, as indicated by his episodic diarrhea, abdominal pain, and bloating after eating dairy products. As his symptoms began after an acute diarrheal illness suggestive of viral gastroenteritis, secondary lactase deficiency is the most likely underlying diagnosis. Secondary lactase deficiency is a relatively common cause of lactose malabsorption. It results from destruction of the brush border of the small intestine , as may sometimes occur with viral gastroenteritis.\nLactose malabsorption is often a clinical diagnosis based on the appearance of symptoms within a few hours of significant lactose ingestion (> 1 serving of dairy products). A hydrogen breath test can be used to aid in the diagnosis. In this test, a standardized lactose solution is consumed, followed by the collection of serial breath samples for measuring hydrogen levels. A significant increase in exhaled hydrogen is considered a positive test, with very good specificity for diagnosing lactose malabsorption. \nManagement of secondary lactase deficiency involves avoidance of > 1 serving of dairy per meal or > 2 servings daily, along with calcium and vitamin D supplementation to ensure adequate intake of these nutrients. Lactase is also commercially available in oral preparations to assist with lactose degradation.\nImportantly, patients with symptom onset at > 50 years of age, associated bleeding or melena, weight loss, history of inflammatory bowel disease, and nocturnal pain should be evaluated endoscopically to rule out another disorder.\nTypes of Lactose Malabsorption\n| Acquired primary lactase deficiency | - Most common cause of primary lactose malabsorption - Age-related decrease in lactase expression in the intestinal brush border, usually beginning in early childhood (preschoolers) - Most common in Asian and African populations |\n|---|---|\n| Congenital lactase deficiency | - Rare autosomal recessive disorder - Characterized by complete absence of lactase in the small intestine - Diarrhea begins shortly after birth |\n| Developmental lactase deficiency | - Low lactase levels associated with prematurity - Fetal lactase develops late in gestation, placing infants born between 28\u201332 weeks at risk of lactase deficiency - May be asymptomatic if the infant is otherwise healthy, as the colon can salvage unabsorbed carbohydrates |\n| Secondary lactose malabsorption | - Secondary to inflammation or infection affecting large areas of the small intestine - Destruction of the intestinal brush border leads to reduced mucosal lactase activity |</p><p>Secondary lactase deficiency is a relatively common cause of lactose malabsorption. It is the result of destruction of the intestinal brush border, as may sometimes occur with viral gastroenteritis.</p>",
+    "main_topic": "Secondary Lactase Deficiency",
+    "modifier": "Result Of Destruction Of Intestinal Brush Border",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:6129"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

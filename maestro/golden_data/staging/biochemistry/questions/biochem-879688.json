@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-879688",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Vitamin D Overdose: Ca+ Kidney Stones, Constipation, Confusion, Nausea"
+  },
+  "expected": {
+    "unique_name": "L1_XXX_S1_Bio_033",
+    "question_text": "<p>A 43-year-old female is brought to the hospital with confusion, abdominal pain, and nausea. The history is provided by her husband, who says that he brought her to the hospital because she was lethargic and confused this morning. Her husband notes that she switched to a vegan diet six months ago and has been taking numerous over-the-counter supplements. Examination is remarkable for a diffusely tender abdomen. Abdominal x-ray demonstrates a large amount of stool throughout the colon and a CT scan of the abdomen/pelvis reveals a nonobstructive calculus in the right renal pelvis. The most likely diagnosis is</p>",
+    "explanation_header": "<p>The correct answer is vitamin D (calcitriol) toxicity.</p>",
+    "explanation_footer": "<p>This patient taking multiple supplements is experiencing confusion, nausea, abdominal pain, constipation, and nephrolithiasis, suggesting hypercalcemia. The triad of renal stones, confusion, and gastrointestinal upset is commonly seen in patients with hypercalcemia. Bone pain is another common symptom. A mnemonic for hypercalcemia is: \"stones, bones, (abdominal) groans, and psychiatric overtones\" describing nephrolithiasis, bone pain, abdominal pain and gastrointestinal symptoms, and altered mental status. \nThe development of hypercalcemia in this patient is most likely due to vitamin D overdose , given her history of taking multiple over-the-counter supplements. Since vitamin D facilitates calcium absorption, megadoses of this vitamin can lead to hypercalcemia and its sequelae. \nTreatment of vitamin D overdose includes discontinuing supplementation and supportive treatment, in addition to treatment of the sequelae of hypercalcemia (ie, management of kidney stones, etc).\nVitamin D (Calcitriol)\n| Production | - Dermal synthesis is the major source of vitamin D. 7-dehydrocholesterol is nonenzymatically converted to previtamin D 3 upon exposure to UV light. Previtamin D 3 is then rearranged to form vitamin D 3 (cholecalciferol) in a temperature-dependent manner. Plant sources provide ergocalciferol, which is also able to be converted to vitamin D3, although this provides less than the dermal pathway - In the liver, vitamin D 3 is converted to 25-hydroxyvitamin D, the major circulating form of vitamin D - In the kidney, 25-hydroxyvitamin D is converted to 1,25-dihydroxyvitamin D, the final and most biologically active form of vitamin D |\n|---|---|\n| Function | - Increases absorption of calcium and phosphorous in the small bowel and kidneys - Facilitates mineralization of epiphyseal plates and osteoid matrix in bone formation - Vitamin D binds receptors on osteoblasts and chondrocytes, releasing alkaline phosphatase, which dephosphorylates pyrophosphate and lifts inhibition of bone mineralization |\n| Deficiency | - Causes - Renal failure: impaired 1,25-dihydroxyvitamin D production - Low sunlight exposure: impaired vitamin D 3 production - Fat malabsorption: impaired dietary vitamin D absorption - Chronic liver disease: impaired 25-hydroxyvitamin D production - Cytochrome P450 induction: overmetabolism of vitamin D - Exclusive breastfeeding in infants: low vitamin D levels in breast milk Manifestations: - Pathologic fractures - Tibial bowing - Muscular tetany - Chvostek and Trousseau sign |\n| Hypervitaminosis | - Causes - Megadosing of vitamin D supplements - Sarcoidosis - Pathophysiology: sequelae of hypercalcemia from high amounts of vitamin D - Manifestations - Confusion - Polyuria - Polydipsia - Anorexia - Vomiting - Muscle weakness - Bone pain - Nephrolithiasis - Constipation - Metastatic calcification of soft tissue |\nhttps://d2vrujxrqm3l5p.cloudfront.net/5f24f1c5-5f95-42d7-b0af-ea549dbf212f.png</p><p>Patients taking excessive vitamin D can present with signs and symptoms of hypercalcemia, such as calcium kidney stones, constipation, confusion, and nausea.</p>",
+    "main_topic": "Vitamin D Overdose",
+    "modifier": "Ca+ Kidney Stones, Constipation, Confusion, Nausea",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:879688"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

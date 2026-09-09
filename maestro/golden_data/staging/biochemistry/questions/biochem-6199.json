@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-6199",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Neurofibromatosis Type I: Autosomal Dominant Inheritance"
+  },
+  "expected": {
+    "unique_name": "L1_PATH_044ECM-r",
+    "question_text": "<p>A 38-year-old male presents to the office with multiple chronic skin lesions. Physical examination reveals many lesions, as shown in the exhibit, as well as a few irregularly shaped, evenly pigmented, brown macules. The pattern of inheritance of the most likely underlying disorder affecting this patient is</p>",
+    "explanation_header": "<p>The correct answer is autosomal dominant.</p>",
+    "explanation_footer": "<p>This patient likely has neurofibromatosis type 1 (NF1), as evidenced by his characteristic presentation with multiple neurofibromas, a few pigmented brown macules, and axillary freckling. The pattern of inheritance of NF1 is autosomal dominant .\nNeurofibromas are benign tumors that can arise anywhere along the path of nerves, especially cutaneous nerves (resulting in cutaneous neurofibromas). Cutaneous neurofibromas usually are soft dome-shaped tumors but can also be pedunculated, nodular, or plaque-like, as seen in this patient. In addition to neurofibromas, other manifestations of NF1 include caf\u00e9-au-lait macules (irregularly shaped, evenly pigmented, brown macules) as well as axillary and inguinal freckling (as shown in the exhibit). This patient presents with both of these findings. Lisch nodules (pigmented iris hamartomas) and an increased likelihood of several other benign and malignant tumors (eg, pheochromocytoma, optic pathway or other gliomas, soft tissue sarcomas) are also associated with NF1. \nNF1 is caused by a mutation in the NF1 tumor suppressor gene, which is located on the long arm of chromosome 17. NF1 is inherited in an autosomal dominant pattern. Although the penetrance of the disorder is 100%, disease expression (ie, severity and type of clinical manifestation) varies across individuals.\nNeurofibromatosis Type 1\n| Genetics | - Autosomal dominant - 100% penetrance - Mutation in NF1 tumor suppressor gene on chromosome 17 |\n|---|---|\n| Clinical presentation | - Caf\u00e9-au-lait macules - Neurofibromas - Lisch nodules - Optic gliomas - Axillary/inguinal freckling |\n| Diagnosis | - \u2265 2 of the following: - \u2265 6 caf\u00e9-au-lait macules - \u2265 2 neurofibromas or 1 plexiform neurofibroma - Axillary/inguinal freckling - Optic glioma - \u2265 2 Lisch nodules (iris hamartomas) - Distinctive bony lesion (eg, sphenoid dysplasia) - First-degree relative with NF1 |\n| Annual childhood surveillance for complications | - Physical examination: - Examine skin for new lesions/progression of lesions - Measure blood pressure to assess for hypertension - Evaluate growth measurements - Evaluate for skeletal changes - Formal ophthalmologic examination - Assessment for precocious puberty - Developmental assessment |\n| NF1 = neurofibromatosis type 1. | |\nThe below photograph shows cutaneous neurofibromas (arrows) and axillary freckling (circle) in a patient with NF1.\nhttps://d2vrujxrqm3l5p.cloudfront.net/61b916ed-efba-44e4-bd96-379d0894a927.png \nThe below diagram depicts a pedigree representing autosomal dominant inheritance.\nhttps://d2vrujxrqm3l5p.cloudfront.net/ac7f3fd5-062b-4208-a3c6-048561cc395d.png</p><p>Neurofibromatosis type 1 is a disorder characterized by neurofibromas, caf\u00e9-au-lait macules, axillary and inguinal freckling, Lisch nodules, and an increased risk of other tumors. This condition has an autosomal dominant pattern of inheritance.</p>",
+    "main_topic": "Neurofibromatosis Type I",
+    "modifier": "Autosomal Dominant Inheritance",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:6199"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

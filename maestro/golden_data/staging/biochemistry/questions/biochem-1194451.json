@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1194451",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Whipple Disease: Positive Periodic Acid-Schiff Staining"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_COMSAE_10872",
+    "question_text": "<p>A 64-year-old male presents to the primary care physician with a complaint of diarrhea for the past month. He also notes that he has had migratory, non-deforming arthritis for the past year. He had acute endocarditis two years ago. He reports a progressive loss of memory over the past six months. He has lost 25 pounds unintentionally over the past six months. Vital signs reveal:\n| Temperature | 37.9\u00b0C (100.2\u00b0F) |\n|---|---|\n| Blood pressure | 110/70 mmHg |\n| Heart rate | 84/min |\n| Respiratory rate | 18/min |\nUltrasound examination reveals mesenteric lymphadenopathy. Which of the following would most likely be seen on small bowel biopsy?</p>",
+    "explanation_header": "<p>The correct answer is Periodic acid-Schiff-positive staining.</p>",
+    "explanation_footer": "",
+    "main_topic": "Whipple Disease",
+    "modifier": "Positive Periodic Acid-Schiff Staining",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:adversarial",
+    "root_id:1194451"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

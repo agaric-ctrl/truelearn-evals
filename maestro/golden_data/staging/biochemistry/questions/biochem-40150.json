@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-40150",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Vitamin B3 Deficiency: Dementia Is A Complication"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_227",
+    "question_text": "<p>A 47-year-old man comes to the emergency department because of diarrhea. He has a history of hepatitis C, intravenous substance use disorder, and alcohol use disorder. The diarrhea has been persistent for the past 3 months; it is nonbloody and is not associated with vomiting. On examination, the patient has sunken eyes, a dry tongue, and a hyperpigmented, pruritic rash over his arms, legs, and face. His temperature is 37.0\u00b0C (98.6\u00b0F), pulse is 104/min, respirations are 19/min, and blood pressure is 105/85 mm Hg. A deficiency of some kind is suspected. Left untreated, this patient will most likely develop which of the following?</p>",
+    "explanation_header": "<p>The correct answer is Dementia.</p>",
+    "explanation_footer": "<p>Vitamin B 3 (Niacin)\n| Function | - Essential nutrient involved in the synthesis and metabolism of carbohydrates, fatty acids, and proteins |\n|---|---|\n| Deficiency | - Pellagra - Diarrhea - Photosensitive pigmented dermatitis - Dementia |\n| Sources | - Plant and animal foods |\nThis patient has vitamin B 3 (niacin) deficiency . The initial manifestation of niacin deficiency is diarrhea, followed by pruritic dermatitis in sun-exposed areas. If niacin deficiency remains uncorrected, it will eventually progress to dementia . \nNiacin is important as a cofactor in oxidation-reduction biochemical reactions that involve NAD and NADP. It is also essential in the synthesis and metabolism of carbohydrates, fatty acids, and proteins. \nNiacin deficiency causes pellagra , which consists of diarrhea, pigmented dermatitis, and, eventually, dementia. Given that this patient has a history of alcohol use disorder and intravenous substance use disorder, it is likely that he has poor nutrition leading to the deficiency of key nutrients.\nhttps://d2vrujxrqm3l5p.cloudfront.net/ab3876b8-7c58-4a92-a43a-2192b96f0dea.png \nThe swollen, roughened, and mottled pigmentation of the skin is the classic dermatologic finding in pellagra secondary to niacin deficiency.</p><p>Pellagra (diarrhea, dermatitis, dementia) is a manifestation of vitamin B 3 (niacin) deficiency.</p>",
+    "main_topic": "Vitamin B3 Deficiency",
+    "modifier": "Dementia Is A Complication",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:40150"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

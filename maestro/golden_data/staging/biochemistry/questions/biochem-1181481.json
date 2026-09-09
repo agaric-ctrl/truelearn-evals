@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1181481",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Down Syndrome: Robertsonian Translocation"
+  },
+  "expected": {
+    "unique_name": "L1_GEN_2023_004",
+    "question_text": "<p>A 2-year-old boy is brought to the office for evaluation of developmental delay. He cannot walk independently and speaks only a few words. Physical examination reveals upslanting palpebral fissures, a flattened nasal bridge, and a single transverse palmar crease. Chromosomal analysis reveals a karyotype similar to the one shown in the exhibit. The most likely mechanism for this patient's condition is</p>",
+    "explanation_header": "<p>The correct answer is unbalanced segregation of a translocated chromosome.</p>",
+    "explanation_footer": "<p>This patient has Down syndrome caused by an unbalanced Robertsonian translocation , as demonstrated by his karyotype showing 3 functional copies of chromosome 21. As shown in the exhibit, 1 copy of chromosome 21 material has translocated onto another chromosome (chromosome 14), while 2 normal copies of chromosome 21 are also present. This unbalanced Robertsonian translocations can arise de novo during gametogenesis in 1 of the parents, or it can be caused by unbalanced segregation during meiosis in a parent who is a carrier for a balanced Robertsonian translocation (ie, unbalanced segregation of a translocated chromosome ), producing a gamete with both the altered chromosome and a normal chromosome 21.\nUnbalanced Robertsonian translocations account for ~ 3\u20134% of all cases of Down syndrome. In Robertsonian translocations, the long arms of 2 acrocentric chromosomes (chromosomes 13, 14, 15, 21, or 22) fuse at their centromeres, after which their short arms are lost. The most common Robertsonian translocation causing Down syndrome involves chromosomes 14 and 21 (as seen in this patient). \nUnlike nondisjunction Down syndrome (the most common form of Down syndrome), translocation Down syndrome is not associated with maternal age and shows familial clustering when 1 parent is a balanced carrier. The clinical features of patients with translocation Down syndrome are similar to those seen in patients with nondisjunction Down syndrome. These features include upslanting palpebral fissures, a flattened nasal bridge, and a single transverse palmar crease (as seen in this patient).\nDown Syndrome: Pathogenesis of Main Types\n| Type | Mechanism | Description | Notes |\n|---|---|---|---|\n| Nondisjunction Down syndrome (free trisomy 21) | Meiotic nondisjunction | - An extra complete copy of chromosome 21 (trisomy 21) in every cell - 47 chromosomes in all cells - Almost always due to nondisjunction during maternal gametogenesis | - Seen in ~ 95% of patients - \u2191 risk with advanced maternal age |\n| Mosaic Down syndrome | Mosaicism | - An extra copy of chromosome 21 in some (not all) cells - Due to a mitotic nondisjunction event in early embryonic life - Affected individuals have 2 distinct cell lines: 1 with a normal genotype and the other with trisomy 21 - Disease severity correlates directly with the percentage of trisomy 21 cells | - Seen in ~ 2% of patients |\n| Translocation Down syndrome | Unbalanced translocation | - Additional chromosome 21 material is attached to another chromosome (Robertsonian translocation) - 46 chromosomes in all cells - ~ 33\u201350% of cases are due to unbalanced segregation during meiosis in a parent with a balanced translocation - Disease severity is similar to that seen in meiotic nondisjunction | - Seen in ~ 3\u20134% of patients - Risk for recurrence is high if a balanced translocation is present in 1 parent |</p><p>Down syndrome is most commonly caused by meiotic nondisjunction (approximately 95% of patients). A minority of cases (approximately 3\u20134%) are caused by an unbalanced Robertsonian translocation, usually between chromosomes 14 and 21. During unbalanced Robertsonian translocations, the long arm of 1 acrocentric chromosome translocates to another acrocentric chromosome, ultimately resulting in 3 functional copies of the translocated chromosomal material.</p>",
+    "main_topic": "Down Syndrome",
+    "modifier": "Robertsonian Translocation",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:1181481"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

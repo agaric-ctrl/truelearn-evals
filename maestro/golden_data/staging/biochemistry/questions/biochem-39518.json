@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-39518",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Osteogenesis Imperfecta: Fractures, Blue Sclerae, Family History"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_065",
+    "question_text": "<p>An 11-year-old girl is brought to the emergency department by her parents because of a fracture of the right ulna near the wrist. According to the mother, the injury occurred when the girl was doing a cartwheel. The girl says that her arm felt as though it buckled underneath her body weight. This is the third fracture that she has had in the past 3 years. Her previous fractures were a malleolar fracture that occurred while she was jumping rope and a humeral fracture from falling off the couch. Her father reports that neither he nor the patient's mother were present when any of the injuries occurred. He also states that they believe she takes after her mother, who had more than 10 fractured bones during her childhood. The patient is at the 8th percentile for weight and the 30th percentile for height. Physical examination is remarkable for a thin-appearing girl with brittle and discolored teeth as well as swelling and discoloration of the right wrist. The right hand is deviated towards the ulnar side. Which of the following is the most likely diagnosis?</p>",
+    "explanation_header": "<p>The correct answer is Osteogenesis imperfecta.</p>",
+    "explanation_footer": "<p>Osteogenesis Imperfecta\n| Pathophysiology | - Autosomal-dominant mutation of COL1A1 and COL1A2 - Decreased type I collagen - Abnormal triple helix formation after collagen glycosylation |\n|---|---|\n| Presentation | - Recurrent low-energy fractures - Blue sclerae - Conductive hearing loss - Tooth abnormalities |\n| Diagnosis | - Skeletal survey - Protein testing or DNA sample testing |\n| Treatment | - Bisphosphonates to reduce risk for fractures |\nThis patient most likely has osteogenesis imperfecta , as evidenced by recurrent fractures after minimal trauma; brittle, discolored teeth; thin habitus; and a family history of frequent childhood fractures because of a type I collagen defect .\nPatients with osteogenesis imperfecta have brittle bones with poorly formed and opalescent or discolored teeth. They may have blue sclerae (see image), and conductive hearing loss can result from abnormalities of the bones within the inner ear canal. Joint hypermobility also is commonly seen in affected patients. Family history of similar events may be elicited because of the autosomal-dominant inheritance pattern for the disease.\nhttps://d2vrujxrqm3l5p.cloudfront.net/c1a54269-ba26-4038-aecd-e8ed66efd56f.png \nBlue coloring of the sclera (arrow) is a common finding in children with osteogenesis imperfecta.</p><p>Osteogenesis imperfecta is caused by a mutation that leads to defects in type I collagen. Patients typically have brittle bones, blue sclerae, poor dentition, and hearing loss, and they often will have a history of multiple broken bones.</p>",
+    "main_topic": "Osteogenesis Imperfecta",
+    "modifier": "Fractures, Blue Sclerae, Family History",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:39518"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

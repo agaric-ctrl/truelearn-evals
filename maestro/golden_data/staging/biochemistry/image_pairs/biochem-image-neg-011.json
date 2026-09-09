@@ -1,0 +1,33 @@
+{
+  "example_id": "biochem-image-neg-011",
+  "source_type": "image_selection",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "image_url": "https://d2vrujxrqm3l5p.cloudfront.net/020085ec-d742-4adf-8de6-db316af2a6a0.png",
+    "candidate_topics": [
+      "Vitamin C Deficiency",
+      "Enzymatic Impairment",
+      "USMLE Step 1"
+    ]
+  },
+  "expected": {
+    "relevant": false,
+    "note": "constructed negative - topics borrowed from a different image (https://d2vrujxrqm3l5p.cloudfront.net/d966d9ba-f9e9-42cf-8c19-60b50c9e8309.png)"
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "pair:constructed_negative"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

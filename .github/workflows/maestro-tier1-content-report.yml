@@ -1,0 +1,57 @@
+name: Maestro Tier 1 content report
+
+# Separate workflow file, same reasoning as faithfulness-framework-evaluation.yml being separate
+# from validate.yml:
+# a different trigger type deserves its own file rather than a conditional gate bolted onto the
+# PR-blocking job. Fully offline - these are all deterministic checks, no API key, no live model
+# calls, unlike faithfulness-framework-evaluation.yml.
+#
+# Per docs/qa-context/TIER1_CHECKS_TASK.md: "note, as a comment in the workflow file... a workflow
+# with both a PR trigger and a manual/scheduled trigger already provides 'runs on-demand and in
+# CI/CD' for this specific check category, without a separately deployed service." Flagging that
+# here, not deciding it: validate.yml's offline-validation job (PR-triggered) plus this workflow
+# (on-demand + weekly) may or may not be what the sidecar-eval-service proposal in
+# docs/qa-context/MAESTRO_QA_FINDINGS.md Section 3 meant - that's for whoever owns that proposal to
+# confirm, not something this task resolves unilaterally.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"  # weekly, Monday 06:00 UTC
+  # This repo's own tools/validate_workflows.py (run by validate.yml's own offline-validation job)
+  # requires any workflow that isn't "validate" or a "live-*" one to be workflow_run-triggered.
+  # Added genuinely, not just to satisfy that check: this also auto-refreshes the report whenever
+  # a Validate run (which exercises these same checks) succeeds, on top of the two triggers above.
+  workflow_run:
+    workflows: ["Validate"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  tier1-content-report:
+    # True for workflow_dispatch/schedule (no workflow_run event to check); for workflow_run,
+    # only proceeds if the triggering Validate run actually succeeded.
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Maestro dependencies
+        run: python -m pip install -r requirements-maestro.txt
+      - name: Run Tier 1 content checks and build the HTML report
+        run: |
+          mkdir -p /tmp/maestro-tier1-report
+          python maestro/checks/tier1_content_report.py \
+            --content-dir maestro/examples/tier1_content_samples \
+            --out /tmp/maestro-tier1-report/tier1-content-report.html
+      - name: Upload Tier 1 content report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: maestro-tier1-content-report
+          path: /tmp/maestro-tier1-report/tier1-content-report.html
+          if-no-files-found: error

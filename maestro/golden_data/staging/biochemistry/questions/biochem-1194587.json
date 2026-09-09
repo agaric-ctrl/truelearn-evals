@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1194587",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Severe Combined Immunodeficiency: Accumulation Of Deoxyadenosine"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_COMSAE_11655",
+    "question_text": "<p>A 4-month-old female is brought to the primary care physician by her father with a complaint of loose, watery stools over the past three months. She has a painful diaper rash. She has had several infections since birth, including oral candidiasis and several bacterial upper respiratory infections. Physical examination reveals a female that is small for her age, with a weight and height below the 5th percentile. Abdominal examination reveals a soft, nontender, nondistended abdomen. A chest radiograph reveals an absent thymic shadow. Which of the following is the most likely cause of the disease in this patient?</p>",
+    "explanation_header": "<p>The correct answer is Accumulation of deoxyadenosine.</p>",
+    "explanation_footer": "",
+    "main_topic": "Severe Combined Immunodeficiency",
+    "modifier": "Accumulation Of Deoxyadenosine",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:adversarial",
+    "root_id:1194587"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

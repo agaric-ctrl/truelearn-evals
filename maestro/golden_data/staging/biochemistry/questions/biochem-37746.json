@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-37746",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Phenylketonuria: Deficiency Of Tetrahydrobiopterin"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_108",
+    "question_text": "<p>A 16-month-old girl is brought to the office for a well-child visit. Her mother is concerned that she has not yet started to speak or walk. She is able to sit up and pull herself to a stand with assistance. Her mother says that she has frequent illnesses in which she has a few episodes of vomiting lasting for 2-3 days each time. She does not have fevers during these episodes, and there are no sick contacts at home. On examination, she is at the 20th percentile for height and 15th percentile for weight. She has evidence of hypopigmentation and eczema on both her arms and trunk. Deficiency of which of the following is most likely to explain this patient's presentation?</p>",
+    "explanation_header": "<p>The correct answer is Tetrahydrobiopterin.</p>",
+    "explanation_footer": "<p>https://d2vrujxrqm3l5p.cloudfront.net/408e864b-c5cc-4125-9706-726531680e90.png \nThis pediatric patient with developme ntal delay, vomiting, h ypopigmentation, and eczema likely has phenylketonuria (PKU). PKU is an autosomal recessive disorder of metabolism caused by a deficiency of either phenylalanine hydroxylase or tetrahydrobiopterin (BH 4 ), which is a cofactor of phenylalanine hydroxylase. Patients with PKU are unable to metabolize phenylalanine to tyrosine, leading to accumulation of phenylalanine and normally rare metabolites such as phenylpyruvate when exposed to phenylalanine in the diet. These metabolites give rise to the characteristic musty odor that can be present in patients with PKU. Screening occurs 2-3 days after birth as the infant is normal at birth owing to the persistence of maternal enzyme activity from fetal life. Newborn screening for PKU is carried out in all 50 states, but parents can opt out for religious reasons. \nPatients are usually identified by the newborn screening so that treatment may be implemented before the development of symptoms and neurologic damage. If missed in the newborn screening, the disease manifests as fair skin, eczema, hypopigmentation, a musty body odor, intellectual disability, and developmental delay. In addition, patients can present with abdominal pain, vomiting, hepatomegaly, hypoglycemia, and metabolic acidosis. \nTreatment is with the elimination of phenylalanine from the diet and supplementation with tyrosine (since patients are no longer able to synthesize tyrosine). Patients with PKU must avoid the artificial sweetener aspartame (commonly found in carbonated beverages), which contains phenylalanine.</p><p>Phenylketonuria is an inborn error of metabolism due to a deficiency in phenylalanine hydroxylase or tetrahydrobiopterin (BH 4 ), a cofactor of phenylalanine hydroxylase. Patients present with developmental delay, musty body odor, hypopigmentation, and eczema when exposed to dietary phenylketonuria.</p>",
+    "main_topic": "Phenylketonuria",
+    "modifier": "Deficiency Of Tetrahydrobiopterin",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:37746"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,28 @@
+{
+  "example_id": "biochem-article-minerals-and-trace-elements-reference-01",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Minerals_and_Trace_Elements.docx",
+    "fixture_type": "reference"
+  },
+  "expected": {
+    "text": "Savatt JM, Sincan M, Lebo MS, et al. Testing and management of iron overload after genetic screening-identified hemochromatosis. JAMA Netw Open. 2023;6(10):e2338995. doi:10.1001/jamanetworkopen.2023.38995."
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:reference"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

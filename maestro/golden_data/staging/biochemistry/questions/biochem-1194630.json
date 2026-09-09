@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1194630",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Carbon Monoxide: Carboxyhemoglobin"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_COMSAE_12064",
+    "question_text": "<p>A 45-year-old male is brought to the emergency department by his wife after she found him unconscious on the ground in his garage. He has no past medical history and takes no daily medications. His wife has a mild headache. Vital signs reveal:\n| Temperature | 36.9\u00b0C (98.4\u00b0F) |\n|---|---|\n| Blood pressure | 90/50mmHg |\n| Heart rate | 115/min |\n| Respiratory rate | 23/min |\n| Oxygen saturation | 100% on room air |\nPhysical examination reveals normal skin color. Which of the following would most likely be elevated in this patient?</p>",
+    "explanation_header": "<p>The correct answer is Carboxyhemoglobin.</p>",
+    "explanation_footer": "",
+    "main_topic": "Carbon Monoxide",
+    "modifier": "Carboxyhemoglobin",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:adversarial",
+    "root_id:1194630"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

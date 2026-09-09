@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-605",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Estrogen Precursor - Formation Of Estrogen: Androstenedione, Converted By Aromatase"
+  },
+  "expected": {
+    "unique_name": "L1_OBGYN_003PW-r_1",
+    "question_text": "<p>A 52-year-old female presents to her gynecologist's office with complaints of vaginal irritation. The patient underwent menopause last year and has since noticed more itching and irritation in her vulvar region. She is concerned that she may have a yeast infection. On physical examination, there is some thinning of the vulvar skin and decreased lubrication consistent with atrophic vaginitis related to postmenopausal hypoestrogenism. In this postmenopausal patient, the immediate steroidal precursor to the deficient hormone causing her findings is most likely</p>",
+    "explanation_header": "<p>The correct answer is androstenedione, which is converted by aromatase in the granulosa lutein cells.</p>",
+    "explanation_footer": "<p>Estrogens are responsible for the development and maintenance of the female reproductive system and secondary sexual characteristics. Estradiol, the most potent form of estrogen found in the female body and the principle intracellular human estrogen, is synthesized by the ovaries, granulosa-theca cells, and placenta. It is the primary estrogen secreted prior to menopause. Androstenedione, the steroid precursor, is converted to estradiol by aromatase enzymes. \nA complex interaction of hormones takes place during ovarian follicular development, the process that produces and releases an ovum from an ovary. During the initial period of follicular recruitment and growth, there are 2 cell types within the ovaries responsible for producing many of the steroids required for the process:\nTheca cells: Steroid production begins with cholesterol, which becomes pregnenolone in the theca cells. This is then converted to androstenedione in the theca cells by 17-\u03b1-hydroxylase.\nGranulosa cells: Androstenedione then diffuses across the basement membrane into the granulosa cells and is converted to estradiol by aromatase enzymes. \nTherefore, these cells participate in the production of steroid hormones from a cholesterol precursor, acting together to synthesize estradiol and progesterone. While both cells are able to produce progesterone independently of each other, the production of estradiol requires both cells working together. Ultimately, estrogens interact with the pituitary secretion of gonadotropins, luteinizing hormone, and follicle-stimulating hormone through a negative feedback system.\nThe image below illustrates the process of estradiol production.\nhttps://d2vrujxrqm3l5p.cloudfront.net/8cb15393-ac86-4f93-9c52-71d9eab21137.png \nIllustration \u00a9 TrueLearn, LLC</p><p>Androstenedione is the immediate steroid precursor of estradiol, and is converted by aromatase within the granulosa lutein cells.</p>",
+    "main_topic": "Estrogen Precursor - Formation Of Estrogen",
+    "modifier": "Androstenedione, Converted By Aromatase",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:605"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

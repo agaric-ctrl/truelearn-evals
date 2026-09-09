@@ -1,0 +1,29 @@
+{
+  "example_id": "biochem-article-minerals-and-trace-elements-case-03",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Minerals_and_Trace_Elements.docx",
+    "fixture_type": "teaching_case",
+    "label": "Case 4: Acrodermatitis Enteropathica"
+  },
+  "expected": {
+    "body": "A 9-month-old boy develops periorificial dermatitis, diarrhea, and alopecia three weeks after weaning from breast milk. Serum zinc is low; SLC39A4 mutation confirmed. Diagnosis: acrodermatitis enteropathica; breast milk picolinic acid masks the absorptive defect until weaning. Key teaching: the triad plus onset at weaning is pathognomonic; oral zinc is curative."
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:teaching_case"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

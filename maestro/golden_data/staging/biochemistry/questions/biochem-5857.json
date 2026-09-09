@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-5857",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Osteogenesis Imperfecta: Type I Collagen Defect"
+  },
+  "expected": {
+    "unique_name": "L1_PATH_035ECM",
+    "question_text": "<p>A 9-year-old male is brought to the office for a routine visit. He has a history of multiple fractures of the upper and lower extremities following minimal trauma. Physical examination reveals:\nAbnormal curvature of the spine\nHypermobility of the elbow and knee joints\nMalformations of several teeth\nOphthalmologic examination reveals the finding shown in the exhibit. The patient's underlying disorder most likely involves defective</p>",
+    "explanation_header": "<p>The correct answer is extracellular matrix remodeling.</p>",
+    "explanation_footer": "<p>This patient likely has osteogenesis imperfecta (also called \"brittle bone disease\"), as evidenced by his blue sclerae (shown in the exhibit), multiple fractures after minimal trauma, abnormal spinal curvature, joint hypermobility, and dental abnormalities. Osteogenesis imperfecta is a genetic connective tissue disorder characterized by defective extracellular matrix remodeling . It is caused by mutations in genes responsible for the formation or processing of type I collagen , resulting in decreased production of normal type I collagen. Most patients (~ 85\u201390%) have an autosomal dominant mutation in the collagen type I alpha 1 chain ( COL1A1 ) gene or collagen type I alpha 2 chain ( COL1A2 ) gene. \nType I collagen is a critical component of the extracellular matrix of bones, skin, tendons, teeth, corneas, sclerae, and fascia. Thus, osteogenesis imperfecta manifests as abnormalities in these diverse organs and tissues. Patients commonly present with multiple fractures at various stages of healing (may be mistaken for child abuse), hearing loss (due to abnormally formed middle ear bones or otosclerosis), easy bruising (due to thin skin), dental abnormalities (eg, dentinogenesis imperfecta), joint laxity, and scoliosis. Blue sclerae persisting beyond the neonatal period are essentially pathognomonic of the disorder. They are due to abnormally thin sclerae allowing visualization of the underlying dark choroidal vessels. \nIn addition to fractures, radiographs in osteogenesis imperfecta typically reveal bowing deformities in both lower extremities, as weakened, brittle bones are prone to deformation under normal physiological stress. Genetic testing confirms the diagnosis of osteogenesis imperfecta and will identify the patient's specific genetic mutation. \nOsteogenesis Imperfecta\n| Etiology | - Autosomal dominant inheritance (usually) - Mutations in the COL1A1 gene or COL1A2 gene (~ 85\u201390% of patients) |\n|---|---|\n| Pathophysiology | - Type I collagen is a major component of the extracellular matrix in various organs and tissues, including: - Bones, skin, tendons, teeth, corneas, sclerae, fascia - Defects in type I collagen synthesis or processing \u2192 \u2193 production of normal type I collagen \u2192 defective extracellular matrix remodeling |\n| Clinical features | - Recurrent low-impact fractures (usually beginning in infancy) - Blue sclerae - Dental abnormalities, such as dentinogenesis imperfecta (defective dentin formation resulting in discolored, opalescent teeth and enamel fractures/hypoplasia) - Short stature, skeletal deformities, scoliosis - Joint hypermobility or laxity - Hearing loss (due to ossicle abnormalities or otosclerosis) - Easy bruising |\n| COL1A1 = collagen type I alpha 1 chain; COL1A2 = collagen type I alpha 2 chain. | |\nThe below image is a reproduction of the exhibit. Note the pathognomonic blue sclerae (red arrows) of osteogenesis imperfecta.\nhttps://d2vrujxrqm3l5p.cloudfront.net/0cf4d30f-c8ff-4fad-8a25-a93f3ea23800.png</p><p>Osteogenesis imperfecta is a genetic connective tissue disorder characterized by defective extracellular matrix remodeling. It is caused by mutations in genes responsible for the formation or processing of type I collagen, resulting in reduced production of normal type I collagen. Clinical manifestations of osteogenesis imperfecta reflect the critical role of type I collagen as a component of the extracellular matrix of bones, skin, tendons, teeth, corneas, sclerae, and fascia.</p>",
+    "main_topic": "Osteogenesis Imperfecta",
+    "modifier": "Type I Collagen Defect",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:5857"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

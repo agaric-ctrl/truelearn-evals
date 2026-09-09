@@ -13,7 +13,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -42,6 +42,8 @@ class ImportOutcome:
     grade: str | None
     promoted: bool
     reason: str | None = None  # "sme_rejected" | "sme_needs_revision" | "tier1_check_failed" | "collision" | "ungraded"
+    exam_bank: str = ""  # added for import_summary.py's per-bank grouping - was computed locally
+    # in the loop below but never attached to the outcome object before now
 
 
 def read_graded_rows(xlsx_path: Path) -> dict[str, dict[str, str | None]]:
@@ -114,7 +116,7 @@ def import_pool(
                 "golden_example": dump_golden_example(example),
                 **({"tier1_report": json.loads(report.to_json())} if report is not None else {}),
             })
-            outcomes.append(ImportOutcome(example.example_id, display_id, grade, False, reason))
+            outcomes.append(ImportOutcome(example.example_id, display_id, grade, False, reason, exam_bank=bank))
 
         if grade is None:
             _block("ungraded")
@@ -139,7 +141,7 @@ def import_pool(
                 f"(existing reviewer={collision.sme_verified.reviewer_id!r}, "
                 f"new reviewer={graded['reviewer_id']!r}) - skipped. Use --allow-overwrite to replace."
             )
-            outcomes.append(ImportOutcome(example.example_id, display_id, grade, False, "collision"))
+            outcomes.append(ImportOutcome(example.example_id, display_id, grade, False, "collision", exam_bank=bank))
             continue
         if collision is not None and allow_overwrite:
             print(
@@ -155,7 +157,7 @@ def import_pool(
             verified_at=datetime.now(timezone.utc).isoformat(),
         )
         promotions_by_bank.setdefault(bank, []).append(example)
-        outcomes.append(ImportOutcome(example.example_id, display_id, grade, True))
+        outcomes.append(ImportOutcome(example.example_id, display_id, grade, True, exam_bank=bank))
 
     for bank, promoted in promotions_by_bank.items():
         path = golden_dir / f"{bank.lower()}.jsonl"
@@ -184,6 +186,11 @@ def main() -> int:
                          help="Where <bank>.blocked.jsonl files go. Defaults to the mapping file's own directory - the pool's working directory, where its other artifacts already live.")
     parser.add_argument("--no-run-checks", action="store_true", help="Skip the Tier 1 promotion gate.")
     parser.add_argument("--allow-overwrite", action="store_true", help="Replace an existing golden record with the same example_id instead of skipping it.")
+    parser.add_argument("--outcomes-json", type=Path, default=None,
+                         help="Optional: write this run's outcomes (one object per graded row - "
+                         "example_id, display_id, grade, promoted, exam_bank, reason) as a JSON "
+                         "list to this path. This is the per-run artifact golden/import_summary.py "
+                         "reads from; omit if you don't need a summary of this run.")
     args = parser.parse_args()
 
     mapping = json.loads(args.mapping.read_text(encoding="utf-8"))
@@ -202,6 +209,13 @@ def main() -> int:
     print(f"Promoted {len(promoted)}, blocked {len(blocked)} (of {len(outcomes)} graded row(s)).")
     for outcome in blocked:
         print(f"  [{outcome.reason}] {outcome.example_id} (display_id={outcome.display_id})")
+
+    if args.outcomes_json:
+        args.outcomes_json.parent.mkdir(parents=True, exist_ok=True)
+        args.outcomes_json.write_text(
+            json.dumps([asdict(outcome) for outcome in outcomes], indent=2), encoding="utf-8",
+        )
+        print(f"Wrote {len(outcomes)} outcome(s) to {args.outcomes_json}.")
 
     return 1 if any(outcome.reason == "collision" for outcome in blocked) else 0
 

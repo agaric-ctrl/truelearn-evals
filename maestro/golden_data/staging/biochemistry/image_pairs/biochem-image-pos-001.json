@@ -1,0 +1,33 @@
+{
+  "example_id": "biochem-image-pos-001",
+  "source_type": "image_selection",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "image_url": "https://d2vrujxrqm3l5p.cloudfront.net/0f54c130-d410-43ca-b49f-956abb21a08e.png",
+    "candidate_topics": [
+      "Polycythemia Vera",
+      "Decreased Erythropoietin",
+      "COMLEX Level 1"
+    ]
+  },
+  "expected": {
+    "relevant": true,
+    "note": "real positive pairing from Editorial's own image catalog"
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "pair:positive"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

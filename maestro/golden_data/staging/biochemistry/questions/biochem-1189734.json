@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1189734",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Marfan Syndrome: Aortic Root Dilatation"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_5653",
+    "question_text": "<p>A 15-year-old male presents for a routine preventative care visit. He has no complaints. His past medical history is significant for a hospitalization at age 13 for spontaneous pneumothorax. His father died suddenly at age 36. On physical examination, he is at the 50th percentile for weight and the 90th percentile for height. Vital signs are within normal limits. Cardiopulmonary auscultation reveals clear lung fields bilaterally. A grade II/VI late systolic murmur is heard throughout the precordium. Pectus excavatum and mild scoliosis are present. His arms and legs are longer than average, and his fingers and toes are long and hyperextensible. Which of the following is the most likely complication of this patient's condition?</p>",
+    "explanation_header": "<p>The correct answer is Aortic root dilatation.</p>",
+    "explanation_footer": "<p>Marfan syndrome is a connective tissue disorder with involvement of multiple organ systems. The most common cardiovascular finding in Marfan syndrome is aortic root dilatation.\nMarfan syndrome is one of the most common genetic disorders of connective tissue, with autosomal dominant inheritance. The most readily apparent abnormalities will be those of the musculoskeletal system; patients with Marfan syndrome have joint laxity and excessive growth of the long bones. This leads to taller-than-predicted stature, disproportionately long extremities, and arachnodactyly (very long, \u201cspider-like\u201d fingers), with hyperextensible joints and skin striae. Also look for abnormalities of the chest wall (pectus excavatum or carinatum) and spine (scoliosis, kyphosis).\nThe other findings in Marfan syndrome are less immediately obvious. Several ocular abnormalities can occur, but the one to watch for is ectopia lentis (displacement of the lens), which is pathognomonic for the disease. Patients with Marfan disease are prone to developing lung bullae, which can rupture and cause spontaneous pneumothorax.\nThe most serious and potentially deadly manifestations of Marfan syndrome are the cardiovascular findings. Aortic root disease\u2014and the possibility of subsequent aortic dissection and death\u2014is the big one to watch for on exams. Over 50% of patients with Marfan syndrome have some degree of aortic root dilatation, but there may not be any clinical findings unless aortic regurgitation is also present, so screening is vital. Almost as many patients have mitral valve prolapse.\nAtrial septal defect (choice B) is an abnormal opening between the left and right atria. It is a common defect and is usually asymptomatic. An atrial septal defect (ASD) usually does not cause a murmur due to the relatively low pressure in the atria; the classic finding is a \u201csplit S2\u201d which is constant or \u201cfixed\u201d--unlike a normal S2 split, which occurs only during inspiration.\nCoarctation of the aorta (choice C) is a narrowing of the aortic arch, either at or just proximal to the ductus arteriosus. Exam questions will present a patient with hypertension in the arms but lower blood pressure and weak pulses in the legs. Although coarctation is more common in males, keep in mind that this lesion is often seen in patients with Turner syndrome.\nEndocardial cushion defect (choice D), or atrioventricular canal defect, is characterized by a single, common atrioventricular valve with an ASD and, sometimes, a ventricular septal defect (VSD). This defect is the most common cardiac anomaly seen in trisomy 21 (Down syndrome).\nHypertrophic cardiomyopathy (choice E) is a genetic disease that causes abnormal proteins in the sarcomeres of cardiac myocytes. The left ventricle becomes massively hypertrophied, with small chamber size and reduced compliance, and can progress to obstruction of the left ventricular outflow tract. This is one of the two most important causes of sudden cardiac death in young athletes that you should know (the other is long QT syndrome).</p><p>Marfan syndrome is an autosomal dominant connective tissue disorder affecting multiple organ systems. The most important complication is aortic root dilatation because it can lead to aortic dissection and sudden death.</p>",
+    "main_topic": "Marfan Syndrome",
+    "modifier": "Aortic Root Dilatation",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1189734"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

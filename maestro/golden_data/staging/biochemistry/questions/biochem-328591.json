@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-328591",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Peutz-Jeghers Syndrome: STK11 Gene Mutation"
+  },
+  "expected": {
+    "unique_name": "L1_BIOCHEM_001AO_3",
+    "question_text": "<p>A 30-year-old man who recently moved to the area presents to the office for a routine health maintenance examination. His last examination was 8 years ago. He has no current complaints. The patient's medical history is unremarkable. Physical examination reveals several small, flat, brown macules around the mouth and on the lips and palms. A biopsy of 1 of these lesions reveals intraepidermal pigment-laden macrophages. Colonoscopy is performed, revealing several polyps. The histology of 1 of these polyps is shown in the exhibit. This patient's presentation is most likely related to a mutation in which of the following genes?</p>",
+    "explanation_header": "<p>The correct answer is STK11.</p>",
+    "explanation_footer": "<p>This patient likely has Peutz-Jeghers syndrome (PJS), as evidenced by the findings on physical examination and polyp histopathology. PJS is a rare autosomal dominant genetic disorder that is characterized by the development of hamartomatous polyps in the gastrointestinal tract and mucocutaneous pigmentation, which presents as small, flat, brown macules on the lips, around the mouth, and on the palms. The presence of intraepidermal pigment-laden macrophages in the biopsy of 1 of the patient's lesions is consistent with the mucocutaneous pigmentation seen in PJS. Additionally, the finding of polyps on colonoscopy further supports this diagnosis, as gastrointestinal polyps are a hallmark of PJS.\nPJS is caused by mutations in the STK11 (also known as LKB1 ) gene, which is a tumor suppressor gene. Mutations in this gene lead to an increased risk of developing various types of cancer, including gastrointestinal, breast, ovarian, pancreatic, and lung cancers.\nPeutz-Jeghers Syndrome\n| Etiology | - Autosomal dominant - Mutation in STK11 gene |\n|---|---|\n| Clinical presentation | - Hamartomatous gastrointestinal polyps - Benign growths in the stomach, small intestine, and colon - Mucocutaneous pigmentation: dark blue to dark brown, freckle-like pigmentation on the lips, perioral areas, buccal mucosa, eyes, nostrils, fingertips, palms, soles, and perianal areas |\n| Increased risk of cancers | - Breast - Cervical - Colorectal - Ovarian - Pancreatic - Small bowel - Stomach - Testicular |\nThe below histology image, reproduced from the exhibit, shows the typical appearance of hamartomatous polyps. The epithelium is hyperplastic, but there is no adenomatous dysplasia. The smooth muscle has an arborizing pattern (arrows), creating a leaf-like appearance. \nhttps://d2vrujxrqm3l5p.cloudfront.net/dea9781c-0b61-44eb-9f64-927478ab9943.png</p><p>Mutations in the STK11 gene are associated with Peutz-Jeghers syndrome, an autosomal dominant disorder that is characterized by hamartomatous polyps of the gastrointestinal tract and melanin spots that are typically found around the mouth as well as on the palms and soles or around the anus.</p>",
+    "main_topic": "Peutz-Jeghers Syndrome",
+    "modifier": "STK11 Gene Mutation",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:328591"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

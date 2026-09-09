@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-875107",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Crohn Disease: Vitamin B12 Deficiency"
+  },
+  "expected": {
+    "unique_name": "L1_XXX_S1_Bio_048",
+    "question_text": "<p>A 62-year-old male is brought to the emergency department by his wife due to severe right lower abdominal pain. She reports that he has been experiencing abdominal pain, watery diarrhea, and fatigue consistently during the past year. Vital signs reveal:\n| Temperature | 38\u00b0C (100.4\u00b0F) |\n|---|---|\n| Blood pressure | 135/80 mmHg |\n| Heart rate | 75/min |\n| Respiratory rate | 15/min |\nOn physical examination, dry mucous membranes and conjunctival pallor are noted. Laboratory studies reveal a hemoglobin of 10.3 g/dL (reference range: 14.0\u201318.0 g/dL) and a mean corpuscular volume of 101 fL (reference range: 80\u201394 fL). He undergoes colonoscopy with biopsies taken in the colon and terminal ileum. Histologic section of one of the biopsies is shown in the exhibit. The vitamin that is most likely deficient in this patient is stored predominately in the</p>",
+    "explanation_header": "<p>The correct answer is liver.</p>",
+    "explanation_footer": "<p>This patient with right lower abdominal pain, watery diarrhea, fatigue, anemia, and noncaseating granulomas on histology has Crohn disease . Crohn disease is a type of inflammatory bowel disease that can affect any portion of the gastrointestinal tract, most commonly the terminal ileum. Since the terminal ileum is the site of vitamin B 12 absorption, Crohn disease can lead to vitamin B 12 deficiency and present with macrocytic anemia, as seen in this patient. \nUnlike most other vitamins, vitamin B 12 has a large reserve stored mainly in the liver . Because of this storage capacity, it can take years for patients to clinically become vitamin B 12 deficient, even after the intake of vitamin B 12 decreases or the absorption is impaired. Thus, dietary deficiency is a rare cause vitamin B 12 deficiency (although it may be possible in long-term vegans). Vitamin B 12 deficiency most commonly occurs due to pernicious anemia (autoimmune destruction of parietal cells and intrinsic factor deficiency). It also occurs due to pancreatic insufficiency and damage to the terminal ileum from diseases that affect the terminal ileum (eg, Crohn disease or Diphyllobothrium latum infection). Treatment involves supplementation with vitamin B 12 either orally or through intramuscular injections.\nCrohn Disease\n| Involvement | - Anywhere from mouth to anus (most commonly terminal ileum) - Rectum typically spared - Perianal disease - Skip lesions |\n|---|---|\n| Clinical manifestations | - Abdominal pain - Diarrhea (bloody if colitis) - Urgency - Tenesmus - Weight loss - Aphthous stomatitis - Fatigue - Osteopenia - Nephrolithiasis - Venous thromboembolism |\n| Gross | - Transmural inflammation - Linear mucosal ulcerations - Cobblestoning - Creeping fat |\n| Microscopic | - Noncaseating granulomas |\n| Intestinal complications | - Fistulas - Strictures - Abscesses |\n| Extraintestinal manifestations | - Arthritis - Uveitis - Erythema nodosum - Pyoderma gangrenosum |\n| Treatment | - Exclusive enteral nutrition - Induction: steroids - Maintenance: biologics (tumor necrosis factor-\u03b1 antagonists, vedolizumab, ustekinumab) and small molecules (eg, tofacitinib) |\nThe below image shows noncaseating granulomas in Crohn disease (arrow).\nhttps://d2vrujxrqm3l5p.cloudfront.net/9d8a8f38-2bec-4ec7-9f4e-30454224620f.png</p><p>Vitamin B 12 deficiency is common in patients with Crohn disease due to involvement of the terminal ileum. Vitamin B 12 has a large reserve in the liver.</p>",
+    "main_topic": "Crohn Disease",
+    "modifier": "Vitamin B12 Deficiency",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:875107"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

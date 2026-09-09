@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-38168",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Xeroderma Pigmentosum: Caused By Defective Nucleotide Excision Repair"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_114",
+    "question_text": "<p>A 15-month-old girl is brought to the office by her parents for the evaluation of a skin rash. Her parents are concerned because her skin becomes red and scaly upon exposure to the sun. They initially noticed these findings 9 months ago but did not seek medical evaluation because the lesions seemed to diminish during the winter months when the child was inside more often. The patient is now spending time outside again and they have noticed that the rash has recurred. When the patient was 3 months old, she was seen in the emergency department for a severe sunburn that she developed after 15 minutes outside. She has no other medical history and is up to date on all recommended immunizations. Physical examination reveals dry, scaly skin and multiple hyperpigmented lesions on sun-exposed areas. There are no blisters present. Her eyes are bloodshot and she turns her head when light is shined in each eye. Which of the following is the most likely cause of this patient's symptoms?</p>",
+    "explanation_header": "<p>The correct answer is Defective repair of DNA pyrimidine dimers.</p>",
+    "explanation_footer": "<p>This patient's presentation is consistent with xeroderma pigmentosum. Xeroderma pigmentosum is caused by an autosomal recessive defect in nucleotide excision repair, which involves specific endonucleases that function to remove oligonucleotides containing damaged bases. Exposure to ultraviolet (UV) light causes damage to DNA and leads to the presence of pyrimidine dimers; patients with xeroderma pigmentosum are unable to repair these UV light\u2013induced DNA pyrimidine dimers. As a result, they have extreme light sensitivity and will develop diffuse freckles at a very early age and often experience sunburn when exposed to small amounts of sunlight. \nAdditional findings can include corneal ulcerations; dry, scaly skin; telangiectasias; bloodshot eyes; and corneal ulceration. Patients with xeroderma pigmentosum are at an increased risk of developing skin cancer. \nhttps://d2vrujxrqm3l5p.cloudfront.net/997a1b4a-5abc-4345-8ae0-52964bbeeb93.png \nAn 8-year-old child with xeroderma pigmentosum.</p><p>Xeroderma pigmentosum is caused by a defect in nucleotide excision repair, and affected patients are unable to repair DNA pyrimidine dimers that are caused by ultraviolet light exposure. Patients have extreme sensitivity to light and often present with sunburn, dry skin, and diffuse hyperpigmentation (freckles). They also have a significantly increased risk of developing skin cancer.</p>",
+    "main_topic": "Xeroderma Pigmentosum",
+    "modifier": "Caused By Defective Nucleotide Excision Repair",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:38168"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,28 @@
+{
+  "example_id": "biochem-article-minerals-and-trace-elements-reference-02",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Minerals_and_Trace_Elements.docx",
+    "fixture_type": "reference"
+  },
+  "expected": {
+    "text": "Kumar A, Sharma E, Marley A, Samaan MA, Brookes MJ. Iron deficiency anaemia: pathophysiology, assessment, practical management. BMJ Open Gastroenterol. 2022;9(1):e000759. doi:10.1136/bmjgast-2021-000759."
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:reference"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

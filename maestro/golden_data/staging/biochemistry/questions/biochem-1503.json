@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1503",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Genetic Type Of Kidney Stone: Cystine"
+  },
+  "expected": {
+    "unique_name": "L1_NEPHRO_009ZW_3",
+    "question_text": "<p>A 24-year-old male presents to his primary care physician with recurrent right lower abdominal pain radiating to the testicle. The pain started over the weekend and would cyclically last for approximately 3 hours then improve. This occurred 3 times prior to complete resolution. With each cycle, the pain appeared to migrate more caudally and anteriorly until resolution. He noted pink urine initially but it has now cleared up. He recalls a similar event occurring approximately 6 years ago, which also self-resolved. He has no known past medical history and denies alcohol or tobacco abuse. Family history is unknown. Vital signs and physical exam are normal. CT of the abdomen displays multiple small 1-2 mm renal stones throughout the calyces bilaterally without hydronephrosis. No stones were seen in the ureter. Urinalysis, including microscopy, is unremarkable. A urine cyanide-nitroprusside test is positive. A 24-hour urine collection is pending. The most likely composition of the stones seen on CT imaging is</p>",
+    "explanation_header": "<p>The correct answer is cystine.</p>",
+    "explanation_footer": "<p>This patient is presenting with a history consistent with a passed renal stone, with multiple others at risk for becoming dislodged based on CT imaging. Recurrent nephrolithiasis occurring at a younger age is concerning for a genetic etiology, namely cystinuria , the rarest form of nephroliths. Excess cysteine excreted in the renal tubules can become supersaturated and crystalize. The cyanide-nitroprusside test evaluates for high urine cysteine levels. \nCystinuria is caused by a homozygous recessive genetic mutation in the SLC7A9 or SLC3A1 gene. This defect affects the kidney transporter for cystine (a multiple amino acid transporter), leading to both high levels of the amino acid cystine in the urine and an acidic environment in which cystine nephroliths can form.\nThe following modalities assist in diagnosing cystinuria, as summarized below:\nStone analysis: If a stone is able to be strained and collected, analysis will display cystine, consistent with the diagnosis.\nFamily history: A confirmed diagnosis in an immediate family member is consistent with cystinuria in a young patient with nephrolithiasis.\nCrystals: Urinalysis may display the pathognomonic hexagonal cystine crystals.\nCyanide-nitroprusside: This screening test may be used if stone analysis or cystine crystals are not visualized in the urine. In the setting of elevated cystine levels, the urine turns a purple color.\nTreatment is focused on increasing the solubility of cysteine in order to prevent crystallization. This is accomplished through increased fluid intake (dilutes the cysteine concentration), restricting sodium and protein intake (reduces cysteine excretion), and alkalinizing the urine (increases cysteine solubility).\nCystine crystals are hexagonal, and can be remembered by the memory aid \"SIX-tine.\" A microscopic image of the crystals is displayed below:\nhttps://d2vrujxrqm3l5p.cloudfront.net/517ce74a-fd00-481d-9705-71a3c11be4c0.png</p><p>Cystine stones are the rarest form of kidney stones, accounting for 2% of nephrolithiasis. It is caused by a genetic mutation that affects cysteine reabsorption, thereby leading to excess cysteine in the renal tubules that can become supersaturated and crystalize. It typically causes recurrent nephrolithiasis at a young age, in a patient with a similar family history. Cyanide-nitroprusside testing would be positive, and cystine crystals are hexagonal.</p>",
+    "main_topic": "Genetic Type Of Kidney Stone",
+    "modifier": "Cystine",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1503"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-878687",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Metachromatic Leukodystrophy: Cognitive Impairment, Ataxia, Optic Atrophy"
+  },
+  "expected": {
+    "unique_name": "L1_XXX_S1_Bio_221",
+    "question_text": "<p>A 2-year-old female is brought to the office by her parents because she had a witnessed seizure earlier this week. They say leading up to the seizure she has had difficulty walking, often falling over when she tries to chase after their dog. Vital signs reveal:\n| Temperature | 37\u00b0C (98.6\u00b0F) |\n|---|---|\n| Blood pressure | 90/52 mmHg |\n| Heart rate | 112/min |\n| Respiratory rate | 24/min |\n| Oxygen saturation | 97% on room air |\nPhysical examination reveals that she is unable to jump in place, which she was able to do at her last appointment. She walks with an unsteady, wide-based gait. Her reflexes are brisk throughout and fundoscopic examination shows optic atrophy. A urine sample reveals elevated sulfatides. Cultured skin fibroblasts reveal a decrease in arylsulfatase A. The most likely diagnosis is</p>",
+    "explanation_header": "<p>The correct answer is metachromatic leukodystrophy.</p>",
+    "explanation_footer": "<p>This child has seizures, ataxia, regressed motor skills, and optic atrophy. These clinical findings along with increased sulfatides in her urine and decreased arylsulfatase A in cultured skin fibroblasts suggest a diagnosis of metachromatic leukodystrophy . This condition is a rare, autosomal recessive, lysosomal storage disorder. It develops in three primary forms: late infantile, juvenile, and adult. Late infantile has a typical onset between the ages of 6 months and 2 years. These patients will have ataxia, optic atrophy, regression of motor skills, and seizures. Juvenile onset occurs between the ages of 3 and 16 years. These patients will typically have ataxia, intellectual impairment, and the beginning symptoms of neuropathy in the peripheral nerves. This is caused by demyelination because of damage to Schwann cells from the accumulated cerebroside sulfate. The last form of the disease is adult-onset, which has dementia and central demyelination from damage to the oligodendrocytes because of cerebroside sulfate accumulation.\nMetachromatic leukodystrophy is caused by a deficiency of arylsulfatase A, which leads to accumulations of cerebroside sulfate within the nervous system. As the substrate accumulates, it causes damage to the Schwann and oligodendrocytes, which results in the clinical findings previously discussed. Krabbe and Tay-Sachs are appropriate differential diagnoses, with the main difference between these diseases being the increased sulfatides in the patient's urine and decreased levels of arylsulfatase A in serum leukocytes or cultured skin fibroblasts.\nThere is currently no effective treatment for metachromatic leukodystrophy.\nMetachromatic Leukodystrophy\n| Accumulated substrate | - Cerebroside sulfate - \u2191 urine sulfatides |\n|---|---|\n| Clinical findings | - Late infantile onset - 6 months - 2 years - Ataxia - Optic atrophy - Regression of motor skills - Seizures Juvenile onset - 3-16 years - Ataxia - Behavioral difficulties - Intellectual impairment - Peripheral neuropathy - Adult - > 16 years - Ataxia - Dementia - Neuropathy - Central and peripheral demyelination |\n| Deficient enzyme | - Arylsulfatase A - \u2193 gene activity in serum leukocytes - \u2193 gene activity in cultured skin fibroblasts |\n| Inheritance pattern | - Autosomal recessive |\n| Treatment | - No current treatment |</p><p>Metachromatic leukodystrophy is caused by a deficiency of arylsulfatase A. Accumulation of cerebroside sulfate causes demyelination, and patients develop cognitive impairment, ataxia, and optic atrophy.</p>",
+    "main_topic": "Metachromatic Leukodystrophy",
+    "modifier": "Cognitive Impairment, Ataxia, Optic Atrophy",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:878687"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

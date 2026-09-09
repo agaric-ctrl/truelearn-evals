@@ -400,7 +400,7 @@ only one output mode: a banner on stderr before and after every run, `metric:
 promotion gate calls only Tier 1's `run_checks()` — there is no Tier 3 gate anywhere, and adding one
 isn't planned until this judge's real-world agreement has actually been measured against SME
 grading. It's also not wired into any CI workflow, including the human-triggered
-`live-evaluation.yml` — running it is a deliberate, manual, by-hand action for now.
+`faithfulness-framework-evaluation.yml` — running it is a deliberate, manual, by-hand action for now.
 
 Scope note: this covers faithfulness only, not the full "faithfulness / non-contradiction /
 completeness" list from the original brief — those are a natural follow-up once this one has
@@ -823,7 +823,7 @@ cover Python syntax, the normalized result contract, patch formatting, and Maest
 own test suites and CLI smoke tests. The
 live framework evaluations remain opt-in because they require API keys and incur
 model costs. Live API evaluations are available only through the manually
-dispatched [live workflow](.github/workflows/live-evaluation.yml).
+dispatched [faithfulness framework workflow](.github/workflows/faithfulness-framework-evaluation.yml).
 It requires an `ANTHROPIC_API_KEY` repository secret, limits runtime to 15
 minutes, and enforces an explicit maximum test count. Normal pushes and pull
 requests never make provider calls — this remains true for Maestro's Tier 3 judge as well; it has

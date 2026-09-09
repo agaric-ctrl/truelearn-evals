@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1961",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Lesch-Nyhan Syndrome: Enzyme Deficiency"
+  },
+  "expected": {
+    "unique_name": "L1_BIOCHEM_039JP-r",
+    "question_text": "<p>A 14-year-old male presents as a new patient to the clinic for repeated lip and tongue biting, as well as a swollen, painful 1st metatarsophalangeal joint. He also has a history of repeated jerky, choreiform-like movements. The most likely mechanism of this patient\u2019s presentation is</p>",
+    "explanation_header": "<p>The correct answer is hypoxanthine-guanine phosphoribosyltransferase deficiency.</p>",
+    "explanation_footer": "<p>This patient likely has Lesch-Nyhan syndrome , as indicated by his repeated tongue and lip biting (self-mutilating behavior), inflamed first metatarsophalangeal joint (gout), and choreiform-like movements. Lesch-Nyhan syndrome is an X-linked recessive disorder caused by hypoxanthine-guanine phosphoribosyltransferase (HGPRT) deficiency . HGPRT is a purine salvage enzyme that converts guanine to guanosine monophosphate and hypoxanthine to inosine monophosphate. Through these actions, HGPRT plays a key role in recycling purines from degraded DNA for subsequent reuse in purine synthetic pathways.\nOver 2000 mutations in the HGPRT gene have been described, which result in varying degrees of reduced HGPRT activity. The severity of clinical effects is related to the degree of reduction in enzyme activity, accounting for the wide range of disease severity. As Lesch-Nyhan syndrome is an X-linked recessive disorder, females are usually asymptomatic carriers of the mutant gene.\nHGPRT deficiency results in complex motor and behavioral symptoms. Common findings in Lesch-Nyhan syndrome include intellectual disability, developmental delay, self-mutilation, hyperuricemia leading to gout, and choreiform-like movements. Few patients live beyond 40 years of age, and many die of either aspiration pneumonia or chronic kidney disease. Allopurinol is typically used to control hyperuricemia, but chronic nephrolithiasis may ultimately lead to renal failure. Benzodiazepines and/or anticonvulsants are used to control seizures and extrapyramidal abnormalities.\nLesch-Nyhan Syndrome\n| Genetics | - X-linked recessive |\n|---|---|\n| Enzyme deficiency | - Hypoxanthine-guanine phosphoribosyltransferase (HGPRT) - Purine salvage enzyme |\n| Clinical presentation | - Intellectual disability - Developmental delay - Self-mutilation - Hyperuricemia \u2192 gout and nephrolithiasis - Choreiform-like movements - Most patients do not live beyond 40 years of age - Typical causes of death: - Aspiration pneumonia - Chronic kidney disease |\n| Treatment | - Hyperuricemia: allopurinol - Seizures: benzodiazepines and/or other anticonvulsants |</p><p>Lesch-Nyhan syndrome is an X-linked disorder resulting from hypoxanthine-guanine phosphoribosyltransferase deficiency. Common manifestations include intellectual disability, developmental delay, self-mutilation, and gout.</p>",
+    "main_topic": "Lesch-Nyhan Syndrome",
+    "modifier": "Enzyme Deficiency",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1961"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

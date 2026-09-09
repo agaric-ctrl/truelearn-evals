@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-39406",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Genetics: Recognize Uniparental Disomy"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_179",
+    "question_text": "<p>A 3-year-old girl is diagnosed with Prader-Willi syndrome. Her parents would like to have another child, but they are concerned that a second child also will have this syndrome. They go to genetic counseling and learn that both copies of their daughter\u2019s chromosome 15 are inherited from her mother. This is an example of which of the following?</p>",
+    "explanation_header": "<p>The correct answer is Uniparental disomy.</p>",
+    "explanation_footer": "<p>https://d2vrujxrqm3l5p.cloudfront.net/844d45a5-0b0e-4109-90c2-1a706b247aad.png \nUniparental disomy.\nIn this patient's case, her Prader-Willi syndrome most likely resulted from uniparental disomy , where both of her chromosomes were inherited from her mother, which suggests biallelic microdeletions of ch15q11-13 . Uniparental disomy occurs most frequently during meiosis (either meiosis 1 or meiosis 2), where nondisjunction leads to two copies of one parental chromosome ending up in a single germ cell (normally haploid for all chromosomes). \nFollowing fertilization, this results in 3 copies of a given chromosome (trisomy) in the zygote. Through a process termed elimination during early divisions, the trisomic chromosome can revert back to disomic (\u201celiminating\u201d the extra copy). Elimination occurs randomly and, therefore, can leave the daughter cells with two copies of a chromosome from one parent and none from the other (see the included diagrams).\nPrader-Willi syndrome most commonly results from a mutation ( microdeletion ) at ch15q11-13 on the paternal chromosome , leading to dysfunction of the genes in this region. Normally, mutations at a given locus on the paternal chromosomes would be rescued by normal functioning genes at the same locus on the maternal chromosome. However, these loci undergo silencing by a mechanism called imprinting on the maternal chromosome . Thus, in most cases of Prader-Willi syndrome, patients will have one chromosome 15 with a microdeletion (paternal chromosome) and another that is silenced (maternal chromosome). In rare cases, uniparental disomy can lead to patients inheriting two copies of either their maternal or paternal chromosome 15. This leads to two copies that undergo silencing or two copies with a microdeletion, resulting in a nearly identical disease phenotype.\n https://d2vrujxrqm3l5p.cloudfront.net/e0cd80af-6b82-4b55-8ecd-0d4a3ec06c0f.png \nDiagram showing the process of nondisjunction occurring in meiosis 2 (left) and meiosis 1 (right). The ultimate result following fertilization is the possibility of zygotes that are trisomic (two maternal chromosomes, one paternal chromosome). Following elimination, this can result in uniparental disomy as shown above.</p><p>Uniparental disomy occurs when a person inherits both sets of chromosomes from a single parent. It is most commonly caused by nondisjunction during meiosis.</p>",
+    "main_topic": "Genetics",
+    "modifier": "Recognize Uniparental Disomy",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:39406"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

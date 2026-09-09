@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-41996",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Cholesterol Molecules: Apolipoprotein E"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_052",
+    "question_text": "<p>A 21-year-old man comes to his university's health center because he is concerned about his risk of cardiovascular disease. He recently learned that multiple family members on his mother\u2019s side have been diagnosed with a deficiency of lipoprotein lipase and wanted to learn more about the enzyme. The physician explains that lipoprotein lipase is necessary for the metabolism of very low\u2013density cholesterol to intermediate-density lipoproteins, which is taken up into the liver and then broken down to low-density lipoproteins. Which of the following is found both in intermediate-density lipoproteins and chylomicron remnants?</p>",
+    "explanation_header": "<p>The correct answer is Apolipoprotein E.</p>",
+    "explanation_footer": "<p>| | Apolipoproteins | | | | |\n|---|---|---|---|---|---|\n| A-I | B-48 | B-100 | C-II | E | |\n| Chylomicron | | + | | + | + |\n| Chylomicron Remnant | | | | | + |\n| High-Density Lipoprotein | + | | | + | + |\n| Intermediate-Density Lipoprotein | | | + | + | + |\n| Low-Density Lipoprotein | | | + | | |\n| Very Low\u2013Density Lipoprotein | | | + | + | + |\nApolipoprotein (apo) E is found on intermediate-density lipoprotein (IDL), chylomicrons, and chylomicron remnants . This apo binds to remnant receptors on the liver to facilitate uptake. Defective or deficient apo E is the defining pathology of d ysbetalipoproteinemia (type III familial dyslipidemias), an autosomal recessive metabolic disorder. \nPatients with dysbetalipoproteinemia present with premature atherosclerosis and cutaneous findings such as palmar xanthomata . Other derangements of the apo pathway have been implicated in Alzheimer disease, dementia with Lewy bodies, and cardiovascular diseases .'\nhttps://d2vrujxrqm3l5p.cloudfront.net/e80e3b2d-29f8-4f36-ae9b-5e87ca8080df.png</p><p>Apolipoprotein E is present on intermediate-density lipoprotein, chylomicrons, and chylomicron remnants and binds to the low-density lipoprotein receptor on the liver to facilitate lipid uptake.</p>",
+    "main_topic": "Cholesterol Molecules",
+    "modifier": "Apolipoprotein E",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:41996"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

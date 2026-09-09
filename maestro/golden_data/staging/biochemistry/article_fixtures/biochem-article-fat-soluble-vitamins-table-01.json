@@ -1,0 +1,62 @@
+{
+  "example_id": "biochem-article-fat-soluble-vitamins-table-01",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Fat-Soluble Vitamins.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Classic Lab Pattern in Vitamin D Deficiency"
+      ],
+      [
+        "Lab",
+        "Direction",
+        "Reason"
+      ],
+      [
+        "25-(OH)D\u2083",
+        "\u2193",
+        "Primary deficiency marker"
+      ],
+      [
+        "PTH",
+        "\u2191",
+        "Secondary hyperparathyroidism compensating for low Ca\u00b2\u207a"
+      ],
+      [
+        "Serum Ca\u00b2\u207a",
+        "\u2193 or normal",
+        "PTH partially compensates"
+      ],
+      [
+        "Serum Phosphate",
+        "\u2193",
+        "PTH causes phosphaturia (phosphate wasting)"
+      ],
+      [
+        "Alkaline Phosphatase",
+        "\u2191",
+        "\u2191 osteoblast activity from PTH stimulation"
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

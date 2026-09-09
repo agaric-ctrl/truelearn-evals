@@ -2,7 +2,7 @@ name: Build evaluation report
 
 on:
   workflow_run:
-    workflows: ["Live evaluation"]
+    workflows: ["Faithfulness framework evaluation"]
     types: [completed]
 
 permissions:

@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-977627",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Collagen Types: Type Of Collagen Found In Scars"
+  },
+  "expected": {
+    "unique_name": "L1_XXX_S1_Car_8711",
+    "question_text": "<p>A 14-year-old female is brought to the office for evaluation of a right ear nodule. She reports that it is mildly painful to touch and itchy. It has been present for approximately 9 weeks. Her mother states that her daughter secretly got ear-piercings with her friends. Head and neck examination reveals a raised, erythematous nodule, measuring 3 \u00d7 2.5 \u00d7 1 cm, on the antitragus of the right ear. It appears to extend beyond the borders of the original piercing. A photograph is shown in the exhibit. The protein most associated with this patient's nodule is</p>",
+    "explanation_header": "<p>The correct answer is type I collagen.</p>",
+    "explanation_footer": "<p>The patient\u2019s history and clinical presentation is most consistent with a keloid , a fibroproliferative skin disorder. It results from abnormal wound healing following trauma (in this case, the patient's ear-piercing), inflammation, surgery, or burns. Keloids form from scar tissue, which is an area of fibroconnective tissue that replaces normal skin during the process of wound repair. Type I collagen is the most abundant collagen in the human body; it is the primary collagen found in mature scar tissue, as well as bone, skin, tendons, ligaments, teeth, and organ fascia. Type I collagen is produced by the COL1A1 and COL1A2 genes, initially as a long rope-like precursor protein. Three chains of these precursor proteins form procollagen, which are then processed by enzymes into collagen outside the cell. The collagen molecules arrange themselves into long, thin fibrils that cross-link together, giving type I collagen its strength.\nIn a keloid, collagen proliferates past the initial area of injury, causing a mass larger than the original scar. It is hypothesized that keloids form as a result of mechanical stretching forces triggering mechanoreceptors near the scar tissue, causing the release of cytokines and inflammatory factors, such as transforming growth factor\u2013beta, vascular endothelial growth factor, platelet-derived growth factor, interleukin (IL)\u20136, and IL-8. These inflammatory factors increase vascular permeability and extracellular matrix production. Stretching forces also promote a continued production of stiff immature Type I collagen that does not undergo remodeling as in normal wound healing. Type III collagen, the main protein of early scar tissue, can also been seen in keloids.\nThe risk of keloid development is highest among people with pigmented and dark skin, and the peak incidence is in patients in their teens and 20s. The most common locations are the earlobes, face, and upper extremities. A keloid differs from a hypertrophic scar as it spreads beyond the borders of the initial injury and does not regress, while hypertrophic scars are contained within the site of injury and may regress. Surgical excision is the definitive treatment for keloids. However, because of the tendency for keloids to recur, post-surgical treatment can include radiotherapy, chemotherapy, and corticosteroids.\nCollagen Types\n| Type | Associated Structures | High-yield Disease Associations |\n|---|---|---|\n| I * | - Bone - Cornea - Dentin - Fascia - Scar tissue (late wound repair) \u2020 - Skin - Tendons | - \u2193 production in osteogenesis imperfecta type 1 |\n| II | - Cartilage - Nucleus pulposus - Vitreous body | \u2014 |\n| III | - Blood vessels - Fetal tissue - Scar tissue (early wound repair) - Uterus | - Deficient in the vascular type of Ehlers-Danlos syndrome |\n| IV | - Basement membrane - Lens | - Defective in Alport syndrome - Target of antibodies in Goodpasture syndrome |\n| * Most common overall type (~ 90%) \u2020 Includes scar tissue found post\u2013myocardial infarction | | |\nThe following image is of a biopsy of a keloid, which reveals wide bands of Type I collagen in large, brightly pink fibers.\nhttps://d2vrujxrqm3l5p.cloudfront.net/b519c8d6-e2b6-4799-86bd-073729e4d328.png</p><p>Type I collagen, the most prevalent collagen in the human body, is the primary collagen in mature scars as well as keloids.</p>",
+    "main_topic": "Collagen Types",
+    "modifier": "Type Of Collagen Found In Scars",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:977627"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -265,7 +265,7 @@ class ResultSchemaTest(unittest.TestCase):
 
     def test_live_workflow_has_required_safeguards(self):
         errors = validate_workflow(
-            ROOT / ".github" / "workflows" / "live-evaluation.yml",
+            ROOT / ".github" / "workflows" / "faithfulness-framework-evaluation.yml",
             live=True,
         )
 

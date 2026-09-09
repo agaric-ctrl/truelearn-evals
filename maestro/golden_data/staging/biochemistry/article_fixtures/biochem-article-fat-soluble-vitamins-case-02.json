@@ -1,0 +1,29 @@
+{
+  "example_id": "biochem-article-fat-soluble-vitamins-case-02",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Fat-Soluble Vitamins.docx",
+    "fixture_type": "teaching_case",
+    "label": "Case 3: Vitamin D Toxicity"
+  },
+  "expected": {
+    "body": "A 43-year-old woman on multiple supplements presents with confusion, abdominal pain, constipation, and nephrolithiasis. Serum Ca\u00b2\u207a is elevated. Diagnosis: Vitamin D toxicity, hypercalcemia. Key teaching: treatment is to stop supplements, restrict dietary calcium, give IV fluids, \u00b1 glucocorticoids or bisphosphonates."
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:teaching_case"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

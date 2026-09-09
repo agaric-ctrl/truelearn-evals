@@ -44,6 +44,11 @@ def _clean_candidate(example_id: str, exam_bank: str = "USMLE") -> GoldenExample
             "explanation_footer": "<p>Footer.</p>",
             "main_topic": "Cardiology", "modifier": "Adult",
             "question_type": "single question", "question_format": "Text",
+            # 3 references: satisfies references_format's reference_count sub-check (new since
+            # the Tier 1 checks task filled that stub in) - keeps this fixture actually clean.
+            "references": [
+                "Smith J. Journal A. 2022.", "Doe R. Journal B. 2021.", "Lee K. Journal C. 2020.",
+            ],
         },
         tags=["edge_case"],
     )
@@ -192,6 +197,7 @@ class ReviewPoolImporterTests(unittest.TestCase):
 
             self.assertEqual(len(outcomes), 1)
             self.assertTrue(outcomes[0].promoted)
+            self.assertEqual(outcomes[0].exam_bank, "USMLE")
 
             promoted = read_jsonl(golden_dir / "usmle.jsonl")
             self.assertEqual(len(promoted), 1)

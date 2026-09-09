@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1194588",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Lesch-Nyhan Syndrome: Increased De Novo Purine Synthesis"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_COMSAE_11659",
+    "question_text": "<p>A 2-year male is brought to the primary care physician by his mother with a complaint of self-injuring behavior. His speech is minimal and he has had persistent difficulty walking. His mother has also noticed an orange, grainy material in his diapers. Physical examination reveals that he has difficulty holding his head up and sitting erect without help. Laboratory studies reveal serum uric acid of 18.4 mg/dL (reference range: 4.5-8.0 mg/dL) and a urine urate-to-creatinine ratio of 2.3. The most likely mechanism involved in this patient\u2019s pathology is</p>",
+    "explanation_header": "<p>The correct answer is increased de novo purine synthesis.</p>",
+    "explanation_footer": "",
+    "main_topic": "Lesch-Nyhan Syndrome",
+    "modifier": "Increased De Novo Purine Synthesis",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:adversarial",
+    "root_id:1194588"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -5,6 +5,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+LIVE_WORKFLOW_NAMES = {"faithfulness-framework-evaluation.yml"}
+
 
 def validate_workflow(path: Path, *, live: bool) -> list[str]:
     text = path.read_text(encoding="utf-8")
@@ -39,7 +41,7 @@ def main() -> int:
     args = parser.parse_args()
     errors = []
     for path in sorted(args.directory.glob("*.yml")):
-        errors.extend(validate_workflow(path, live="live" in path.stem))
+        errors.extend(validate_workflow(path, live=path.name in LIVE_WORKFLOW_NAMES))
     if errors:
         for error in errors:
             print(error)

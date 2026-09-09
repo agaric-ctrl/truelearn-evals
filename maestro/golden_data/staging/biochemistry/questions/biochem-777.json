@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-777",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Hemophilia A: Normal Platelet Count, Normal PT, Elevated PTT"
+  },
+  "expected": {
+    "unique_name": "L1_PEDS_023ECM-r",
+    "question_text": "<p>A 13-year-old boy is brought to the emergency department by an ambulance after being involved in a motor vehicle collision as an unrestrained passenger. His mother is concerned that her son may bleed to death due to his diagnosis of hemophilia A. At baseline, this patient's laboratory studies would most likely reveal</p>",
+    "explanation_header": "<p>The correct answer is normal platelet count, normal prothrombin time, \u2191 partial thromboplastin time.</p>",
+    "explanation_footer": "<p>This patient has hemophilia A , an X-linked recessive disease that is characterized by a deficiency in factor VIII, which is part of the intrinsic pathway in the coagulation cascade. Patients with hemophilia A will have a normal platelet count, normal prothrombin time (PT), and prolonged partial thromboplastin time (PTT).\nThe coagulation cascade, or secondary hemostasis, includes the intrinsic, extrinsic, and common pathways. The intrinsic and extrinsic pathways converge on the common pathway, which culminates in a fibrin mesh. The fibrin mesh stabilizes an unstable platelet plug that is produced during the initial primary hemostasis after an endothelial injury. The intrinsic pathway (measured by PTT), includes factors VIII, IX, XI, and XII. The extrinsic pathway (measured by PT) consists of factor VII. Both pathways converge on the common pathway, which includes factor X, prothrombin, and fibrinogen. Therefore, a deficiency in factor VIII will cause a prolonged PTT with a normal PT and a normal platelet count.\nClinical manifestations of hemophilia are related to difficulty in controlling bleeding. The age of presentation depends on the severity of factor VIII deficiency. Bleeding may occur anywhere in these patients, and the most common sites of bleeding are related to age. Common sites of bleeding include hemarthrosis (bleeding into joints), bleeding after trauma or surgeries, and easy bruising.\nManagement of hemophilia A is with recombinant factor VIII during acute bleeding. Factor VIII may also be used as a prophylactic treatment in patients and can reduce the incidence of bleeding, especially in those with severe disease.\nBleeding Disorders and Associated Lab Findings\n| Condition | Platelet Count | PT | PTT | Bleeding Time |\n|---|---|---|---|---|\n| Disseminated intravascular coagulation | \u2193 | \u2191 | \u2191 | \u2191 |\n| Hemophilia (A, B, C) | Normal | Normal | \u2191 | Normal |\n| Immune thrombocytopenia | \u2193 | Normal | Normal | \u2191 |\n| Thrombotic thrombocytopenic purpura | \u2193 | Normal | Normal | \u2191 |\n| Vitamin K deficiency | Normal | \u2191 | \u2191 | Normal |\n| Von Willebrand disease | Normal | Normal | Normal/\u2191 | \u2191 |\n| PT = prothrombin time; PTT = partial thromboplastin time. | | | | |\nThe image below summarizes the coagulation cascade.\n https://d2vrujxrqm3l5p.cloudfront.net/8700ad53-1394-43cf-9394-04d742ada083.png</p><p>Hemophilia A is an X-linked recessive disorder caused by a deficiency in factor VIII, which is part of the intrinsic coagulation pathway. Pathologies affecting the intrinsic pathway result in a normal platelet count, normal prothrombin time, and prolonged partial thromboplastin time.</p>",
+    "main_topic": "Hemophilia A",
+    "modifier": "Normal Platelet Count, Normal PT, Elevated PTT",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:777"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1189381",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Von Hippel Lindau: Medullary Hemangioblastoma"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_2086",
+    "question_text": "<p>A 29-year-old male presents to his primary care physician complaining of decreasing vision in his left eye. On specific questioning, he also recalls a recent history of worsening headaches and dizziness. His past medical history is significant for hypertension that has persisted despite treatment with hydrochlorothiazide, lisinopril, and amlodipine. Vital signs are normal except for a blood pressure of 158/98 mmHg. Physical examination reveals a red nodule on his chin as shown in the exhibit and a lesion of similar pathophysiologic origin in his left retina. Which of the following additional findings is most likely to be present?</p>",
+    "explanation_header": "<p>The correct answer is Medullary hemangioblastoma.</p>",
+    "explanation_footer": "<p>Von-Hippel Lindau disease is a rare condition that causes CNS tumors (most commonly retinal hemangioblastomas), dermatologic hemangiomas, renal cell carcinoma, and pheochromocytoma.\nVon Hippel-Lindau disease is an autosomal dominant condition resulting from a single mutated VHL tumor suppressor gene on chromosome 3 that activates angiogenic growth factors. This leads to dysregulation of angiogenesis in several parts of the body. It presents with several unique findings:\nCentral nervous system (CNS) tumors - hemangioblastomas in the retina, cerebellum, medulla, or spinal cord.\nDermatologic manifestations - angiomatosis, typically hemangiomas, with an abnormal proliferation of blood vessels appearing as 1-3 cm red nodules with peripherally located tiny irregularly patterned blood vessels, often on the face. \nRenal cell carcinomas, which may cause intractable hypertension\nPheochromocytoma, a vascular tumor of adrenal gland in which hypersecretion of epinephrine leads to autonomic hyperstimulation, which may also cause intractable episodic hypertension. \nJuvenile cataracts (choice A) is one of the symptoms of neurofibromatosis 2 (NF2), which presents with caf\u00e9 au lait spots (less common than with NF1), neurofibromas, and bilateral acoustic neuromas. Neurofibromatosis 1 (NF1), by contrast, causes Lisch spots (e.g., small nodules projecting from the surface of the iris) in addition to caf\u00e9 au lait spots. Juvenile cataracts can also develop as a result of trauma, infection, and diabetes, but will usually appear in context of NF2 on exams.\nPort wine stain (choice B) on an exam should raise suspicion for Sturge-Weber syndrome, although it is usually isolated and benign in real-world practice. These \u201cstains\u201d are the result of dilated capillary-sized blood vessels and appear in newborns. In SW, they appear in the ophthalmic (V1) and maxillary (V2) distribution of the trigeminal nerve together with ipsilateral angiomas, pheochromocytomas, glaucoma, and intellectual disability.\nCaf\u00e9 au lait spots (choice D) are coffee-colored, hyperpigmented skin birthmarks and can be related to dozens of conditions, including McCune-Albright syndrome (precocious puberty and unilateral caf\u00e9 au lait spots) and neurofibromatosis type 1. On the exam, they will most often appear in the context of neurofibromatosis type 1, especially if there are more than six of them.\nIgA deficiency (choice E) is one of the symptoms of ataxia telangiectasia (AT), an autoimmune autosomal recessive disease that also leads to deficiencies in B and T cells. AT presents with cerebellar defects (leading to ataxia) and spider angiomas, which are reddish blood vessels in spider web pattern near the skin\u2019s surface. Note that spider angiomas (seen in cirrhosis of the liver as well) are almost flush to the skin and lack the central, raised nodule like the hemangiomas seen in VHL.</p><p>von Hippel-Lindau disease presents with hemangioblastomas in the retina and brain, hemangiomas in skin, renal cell carcinomas, and pheochromocytomas. It is autosomal dominant disease caused by a mutation in the VHL gene on chromosome 3.</p>",
+    "main_topic": "Von Hippel Lindau",
+    "modifier": "Medullary Hemangioblastoma",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:1189381"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

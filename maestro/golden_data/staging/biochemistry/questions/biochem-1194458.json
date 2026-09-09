@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1194458",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Phenylketonuria: Decreasing Phenylalanine Intake"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_COMSAE_10892",
+    "question_text": "<p>An 8-month-old female is brought to the primary care physician by her father with a complaint of a delay in milestones. She is able to roll over, but has not yet sat up on her own. She was adopted from Africa six months ago. Physical examination reveals a moldy smell on the child. Laboratory studies reveal:\n| Phenylalanine level | 18 mg/dL | 1 mg/dL |\n|---|---|---|\n| Plasma tyrosine | 0.5 mg/dL | 1 mg/dL |\nWhich of the following is the best treatment for this patient?</p>",
+    "explanation_header": "<p>The correct answer is Decreasing phenylalanine intake.</p>",
+    "explanation_footer": "",
+    "main_topic": "Phenylketonuria",
+    "modifier": "Decreasing Phenylalanine Intake",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:adversarial",
+    "root_id:1194458"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

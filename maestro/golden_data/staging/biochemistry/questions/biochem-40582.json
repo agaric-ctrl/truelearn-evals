@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-40582",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "DNA Mutations: Heteroplasmy"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_177",
+    "question_text": "<p>A 28-year-old woman comes to the physician with her husband for genetic counseling because they plan to have children in the near future. She has a history of Leber hereditary optic neuropathy. Her husband has no known medical conditions. The couple inquires about the possibility of their children being born with the disorder. The physician explains that because her condition is caused by mutations in mitochondrial DNA, it will be difficult to predict the severity of the condition if her children are affected. Which of the following genetic principles best explains this phenomenon?</p>",
+    "explanation_header": "<p>The correct answer is Heteroplasmy.</p>",
+    "explanation_footer": "<p>https://d2vrujxrqm3l5p.cloudfront.net/3d747444-7148-480f-8cd1-0dde7941949c.png \nThe physician explains to the patient and her husband that it will be difficult to predict the degree to which their children might be affected by Leber hereditary optic neuropathy because this is a disease of mitochondrial inheritance . The genetic principle that best explains this situation is heteroplasmy . \nHeteroplasmy is the presence of more than one type of organellar genome (eg, mitochondrial DNA), which occurs when a mutation arises in mitochondrial DNA . Because there are multiple types of mitochondria within a particular cell and a particular organism, there will be a difference in the ratio of mutated mitochondria to normal mitochondria. This leads to variations in the severity of the disease. Because the mitochondria are inherited from the mother, diseases will only be passed on from the maternal lineage.</p><p>Heteroplasmy refers to the presence of both mutated and non-mutated mitochondrial DNA within the same cell, leading to differences in disease severity.</p>",
+    "main_topic": "DNA Mutations",
+    "modifier": "Heteroplasmy",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:40582"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

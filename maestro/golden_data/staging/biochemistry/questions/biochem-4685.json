@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-4685",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Iron Deficiency Anemia Laboratory Findings: Low MCV; Low Fe2+, High Transferrin"
+  },
+  "expected": {
+    "unique_name": "L1_GASTRO_006CK-r",
+    "question_text": "<p>A 42-year-old female presents to your family practice for increased fatigue and malaise for the past 6 months. She states she feels short of breath and feels her heart racing with exertion. She walks 3 miles on a treadmill 3 times weekly, but recently has had to stop early due to dyspnea. She has a medical history of gastric bypass surgery 2 years ago and reports a 45-kg (100-lb) weight loss following surgery. Prior to surgery, she was taking metformin for diabetes mellitus type 2, however, she has discontinued this as her most recent HgbA1c was 6.1%. Vital signs reveal:\n| Temperature | 37\u00b0 C (98.6\u00b0 F) |\n|---|---|\n| Blood pressure | 110/65 mmHg |\n| Heart rate | 98/min |\nHeart rate is regular and lungs are clear to auscultation bilaterally. Her conjunctiva are clear, but pallor is noted in the lower eyelids. An image of her peripheral blood smear is displayed in the exhibit. The most likely laboratory findings on a complete blood count would be</p>",
+    "explanation_header": "<p>The correct answer is low MCV; low Fe 2+ ; high transferrin.</p>",
+    "explanation_footer": "<p>This patient is presenting with findings concerning for iron deficiency anemia , with signs and symptoms including increased fatigue and malaise, dyspnea and tachycardia with exertion, and conjunctival pallor. In a menstruating-aged female with a recent gastric bypass surgery, iron deficiency anemia should be suspected. Her peripheral blood smear displaying microcytic anemia with hypochromic cells is consistent with iron deficiency anemia. \nIron-deficiency anemia is associated with an elevated transferrin and elevated total iron binding capacity (TIBC) with a depressed transferrin saturation, low serum iron concentration , and low ferritin (not to be confused with transferrin). These labs are discussed in detail below.\nTIBC: This is a calculation that measures the blood's capacity to bind iron with transferrin; TIBC is an indirect method to assess transferrin levels and correlates with serum transferrin levels.\nTransferrin: This is the major transporter for iron trafficking through the plasma and hepatic synthesis of transferrin is increased in the iron-deficient state. \nTransferrin % saturation: This is simply an equation derived of serum iron divided by TIBC. In iron deficiency anemia, transferrin is elevated (as is TIBC), but because iron is low the percent saturation of transferrin is low.\nFerritin: is the cellular storage protein for iron; it will be low if there is no iron to store or if iron stores have been depleted.\nIn addition, peripheral blood smear findings in patients with iron deficiency anemia will show evidence of a microcytic anemia with hypochromic cells due to the decrease in hemoglobin. Red cell distribution width increases as microcytic cells with less hemoglobin per red blood cell (RBC) are released from the bone marrow. Mean corpuscular value (MCV) which is the measured volume of the RBC, will also be decreased. \nThe images below relate to iron deficiency anemia. At the bottom right, esophageal webs are seen in Plummer-Vinson syndrome, a condition presenting with the triad of iron deficiency anemia, dysphagia, and a cervical esophageal web. Glossitis can also be a symptom of iron deficiency anemia, but is not noted in this patient.\nFindings in Iron Deficiency Anemia\n| | |\n|---|---|\n| | |\n| Upper left: Koilonychia, a spoon-shaped nail that has lost convexity Lower left: Peripheral smear, microcytosis and hypochromic RBC's Upper right: Atrophic glossitis, a smooth tongue that has lost its papillae and is often sore Lower right: Esophageal web on barium esophogram (Plummer Vinson syndrome) | |</p><p>Iron deficiency anemia is associated with findings including koilonychia, fatigue and malaise, dyspnea and tachycardia with exertion, glossitis, and conjunctival pallor. An iron panel would reveal elevated transferrin and elevated total iron-binding capacity (TIBC) with a depressed transferrin saturation, low serum iron concentration, and low ferritin.</p>",
+    "main_topic": "Iron Deficiency Anemia Laboratory Findings",
+    "modifier": "Low MCV; Low Fe2+, High Transferrin",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:4685"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

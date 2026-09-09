@@ -1,0 +1,13 @@
+{
+  "unique_name": "Sample_Violations_001",
+  "question_text": "<p>A patient presents with symptoms -> workup begins.</p>",
+  "explanation_header": "<p>The correct answer is treatment A.</p>",
+  "explanation_footer": "<p>Case 1: A patient presents with a finding. <strong>Key teaching:</strong> Treatment A is preferred.</p><p>Case 3: A patient presents with another finding.</p><table><tr><th>Finding</th><th>Value</th></tr><tr><td>CBC</td><td>Abnormal</td></tr><tr><td>Footnote: no abbreviations defined here.</td></tr></table>",
+  "main_topic": "Pulmonology",
+  "modifier": "Adult",
+  "question_type": "single question",
+  "question_format": "Text",
+  "references": [
+    "Smith J, et al. Journal A. 2020."
+  ]
+}

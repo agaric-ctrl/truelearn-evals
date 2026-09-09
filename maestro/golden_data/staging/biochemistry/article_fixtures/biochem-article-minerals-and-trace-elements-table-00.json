@@ -1,0 +1,105 @@
+{
+  "example_id": "biochem-article-minerals-and-trace-elements-table-00",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Minerals_and_Trace_Elements.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Minerals and Trace Elements"
+      ],
+      [
+        "Mineral",
+        "Function",
+        "Dietary Sources",
+        "Deficiency",
+        "Toxicity / Excess"
+      ],
+      [
+        "Iron",
+        "Heme synthesis (hemoglobin, myoglobin)\nElectron transport (cytochromes)\nCofactor for numerous enzymes",
+        "Meat\nFortified cereals\nLegumes\nLeafy greens",
+        "Microcytic hypochromic anemia\nKoilonychia\nGlossitis\nPica\nPlummer-Vinson syndrome",
+        "Hereditary hemochromatosis: bronze diabetes, cirrhosis, cardiomyopathy\nHemosiderosis (transfusion-related)"
+      ],
+      [
+        "Zinc",
+        "Cofactor for > 300 enzymes (eg, carbonic anhydrase, DNA/RNA polymerases, alkaline phosphatase)\nStructural role in zinc-finger proteins\nImmune function, wound healing, taste",
+        "Oysters\nRed meat\nWhole grains\nLegumes\nNuts",
+        "Acrodermatitis enteropathica: perioral/perineal rash + diarrhea + alopecia\nImpaired wound healing, immune deficiency, dysgeusia",
+        "Nausea, vomiting\n\u2193 copper absorption"
+      ],
+      [
+        "Copper",
+        "Cofactor for ceruloplasmin (ferroxidase activity), cytochrome c oxidase (complex IV), dopamine \u03b2-hydroxylase, lysyl oxidase (collagen/elastin crosslinking), superoxide dismutase (SOD1)",
+        "Liver\nShellfish\nNuts\nChocolate",
+        "Microcytic anemia (\u2193 ceruloplasmin \u2192 \u2193 iron mobilization)\nMenkes disease: kinky/steely hair, neurodegeneration, hypotonia, X-linked (ATP7A)",
+        "Wilson disease: hepatolenticular degeneration, Kayser-Fleischer rings, asterixis, cirrhosis, neuropsychiatric changes, AR mutation in ATP7B"
+      ],
+      [
+        "Selenium",
+        "Component of selenoproteins (eg, glutathione peroxidase, thioredoxin reductase)\nAntioxidant defense\nRequired for T4 \u2192 T3 conversion",
+        "Brazil nuts\nFish\nMeat",
+        "Keshan disease: dilated cardiomyopathy (endemic in China)\nKashin-Beck disease: osteoarthropathy",
+        "Selenosis: brittle hair/nails, garlic breath, neurological symptoms"
+      ],
+      [
+        "Iodine",
+        "Substrate for thyroid hormone synthesis (T3, T4)\nThyroperoxidase oxidizes iodide and incorporates it into thyroglobulin",
+        "Seafood\nIodized salt\nDairy",
+        "Hypothyroidism, goiter\nCretinism (congenital): intellectual disability, short stature, deafness (iodine deficiency in pregnancy)",
+        "Jod-Basedow phenomenon: iodine load triggers hyperthyroidism in susceptible patients\nHigh iodine can also cause hypothyroidism (Wolff-Chaikoff)"
+      ],
+      [
+        "Fluoride",
+        "Incorporation into hydroxyapatite \u2192 fluorapatite (harder, more acid-resistant enamel)\nInhibits bacterial acid production",
+        "Fluoridated water\nDental products\nFish",
+        "Dental caries",
+        "Dental fluorosis: white/brown mottling\nSkeletal fluorosis: joint pain, osteosclerosis"
+      ],
+      [
+        "Chromium",
+        "Enhances insulin signaling (chromodulin)\nPotentiates insulin-receptor binding",
+        "Whole grains\nMeat\nBroccoli\nNuts",
+        "Impaired glucose tolerance, insulin resistance",
+        "Rare; hexavalent Cr(VI) causes lung cancer (occupational)"
+      ],
+      [
+        "Manganese",
+        "Cofactor for arginase (urea cycle), superoxide dismutase (MnSOD), pyruvate carboxylase, glycosyl transferases",
+        "Nuts\nGrains\nLeafy greens",
+        "Rare; skeletal abnormalities, altered lipid metabolism",
+        "Manganism: parkinsonism-like syndrome from occupational inhalation"
+      ],
+      [
+        "Molybdenum",
+        "Cofactor for xanthine oxidase (purine catabolism \u2192 uric acid), sulfite oxidase, aldehyde oxidase",
+        "Legumes\nWhole grains\nOrgan meats",
+        "Rare; neurological dysfunction\nIsolated in total parenteral nutrition",
+        "Gout-like syndrome\nAntagonizes copper"
+      ],
+      [
+        "AR = autosomal recessive; T3 = triiodothyronine; T4 = thyroxine."
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

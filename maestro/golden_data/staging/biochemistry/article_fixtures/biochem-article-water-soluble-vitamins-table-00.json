@@ -1,0 +1,105 @@
+{
+  "example_id": "biochem-article-water-soluble-vitamins-table-00",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Water-Soluble Vitamins.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Water-Soluble Vitamins"
+      ],
+      [
+        "Vitamin",
+        "Active Coenzyme",
+        "Function",
+        "Deficiency",
+        "Risk Factors for Deficiency"
+      ],
+      [
+        "B1 (Thiamine)",
+        "Thiamine pyrophosphate",
+        "Coenzyme of pyruvate dehydrogenase that converts pyruvate into acetyl-CoA\nCofactor of \u03b1-KG dehydrogenase in TCA cycle\nCofactor of transketolase required for pentose phosphate pathway",
+        "Dry/wet beriberi\nWernicke encephalopathy\nKorsakoff syndrome",
+        "Alcohol use disorder"
+      ],
+      [
+        "B2 (Riboflavin)",
+        "Flavin adenine dinucleotide (FAD); Flavin mononucleotide (FMN)",
+        "Electron transport chain (complex II)\nTCA cycle\n\u03b2-oxidation\nActivates B6 and folate",
+        "Angular cheilitis\nStomatitis\nGlossitis\nCorneal vascularization",
+        "Malnutrition\nLow-dairy diet"
+      ],
+      [
+        "B3 (Niacin)",
+        "NAD+; NADP+",
+        "Redox (NAD+) and anabolic (NADP+) reactions\nLipid metabolism",
+        "Pellagra: dermatitis, diarrhea, dementia, death (4 Ds)",
+        "Corn diet\nHartnup disease\nCarcinoid"
+      ],
+      [
+        "B5 (Pantothenic Acid)",
+        "Coenzyme A; Acyl carrier protein",
+        "Fatty acid and steroid synthesis\nTCA cycle",
+        "Rare \"burning feet\" neuropathy\nDermatitis",
+        "Severe malnutrition\nProlonged TPN"
+      ],
+      [
+        "B6 (Pyridoxine)",
+        "Pyridoxal phosphate",
+        "Transamination (with ALT, AST)\nHeme synthesis (ALA synthase)\nNeurotransmitter synthesis",
+        "Sideroblastic anemia\nPeripheral neuropathy\nGlossitis",
+        "Isoniazid\nAlcohol use disorder"
+      ],
+      [
+        "B7 (Biotin)",
+        "Carboxylase cofactor",
+        "Carboxylation\nPyruvate \u2192 OAA\nAcetyl-CoA \u2192 malonyl-CoA\nPropionyl-CoA \u2192 methylmalonyl-CoA",
+        "Alopecia\nSeborrheic dermatitis\nNeurologic symptoms",
+        "Raw egg whites (avidin)"
+      ],
+      [
+        "B9 (Folate)",
+        "Tetrahydrofolate",
+        "One-carbon transfer\nPurine synthesis\ndUMP \u2192 dTMP (thymidylate synthase)",
+        "Megaloblastic anemia\nNeural tube defects\nNo neurologic deficits",
+        "Pregnancy\nMethotrexate\nTrimethoprim\nPhenytoin"
+      ],
+      [
+        "B12 (Cobalamin)",
+        "Methylcobalamin; Adenosylcobalamin",
+        "Homocysteine \u2192 methionine\nMethylmalonyl-CoA \u2192 succinyl-CoA",
+        "Megaloblastic anemia + subacute combined degeneration (posterior and lateral columns)",
+        "Pernicious anemia\nVegan diet\nBariatric surgery\nMetformin\nPPIs"
+      ],
+      [
+        "C (Ascorbic Acid)",
+        "Ascorbate",
+        "Collagen hydroxylation (with prolyl and lysyl hydroxylase)\nFe\u00b3\u207a \u2192 Fe\u00b2\u207a\nAntioxidant\nCofactor of dopamine \u03b2-hydroxylase",
+        "Scurvy\nPerifollicular hemorrhages\nCorkscrew hairs\nGingival bleeding\nImpaired wound healing",
+        "Restrictive diet\nFood insecurity\nAlcohol use disorder"
+      ],
+      [
+        "ALA = \u03b4-aminolevulinic acid; ALT = alanine aminotransferase; AST = aspartate aminotransferase; CoA = coenzyme A; dTMP = deoxythymidine monophosphate; dUMP = deoxyuridine monophosphate; NAD\u207a = nicotinamide adenine dinucleotide; NADP\u207a = nicotinamide adenine dinucleotide phosphate; OAA = oxaloacetate; PPI = proton pump inhibitor; TPN = total parenteral nutrition; TCA cycle = tricarboxylic acid cycle (citric acid cycle)."
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

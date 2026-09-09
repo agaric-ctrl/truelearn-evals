@@ -1,0 +1,15 @@
+{
+  "unique_name": "Sample_Clean_001",
+  "question_text": "<p>A 45-year-old patient presents with acute chest pain radiating to the left arm.</p>",
+  "explanation_header": "<p>The correct answer is immediate reperfusion therapy.</p>",
+  "explanation_footer": "<p>Case 1: A patient presents with an ST-elevation myocardial infarction. <strong>Key teaching:</strong> Immediate reperfusion therapy improves outcomes.</p><p>Case 2: A patient presents with unstable angina without ST elevation. <strong>Key teaching:</strong> Medical management is initiated pending risk stratification.</p><table><tr><th>Finding</th><th>STEMI</th></tr><tr><td>ECG</td><td>ST elevation</td></tr><tr><td>Footnote: ECG = electrocardiogram; STEMI = ST-elevation myocardial infarction.</td></tr></table>",
+  "main_topic": "Cardiology",
+  "modifier": "Adult",
+  "question_type": "single question",
+  "question_format": "Text",
+  "references": [
+    "Smith J, et al. Circulation. 2023.",
+    "Doe R, et al. JAMA Cardiology. 2022.",
+    "Lee K, et al. NEJM. 2021."
+  ]
+}

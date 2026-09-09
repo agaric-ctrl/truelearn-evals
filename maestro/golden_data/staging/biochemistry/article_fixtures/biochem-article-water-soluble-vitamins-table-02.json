@@ -1,0 +1,72 @@
+{
+  "example_id": "biochem-article-water-soluble-vitamins-table-02",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Water-Soluble Vitamins.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "B9 vs. B12 Deficiency"
+      ],
+      [
+        "Feature",
+        "B9 Deficiency",
+        "B12 Deficiency"
+      ],
+      [
+        "Megaloblastic Anemia",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "Hypersegmented Neutrophils",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "Subacute Combined Degeneration",
+        "No",
+        "Yes"
+      ],
+      [
+        "Methylmalonic Acid (MMA)",
+        "Normal",
+        "Elevated"
+      ],
+      [
+        "Homocysteine",
+        "Elevated",
+        "Elevated"
+      ],
+      [
+        "Serum Folate",
+        "Low",
+        "May appear elevated (folate trap)"
+      ],
+      [
+        "Neural Tube Defect Risk",
+        "Yes",
+        "No"
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

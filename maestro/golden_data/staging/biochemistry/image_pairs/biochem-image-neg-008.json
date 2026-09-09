@@ -1,0 +1,33 @@
+{
+  "example_id": "biochem-image-neg-008",
+  "source_type": "image_selection",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "image_url": "https://d2vrujxrqm3l5p.cloudfront.net/5404ab95-a164-4d2e-a2b8-0a7ce5bd2859.png",
+    "candidate_topics": [
+      "Methemoglobinemia",
+      "Cyanosis, Benzocaine",
+      "COMLEX Level 1"
+    ]
+  },
+  "expected": {
+    "relevant": false,
+    "note": "constructed negative - topics borrowed from a different image (https://d2vrujxrqm3l5p.cloudfront.net/042f1823-8207-4211-a5e6-1fcd53143dac.png)"
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "pair:constructed_negative"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

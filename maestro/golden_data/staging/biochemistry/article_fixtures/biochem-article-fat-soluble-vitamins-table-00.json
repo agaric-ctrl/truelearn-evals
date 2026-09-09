@@ -1,0 +1,67 @@
+{
+  "example_id": "biochem-article-fat-soluble-vitamins-table-00",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Fat-Soluble Vitamins.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Fat-soluble Vitamins"
+      ],
+      [
+        "Vitamin",
+        "Active Form",
+        "Function",
+        "Deficiency",
+        "Toxicity"
+      ],
+      [
+        "A (Retinol)",
+        "Retinal, Retinoic acid",
+        "Vision\nEpithelial integrity\nGene expression",
+        "Night blindness\nBitot spots\nXerophthalmia\nDry scaly skin",
+        "Teratogenic\n\u2191 ICP\nHepatotoxicity\nAlopecia"
+      ],
+      [
+        "D (Cholecalciferol)",
+        "Calcitriol [1,25-(OH)\u2082D\u2083]",
+        "Ca\u00b2\u207a/PO\u2084\u00b3\u207b homeostasis\nBone mineralization",
+        "Rickets (children)\nOsteomalacia (adults)\nSecondary hyperparathyroidism",
+        "Hypercalcemia \u2192 stones, bones, groans, psychiatric moans"
+      ],
+      [
+        "E (Tocopherol)",
+        "\u03b1-Tocopherol",
+        "Antioxidant (protects RBC membranes)",
+        "Hemolytic anemia\nSpinocerebellar ataxia\nAreflexia (rare)",
+        "Generally non-toxic\nMay inhibit vitamin K"
+      ],
+      [
+        "K (Phylloquinone/Menaquinone)",
+        "Reduced form (hydroquinone)",
+        "\u03b3-Carboxylation of clotting factors II, VII, IX, X, protein C, S",
+        "Bleeding diathesis, prolonged PT/INR\nHemorrhagic disease of newborn",
+        "Neonatal hemolytic anemia (synthetic K\u2083/menadione)"
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1189336",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Multiple Endocrine Neoplasia IIb: Tumor Of The Tongue"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_2007",
+    "question_text": "<p>An 11-year-old male presents to the clinic for follow-up. The patient was diagnosed with hypertension one week ago after two consecutive appointments showed a blood pressure of 180/100 mmHg. The patient was instructed to return in one week to discuss medication options. The patient has a past medical history of medullary thyroid carcinoma and has been cancer-free for ten months. Physical examination reveals:\n| Blood pressure | 101/72 mmHg |\n|---|---|\n| Heart rate | 70/min |\n| Respiratory rate | 13/min |\nRepeat blood pressure after the examination is 98/74 mmHg. The patient is tall and thin with notably long arms. After several laboratory tests, the patient is diagnosed with pheochromocytoma and treatment is initiated. The patient should also be evaluated for</p>",
+    "explanation_header": "<p>The correct answer is tumor of the tongue.</p>",
+    "explanation_footer": "<p>MEN IIB is characterized by medullary thyroid carcinoma, pheochromocytoma, and mucosal neuromas. Patients also tend to present with a marfanoid body habitus (tall and thin with long arms).\nMultiple Endocrine Neoplasia (MEN) syndromes are familial tumor syndromes that affect specific endocrine glands. MEN type IIB is caused by a mutation in the RET protooncogene that results in the following tumors: medullary thyroid carcinoma, pheochromocytoma, and mucosal ganglioneuromas. This is generally diagnosed in childhood. Medullary thyroid carcinoma is a malignancy of the parafollicular C cells of the thyroid gland, which normally secrete calcitonin, and usually presents as a thyroid nodule. Pheochromocytoma is a tumor of the chromaffin cells of adrenal medulla that secrete catecholamines. Pheochromocytoma presents with episodes of anxiety, headache, sweating, palpitations, and tachycardia. Patients often have fluctuating hypertension during these episodes as well. Submucosal ganglioneuromas appear most commonly in the mouth, lips, and eyes. Other manifestations of MEN IIB are marfanoid habitus (long limbs, tall and thin stature) and chronic constipation.\nOther MEN syndromes are MEN I and MEN IIA. MEN I is characterized by tumors of the pancreas, parathyroid, and pituitary. MEN IIA is characterized by medullary thyroid carcinoma, pheochromocytoma, and parathyroid hyperplasia.\nAdrenal insufficiency (choice A), or Addison\u2019s disease is most commonly caused by autoimmune lymphocytic destruction of the adrenal glands. Symptoms of Addison\u2019s disease are nonspecific (e.g., nausea/vomiting, weakness, fatigue). Classic findings are hypotension, hyponatremia, hyperkalemia, and hyperpigmentation of the skin.\nPancreatic islet cell tumor (choice B) can be seen in MEN type I. Patients with MEN I present with tumors of the pancreas, of the parathyroid, and of the pituitary gland.\nPancreatic beta cell tumor (choice C) causes insulinoma and would be portrayed by periods of severe hypoglycemia. \nPituitary tumor (choice D) is another common finding in MEN type I. Patients often complain of visual disturbance and headache. Physical examination will reveal bitemporal hemianopsia. Endocrine symptoms of pituitary tumors depend on the hormone being secreted. Hormones secreted by the pituitary are thyroid stimulating hormone, follicle stimulating hormone, luteinizing hormone, prolactin, growth hormone, adrenocorticotropic hormone, melanocyte stimulating hormone, antidiuretic hormone, and oxytocin.</p><p>MEN type IIB presents with medullary thyroid cancer, pheochromocytoma, marfanoid body habitus, and mucosal neuromas.</p>",
+    "main_topic": "Multiple Endocrine Neoplasia IIb",
+    "modifier": "Tumor Of The Tongue",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1189336"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

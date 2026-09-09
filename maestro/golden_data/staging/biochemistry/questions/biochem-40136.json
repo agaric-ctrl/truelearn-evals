@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-40136",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "DNA Replication: 3' End Of Growing Chain"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_247",
+    "question_text": "<p>In an experiment investigating the mechanisms of DNA replication and repair in eukaryotes, a group of researchers aims to study the various enzymes involved in the process. The experiment is planned to provide a novel paradigm for the mechanisms by which the DNA replication machinery is coordinated with DNA repair proteins in response. The researchers design an in vitro assay mimicking DNA replication. They use purified proteins involved in replication and observe their actions on a synthetic DNA template. One of the target enzymes in the experiment is DNA polymerase. Which of the following is a fundamental function of this enzyme?</p>",
+    "explanation_header": "<p>The correct answer is Addition of deoxyribonucleotides to the 3\u2032 hydroxyl group of a growing chain.</p>",
+    "explanation_footer": "<p>https://d2vrujxrqm3l5p.cloudfront.net/90b7a7bc-530e-446e-94ec-1271e56de7e1.png \nDNA replication is a semiconservative process, meaning that for every new pair, there is one original strand and one new strand. This process begins with the initiation phase, where origin-binding proteins bind to the origin of replication, leading to the unwinding of the double helix by helicase , forming a replication fork. Single-stranded binding proteins stabilize the unwound DNA while topoisomerases alleviate tension and allow elongation to proceed. Primase generates RNA primers for DNA polymerases to initiate replication.\nDuring elongation, DNA polymerases (eg, DNA polymerase III in prokaryotes and DNA polymerase alpha, epsilon, and delta in eukaryotes) add deoxyribonucleotides to the 3\u2032 hydroxyl group (3'-OH) of a growing chain , synthesizing DNA in the 5\u2032 to 3\u2032 direction. DNA polymerase III has 5\u2019 to 3\u2019 synthesis and 3\u2019 to 5\u2019 proofreading exonuclease. DNA polymerase alpha is a complex that has the DNA primase that creates the RNA primer, and then the polymerase alpha itself elongates approximately 20 nucleotides and passes off to DNA polymerase epsilon or delta. DNA polymerase epsilon elongates and proofreads on the leading strand. DNA polymerase delta elongates and proofreads on the lagging strand. \nThe leading strand is synthesized continuously, whereas the lagging strand is synthesized discontinuously in short segments, called Okazaki fragments. These fragments are later joined by DNA ligase after RNA primers are replaced by DNA.\nTermination occurs differently in prokaryotes and eukaryotes. In prokaryotes, replication ends when replication forks meet, whereas in eukaryotes, termination happens at telomere regions, which are repetitive sequences at chromosome ends.</p><p>DNA polymerase catalyzes the addition of deoxyribonucleotides to the 3\u2032 hydroxyl group of a growing DNA chain during replication. This process occurs in the 5\u2032 to 3\u2032 direction and is essential for elongating the DNA strand.</p>",
+    "main_topic": "DNA Replication",
+    "modifier": "3' End Of Growing Chain",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:40136"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

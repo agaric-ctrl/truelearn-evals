@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-40352",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Probability Of Polycystic Kidney Disease: 0% For Either Sex"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_168",
+    "question_text": "<p>A 27-year-old healthy woman comes to the office for a routine physical examination. She and her husband are hoping to conceive a child in the next year. She is concerned about passing on a disease that had affected her grandfather and his brother, her great-uncle, to her children. She says that both men had suffered from hypertension starting in their late 20s and early 30s because of a \u201ckidney problem.\u201d Her grandfather developed end stage renal disease, necessitating hemodialysis before his death. His brother died in his late 40s from a sudden \u201cbrain bleed.\u201d Neither of her parents or three siblings are affected with the disease. Her husband is healthy and has no family history of disease. What are the chances of having a child who develops this disease later in life?</p>",
+    "explanation_header": "<p>The correct answer is 0% for either sex.</p>",
+    "explanation_footer": "<p>This patient\u2019s grandfather and great-uncle likely died from complications of autosomal dominant polycystic kidney disease, which is due to a mutation of the APKD gene on chromosome 16. Patients can present with hypertension, renal failure, painful hematuria, berry aneurysm, and palpable enlarged kidneys. Since the disease is autosomal dominant, there are no carriers. Each person with a mutated allele will express the disease. Since the patient does not have the disease, she likely does not have the mutation. Given that she is young and may not have presented with features of the disease yet, it is important to look at her other family members. Neither of her parents are affected, making it much less likely that she would have the disease; therefore, the chance of having an offspring with autosomal dominant polycystic kidney disease is 0%, regardless of the sex of the child.</p><p>Autosomal dominant polycystic kidney disease is due to a mutation of the APKD gene on chromosome 16 leading to hypertension, renal failure, bilaterally enlarged kidneys, and berry aneurysms.</p>",
+    "main_topic": "Probability Of Polycystic Kidney Disease",
+    "modifier": "0% For Either Sex",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:40352"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

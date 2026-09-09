@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-41596",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Carcinoid Syndrome: Vitamin B3 Deficiency"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_133",
+    "question_text": "<p>A 51-year-old man comes to his primary care provider with persistent diarrhea. He first noticed the diarrhea 1 month ago, and it has worsened during that time. He says that he has up to 10 watery bowel movements per day. He notes intermittent abdominal cramping and denies nausea or vomiting. He has not noticed blood in his stool. His past medical history is significant only for asthma, and he notes more frequent exacerbations of his symptoms. He denies any recent illness or sick contacts. His temperature is 37.0\u00b0C (98.6\u00b0F), pulse is 98/min, respirations are 20/min, and blood pressure is 98/60 mm Hg. He has decreased skin turgor and a dry, scaly rash on physical examination. Lung auscultation reveals bilateral wheezes. Urinary 5-hydroxyindoleacetic acid is elevated. Which of the following is the precursor to the vitamin that this patient is most likely lacking?</p>",
+    "explanation_header": "<p>The correct answer is Tryptophan.</p>",
+    "explanation_footer": "<p>The pathways of tryptophan metabolism are shown below. Carcinoid syndrome shunts metabolism on the left-hand side:\nhttps://d2vrujxrqm3l5p.cloudfront.net/043ef3e1-9d1b-434b-b1ce-796667e60487.png \nA patient who has flushing, diarrhea, and wheezing most likely has carcinoid syndrome. This condition is characterized by slow-growing neuroendocrine tumors that produce excess serotonin, stimulating gut motility and inducing bronchospasm and vasodilation. Serotonin is metabolized to 5-hydroxyindoleacetic acid (5-HIAA), which is excreted in the urine, and elevated levels of 5-HIAA are diagnostic of carcinoid syndrome.\nCarcinoid tumors most frequently occur in the gastrointestinal tract but can also rarely occur in the lungs. Because serotonin is metabolized by the liver, carcinoid tumors are frequently asymptomatic until they have metastasized to or beyond the liver, thereby allowing serotonin to reach systemic circulation and leading to the classic symptoms described above. \nBecause carcinoid tumors produce excess serotonin, tryptophan, a precursor of serotonin, can become relatively depleted in patients with carcinoid tumors. Tryptophan is also a precursor for niacin (vitamin B3). Consumption of tryptophan by the carcinoid tumors can lead to niacin deficiency, a condition called pellagra that involves dermatitis, diarrhea, and dementia (\"the 3 Ds for B3\").\nPatients who are diagnosed with carcinoid syndrome should undergo imaging to determine the location of the tumors and any metastases. Surgical management is first-line treatment of carcinoid syndrome, although somatostatin analogs, such as octreotide, can be used in patients for whom surgery is contraindicated.</p><p>Carcinoid tumor produces serotonin, which is synthesized from tryptophan. Shunting tryptophan toward serotonin and away from niacin biosynthesis can produce symptoms similar to niacin deficiency.</p>",
+    "main_topic": "Carcinoid Syndrome",
+    "modifier": "Vitamin B3 Deficiency",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:41596"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -39,6 +39,28 @@ class EvalConfig:
     allowed_question_formats_by_type: dict[str, set[str]] = field(default_factory=dict)
     existing_unique_names: set[str] | None = None
 
+    # readability.py: PLACEHOLDER threshold, not calibrated against any real content - see
+    # docs/qa-context/TIER1_CHECKS_TASK.md. None (the default) means Skip; the computed grade
+    # level is still reported in CheckResult.details either way.
+    readability_grade_level_range: tuple[float, float] | None = None
+
+    # density_redundancy.py: same PLACEHOLDER-threshold convention as above. ngram_size is a plain
+    # algorithm parameter (not a business rule pending confirmation), so it has a real default.
+    max_ngram_overlap_ratio: float | None = None
+    ngram_size: int = 3
+
+    # references_format.py: docs/qa-context/TIER1_CHECKS_TASK.md names "two specific citation
+    # types" and "certain named non-authoritative sources" without saying which ones - genuinely
+    # unconfirmed, not guessed at here. None means Skip for each, same as every other
+    # not-yet-confirmed rule in this file.
+    reference_citation_type_patterns: dict[str, str] | None = None
+    max_per_citation_type: dict[str, int] | None = None
+    excluded_reference_sources: set[str] | None = None
+
+    # table_abbreviation_footnotes.py: an always-on check (the rule itself isn't in question), but
+    # this is the tuning safety-valve for terms that should never require a footnote definition.
+    abbreviation_allowlist: set[str] = field(default_factory=set)
+
 
 def load_generated_question(data: dict) -> GeneratedQuestion:
     return GeneratedQuestion(**data)
@@ -48,6 +70,7 @@ def load_eval_config(data: dict) -> EvalConfig:
     """JSON has no set type, so a naive EvalConfig(**data) would silently hand
     existing_unique_names a list instead of a set. Build the dataclass field by field instead."""
     placement = data.get("table_placement") or {}
+    readability_range = data.get("readability_grade_level_range")
     return EvalConfig(
         require_bottom_line=data.get("require_bottom_line"),
         table_placement=TablePlacementConfig(confirmed=bool(placement.get("confirmed", False))),
@@ -61,4 +84,17 @@ def load_eval_config(data: dict) -> EvalConfig:
             if data.get("existing_unique_names") is not None
             else None
         ),
+        readability_grade_level_range=(
+            tuple(readability_range) if readability_range is not None else None
+        ),
+        max_ngram_overlap_ratio=data.get("max_ngram_overlap_ratio"),
+        ngram_size=data.get("ngram_size", 3),
+        reference_citation_type_patterns=data.get("reference_citation_type_patterns"),
+        max_per_citation_type=data.get("max_per_citation_type"),
+        excluded_reference_sources=(
+            set(data["excluded_reference_sources"])
+            if data.get("excluded_reference_sources") is not None
+            else None
+        ),
+        abbreviation_allowlist=set(data.get("abbreviation_allowlist") or []),
     )

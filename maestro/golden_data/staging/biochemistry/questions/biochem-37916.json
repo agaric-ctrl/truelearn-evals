@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-37916",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Transcriptional Start Site : Enhancer, Promoter, Repressor Location"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_307",
+    "question_text": "<p>A researcher is working to develop new chemotherapeutic agents for breast cancer targeting specific oncogenes in order to minimize the adverse effects experienced by patients. He begins by culturing breast cancer cells and sequences the chromosomes on which the oncogenes are located. The researcher wants to inhibit the promoter of one oncogene, inhibit an enhancer of a second, and activate the repressor of a third. In relation to the transcriptional start site, which of the following most closely describes where each of these elements is located? \n| | Enhancer | Promoter | Repressor |\n|---|---|---|---|\n| A. | Anywhere | Anywhere | Anywhere |\n| B | Anywhere | Downstream | Upstream |\n| C | Anywhere | Upstream | Anywhere |\n| D | Downstream | Anywhere | Downstream |\n| E | Downstream | Downstream | Upstream |\n| F | Downstream | Upstream | Downstream |\n| G | Upstream | Anywhere | Anywhere |\n| H | Upstream | Downstream | Anywhere |\n| I | Upstream | Upstream | Upstream |</p>",
+    "explanation_header": "<p>The correct answer is C.</p>",
+    "explanation_footer": "<p>The regulation of genes is a complex process involving the activation and inhibition of sites related to the subsequent transcription of the gene. The promoter is an element that is located directly upstream of the transcription site. TATA and CAAT boxes are elements found in the promoter, and it is the site where RNA polymerases and other transcription factors bind prior to transcription. Unlike the fixed position of the promoter, other regulators of gene expression, including enhancers and repressors, can be located anywhere. Because DNA is a three-dimensional molecule, distant sites of regulation can be brought close to the transcription start site through folding of the molecule. While both upstream and downstream enhancers and repressors are common, they can also be found within the gene itself, most often in an intron. Thus, the researcher will look directly upstream of the transcription start site for the promoter but can expect the enhancer and repressor to be anywhere along the DNA strand.</p><p>The promoter for a gene is located directly upstream of the transcriptional start site while enhancers and repressors can be located anywhere: upstream, downstream and within the gene itself.</p>",
+    "main_topic": "Transcriptional Start Site ",
+    "modifier": "Enhancer, Promoter, Repressor Location",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:37916"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

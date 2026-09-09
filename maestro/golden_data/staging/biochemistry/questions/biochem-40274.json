@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-40274",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Cytochrome P450 Enzymes: Smooth Endoplasmic Reticulum"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_102",
+    "question_text": "<p>A 17-year-old boy returns to the office for a follow-up appointment after he was started on carbamazepine for his newly diagnosed epilepsy. The patient asks if he should be concerned about any drug interactions. The physician explains to the patient that carbamazepine interacts with a major class of enzymes involved in drug metabolism. The patient is instructed to call the office before starting any new medications because of possible interactions. The enzyme class responsible for the majority of the metabolism of this medication is mostly localized to which of the following subcellular organelles?</p>",
+    "explanation_header": "<p>The correct answer is Smooth endoplasmic reticulum.</p>",
+    "explanation_footer": "<p>| Organelle | Functions |\n|---|---|\n| Golgi Apparatus | - Processes and packages proteins and lipids from the endoplasmic reticulum - Distributes these proteins and lipids to the vesicles and plasma membrane |\n| Lysosomes | - Digesting cellular debris and damaged structures - Apoptosis |\n| Mitochondria | - Adenosine triphosphate production - Fatty acid oxidation |\n| Nucleus | - Contains genetic information - Site of DNA synthesis |\n| Peroxisomes | - \u03b2-oxidation of very-long-chain fatty acids - Catabolism of branched-chain fatty acids, amino acids, and ethanol - Synthesis of cholesterol, bile acids, and plasmalogens |\n| Rough Endoplasmic Reticulum | - Synthesis of secretory proteins - Addition of N-linked oligosaccharide to lysosomal (and other) proteins |\n| Smooth Endoplasmic Reticulum | - Steroid synthesis - Detoxification of drugs and poisons (cytochrome P450 enzymes) |\nThis patient was recently prescribed carbamazepine , an antiepileptic agent that is both an inducer and a substrate of the cytochrome P450 system . The liver is the organ responsible for the metabolism of most drugs and toxins introduced into the body. Most drugs absorbed from the gastrointestinal tract are lipophilic (water insoluble). For them to be properly excreted into bile or to be renally filtered, they must be converted into more hydrophilic molecules. \nPhase I drug metabolism, which is mediated by cytochrome P450 enzymes, transforms lipophilic drugs into more polar, hydrophilic intermediates via oxidation, reduction, or hydrolysis reactions. Most of the cytochrome P450 enzymes that do so are located within the smooth endoplasmic reticulum , and a minority is found in the mitochondria. If a drug is still not hydrophilic enough for excretion after phase I reactions, it can undergo phase II reactions. These reactions occur in the hepatocyte cytoplasm and involve methylation, acetylation, sulfation, or glucuronidation of the drug molecule. \nhttps://d2vrujxrqm3l5p.cloudfront.net/b8078372-3a27-4a92-b343-39434e45903e.png</p><p>Cytochrome P450 enzymes are responsible for phase I drug metabolism, which converts lipophilic drug molecules into more hydrophilic substances via oxidation, reduction, and hydrolysis reactions. The cytochrome P450 enzymes are primarily located on the cytoplasmic side of the membrane of the smooth endoplasmic reticulum.</p>",
+    "main_topic": "Cytochrome P450 Enzymes",
+    "modifier": "Smooth Endoplasmic Reticulum",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:40274"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

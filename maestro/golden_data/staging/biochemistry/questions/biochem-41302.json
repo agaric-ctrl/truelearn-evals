@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-41302",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Lipoic Acid Biochemistry: Lactate"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_306",
+    "question_text": "<p>A biochemist is using hepatocytes in culture to study the effect of certain enzyme and cofactor deficiencies on the overall biochemical states of the cells. He develops assays to measure the concentrations of electrolytes and biochemically-active molecules as well as the activity of metabolically-important enzymes. Accumulation of which of the following metabolites is most likely to be caused by depriving the cells of lipoic acid?</p>",
+    "explanation_header": "<p>The correct answer is Lactate.</p>",
+    "explanation_footer": "<p>Lipoic acid is an important cofactor for several key enzymes in metabolism. Along with vitamins B 1 (thiamine), B 2 (riboflavin), B 3 (niacin), and B 5 (pantothenic acid) lipoic acid is necessary for use as a cofactor for the enzymes pyruvate dehydrogenase, \u03b1-ketoglutarate dehydrogenase, and branched-chain \u03b1-ketoacid dehydrogenase. Lipoic acid deficiency would inhibit glucose metabolism both at the end of glycolysis (via pyruvate dehydrogenase inhibition), causing the accumulation of pyruvate, and the TCA cycle (via \u03b1-ketoglutarate dehydrogenase inhibition), which inhibits the cycle further. With inhibition of the TCA cycle, insufficient NADH and FADH 2 are generated to drive ATP synthesis via oxidative phosphorylation, and the metabolic state of the cell therefore mimics that of anaerobic metabolism. Under anaerobic conditions, lactate dehydrogenase reduces the pyruvate produced by glycolysis to lactate while oxidizing NADH to NAD + . This reaction regenerates the NAD + needed for glycolysis since the electron transport chain cannot be used to replenish NAD + under anaerobic conditions. Lactate is then shunted to the liver for conversion back to pyruvate by lactate dehydrogenase and subsequently enter gluconeogenesis in a pathway known as the Cori cycle. Therefore, in lipoic acid deficiency both the accumulation of pyruvate and the inhibition of the TCA cycle cause the increase in lactate production by lactate dehydrogenase in order to regenerate NAD + from NADH.</p><p>Along with vitamins B 1 , B 2 , B 3 , and B 5 , lipoic acid is necessary for use as a cofactor for the enzymes pyruvate dehydrogenase, \u03b1-ketoglutarate dehydrogenase, and branched-chain amino acid dehydrogenase. Inhibition of both the PDH complex and the TCA cycle due to lipoic acid deficiency would inhibit oxidative metabolism, and lactic acid would accumulate as a consequence of anaerobic metabolism of glucose.</p>",
+    "main_topic": "Lipoic Acid Biochemistry",
+    "modifier": "Lactate",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:41302"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

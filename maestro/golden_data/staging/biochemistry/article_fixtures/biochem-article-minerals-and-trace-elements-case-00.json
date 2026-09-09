@@ -1,0 +1,29 @@
+{
+  "example_id": "biochem-article-minerals-and-trace-elements-case-00",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Minerals_and_Trace_Elements.docx",
+    "fixture_type": "teaching_case",
+    "label": "Case 1: Iron Deficiency Anemia"
+  },
+  "expected": {
+    "body": "A 42-year-old woman with uterine fibroids presents with fatigue, koilonychia, ferritin 4 ng/mL, and TIBC 480 \u00b5g/dL. Peripheral smear shows hypochromic microcytic cells. Diagnosis: iron deficiency anemia from chronic blood loss; treat with oral ferrous sulfate. Key teaching: ferritin is the most sensitive early marker; TIBC rises in deficiency, distinguishing it from anemia of chronic disease."
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:teaching_case"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}
