@@ -1,4 +1,4 @@
-name: Live evaluation
+name: Faithfulness framework evaluation
 
 on:
   workflow_dispatch:

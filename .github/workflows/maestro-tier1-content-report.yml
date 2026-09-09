@@ -1,9 +1,10 @@
 name: Maestro Tier 1 content report
 
-# Separate workflow file, same reasoning as live-evaluation.yml being separate from validate.yml:
+# Separate workflow file, same reasoning as faithfulness-framework-evaluation.yml being separate
+# from validate.yml:
 # a different trigger type deserves its own file rather than a conditional gate bolted onto the
 # PR-blocking job. Fully offline - these are all deterministic checks, no API key, no live model
-# calls, unlike live-evaluation.yml.
+# calls, unlike faithfulness-framework-evaluation.yml.
 #
 # Per docs/qa-context/TIER1_CHECKS_TASK.md: "note, as a comment in the workflow file... a workflow
 # with both a PR trigger and a manual/scheduled trigger already provides 'runs on-demand and in
