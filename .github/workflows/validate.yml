@@ -97,7 +97,17 @@ jobs:
           python maestro/golden/import_pool.py \
             --graded-xlsx /tmp/maestro-review-pools/ci_smoke.xlsx \
             --mapping /tmp/maestro-review-pools/ci_smoke.mapping.json \
-            --golden-dir /tmp/maestro-review-pools/golden_out
+            --golden-dir /tmp/maestro-review-pools/golden_out \
+            --outcomes-json /tmp/maestro-review-pools/ci_smoke.outcomes.json
+          # Hooked in right after the existing import-loop smoke test above, per
+          # docs/qa-context/REPORTING_SUMMARY_TASK.md - no new CI infrastructure, just the next
+          # step reading what the import step already produces. Written to /tmp, not committed:
+          # this is throwaway CI-smoke data, not a real run of maestro/golden_data/import_summary.md.
+          python maestro/golden/import_summary.py \
+            --outcomes-json /tmp/maestro-review-pools/ci_smoke.outcomes.json \
+            --out /tmp/maestro-review-pools/ci_smoke.import_summary.md
+      - name: Test Maestro golden-set import summary
+        run: python -m unittest maestro/test_import_summary.py
       - name: Validate committed golden datasets parse
         run: >-
           python -c "

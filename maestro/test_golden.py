@@ -197,6 +197,7 @@ class ReviewPoolImporterTests(unittest.TestCase):
 
             self.assertEqual(len(outcomes), 1)
             self.assertTrue(outcomes[0].promoted)
+            self.assertEqual(outcomes[0].exam_bank, "USMLE")
 
             promoted = read_jsonl(golden_dir / "usmle.jsonl")
             self.assertEqual(len(promoted), 1)
