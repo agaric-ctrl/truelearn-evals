@@ -1,0 +1,71 @@
+{
+  "example_id": "biochem-article-minerals-and-trace-elements-table-01",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Minerals_and_Trace_Elements.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Iron Studies in Iron Deficiency vs. Iron Overload"
+      ],
+      [
+        "Lab Value",
+        "Iron Deficiency",
+        "Iron Overload / Hemochromatosis",
+        "Notes"
+      ],
+      [
+        "Serum Iron",
+        "\u2193",
+        "\u2191",
+        "Reflects circulating iron, not stored iron"
+      ],
+      [
+        "Serum Ferritin",
+        "\u2193 (most sensitive early marker)",
+        "\u2191",
+        ""
+      ],
+      [
+        "Total Iron-binding Capacity (TIBC)",
+        "\u2191 (transferrin is upregulated)",
+        "\u2193",
+        "Reflects transferrin availability"
+      ],
+      [
+        "Transferrin Saturation",
+        "\u2193 (< 15%)",
+        "\u2191 (> 45%)",
+        ""
+      ],
+      [
+        "RBC Morphology",
+        "Microcytic, hypochromic; target cells in severe deficiency",
+        "Normal (late disease may show damage)",
+        ""
+      ],
+      [
+        "RBC = red blood cell."
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

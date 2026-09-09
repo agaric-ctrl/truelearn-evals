@@ -1,0 +1,29 @@
+{
+  "example_id": "biochem-article-fat-soluble-vitamins-case-00",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Fat-Soluble Vitamins.docx",
+    "fixture_type": "teaching_case",
+    "label": "Case 1: Vitamin A Deficiency"
+  },
+  "expected": {
+    "body": "A 40-year-old woman with celiac disease presents with worsening vision at night, especially while driving. Exam shows foamy plaques on the conjunctiva. Diagnosis: Vitamin A deficiency, refer for dietary assessment and supplementation. Key teaching: celiac disease leads to fat malabsorption, which lowers vitamin A, which impairs rhodopsin production."
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:teaching_case"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

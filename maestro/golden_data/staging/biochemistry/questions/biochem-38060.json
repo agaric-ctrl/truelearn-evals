@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-38060",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Ehlers-Danlos Syndrome: COL5A2 Mutation Causes Classic EDS"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_083",
+    "question_text": "<p>A 16-year-old boy comes to the office accompanied by his mother for his yearly physical examination. He complains of muscle weakness and fatigue, which has affected his performance in gym class. However, he tends to perform exceptionally better than his classmates in flexibility testing. His mother adds that he bruises more easily than her other children and does not heal quickly from minor scrapes and cuts. His blood pressure is 119/80 and pulse is 77/min. On physical examination, his height and weight are at the 50th percentile. Multiple bruises in different stages of healing are dispersed across his arms and legs. Bilateral upper and lower extremity joints are hypermobile, and this hypermobility is especially prominent in his hand and shoulder joints. Skin on the dorsal surface of his hands and his abdominal skin is particularly elastic. A defect in which of the following genes is most likely present in this boy?</p>",
+    "explanation_header": "<p>The correct answer is COL5A2.</p>",
+    "explanation_footer": "<p>Subtypes of Ehlers-Danlos Syndrome\n| | Classical Type | Vascular Type |\n|---|---|---|\n| Genetics | COL5A1 and COL5A2 | COL3A1 |\n| Defective Collagen | Type V collagen | Type III procollagen |\n| Clinical Presentation | - Hyperextensible skin - Hypermobile joints - Joint dislocations - Easy bruising | - Friable blood vessels \u2192 easy bruising and bleeding - Aortic dissection - Aortic and berry aneurysms - Muscles and organs that are prone to rupture (eg, uterine rupture) |\nThis boy with muscle weakness, hypermobile joints, impaired wound healing, and diffuse bruising most likely has Ehlers-Danlos syndrome (EDS), a genetically inherited family of connective disorders. Classical EDS is the most common subtype, with an autosomal dominant inheritance pattern and mutations in COL5A1 and COL5A2, affecting 90% of patients with classic EDS. Patients with EDS inherit gene mutations that impair the production and processing of collagen, the protein that gives integrity to skin, tendons, ligaments, arteries, bony skeleton, and eyes. Less commonly, patients with EDS have mutations in genes that are responsible for producing the extracellular matrix and its associated structures (glycosaminoglycans). \nClassic EDS is diagnosed clinically and is supported by a positive family history of EDS features. The major criteria are hyperextensible skin, widened atrophic scars (\"cigarette paper-like\"), hypermobile joints. The minor criteria are doughy skin, easy bruising, delicate skin, molluscoid pseudotumors, subcutaneous spheroids, complications resulting from joint hypermobility, epicanthal folds, hernias, and a positive family history of EDS. Diagnosis is made if (1) a major and minor criteria are met, (2) a major criterion is met and there is diffuse joint hypermobility, or (3) at least 3 minor criteria are met. Classic EDS can be confirmed by sequencing COL5A1 and COL5A2. \nhttps://d2vrujxrqm3l5p.cloudfront.net/d01b1463-b1ba-404a-be34-a2e84a8f10c1.png \nThis image shows hypermobility classical seen in patients with EDS.</p><p>Ehlers-Danlos syndrome (EDS) is a connective disorder with an autosomal dominant inheritance pattern. Patients with classic EDS have mutations in COL5A1 and COL5A2 genes, leading to impaired production and processing of collagen. The major criteria for classic EDS are hyperextensible skin, widened atrophic scars (\"cigarette paper-like\"), and hypermobile joints.</p>",
+    "main_topic": "Ehlers-Danlos Syndrome",
+    "modifier": "COL5A2 Mutation Causes Classic EDS",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:38060"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

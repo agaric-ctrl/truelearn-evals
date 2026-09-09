@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-38946",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Neurofibromatosis Type 1: Lisch Nodules"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_125",
+    "question_text": "<p>A 10-year-old boy with a condition that has an autosomal-dominant inheritance pattern comes to the physician for an evaluation. A photograph of his left eye is shown. \nhttps://d2vrujxrqm3l5p.cloudfront.net/217e4d45-5ff0-4421-bebb-7d09663330bb.png \nWhich of the following is the most likely diagnosis?</p>",
+    "explanation_header": "<p>The correct answer is Neurofibromatosis type 1.</p>",
+    "explanation_footer": "<p>Neurocutaneous Disorders\n| Disorder | Inheritance | Genetics |\n|---|---|---|\n| Neurofibromatosis, Type 1 | Autosomal dominant | - NF1 gene on chromosome 17 |\n| Neurofibromatosis, Type 2 | Autosomal dominant | - NF2 gene on chromosome 22 |\n| Sturge-Weber Syndrome | Nonhereditary | - Somatic mosaicism of an activating mutation in GNAQ gene |\n| Tuberous Sclerosis | Autosomal dominant | - Variable expression - TSC1 mutation on chromosome 9 - TSC2 mutation on chromosome 16 |\n| Von Hippel-Lindau Disease | Autosomal dominant | - Deletion of VHL gene on chromosome 3 |\n| GNAQ = G protein subunit alpha Q, NF = neurofibromin, TSC = tuberous sclerosis, VHL = von Hippel-Lindau. | | |\nThe patient most likely has neurofibromatosis type 1 (NF1), an autosomal dominant disease that results from inactivation of the tumor suppressor gene NF1 found on Chromosome 17. \nNF1 causes cafe-au-lait spots, neural tumors, Lisch nodules (pigmented iris hamartomas), skeletal disorders (scoliosis), and pheochromocytoma. The Lisch nodules shown in the picture occur in more than 90% of the patients with NF1. They do not typically affect vision and are useful for diagnostic purposes. \nMake sure to memorize the underlying mutations that are associated with the development of neurocutaneous disorders as shown in the table.\nhttps://d2vrujxrqm3l5p.cloudfront.net/7f92dbfc-7036-4a3f-b60e-09fa0f27a308.png \nLisch nodules (red arrows).</p><p>Neurofibromatosis 1 is an autosomal-dominant condition caused by a mutation in the long arm of chromosome 17. It can cause cafe-au-lait spots, neural tumors, Lisch nodules (pigmented iris hamartoma), skeletal disorders, and pheochromocytoma.</p>",
+    "main_topic": "Neurofibromatosis Type 1",
+    "modifier": "Lisch Nodules",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:38946"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,29 @@
+{
+  "example_id": "biochem-article-minerals-and-trace-elements-case-01",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Minerals_and_Trace_Elements.docx",
+    "fixture_type": "teaching_case",
+    "label": "Case 2: Hereditary Hemochromatosis"
+  },
+  "expected": {
+    "body": "A 52-year-old man of Northern European descent presents with bronze skin, MCP arthralgias, and fasting glucose 210 mg/dL. Transferrin saturation is 62%; HFE testing confirms C282Y homozygosity. Diagnosis: hereditary hemochromatosis; treat with therapeutic phlebotomy. Key teaching: transferrin saturation > 45% is the most sensitive screening test; MCP arthropathy responds poorly to phlebotomy."
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:teaching_case"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

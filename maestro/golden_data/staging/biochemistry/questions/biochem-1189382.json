@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1189382",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Tuberous Sclerosis Complex: Spontaneous Mutation"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_2087",
+    "question_text": "<p>A 12-year-old female with a history of intellectual disability and epilepsy is brought to the pediatrician due to recent-onset hematuria. On specific questioning, she admits to history of worsening vague right-sided flank pain over the last several months. Her only current medication is valproic acid and her vaccinations are up to date. Vital signs are significant for a blood pressure of 165/98 mmHg. Family history shows no history of similar conditions in any first-degree or second-degree relatives. Physical examination reveals the skin lesions shown in the exhibit and a holosystolic, blowing murmur that is loudest at the apex. Which of the following is the most likely underlying cause of the patient's condition?</p>",
+    "explanation_header": "<p>The correct answer is Spontaneous mutation.</p>",
+    "explanation_footer": "<p>Tuberous sclerosis causes hamartomas in various parts of the body, which commonly affect the skin, the brain, and the kidneys. While it is sometimes associated with an autosomal dominant inheritance pattern, the majority of cases occur as a spontaneous mutation in the TSC1 or TSC2 gene.\nRemember what tuberous sclerosis can present as with the mnemonic HAMARTOMAS:\nHamartomas in CNS and skin\nAngiofibromas\nMitral regurgitation\nAsh-leaf spots\ncardiac Rhabdomyoma\nTuberous sclerosis\nautosomal dOminant\nIntellectual disability\nrenal Angiomyolipoma\nSeizures\nShagreen patches\nTuberous sclerosis is a genetic condition with variable presentation and incomplete penetrance that presents with abnormal growths in the skin, central nervous system (CNS), and organs. Skin hamartomas manifest with hypopigmented skin patches called ash spots (usually only on the trunk), adenoma sebaceum (angiofibromas and multiple small red papules) in butterfly distribution on the face, and a shagreen (leather-like) patch on the lower back. CNS involvement includes cortical tubers (after which the disease is named) and subependymal giant cell astrocytomas and retinal hamartomas, seizures and intellectual disability. Organ involvement may include cardiac rhabdomyomas (which can present with arrhythmias and murmurs) and renal angiomyolipoma (can present with hematuria and flank pain). It is a favorite topic for exam questions due to the multisystem involvement.\nThe genetics of tuberous sclerosis primarily involve the TSC1 and TSC2 genes whose function is not yet fully understood, but likely involves tumor suppression. The disease is transmitted in an autosomal dominant fashion, so affected patients have a 50% chance of passing the illness on to progeny. However, the majority of cases occur as a spontaneous mutation, so this diagnosis should still be considered in patients who have no family history.\nAutoimmune disease (choice A) is often considered in patients with multisystemic manifestations. The classic example is systemic lupus erythematosus (SLE), which also has dermatologic and renal manifestations. SLE presents with a malar (cheek) rash in butterfly distribution, but it is a macular (= non-elevated) rash, and does not have papules (elevated lesion up to 1cm).Patients also develop a nonspecific constellation of fevers, arthralgias, symmetric arthritis, myalgias, and fatigue. It is not associated with seizures or intellectual disaiblity.\nDrug toxicity (choice B) due to valproic acid most commonly manifests as fatigue, cognitive suppression, alopecia, weight gain, and tremors. Less commonly (but more high-yield), valproic acid is associated with hepatotoxicity. It does not have effects on the kidneys.\nMendelian inheritance (choice C) is one potential means of transmission of tuberous sclerosis, but is less common than spontaneous mutations. Because the transmission is autosomal dominant, a patient who acquired the disease through Mendelian inheritance will have at least one parent who is affected.\nViral infection (choice E) can cause a variety of symptoms, depending on the site and nature of the infection. Seizures can be associated with viral encephalitis, while hematuria can be associated with cystitis (although cystitis is far more likely to be bacterial in origin). There is no clear viral infection that is likely to cause a chronic pattern of seizures, intellectual disability, and renal damage; while human immunodeficiency virus (HIV) may be associated with various nonspecific symptoms due to immunosuppression, these symptoms are likely to appear in a more acute fashion when they occur.</p><p>Tuberous sclerosis is a genetic condition that presents with multiple organ system symptoms and signs including dermatologic (ash spots, facial adenoma sebaceum, shagreen patch), CNS (cortical tubers, astrocytomas, intellectual disability), and solid organ tumors (cardiac rhabdomyomas and renal angiomyolipoma). It can be associated with autosomal dominant inheritance or spontaneous mutation.</p>",
+    "main_topic": "Tuberous Sclerosis Complex",
+    "modifier": "Spontaneous Mutation",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:1189382"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,70 @@
+{
+  "example_id": "biochem-article-water-soluble-vitamins-table-03",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Water-Soluble Vitamins.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Drug-Nutrient Interactions"
+      ],
+      [
+        "Drug",
+        "Vitamin Affected",
+        "Mechanism and Clinical Consequence"
+      ],
+      [
+        "Isoniazid",
+        "B6",
+        "Inhibits pyridoxal kinase, causing functional PLP deficiency and peripheral neuropathy; prevent with pyridoxine"
+      ],
+      [
+        "Methotrexate, Trimethoprim",
+        "B9",
+        "DHFR inhibition impairs THF synthesis, producing megaloblastic anemia; rescue with leucovorin (folinic acid, which bypasses DHFR)"
+      ],
+      [
+        "5-Fluorouracil (5-FU)",
+        "B9 (functional)",
+        "Thymidylate synthase inhibition impairs dUMP-to-dTMP conversion; functionally mimics folate deficiency at the DNA synthesis step"
+      ],
+      [
+        "Phenytoin, Valproate",
+        "B9",
+        "Impair folate absorption and metabolism, producing megaloblastic anemia"
+      ],
+      [
+        "PPIs, H2 Blockers",
+        "B12",
+        "Reduce gastric acid, impairing proteolytic release of food-bound B12"
+      ],
+      [
+        "Metformin",
+        "B12",
+        "Reduces ileal B12 absorption; monitor B12 with long-term use"
+      ],
+      [
+        "dTMP = deoxythymidine monophosphate; DHFR = dihydrofolate reductase; dUMP = deoxyuridine monophosphate; PLP = pyridoxal phosphate; PPI = proton pump inhibitor; THF = tetrahydrofolate."
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

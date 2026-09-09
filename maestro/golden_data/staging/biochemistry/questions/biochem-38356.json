@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-38356",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Gaucher Disease: Due To Deficiency In Glucocerebrosidase"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_229",
+    "question_text": "<p>A 7-year-old girl is brought to the office because of worsening fatigue and bone pain for the last few months. She is now having difficulty walking as a result of the pain. Her parents also say that she bruises easily and that her skin appears pale compared with her siblings. Physical examination reveals several ecchymoses on her extremities. Her abdomen is distended with nontender, palpable hepatosplenomegaly. Laboratory studies show her hemoglobin level is 9.1 g/dL, leukocyte count is 3400 cells/mm 3 , and platelet count is 92,000 cells/mm 3 . A lower extremity x-ray shows necrosis of the left femoral head. Bone marrow aspirate results are shown in the image below:\nhttps://d2vrujxrqm3l5p.cloudfront.net/1d6359df-8c69-4374-8c6f-b00cc74c15c2.png \nDeficiency of which of the following enzymes is the most likely cause of this patient's symptoms?</p>",
+    "explanation_header": "<p>The correct answer is \u03b2-glucocerebrosidase.</p>",
+    "explanation_footer": "<p>https://d2vrujxrqm3l5p.cloudfront.net/d7da0b11-ca9e-43f2-abbc-1eea501ad9df.png \nIllustration \u00a9 TrueLearn, LLC\nGaucher disease , as seen here, is an autosomal recessive lysosomal storage disorder that is caused by \u03b2-glucocerebrosidase deficiency. It is the most prevalent genetic disorder among Ashkenazi Jews and leads to the accumulation of glucocerebroside, a glycolipid that is a component of both leukocyte and erythrocyte membranes. A characteristic finding seen in a bone marrow aspirate is the presence of lipid-laden macrophages (Gaucher cells). These cells are typically described as \"wrinkled tissue paper\" or \"crumpled newspaper.\"\nIn patients with Gaucher disease, symptom onset varies from childhood to early adulthood. Common features include bone pain (due to bone marrow inflammation), hepatosplenomegaly, and pancytopenia. As a result of pancytopenia, patients may also complain of pallor and fatigue (due to anemia) and easy bleeding and bruising (due to thrombocytopenia). Other potential manifestations include osteoporosis and avascular necrosis of the femoral head.\nhttps://d2vrujxrqm3l5p.cloudfront.net/7cbc5029-dc99-428f-a850-3a3427769dc4.png \nThe arrows point to some of the many Gaucher cells (lipid-laden macrophages) that are seen on bone marrow aspirate. Gaucher cells are often described as resembling \"wrinkled tissue paper.\"</p><p>Gaucher disease is caused by an autosomal recessive deficiency in \u03b2-glucocerebrosidase. Patients typically present with bone pain, pancytopenia, and hepatosplenomegaly. A bone marrow biopsy will reveal lipid-laden macrophages (Gaucher cells).</p>",
+    "main_topic": "Gaucher Disease",
+    "modifier": "Due To Deficiency In Glucocerebrosidase",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:38356"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-868467",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Krabbe Disease: Globoid Cells Are A Histopathological Finding"
+  },
+  "expected": {
+    "unique_name": "L1_XXX_S1_Bio_127",
+    "question_text": "<p>An 8-month-old female is brought to the emergency department following a seizure. The patient was adopted from Ukraine at the age of 3 months and her family history is unknown. Review of her medical records indicates that she is currently undergoing evaluation for developmental delay and feeding difficulties. Physical examination shows increased muscle tone and limb stiffness throughout all extremities. Additional testing shows a deficiency in galactocerebrosidase. Histopathological examination of this patient will most likely reveal</p>",
+    "explanation_header": "<p>The correct answer is multinucleated globoid cells.</p>",
+    "explanation_footer": "<p>Krabbe disease is a lysosomal storage disease and is characterized by a deficiency in galactocerebrosidase (galactosylceramidase) that occurs as a result of an autosomal recessive (AR) mutation in the GALC gene on chromosome 13. Accumulation of galactocerebroside (and psychosine) occurs as a result of this enzyme deficiency and leads to demyelination and oligodendrocyte damage. In the United States, patients are typically diagnosed in infancy via routine newborn screening; as such, question stems will often feature a patient that is adopted. \nOn the COMLEX, infantile-onset Krabbe disease is the most commonly tested form and patients will typically present within the first year of life with some combination of developmental delay, feeding difficulties, peripheral neuropathy, seizures, optic atrophy (resulting in blindness), and/or deafness. Around 85-90% of these patients will die prior to the age of 2 years. Note that there is a delayed-onset form of Krabbe disease that presents later in life with more mild symptoms (eg, slurred speech, developmental regression, esotropia); however, this presentation is not typically tested on COMLEX Level 1. \nIn addition to detection of the underlying enzyme deficiency, brain biopsy can be used to diagnose Krabbe disease and will show multinucleated macrophages with PAS+ inclusions (globoid cells). Note that for COMLEX Level 1, you should know both the slang term (globoid cells) and the actual, technical description of key histopathological findings. \nhttps://d2vrujxrqm3l5p.cloudfront.net/c4cb67a6-70c5-4c86-872b-7946b1cdbb89.png \nKrabbe disease is characterized by globoid cells -- multinucleated macrophages with PAS+ inclusions. Multiple globoid cells are seen in this biopsy specimen.\nKrabbe Disease\n| Etiology | - Lysosomal storage disease - Autosomal recessive - Deficiency in galactocerebrosidase \u2192 accumulation of galactocerebroside \u2192 demyelination |\n|---|---|\n| Clinical features | - Developmental delay and feeding difficulties - Irritability - Seizures - Spasticity and limb stiffness - Peripheral neuropathy - Optic atrophy \u2192 blindness - Deafness |\n| Histopathology | - Multinucleated globoid cells |</p><p>Krabbe disease is caused by an autosomal recessive deficiency in galactocerebrosidase (galactosylceramidase), and patients typically present with developmental delay, seizures, peripheral neuropathy, optic atrophy, and/or deafness. The presence of multinucleated globoid cells is a characteristic histopathological finding.</p>",
+    "main_topic": "Krabbe Disease",
+    "modifier": "Globoid Cells Are A Histopathological Finding",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:868467"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

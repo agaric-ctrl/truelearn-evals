@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-39930",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Alkaptonuria: Homogentisic Acid Oxidase Deficiency"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_004",
+    "question_text": "<p>A 32-year-old woman presents to the office for progressively worsening pain in her lower back and hips bilaterally. She says that she noticed the symptoms approximately 5 months ago and says that her pain has gotten worse during that time. She initially had relief with over-the-counter ibuprofen, but this has not given her any relief during the last month. On examination, she has dark blue pigmentation of the cartilage of the ears and her right sclera. A urine sample from this patient was left sitting out overnight and developed a dark brown color. This patient is likely deficient in which of the following enzymes?</p>",
+    "explanation_header": "<p>The correct answer is Homogentisic acid oxidase.</p>",
+    "explanation_footer": "<p>This patient is presenting with progressive arthritis of the lower back and hips at a young age. She also has blue pigmentation of the cartilage and sclera. These are all features of alkaptonuria, which occurs due to a deficiency of the enzyme homogentisic acid oxidase. This results in the accumulation of homogentisic acid, which can then be oxidized to a dark pigment. The pigment can accumulate in cartilage and collagenous tissue. \nPatients may develop degenerative arthritis, particularly of the lower back, hips, and knees as well as dark pigmentation of the cartilaginous surfaces and sclerae. Patients may also note that their urine turns black upon standing. The color change in urine is clinically tested by setting a urine sample out overnight at room temperature and assessing for color change. Unfortunately, there is no treatment for this disease.\nA flow chart of tyrosine metabolism is shown below, with steps affected by enzyme defects in specific disorders.\nhttps://d2vrujxrqm3l5p.cloudfront.net/9973a0f8-1a77-4ccc-905e-c14a59936e76.png \nIllustration \u00a9 TrueLearn, LLC\nhttps://d2vrujxrqm3l5p.cloudfront.net/97ee929d-a1f1-4ef9-85c7-9b66ba0dfb91.png \nOchronotic pigment on the sclera of the eyes.</p><p>Alkaptonuria is due to a deficiency of homogentisic acid oxidase, leading to dark pigmentation of the cartilage and urine that turns black upon standing. Patients may suffer from debilitating degenerative arthritis at an early age.</p>",
+    "main_topic": "Alkaptonuria",
+    "modifier": "Homogentisic Acid Oxidase Deficiency",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:39930"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

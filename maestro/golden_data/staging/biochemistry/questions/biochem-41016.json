@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-41016",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Acute Intermittent Porphyria: Due To Deficiency Of Porphobilinogen Deaminase"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_209",
+    "question_text": "<p>A 21-year-old woman comes to the emergency department because of severe abdominal pain that started this morning. She reports previously good health and is not taking any medications. She says she had red urine prior to arriving at the hospital. Her last menses was 10 days ago, and she is not currently sexually active. She admits to binge drinking at a college graduation party the previous evening. She has not had recent prolonged sun exposure. She does not have any flank pain or other musculoskeletal pain. She has not had symptoms like this in the past. Her vital signs are within normal limits. Upon physical examination, she has mild tenderness to palpation at the upper right abdominal quadrant. She does not have tenderness to percussion at her bilateral flanks. Neurosensory examination is intact. The remainder of the physical examination is unremarkable. Urinalysis results are negative for hematuria; however, urine \u03b4-aminolevulinic acid and porphobilinogen concentrations are increased. This patient most likely has a deficiency in which of the following?</p>",
+    "explanation_header": "<p>The correct answer is Porphobilinogen deaminase.</p>",
+    "explanation_footer": "<p>Acute Intermittent Porphyria\n| Pathophysiology | - Alcohol, CYP450 inducers, or starvation resulting in lower porphobilinogen deaminase activity - Autosomal dominant mutation of porphobilinogen deaminase |\n|---|---|\n| Clinical Features | - Abdominal pain - Red-colored urine - Peripheral neuropathy - Mental changes |\n| Laboratory Findings | - Increased urine porphobilinogen - Increased \u03b4-aminolevulinic acid |\nThis patient most likely has acute intermittent porphyria (AIP) based on abdominal pain, red urine without hematuria, and a recent history of excessive alcohol consumption. This disease is caused by a deficiency of porphobilinogen deaminase , which is necessary for proper heme synthesis. Patients with AIP have an accumulation of porphobilinogen (PBG) and \u03b4-aminolevulinic acid (ALA) in the urine. PBG is increased because of the inhibition of porphobilinogen deaminase, which, in turn, causes an increase in ALA because it is an upstream product of the heme synthesis pathway. For that reason, concentrations of both products would be increased. The condition can also be caused by an autosomal dominant mutation of porphobilinogen deaminase.\nMany patients are asymptomatic until flares of the disease are exacerbated by lifestyle changes. The first attack usually occurs between the ages of 18 and 40 years. PBG and ALA are present in the urine only during the episodes. No other heme disease features increased concentrations of these two byproducts. Of note, porphyria cutanea tarda (PCT) is more common than AIP. Treatment regimens include glucose and hemin.\nEpisodes of AIP often follow exacerbating factors including the following:\nAntiepileptic medications (CYP450 inducers) \nAlcohol consumption \nThe luteal phase of menses \nBelow is an illustration of the heme synthesis pathway. \nhttps://d2vrujxrqm3l5p.cloudfront.net/c8f3a049-9177-4ca1-9740-a0e1939848e1.png \nCommon disorders of the heme synthesis pathway: lead poisoning blocks aminolevulinic acid synthase (ALAS1) and ferrochelatase (FECH); acute intermittent porphyria (AIP) decreases porphobilinogen deaminase activity ; and porphyria cutanea tarda (PCT) decreases uroporphyrinogen decarboxylase (UROD) activity.</p><p>Acute intermittent porphyria is caused by a deficiency of porphobilinogen deaminase , leading to accumulations of \u03b4-aminolevulinic acid and porphobilinogen in the urine. Patients may have diffuse abdominal pain, mental changes, and red urine. This condition can be caused by an autosomal dominant mutation for porphobilinogen deaminase, or it can result from drugs, such as CYP450 inducers, and acute alcohol consumption.</p>",
+    "main_topic": "Acute Intermittent Porphyria",
+    "modifier": "Due To Deficiency Of Porphobilinogen Deaminase",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:41016"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

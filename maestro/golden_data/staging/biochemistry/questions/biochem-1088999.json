@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1088999",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Galactosemia: Inability To Metabolize Galactose To Glucose"
+  },
+  "expected": {
+    "unique_name": "L1_XXX_COMAT_XXX_S2_Ped_17281",
+    "question_text": "<p>A 7-day-old male newborn is brought to the emergency department with a 2-day history of fever, poor feeding, and persistent vomiting of large amounts. He was born at 39 weeks via uncomplicated cesarean delivery with normal Apgar scores. His mother says that he has been less active and his skin has a yellow tinge. She has been trying to breastfeed him every 2 hours. His birth weight was 4150 g (9.1 lbs) and on admission he weighs 3.6 kg (7.9 lbs). Vital signs are within normal limits. Physical examination reveals the patient is lethargic and jaundiced, with abdominal distention and hepatomegaly. Laboratory studies reveal:\n| Test | Patient's Value | Reference Range |\n|---|---|---|\n| Hemoglobin | 10.0 g/dL | 14.0-18.0 g/dL |\n| Leukocyte count | 20 x 10 3 /\u00b5L | 4.8-10.8 x 10 3 /\u00b5L |\n| Glucose | 42 mg/dL | 74-106 mg/dL |\n| Total bilirubin | 20 mg/dL | 0.2-1.2 mg/dL |\n| Direct bilirubin | 2.1 mg/dL | 0.0-0.4 mg/dL |\n| Alanine aminotransferase | 90 U/L | 13-40 U/L |\n| Aspartate aminotransferase | 94 U/L | 10-59 U/L |\nThe most likely cause of this patient's symptoms is the inability to metabolize which of the following?</p>",
+    "explanation_header": "<p>The correct answer is galactose.</p>",
+    "explanation_footer": "<p>The patient's symptoms and physical findings are consistent with classic galactosemia , an autosomal recessive disorder of galactose metabolism caused by deficiency of galactose-1-phosphate uridyltransferase (GALT), an enzyme responsible for the metabolism of galactose to glucose. Lactose is the main source of galactose, and it is present in breast milk and dairy products.\nTwo common disorders of galactose metabolism are of clinical importance:\nGalactokinase deficiency\u2014results in milder symptoms when compared to the severe form of classic galactosemia. Deficiency of galactokinase causes galactitol accumulation in the lens of the eye. Affected newborns typically present with bilateral cataracts in the first few weeks of life, which usually resolve through dietary restriction.\nGALT deficiency (classic galactosemia): Caused by deficiency of GALT. Affected newborns usually present in the first few days of life.\nIn this patient, GALT deficiency is the most likely cause of his symptoms. Newborns with classic galactosemia usually present with lethargy, jaundice, vomiting, hepatomegaly, failure to thrive, and sometimes neonatal sepsis. Early diagnosis and management of classic galactosemia are important because if left untreated, GALT deficiency can cause liver impairment, motor disorders, blindness, and death. Measurement of erythrocyte GALT activity is the gold standard for diagnosis. \nLaboratory findings in patients with classic galactosemia include hypoglycemia, increased liver enzyme activity, conjugated or unconjugated hyperbilirubinemia, and increased urinary and blood galactitol concentrations. A galactose-restricted diet is the primary treatment for patients with classic galactosemia. Breast milk or any formula containing lactose or galactose should be stopped immediately.\nhttps://d2vrujxrqm3l5p.cloudfront.net/059143bd-935b-435c-8cbb-1766378bc2bd.png</p><p>Classic galactosemia is a disorder of galactose metabolism caused by deficiency of galactose-1-phosphate uridyltransferase, an enzyme responsible for the metabolism of galactose (found in breast milk and cow's milk) to glucose, resulting in galactose accumulation and hypoglycemia. Affected patients usually present in the first few days of life with lethargy, jaundice, vomiting, hepatomegaly, failure to thrive, and sometimes sepsis.</p>",
+    "main_topic": "Galactosemia",
+    "modifier": "Inability To Metabolize Galactose To Glucose",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1088999"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-663107",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Acute Intermittent Porphyria: Defect In Porphobilinogen Deaminase"
+  },
+  "expected": {
+    "unique_name": "L1_XXX_S1_Bio_210",
+    "question_text": "<p>A 25-year-old female presents to the emergency department with acute-onset abdominal pain and confusion. Earlier this morning, she noticed that her urine was darker than normal and reddish-brown in color. She has experienced significant nausea and abdominal pain associated with alcohol and tobacco use, and as a result, she does not consume alcohol or use tobacco products. She is sexually active with one male partner and was recently prescribed a combination oral contraceptive pill. Her vital signs are stable. On physical examination, her abdomen is soft and nondistended; there is no tenderness to palpation. Imaging of the abdomen shows no abnormalities. Elevated urine levels of which of the following substances is most specific for the underlying cause of this patient's symptoms?</p>",
+    "explanation_header": "<p>The correct answer is porphobilinogen.</p>",
+    "explanation_footer": "<p>This patient's clinical presentation is consistent with acute intermittent porphyria (AIP). Porphyrias are hereditary or acquired conditions that result in defective heme synthesis and accumulation of heme precursors. With AIP, patients have an autosomal dominant defect in porphobilinogen deaminase that results in the accumulation of both porphobilinogen and aminolevulinic acid (ALA). Porphobilinogen is more specific for AIP than ALA.\nAffected patients typically present with some combination of abdominal pain, nausea, polyneuropathy, psychological disturbances, and reddish brown urine that darkens with exposure to air (\"port wine-colored urine\"). The root word porphyra means purple in Greek. Patients may report their urine to be red, brown, purple or some combination thereof.\nAcute Intermittent Porphyria\n| Pathophysiology | - Autosomal dominant - Mutation in porphobilinogen deaminase |\n|---|---|\n| Accumulated substrates | - Porphobilinogen - Aminolevulinic acid |\n| Clinical presentation | - Abdominal pain and nausea - Port wine-colored urine - Polyneuropathy - Psychological disturbances - Symptoms can be precipitated by: - cytochrome P-450 inducers (eg, oral contraceptives) - alcohol - tobacco - starvation |\n| Treatment | - Dextrose - Hemin |\nFor patients with AIP, symptoms are often precipitated by alcohol, tobacco, and medications that induce cytochrome P-450. Here, it is likely that this patient's symptoms developed due to her newfound usage of a combination oral contraceptive pill. Treatment of AIP includes intravenous dextrose and hemin. These agents are effective as treatment because they cause feedback inhibition of ALA synthase, the rate-limiting enzyme in heme synthesis. As a result of inhibited heme synthesis, patients experience a decrease in porphobilinogen production and a reduction in symptoms. \nhttps://d2vrujxrqm3l5p.cloudfront.net/fea0a377-2806-4195-b824-01ea32bf8a64.png \nThe illustration above shows the process of heme synthesis. In patients with AIP, mutations in porphobilinogen deaminase, resulting in an accumulation of porphobilinogen and ALA.</p><p>Acute intermittent porphyria is caused by an autosomal dominant mutation in porphobilinogen deaminase that results in the accumulation of porphobilinogen. Patients typically present with abdominal pain, polyneuropathy, psychological disturbances, and reddish urine. These symptoms are often exacerbated by alcohol, tobacco, and medications that induce cytochrome P-450.</p>",
+    "main_topic": "Acute Intermittent Porphyria",
+    "modifier": "Defect In Porphobilinogen Deaminase",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:663107"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

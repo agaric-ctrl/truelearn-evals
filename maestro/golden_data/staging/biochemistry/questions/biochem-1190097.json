@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1190097",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Vitamin B12 (cobalamin) Deficiency: Megaloblastic Anemia And Neurologic Changes"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_6221",
+    "question_text": "<p>A 54-year-old woman who is two years status post-bariatric surgery presents to her primary care physician for a routine checkup. She has lost 40 pounds and feels great, but does complain of numbness and weakness in both feet. Her medical history is significant only for obesity. Her vital signs are stable. Physical examination reveals a shiny tongue, and neurologic examination is significant for decreased vibration and position sense in both feet, symmetrically. A complete blood count shows: \n| Hemoglobin | 9.4 g/dL | 12.0-16.0 g/dL |\n|---|---|---|\n| Hematocrit | 32% | 37-47% |\n| Mean corpuscular volume (MCV) | 105 \u00b5m\u00b3 | 81-99 \u00b5m\u00b3 |\nOn microscopic examination of a peripheral blood smear, 10 percent of neutrophils (reference range 54-62%) have the appearance seen in the exhibit. The most likely diagnosis is</p>",
+    "explanation_header": "<p>The correct answer is vitamin B12 (cobalamin) deficiency.</p>",
+    "explanation_footer": "<p>Patients with vitamin B12 or folate deficiency present with megaloblastic anemia, a condition in which red blood cells are large and neutrophils are hypersegmented, ataxia, and paresthesias. Bariatric surgery is a risk factor for vitamin B12 deficiency.\nMegaloblastic anemia is defined by anemia accompanied by enlarged red blood cells (macrocytosis), indicated by elevated mean corpuscular volume or MCV, and hypersegmented neutrophils. Review of the peripheral blood smear by a pathologist is necessary to identify hypersegmented neutrophils. Normal neutrophils have three to four lobes. Neutrophils with five or more lobes are considered hypersegmented. The most common cause of megaloblastic anemia is disturbed hematopoiesis due to vitamin B12 or folate deficiency. Both of these vitamins are coenzymes necessary for the synthesis of methyl donors (methionine and S-adenosyl methionine) in DNA synthesis. Impaired, slowed DNA synthesis leads to open, immature chromatin (appears pale on microscopic examination), and enlarged nuclei in neutrophils and red blood cell precursors. Cytoplasmic maturation is not affected, since DNA synthesis does not occur there. This results in \u201cnuclear-cytoplasmic dyssynchrony,\u201d in which the nucleus is less mature than the cytoplasm.\nOther causes of megaloblastic anemia are copper deficiency, myelodysplasia, and certain medications. Neurologic symptoms are seen only in B12 deficiency, due to defective myelin synthesis of unknown pathogenesis. The neurologic symptoms are symmetrical paresthesias and ataxia in the legs and feet more often than the arms and hands. The most common cause of vitamin B12 deficiency (so-called pernicious anemia) is a deficiency of intrinsic factor, a protein made by the parietal cells of the stomach necessary for absorption of that vitamin. This is why bariatric surgery, atrophic gastritis, and anti-intrinsic factor antibody are risk factors for B12 deficiency. \nOther risk factors are tapeworm infestation, alcoholism (poor dietary intake), and strict vegetarianism (poor dietary intake). Interestingly, the tapeworm Diphyllobothrium latum preferentially uses vitamin B12 for its nutritional source.\nNonmegaloblastic, macrocytic anemia occurs in alcoholism, liver disease, and aplastic anemia. Reticulocytosis, as seen in hemolytic anemia, can also cause this picture since reticulocytes are large, immature red blood cells.\nhttps://d2vrujxrqm3l5p.cloudfront.net/30a7b4d2-1028-4416-873f-2c11890fecab.png \nVitamin A (retinoids) deficiency (choice A) is common worldwide but uncommon in the United States and is associated with ophthalmic symptoms, particularly night blindness and xerophthalmia (dry eyes), as well as poor bone growth in children.\nVitamin B1 (thiamine) deficiency (choice B) causes beriberi and Wernicke-Korsakoff syndrome. It has been reported in bariatric surgery patients and can present with bilateral, symmetrical peripheral neuropathy; however, it is not associated with megaloblastic anemia.\nVitamin B6 (pyridoxine) deficiency (choice C) is rare and presents with neuropathy and glossitis; however, the associated anemia is microcytic rather than macrocytic.\nVitamin D (cholecalciferol) deficiency (choice E) is typically asymptomatic, but with long-term deficiency, reduced absorption of calcium and phosphate lead to hyperparathyroidism and demineralization of bones, with associated pain and difficulty walking.</p><p>Patients who have undergone bariatric surgery are at risk for vitamin B12 deficiency, due to a decrease in gastric mucosa containing parietal cells. These cells synthesize intrinsic factor, a protein necessary for B12 absorption in the stomach. Vitamin B12 deficiency causes megaloblastic anemia and neurologic changes.</p>",
+    "main_topic": "Vitamin B12 (cobalamin) Deficiency",
+    "modifier": "Megaloblastic Anemia And Neurologic Changes",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:1190097"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

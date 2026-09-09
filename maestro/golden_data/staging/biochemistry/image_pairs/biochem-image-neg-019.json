@@ -1,0 +1,33 @@
+{
+  "example_id": "biochem-image-neg-019",
+  "source_type": "image_selection",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "image_url": "https://d2vrujxrqm3l5p.cloudfront.net/e9e7dabb-f0f5-4328-9505-14b3916376eb.png",
+    "candidate_topics": [
+      "DNA Repair Mechanisms",
+      "DNA Glycosylase",
+      "USMLE Step 1"
+    ]
+  },
+  "expected": {
+    "relevant": false,
+    "note": "constructed negative - topics borrowed from a different image (https://d2vrujxrqm3l5p.cloudfront.net/e6f42945-9bcd-4a9b-8cdc-c4fa129e40de.png)"
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "pair:constructed_negative"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

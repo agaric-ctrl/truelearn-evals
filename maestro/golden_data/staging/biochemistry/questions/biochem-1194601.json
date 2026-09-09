@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1194601",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Porphyria: Uroporphyrinogen Decarboxylase"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_COMSAE_11770",
+    "question_text": "<p>A 27-year-old female presents to the primary care physician with a complaint of non-healing blisters, erosions, and ulcers on the legs and dorsal hands which are shown in the exhibit. She also notes that her urine has become red over the past two weeks. She has been using oral contraceptive pills for the past two months. Her father has similar symptoms caused by alcohol. Vital signs reveal:\n| Temperature | 36.7\u00b0C (98.0\u00b0F) |\n|---|---|\n| Blood pressure | 120/80 mmHg |\n| Heart rate | 84/min |\n| Respiratory rate | 18/min |\nPhysical examination reveals hypertrichosis and hyperpigmentation. Laboratory studies are within normal limits. Which of the following enzymes is the most likely to be deficient in this patient?</p>",
+    "explanation_header": "<p>The correct answer is Uroporphyrinogen decarboxylase.</p>",
+    "explanation_footer": "",
+    "main_topic": "Porphyria",
+    "modifier": "Uroporphyrinogen Decarboxylase",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:adversarial",
+    "root_id:1194601"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

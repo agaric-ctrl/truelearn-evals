@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-39838",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Tay-Sachs Disease: Accumulate GM2 Ganglioside"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_023",
+    "question_text": "<p>A 5-month-old girl is brought to the office for concerns about development. At the age of 4 months, she was able to hold her head up and started to roll from her stomach to back. Now, her parents say that she is unable to do either one. She also does not babble or make other noises as she had previously. She will hold a toy when placed in her hand, but she is unable to transfer from one hand to the other. Her head circumference and weight have continued to track at the 60% and 75%, respectively. On examination, she is hypotonic, hyperreflexic, and not interactive with the physician. There is no hepatosplenomegaly. An image from fundoscopic examination is shown below:\nhttps://d2vrujxrqm3l5p.cloudfront.net/a32d3e88-91e7-4944-a39c-66ff26713d84.png \nThe cause of this patient's symptoms is associated with accumulation of which of the following substances?</p>",
+    "explanation_header": "<p>The correct answer is GM 2 ganglioside.</p>",
+    "explanation_footer": "<p>| | Niemann-Pick Disease | Tay-Sachs Disease |\n|---|---|---|\n| Genetics | Autosomal recessive | Autosomal recessive |\n| Deficient Enzyme | Sphingomyelinase | Hexosaminidase A |\n| Accumulated Substrate | Sphingomyelin | GM 2 ganglioside |\n| Clinical Features | - Neurodegeneration - Seizures - Cherry-red spot on the macula | |\n| - Hepatosplenomegaly - Foam cells (lipid-laden macrophages) | - No hepatosplenomegaly - Hyperreflexia - Hyperacusis - Lysosomes with onion skin | |\nOn the USMLE, the presence of a cherry red spot on the macula in a child is suggestive of either Niemann-Pick disease or Tay-Sachs disease. When asked to differentiate between the two, remember that Niemann-Pick disease is associated with hepatosplenomegaly whereas Tay-Sachs disease is not. Therefore, since this patient does not have hepatosplenomegaly, Tay-Sachs disease is the most likely diagnosis. \nTay-Sachs disease is a lysosomal storage disease and is caused by an autosomal recessive deficiency of hexosaminidase A. Hexosaminidase A normally functions to break down GM 2 ganglioside, and as such, patients with Tay-Sachs disease will have accumulation of GM 2 ganglioside. As a result of accumulation of GM 2 ganglioside, patients present with developmental delay, developmental regression, progressive neurodegeneration, and a cherry-red spot on the macula. Other, albeit less commonly tested features include hyperreflexia, hyperacusis, and lysosomes with onion skin. \nhttps://d2vrujxrqm3l5p.cloudfront.net/a6de2aef-9253-4ed3-a647-e8656e21f65b.png \nhttps://d2vrujxrqm3l5p.cloudfront.net/e4997dc5-99d6-4d06-8c1f-528ad8be2eae.png \nCherry-red spot is seen on the macula during fundoscopic examination. On the USMLE, this is typically seen in patients with Tay-Sachs disease or Niemann-Pick disease. However, it can also be seen in patients with Gaucher disease (rare) and retinal artery occlusion.</p><p>Tay-Sachs disease is caused by an autosomal recessive defect in hexosaminidase A, and this results in the accumulation of GM 2 ganglioside. Patients typically present with progressive neurodegeneration, developmental delay, and a cherry-red spot on the macula. Hepatosplenomegaly is not seen in patients with Tay-Sachs disease.</p>",
+    "main_topic": "Tay-Sachs Disease",
+    "modifier": "Accumulate GM2 Ganglioside",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:39838"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

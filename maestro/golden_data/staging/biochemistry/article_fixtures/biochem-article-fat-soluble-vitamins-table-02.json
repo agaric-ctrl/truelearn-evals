@@ -1,0 +1,74 @@
+{
+  "example_id": "biochem-article-fat-soluble-vitamins-table-02",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Fat-Soluble Vitamins.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Fat Malabsorption Syndromes"
+      ],
+      [
+        "Condition",
+        "Mechanism",
+        "Vitamins Affected",
+        "Clinical Pearl"
+      ],
+      [
+        "Cystic Fibrosis",
+        "Pancreatic exocrine insufficiency \u2192 \u2193 lipase \u2192 fat malabsorption",
+        "A, D, E, K",
+        "Vitamin K deficiency \u2192 abnormal bleeding (\u2191 PT)"
+      ],
+      [
+        "Celiac Disease",
+        "Villous atrophy \u2192 \u2193 absorptive surface",
+        "A, D, E, K",
+        "Vitamin A deficiency \u2192 night blindness risk factor"
+      ],
+      [
+        "Crohn Disease",
+        "Inflammation of terminal ileum \u2192 malabsorption",
+        "A, D, E, K + B\u2081\u2082",
+        "Also causes B\u2081\u2082 deficiency (terminal ileum is site of B\u2081\u2082 absorption)"
+      ],
+      [
+        "Cholestasis / Biliary Obstruction",
+        "\u2193 bile salts \u2192 \u2193 fat micelle formation",
+        "A, D, E, K",
+        "K deficiency \u2192 bleeding (tested with cholestyramine use)"
+      ],
+      [
+        "Abetalipoproteinemia",
+        "No chylomicrons formed \u2192 cannot absorb fat-soluble vitamins",
+        "A, D, E (most severely affected), K",
+        "Vitamin E deficiency \u2192 spinocerebellar ataxia, acanthocytosis"
+      ],
+      [
+        "Chronic Pancreatitis",
+        "\u2193 lipase secretion",
+        "A, D, E, K",
+        "Vitamin A deficiency is a specific risk factor"
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

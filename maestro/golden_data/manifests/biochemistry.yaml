@@ -1,0 +1,15 @@
+subject: Biochemistry
+source: BiochemistryQuestions.json
+snapshot_version: '2026-08-24T23:15:16.0066833Z'
+storage:
+  note: No real S3 bucket exists for this yet - these are LOCAL repo-relative paths,
+    not the s3:// convention the task doc's manifest template shows. Update once a
+    real snapshot storage location is confirmed.
+  questions: maestro/golden_data/manifests/biochemistry/BiochemistryQuestions.json
+  image_catalog: maestro/golden_data/manifests/biochemistry/BiochemistryImageCatalog.json
+reference_articles:
+- Fat-Soluble Vitamins.docx
+- Water-Soluble Vitamins.docx
+- Minerals_and_Trace_Elements.docx
+checksum_questions: sha256:1c3d6ecb42da2aa24cababa489a56ab7235707386699ce0eaccd503d2ff6ae95
+checksum_image_catalog: sha256:4605063ffc18c4b7d12b87abfdde5bc4c00d4ec7185531f07b835a56ef66e8d8

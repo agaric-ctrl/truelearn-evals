@@ -1,0 +1,28 @@
+{
+  "example_id": "biochem-article-fat-soluble-vitamins-reference-01",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Fat-Soluble Vitamins.docx",
+    "fixture_type": "reference"
+  },
+  "expected": {
+    "text": "Andr\u00e8s E, Lorenzo-Villalba N, Terrade JE, M\u00e9ndez-Bailon M. Fat-Soluble Vitamins A, D, E, and K: Review of the Literature and Points of Interest for the Clinician. J Clin Med. 2024;13(13):3641. doi:10.3390/jcm13133641"
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:reference"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

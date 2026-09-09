@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1194496",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Friedreich Ataxia: Impairment Of Mitochondrial Function"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_COMSAE_11048",
+    "question_text": "<p>A 12-year-old male is brought to the primary care physician by his mother with a complaint that he has been falling more than normal. She also notes that he has slurred speech. Physical examination reveals that he has absent deep tendon reflexes, decreased vibratory and proprioceptive senses, hammer toes, and mild kyphoscoliosis. Which of the following is the most likely cause of decreased vibratory and proprioceptive senses in this patient?</p>",
+    "explanation_header": "<p>The correct answer is Impairment of mitochondrial function.</p>",
+    "explanation_footer": "",
+    "main_topic": "Friedreich Ataxia",
+    "modifier": "Impairment Of Mitochondrial Function",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:adversarial",
+    "root_id:1194496"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,28 @@
+{
+  "example_id": "biochem-article-fat-soluble-vitamins-reference-02",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Fat-Soluble Vitamins.docx",
+    "fixture_type": "reference"
+  },
+  "expected": {
+    "text": "Giustina A, Bilezikian JP, Adler RA, et al. Consensus Statement on Vitamin D Status Assessment and Supplementation: Whys, Whens, and Hows. Endocr Rev. 2024;45(5):625-654. doi:10.1210/endrev/bnae009"
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:reference"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

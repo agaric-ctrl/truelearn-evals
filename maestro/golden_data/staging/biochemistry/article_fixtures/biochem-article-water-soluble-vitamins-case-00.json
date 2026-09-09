@@ -1,0 +1,29 @@
+{
+  "example_id": "biochem-article-water-soluble-vitamins-case-00",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Water-Soluble Vitamins.docx",
+    "fixture_type": "teaching_case",
+    "label": "Case 1: Wernicke Encephalopathy"
+  },
+  "expected": {
+    "body": "A 48-year-old man with chronic alcohol use disorder is brought to the emergency department with acute confusion and inability to walk. Examination shows horizontal nystagmus, bilateral lateral gaze palsy, and truncal ataxia. Diagnosis: Wernicke encephalopathy from thiamine deficiency; IV thiamine is given before any dextrose. Key teaching: the classic triad is complete in fewer than 20% of cases, so treat empirically when deficiency is suspected."
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:teaching_case"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

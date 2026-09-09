@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-5889",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Cause - Mucopolysaccharidosis Type I: Glycosaminoglycan Accumulation In Lysosomes"
+  },
+  "expected": {
+    "unique_name": "L1_BIOCHEM_007JH",
+    "question_text": "<p>A 5-month-old female is brought to the pediatrician for evaluation of poor feeding and chronic diarrhea. The mother is also concerned about a small bulge at the infant\u2019s umbilicus that becomes more prominent with crying. Physical examination reveals macrocephaly with bulging frontal bones, coarse facies, and hepatosplenomegaly. Ophthalmic examination reveals complete corneal opacification. Medical history reveals discharge from ears, repeated ear infections, weak eyesight, stiffness of joints, and breathing problems with repeated episodes of respiratory infections. Urinalysis revealed an increased amount of heparan sulfate and dermatan sulfate. Which of the following explains the pathophysiology of this disease?</p>",
+    "explanation_header": "<p>The correct answer is glycosaminoglycan accumulation in lysosomes.</p>",
+    "explanation_footer": "<p>This patient suffers from mucopolysaccharidosis type I, also known as Hurler syndrome . Hurler syndrome is a member of a group of inherited metabolic disorders that are caused by a deficiency of lysosomal enzymes required for the degradation of mucopolysaccharides or glycosaminoglycans (GAGs). GAGs are macromolecules that have several functions within cells and play a critical role in the structural integrity of connective tissue. Inability to degrade these products leads to accumulation of partially degraded GAGs in lysosomes . Over time, this results to thickening of tissue and impaired functioning of cells and critical organs. \nHurler syndrome is the most common mucopolysaccharidosis and is caused by an autosomal recessive, inherited nonsense mutation that results in decreased/absence of alpha-L-iduronidase. This prevents lysosomal breakdown of GAGs, specifically dermatan sulfate and heparan sulfate. Infants with Hurler syndrome usually appear healthy up to 9 months of age. Common presenting symptoms include chronic diarrhea and poor feeding, or parents may begin to see facial changes, such as macrocephaly, bulging frontal bones, depression of nasal bridge, enlarged lips, and/or protruding eyeballs. Many infants with Hurler syndrome are either born with umbilical or inguinal hernias or develop them during the first few months of life. \nOther clinical findings include hepatomegaly, valvular heart disease (commonly aortic valve thickening causing aortic regurgitation), obstructive airway disease (enlarged tonsils, adenoids, and tongue), developmental delay, hearing loss, skeletal deformities, and joint stiffness. Ophthalmic examination is very important in these patients because it allows one to differentiate between Hurler syndrome and the less severe mucopolysaccharidosis, Hunter disease (mucopolysaccharidosis type II). Unlike Hunter disease, progressive corneal clouding is common in Hurler syndrome and can begin during the first year of life. Clouding of the cornea has a ground-glass appearance and may lead to blindness.\nDiagnosis is based on detection of increased urinary excretion of heparan sulfate and dermatan sulfate and confirmed by demonstration of enzymatic deficiency in leukocytes or fibroblasts. Enzyme replacement therapy is available, and cord blood or stem cell replacement therapy has shown promise.</p><p>Lysosomal storage diseases describe a heterogeneous group of dozens of rare inherited disorders characterized by the accumulation of undigested or partially digested macromolecules, which ultimately results in cellular dysfunction and clinical abnormalities. Hurler syndrome is cause by a deficiency or absence of a-L-iduronidase, leading to heparan sulfate and dermatan sulfate accumulation in lysosomes and tissue. Hurler syndrome can be distinguished from Hunter disease by the presence of corneal clouding.</p>",
+    "main_topic": "Cause - Mucopolysaccharidosis Type I",
+    "modifier": "Glycosaminoglycan Accumulation In Lysosomes",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:5889"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

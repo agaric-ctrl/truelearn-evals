@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-41840",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Mucolipidosis Type Ii: 2-year-old-male Developmentally Delayed"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_105",
+    "question_text": "<p>A 2-and-a-half-year-old male is seen in the clinic for a routine checkup. The patient is known to have a disease involving protein metabolism. He has shown no growth in the past 8 months. He is severely developmentally delayed. He has coarse facial features and gingival hypertrophy. He has a noticeable umbilical hernia. Range of motion appears limited in all his extremities as he moves. Biopsy results in the patient\u2019s chart describe fibroblasts with significant vacuolization in the cytoplasm, as seen by electron microscopy. \nThis patient\u2019s disease is caused by an error that is best described by which of the following?</p>",
+    "explanation_header": "<p>The correct answer is Mannose phosphorylation.</p>",
+    "explanation_footer": "<p>This patient has I-cell disease, or mucolipidosis type II. This disease is a lysosomal storage disease caused by a defect in the enzyme, N-acetylglucosaminyl-1-phosphotransferase, which is responsible for mannose phosphorylation. Mannose phosphorylation is a method by which cells tag proteins for transport to the lysosome. Without this marking, the proteins that should be degraded simply are stored in a vacuole. Observing cells of mesenchymal origin with numerous cytoplasmic inclusions by electron microscopy is unique to I-cell disease. \nThe inheritance of I-cell disease is autosomal recessive. It presents at a young age, and patients die within the first decade of life. The signs and symptoms of I-cell disease are those that are described in the question stem. The coarse facial features and gingival hyperplasia are classic descriptors of I-cell disease. The skeletal system is affected most by this defect in trafficking. Many deformities of the skeletal system are visible by radiograph.</p><p>I-cell disease is a lysosomal storage disease caused by a defect in the enzyme, N -acetylglucosaminyl-1-phosphotransferase, which is responsible for mannose phosphorylation.</p>",
+    "main_topic": "Mucolipidosis Type Ii",
+    "modifier": "2-year-old-male Developmentally Delayed",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:41840"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

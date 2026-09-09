@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-39522",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Cystinuria: Mechanism Of Acetazolamide"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_078",
+    "question_text": "<p>A 23-year-old man comes to the office for a follow-up appointment. He was recently in the hospital with colicky flank pain and hematuria. He was diagnosed with a kidney stone and needed lithotripsy to break up the stone. He says that this was the third time he was in the hospital with kidney stones and would like to discuss medical treatment to prevent having another recurrence. On his previous admissions, he had bilateral, faintly radiopaque stones on abdominal x-ray. Microscopic evaluation of his urine shows the following:\nhttps://d2vrujxrqm3l5p.cloudfront.net/fe44a87b-ef5e-465e-ab44-d7471455e6c7.png \nHis physician prescribes a medication to decrease the likelihood of developing kidney stones in the future. Which of the following is the most likely mechanism of action of this new medication?</p>",
+    "explanation_header": "<p>The correct answer is Inhibition of carbonic anhydrase.</p>",
+    "explanation_footer": "<p>Cystinuria\n| Etiology/Pathophysiology | - Autosomal recessive inheritance of mutant amino acid transporter - Impaired dibasic amino acid reabsorption \u2192 increased excretion of cystine into the urine \u2192 precipitation of cystine in the urine |\n|---|---|\n| Clinical Features | - Recurrent nephrolithiasis - Can manifest in childhood, continues through adolescence and adulthood |\n| Diagnostics | - Microscopy \u2192 hexagonal crystals - Imaging \u2192 weakly opaque stones (not reliable) - Cyanide nitroprusside test of the urine will be positive (definitive diagnosis) |\n| Treatment | - Hydration - Alkalinization of the urine \u2192 acetazolamide, potassium citrate |\nThis young patient who has recurrent nephrolithiasis, weakly radiopaque stones, and hexagonal crystals on urine microscopy most likely has cystinuria . A key treatment for cystinuria is alkalinization of the urine, most commonly by administration of acetazolamide , a carbonic anhydrase inhibitor .\nCystinuria is caused by a mutation in the dibasic amino acid transporter in the kidney (and also the gastrointestinal tract). It is most frequently inherited in an autosomal recessive fashion. Patients can experience recurrent nephrolithiasis starting early in life. The definitive test for cystinuria is the sodium nitroprusside test, which will be positive in patients with increased concentrations of cystine in their urine. Urine microscopy also is commonly performed, where hexagonal crystals are seen. Because stones are weakly radiopaque, standard abdominal x-rays are minimally sensitive for detecting cystine stones.\nTreatment of cystinuria involves hydration (common amongst all causes of nephrolithiasis) and alkalinization of the urine as cystine precipitates more readily under acidic conditions. Treatment with acetazolamide promotes alkalinization of the urine by decreasing reabsorption of bicarbonate by the kidneys, thus leading to increased excretion of bicarbonate into the urine.\nhttps://d2vrujxrqm3l5p.cloudfront.net/fe44a87b-ef5e-465e-ab44-d7471455e6c7.png \nExample of hexagonal cystine crystals in the urine.</p><p>Patients with cystinuria have recurrent cystine kidney stones early in life. Acetazolamide can be used to alkalinize the urine, thus decreasing cystine precipitation.</p>",
+    "main_topic": "Cystinuria",
+    "modifier": "Mechanism Of Acetazolamide",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:39522"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

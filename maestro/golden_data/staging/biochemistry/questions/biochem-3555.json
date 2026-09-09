@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-3555",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Congenital Adrenal Hyperplasia: 21-hydroxylase Deficiency"
+  },
+  "expected": {
+    "unique_name": "L1_PEDS_001ECM-r",
+    "question_text": "<p>A newborn infant is born to a 19-year-old female. The infant's birth weight is 3.4 kg (7 lb 8 oz). Vital signs reveal marked hypotension. Neonatal examination reveals ambiguous genitalia consisting of a fused labia and an enlarged clitoris. Laboratory studies reveal:\n| Test | Patient's Value | Reference Range |\n|---|---|---|\n| Sodium | 132 mEq/L | 136\u2013145 mEq/L |\n| Potassium | 5.2 mEq/L | 3.5\u20135.1 mEq/L |\n| Chloride | 103 mEq/L | 98\u2013107 mEq/L |\n| Bicarbonate | 27 mEq/L | 22\u201329 mEq/L |\nThe most likely etiology of this newborn's hypotension is</p>",
+    "explanation_header": "<p>The correct answer is enzyme deficiency.</p>",
+    "explanation_footer": "<p>This patient likely has congenital adrenal hyperplasia , as suggested by her hyponatremia, hyperkalemia, hypotension, and ambiguous genitalia at birth. The most common cause of CAH is a deficiency of the 21-hydroxylase enzyme , which accounts for > 95% of cases. \nDeficiency of 21-hydroxylase results in reduced or absent conversion of progesterone to deoxycorticosterone, ultimately leading to decreased or absent aldosterone production. It also causes decreased or absent conversion of 17-hydroxyprogesterone to 11-deoxycortisol, which ultimately leads to decreased or absent cortisol production. The absence of 21-hydroxylase causes a loss of negative feedback from decreased cortisol synthesis, thereby increasing adrenocorticotropic hormone stimulation and androgen production.\nInfants born with CAH are categorized into classic or non-classic forms. In the classic form, the androgen excess in utero causes females to be born with atypical genitalia, including clitoral enlargement and labial fusion. Males with classic CAH typically have normal-appearing genitalia at birth. Patients with the classic form often experience precocious puberty and have a higher risk of developing adrenal crisis. The non-classic form may be asymptomatic or may present as precocious puberty, hirsutism, or menstrual irregularity in women.\nCAH is managed with hydrocortisone, mineralocorticoids, and sodium chloride supplements. If a patient presents in adrenal crisis, they receive glucocorticoids at stress doses. Frequent monitoring is required to adjust the doses. Management can also include surgery for females with atypical genitalia.\nCongenital Adrenal Hyperplasia\n| Etiology | - 21-hydroxylase deficiency (> 95% of cases) |\n|---|---|\n| Pathophysiology | - \u2193 21-hydroxylase \u2192 \u2193 conversion of progesterone to deoxycorticosterone \u2192 \u2193 aldosterone production - \u2193 21-hydroxylase \u2192 \u2193 conversion 17-hydroxyprogesterone to 11-deoxycortisol \u2192 \u2193 cortisol production \u2192 \u2191 ACTH release \u2192 \u2191 adrenal stimulation \u2192 \u2191 production of androgens |\n| Clinical presentation | - Classic: - Atypical genitalia (females) - Decreased mineralocorticoids - Decreased cortisol - Skin hyperpigmentation - Non-classic: - Early pubarche - Bone age advancement - Hirsutism - Menstrual irregularity - Skin hyperpigmentation |\n| Management | - Hydrocortisone - Mineralocorticoids - Sodium chloride supplements - Glucocorticoids if adrenal crisis |\nThe below flowchart illustrates the production pathways of aldosterone, cortisol, and dihydrotestosterone in the adrenal gland.\n https://d2vrujxrqm3l5p.cloudfront.net/b2ab0774-25cc-403c-975c-b30949bf6333.png</p><p>21-hydroxylase deficiency is characterized by hypotension, hyperkalemia, and increased renin activity, as well as masculinization and female pseudohermaphroditism.</p>",
+    "main_topic": "Congenital Adrenal Hyperplasia",
+    "modifier": "21-hydroxylase Deficiency",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:3555"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

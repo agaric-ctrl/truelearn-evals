@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-974299",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Poly-A Tail: Stabilization Of Nascent RNA"
+  },
+  "expected": {
+    "unique_name": "S1_Gen_2033",
+    "question_text": "<p>A researcher is designing a new chemotherapeutic medication that will inhibit modification of certain messenger RNAs transcribed from mutant oncogenes. The drug will make the messenger RNA susceptible to cytoplasmic degradation before it is translated into an oncogenic protein. What enzyme is most likely to be targeted by the drug?</p>",
+    "explanation_header": "<p>The correct answer is Poly-A polymerase.</p>",
+    "explanation_footer": "<p>This proposed drug will be designed to cause the oncogenic messenger RNA (mRNA) to degrade in the cytoplasm after it has been exported from the nucleus. The most likely process affected would be polyadenylation , the posttranscriptional addition of the poly-A tail to the mRNA molecule at the 3' end. Poly-A polymerase is the enzyme that catalyzes the addition of the poly-A tail to the mRNA transcript. \nAfter transcription of the gene terminates, multiple proteins cleave the 3' end of a newly produced mRNA transcript and start polyadenylation at the end produced by the cleavage. This site most often has the polyadenylation sequence AAUAAA . Poly-A polymerase builds the poly-A tail without a DNA template at the 3' end downstream to the consensus sequence. The poly-A tail comprises 200-250 adenosine nucleotides (~200 As).\nThe purpose of the poly-A tail is to protect the mRNA from enzymatic degradation in the cytoplasm after it is exported from the nucleus to the ribosomes for protein synthesis. The poly-A tail gradually gets shorter after the mRNA is translated multiple times, and mRNAs with short poly-A tails get degraded sooner, usually within hours.\nhttps://d2vrujxrqm3l5p.cloudfront.net/fab882f6-22e1-4f3b-9332-75511a1a0e63.png</p><p>Poly-A polymerase builds and adds the poly-A tail to the messenger RNA (mRNA) molecule posttranscriptionally and without a DNA template. The poly-A tail is added at the 3' end downstream to the consensus sequence (AAUAAA). This modification is important as it shields the mRNA molecule from enzymatic degradation in the cytoplasm after the mRNA leaves the nucleus.</p>",
+    "main_topic": "Poly-A Tail",
+    "modifier": "Stabilization Of Nascent RNA",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:974299"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

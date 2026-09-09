@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1163",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Hyperthyroidism: Ligand-Receptor Cross-Reactivity Of \u00df-Hcg And TSH"
+  },
+  "expected": {
+    "unique_name": "L1_ENDO_001JEC",
+    "question_text": "<p>A 23-year-old man with recently diagnosed testicular choriocarcinoma is referred to an endocrinologist because he has been experiencing sweating, weight loss, diarrhea, and a sensation that his heart is racing. He is currently on bleomycin for treatment of his cancer. The most likely pathophysiologic mechanism of the symptoms is the</p>",
+    "explanation_header": "<p>The correct answer is \u03b1 subunit cross-reactivity between human chorionic gonadotropin and thyroid-stimulating hormone.</p>",
+    "explanation_footer": "<p>This patient with recently diagnosed testicular choriocarcinoma likely has paraneoplastic hyperthyroidism , supported by his presentation of sweating, weight loss, diarrhea, and heart palpitations (eg, sensation that his heart is racing). Choriocarcinoma secretes large amounts of human chorionic gonadotropin (hCG) . The \u03b2 subunit of hCG is similar to that of luteinizing hormone (LH), explaining its gonadotropic effect. However, the \u03b1 subunit of hCG is similar to that of thyroid-stimulating hormone (TSH) , causing cross-reactivity . Consequently, patients can have symptoms of paraneoplastic hyperthyroidism.\nTSH, follicle-stimulating hormone (FSH), and LH are glycoproteins consisting of 2 subunits, \u03b1 and \u03b2. The \u03b1 subunits of TSH, FSH, and LH are identical and are synthesized from the same mRNA. The \u03b2 subunits for each hormone are different and have their own biologic specificity. However, compared to other hormones, the \u03b2 subunits contain some homology. The hCG is also structurally related to the TSH-FSH-LH hormone family. Patients with nonseminomatous testicular cancers can have markedly elevated levels of hCG. Due to hormone subunit homology, there is some cross-reactivity at certain hormone receptors . In 1 study, 3.5% of nonseminomatous germ cell tumor cases revealed clinical hyperthyroidism due to hCG and TSH cross-reactivity. Some testicular cancer patients can also exhibit gynecomastia through hCG and LH homology.\nChoriocarcinoma \n| Pathology | - Nonseminomatous germ cell tumor - Syncytiotrophoblast and cytotrophoblast cells - Hemorrhage and necrosis are seen grossly and microscopically |\n|---|---|\n| Clinical features | - Painless testicular mass - Hematogenous spread - Most commonly to lungs and brain (eg, cannonball metastasis) - Gynecomastia - \u03b2 subunit hCG cross-reactivity with LH receptor - Paraneoplastic hyperthyroidism - \u03b1 subunit hCG cross-reactivity with TSH receptor |\n| Tumor markers | - Markedly increased \u03b2-hCG - \u03b1-fetoprotein absent |\n| Treatment | - Radical orchiectomy with postsurgery chemotherapy/radiation - Survival depends on early detection |\n| hCG = human chorionic gonadotropin; LH = luteinizing hormone; TSH = thyroid-stimulating hormone. | |</p><p>Choriocarcinoma secretes large amounts of human chorionic gonadotropin (hCG). The \u03b2 subunit of hCG is similar to that of luteinizing hormone, explaining its gonadotropic effect. However, the \u03b1 subunit of hCG is similar to that of thyroid-stimulating hormone, causing cross-reactivity. Consequently, patients can have symptoms of paraneoplastic hyperthyroidism.</p>",
+    "main_topic": "Hyperthyroidism",
+    "modifier": "Ligand-Receptor Cross-Reactivity Of \u00df-Hcg And TSH",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1163"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

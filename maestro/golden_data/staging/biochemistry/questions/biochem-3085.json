@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-3085",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Carnitine Palmitoyltransferase Deficiency : Transport Of Long-Chain Fatty Acids"
+  },
+  "expected": {
+    "unique_name": "L1_BIOCHEM_002JEC",
+    "question_text": "<p>A 15-year-old female who is diagnosed with a defect in fatty acid oxidation presents to her pediatrician for a regular checkup. She indicates that the episodes of muscle pain, stiffness, and tenderness are at their worst during prolonged exercise. In the past, the patient was admitted to the intensive care unit twice as a child for rhabdomyolysis. Reduction of mitochondrial inner membrane transport of which of the following free fatty acids is most likely to cause the patient's presentation?</p>",
+    "explanation_header": "<p>The correct answer is icosanoic acid (C20:0).</p>",
+    "explanation_footer": "<p>This patient is most likely suffering from recurrent rhabdomyolysis secondary to a metabolic disorder, carnitine palmitoyltransferase deficiency , an enzyme that transports long-chain fatty acids ( icosanoic acid [C20:0] ) into the mitochondria. In patients with a deficiency of this enzyme, insufficient adenosine triphosphate (ATP) production leads to rhabdomyolysis and episodes of muscle pain, stiffness, and tenderness that usually occur during exercise or fasting, as seen in this patient. \nNote: Inborn errors of metabolism affecting fatty acid oxidation include enzyme deficiencies such as carnitine palmitoyltransferase, very long-chain acyl-coenzyme (CoA) dehydrogenase, and long-chain L-3 hydroxy acyl-CoA dehydrogenase deficiency.\nCarnitine palmitoyltransferase is an enzyme responsible for the transport of long-chain fatty acids from the cytosol to the mitochondria. The physiology of cellular damage in the setting of this enzyme deficiency is discussed below.\nArachidic acid, also known as eicosanoic acid, a saturated fatty acid with a 20-carbon chain, is a long-chain fatty acid and depends on carnitine palmitoyltransferase to be transported into the mitochondria for its catabolism.\nSince these long-chain fatty acids are unable to be moved into the mitochondria for metabolism, lipid accumulation occurs in muscle cells, leading to the buildup of fats.\nThe buildup of fats in the muscle cells eventually results in cell damage. In addition, an insufficient ATP supply to meet the energy demands of cardiac and skeletal muscle cells has clear adverse effects. \nUltimately, this energy supply and demand mismatch lead to rhabdomyolysis with resultant release of intracellular contents into the bloodstream. Products released into the blood include myoglobin and creatine kinase. Severely elevated levels of these compounds may potentially be toxic and can lead to renal failure and hyperkalemia.\nThe table below summarizes different fatty acids and their associated characteristics. \nFatty Acids and Their Properties\n| Fatty Acids | Number of Carbons | Example | Mitochondrial Transport |\n|---|---|---|---|\n| Short-chain fatty acids (SCFA) | 5 or fewer | \u2022 3-methyl butanoic acid (C5:0) \u2022 Pentanoic acid (C5:0) | Without transporter |\n| Medium-chain fatty acids (MCFA) | 6 to 12 | \u2022 Hexanoic acid (C6:0) \u2022 Octanoic acid (C8:0) | Without transporter |\n| Long-chain fatty acids (LCFA) | 13 to 21 | \u2022 Stearic acid (C18:0) \u2022 Icosanoic acid (C20:0) | With transporter |\n| Very long-chain fatty acids (VLCFA) | 22 or more | \u2022 Tetracosanoic acid (C24:0) \u2022 Hexacosanoic acid (C26:0) | Does not cross the mitochondrial inner membrane |</p><p>Carnitine palmitoyltransferase is an enzyme responsible for the transport of long-chain fatty acids from the cytosol to the mitochondria. Patients deficient in this enzyme will have episodes of muscle pain, stiffness, and tenderness, usually during exercise or fasting.</p>",
+    "main_topic": "Carnitine Palmitoyltransferase Deficiency ",
+    "modifier": "Transport Of Long-Chain Fatty Acids ",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:3085"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

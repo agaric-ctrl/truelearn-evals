@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1033666",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Aplastic Anemia: Increased Erythropoietin"
+  },
+  "expected": {
+    "unique_name": "L1_XXX_S1_HemeOnc_1861",
+    "question_text": "<p>A 35-year-old male presents to the office with the complaints of progressively worsening fatigue, exertional dyspnea, and easy bruising for several weeks. He has no significant past medical history and does not take any medications. Vital signs reveal:\n| Temperature | 37\u00b0C (98.6\u00b0F) |\n|---|---|\n| Blood pressure | 110/76 mmHg |\n| Heart rate | 109/min |\n| Respiratory rate | 22/min |\nPhysical examination reveals conjunctival pallor and scattered bruises on his trunk and extremities. Cardiopulmonary examination reveals mild sinus tachycardia. His abdomen is soft and nontender, and there is no hepatosplenomegaly. Laboratory studies reveal:\n| Test | Patient's Value | Reference Range |\n|---|---|---|\n| Hemoglobin | 7.2 g/dL | 14.0\u201318.0 g/dL |\n| Mean corpuscular volume | 90 mcm 3 | 80\u201394 mcm 3 |\n| Leukocyte count | 2.3 x 10 3 /mcL | 4.8\u201310.8 x 10 3 /mcL |\n| Platelet count | 42 x 10 3 /mcL | 130\u2013400 x 10 3 /mcL |\n| Serum creatinine | 0.7 mg/dL | 0.7\u20131.3 mg/dL |\nA bone marrow biopsy reveals hypocellular marrow filled with fat and stroma. Further evaluation will most likely reveal an increased concentration of</p>",
+    "explanation_header": "<p>The correct answer is erythropoietin.</p>",
+    "explanation_footer": "<p>The laboratory findings and bone marrow biopsy results for this patient are consistent with aplastic anemia . As such, further evaluation would be expected to show an increased erythropoietin (EPO) concentration .\nAplastic anemia is a form of bone marrow failure that occurs when hematopoietic stem cells are destroyed by either direct cytotoxic injury or cytotoxic T cells. Loss of these multipotent stem cells results in pancytopenia and clinical manifestations related to anemia (eg, fatigue, pallor), leukopenia (eg, infections), and/or thrombocytopenia (eg, bruising, epistaxis). As a result of stem cell destruction, bone marrow biopsy will show hypocellular marrow with an abundance of lipids.\nAs seen with other forms of anemia, decreased oxygen delivery to tissues results in tissue hypoxia, which will in turn stimulate the production of EPO in the kidney. Therefore, as long as renal function is appropriate (as is the case in this patient with a normal serum creatinine), EPO concentrations will be increased. However, because of the reduced amount of functioning hematologic stem cells, EPO cannot stimulate erythrocytosis, and reticulocytes are inappropriately low. Note that because the erythrocytes produced are normal in size and appearance, evaluation will show a normocytic anemia (normal mean corpuscular volume).\nThe laboratory profile of aplastic anemia is:\nPancytopenia with normocytic anemia\nIncreased EPO\nDecreased reticulocytes\nNo signs of hemolysis (eg, haptoglobin and lactate dehydrogenase concentrations are normal)\nAplastic Anemia\n| Pathophysiology | - Bone marrow failure caused by damage to hematopoietic stem cells |\n|---|---|\n| Common causes * | - Autoimmune disease (eg, systemic lupus erythematosus) - Exposure (eg, chemotherapy, immunosuppressants, radiation, toxins) - Viral infection (eg, HIV, viral hepatitis) |\n| Clinical presentation | Patients have complications of pancytopenia, including: - Anemia: dyspnea, fatigue, pallor - Leukopenia: infections - Thrombocytopenia: bleeding and bruising |\n| Diagnosis | - Normocytic anemia with a low reticulocyte count - Peripheral smear: \u2193 quantity of morphologically normal cells - Bone marrow biopsy: hypocellular marrow with \u2191 stroma and adipocytes |\n| * Most cases are idiopathic. | |</p><p>Aplastic anemia is characterized by pancytopenia with normocytic anemia, decreased reticulocytes, and no signs of hemolysis. Assuming that renal function is normal, erythropoietin concentrations will be increased as a compensatory response to tissue hypoxia.</p>",
+    "main_topic": "Aplastic Anemia",
+    "modifier": "Increased Erythropoietin",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1033666"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

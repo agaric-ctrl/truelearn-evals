@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1190447",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Zollinger-Ellison Syndrome: Gastrin"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_16110",
+    "question_text": "<p>A 44-year-old female presents to the clinic with abdominal pain and diarrhea. She also complains of chronic diarrhea and burning abdominal pain for the last several weeks. The patient has a past medical history of persistent gastroesophageal reflux disease and two peptic ulcers. The physical examination reveals:\n| Blood pressure | 118/71 mmHg |\n|---|---|\n| Heart rate | 65/min |\n| Respiratory rate | 13/min |\nThe abdominal examination is unremarkable. The remainder of the examination is non-contributory. Further diagnostic testing reveals a recurrent peptic ulcer and a pancreatic mass. Which of the following is involved?</p>",
+    "explanation_header": "<p>The correct answer is Gastrin.</p>",
+    "explanation_footer": "<p>Zollinger-Ellison syndrome describes a syndrome associated with gastrinomas, a gastrin-secreting tumor. Look for recurrent peptic ulcer disease, gastroesophageal reflux disease (GERD), and chronic diarrhea.\nGastrin is normally produced by gastric G cells in response to the ingestion of peptides and amino acids, distension of the stomach, and vagal stimulation. Gastrin stimulates gastric acid secretion. The symptoms of Zollinger-Ellison syndrome are reflective of excessive gastric acid secretion. Zollinger-Ellison Syndrome is commonly sporadic but can also be part of the multiple endocrine neoplasia type 1 familial syndrome. The diagnosis is made with an elevated fasting serum gastrin followed by a secretin injection test. The normal response to secretin is an inhibition of gastrin production. After administration, gastrin levels are measured again, and if still elevated, the patient is diagnosed with gastrinoma. The tumor location is determined with ultrasound or radionuclide octreotide scanning.\nGhrelin (choice B) is a peptide produced primarily by the cells of the gastric fundus. Ghrelin acts on the hypothalamus to stimulate appetite and increase food intake. Patients with Prader-Willi syndrome have elevated plasma ghrelin levels.\nMotilin (choice C) is a peptide secreted by gastric, intestinal, and colonic enterochromaffin cells and Mo cells. Motilin controls gastrointestinal motility during the fasting state via migrating motor complexes. It acts on G-protein receptors in the intestines and colon and causes increased motility of the stomach and intestines. Thus, nausea, vomiting, and diarrhea are common adverse effects of erythromycin and other macrolide antibiotics due to motilin agonist activity.\nNitric oxide (choice D) deficiency is seen with achalasia, which is a result of the loss of nitric oxide-releasing neurons that normally dilate the lower esophageal sphincter. Look for progressively worsening dysphagia for both liquids and solids and weight loss. Manometry will reveal decreased peristalsis and an increased tone in the lower esophageal sphincter.\nVasoactive intestinal peptide (choice E) is a hormone secreted by the pancreas that is vasoactive in the intestines and several other tissues. It is a member of the secretin/glucagon family of peptide hormones. It stimulates glycogenolysis, relaxes the smooth muscle of the stomach and gallbladder, stimulates the secretion of water into pancreatic juices and bile, and leads to the secretion of water and electrolytes within the intestines which can cause diarrhea.</p><p>Zollinger-Ellison syndrome describes a syndrome associated with gastrinomas, a gastrin-secreting tumor. Look for recurrent peptic ulcer disease, gastroesophageal reflux disease (GERD), and chronic diarrhea.</p>",
+    "main_topic": "Zollinger-Ellison Syndrome",
+    "modifier": "Gastrin",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1190447"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

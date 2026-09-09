@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1190460",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Huntington Disease: Chromosome 4"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_16128",
+    "question_text": "<p>A 35-year-old male presents to the clinic with memory impairment. The patient complains of worsening long-term memory which he began to notice two to three months ago. In addition, the patient describes bothersome, uncontrollable movements of his arms for the last month. The patient has no past medical history. Family history is unknown as the patient was adopted. The patient denies any alcohol, tobacco, or illicit drug use. Physical examination reveals:\n| Blood pressure | 112/73 mmHg |\n|---|---|\n| Heart rate | 86/min |\n| Respiratory rate | 14/min |\nNeurologic examination is positive for intermittent involuntary, writhing movements of both arms. Mini-Mental State Examination score is 20. The remainder of the examination is noncontributory. A mutation on which of the following is responsible for the patient\u2019s condition?</p>",
+    "explanation_header": "<p>The correct answer is Chromosome 4.</p>",
+    "explanation_footer": "<p>Huntington disease is a degenerative neurocognitive disease characterized by repeat expansion of the CAG trinucleotide on the huntingtin gene on chromosome 4. Patients have involuntary choreiform movements (writhing, snakelike movements) and gradually progressive dementia.\nHuntington disease is an autosomal dominant condition that affects adults between the ages of 20 and 50 years. Huntington\u2019s disease is a trinucleotide repeat disorder with repetitious CAG\u2019s on the huntingtin ( HTT ) gene on chromosome 4. In large amounts, this protein will cause destruction and damage within the brain causing depression, dementia, caudate atrophy, snake-like movements of the arms (chorea), and depressed GABA and acetylcholine levels. Unfortunately, due to the timing of symptom presentation, Huntington disease is usually diagnosed after the patient has already chosen to procreate. This autosomal dominant condition carries a 50 percent chance of being passed down to offspring. Without treatment options, Huntington disease carries a grim prognosis. The most common cause of death is from pneumonia due to muscle weakness (because of the decreased capacity to clear the lungs and increased risk of aspirating food and drink).\nA mutation on chromosome 3 (choice A) is associated with von Hippel-Lindau disease, the gene that is mutated results in a defective VHL tumor suppressor. This syndrome is characterized by bilateral retinal hemangioblastomas, pheochromocytomas, and bilateral renal cell carcinoma.\nA mutation on chromosome 5 (choice C) is associated with familial adenomatous polyposis (FAP). It is caused by a deletion of the tumor suppressor gene, APC . Patients present with hundreds to thousands of benign colonic polyps and carry a 100 percent risk of progression to colon cancer if not treated. Patients should receive a total colectomy to avoid the development of cancer.\nA mutation on chromosome 16 (choice D) is associated with autosomal dominant polycystic kidney disease (ADPKD). It results in an increased risk of developing renal cell carcinoma. It presents with abdominal pain, fullness, and hematuria when the cysts burst.\nA mutation on chromosome 22 (choice E) is associated with neurofibromatosis type 2 and produces a defect in the NF2 gene (on chromosome 22). Patients present with bilateral acoustic neuromas (usually developing by age 30), multiple cutaneous and subcutaneous tumors, spinal tumors, cranial nerve tumors, and cataracts.</p><p>Huntington disease is neurodegenerative, causing the patient to develop dementia and involuntary choreiform (dancing-like) movements. Huntington disease is due to a deformed huntingtin gene on chromosome 4.</p>",
+    "main_topic": "Huntington Disease",
+    "modifier": "Chromosome 4",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1190460"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

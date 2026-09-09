@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-190967",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Acid Maltase Deficiency: Pompe Disease"
+  },
+  "expected": {
+    "unique_name": "L1_PEDS_001SM_3",
+    "question_text": "<p>A 4-month-old male presents to the emergency department with acute on chronic findings of severe generalized hypotonia, muscle weakness, respiratory distress, and failure to thrive. He has been followed by his pediatrician who has ordered a referral to a specialist, but these appointments have not yet occurred. Physical exam reveals a cachectic infant with profound muscle atrophy. A chest radiograph shows cardiomegaly and an electrocardiogram reveals a short PR interval with giant QRS complexes in all leads, suggesting biventricular hypertrophy. Laboratory tests show increased serum creatine kinase, lactate dehydrogenase, and aspartate aminotransferase. No acidosis or hypoglycemia is detected. Given these findings, what is the most likely causative enzyme deficiency in this infant?</p>",
+    "explanation_header": "<p>The correct answer is alpha-1,4-glucosidase.</p>",
+    "explanation_footer": "<p>This clinical scenario is indicative of the infantile-onset form of acid alpha-glucosidase (GAA), also called acid maltase deficiency . This disorder was the first identified lysosomal storage disease and is also classified as glycogen storage disease (GSD) type II or Pompe disease. Infantile onset (classic) GAA deficiency typically presents during the first few months of life at a median age of approximately 4 months and typically includes cardiomegaly, respiratory distress, muscle weakness, feeding difficulties, and failure to thrive, as seen in this patient. \nNote: The electrocardiogram reveals a short PR interval with giant QRS complexes in all leads, suggesting biventricular hypertrophy, although this is not unique to GAA deficiency. Labs also will reveal no acidosis or hypoglycemia, but elevated aspartate transaminase, lactate dehydrogenase, and creatine phosphokinase is common. \nLysosomal GAA is needed to hydrolyze both alpha-1,4- and alpha-1,6-glucosidic linkages in the low pH environment of the lysosome, and deficiency of the enzyme leads to the accumulation of glycogen in lysosomes and in the cytoplasm. This results in tissue destruction with skeletal, cardiac, and smooth muscle most prominently involved. \nAlthough all patients with GSD type II share the same general disease course, with a steady accumulation of glycogen substrate in target tissues leading to progressive debilitation, organ failure, and/or death, severity varies by age of onset, and organ involvement including degree and severity of muscular involvement and rate of progression. \nEnzyme activity correlates with genotype and is absent or minimal in patients with the infantile-onset phenotype and variably reduced in those with the late-onset phenotype. GAA enzyme activity can be measured in white blood cells or dried blood spots. Gene sequencing is the preferred test to confirm the diagnosis of GSD type II because it is routinely available and may provide genotype-phenotype information.\nThere are many similarly appearing conditions and the table below compares the similarities between these differential diagnoses.\nDifferential Diagnosis for Acid Maltase Deficiency (Pompe Disease)\n| Differential Diagnosis | Disease Similarities |\n|---|---|\n| Werdnig-Hoffman disease (spinal muscular atrophy I) | \u2022 Hypotonia \u2022 Progressive proximal myopathy \u2022 Absent reflexes |\n| Hypothyroidism | \u2022 Hypotonia \u2022 Macroglossia |\n| Glycogen storage disease IIIa (Cori disease) | \u2022 Cardiomegaly \u2022 Myopathy \u2022 Elevated creatine kinase |\n| Mitochondrial/Respiratory chain disorders | \u2022 Hepatomegaly \u2022 Muscle weakness \u2022 Cardiomegaly \u2022 Elevated creatine kinase |\n| Congenital muscular dystrophy | \u2022 Severe hypotonia \u2022 Muscle weakness |</p><p>The infantile form of alpha-1,4-glucosidase deficiency (GSD type II, acid maltase deficiency, Pompe disease) results in myopathy affecting multiple organ systems. Key clinical features include severe generalized hypotonia, muscle weakness, respiratory distress, failure to thrive, and cardiomegaly with presentation early in childhood.</p>",
+    "main_topic": "Acid Maltase Deficiency",
+    "modifier": "Pompe Disease",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:190967"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

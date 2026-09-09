@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-37708",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Hardy Weinberg Equation Application: 70 Percent"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_145",
+    "question_text": "<p>A 27-year-old woman delivers her first child via spontaneous vaginal delivery. She reports no complications with pregnancy or delivery. He fails to pass meconium within the first 24 hours of life. A sweat chloride test is positive. His parents are told that he likely has a disease affecting his lungs and digestion. If the population is in equilibrium, and 91% of the population is without this disease, what is the prevalence of the normal allele?</p>",
+    "explanation_header": "<p>The correct answer is 70%.</p>",
+    "explanation_footer": "<p>This child has cystic fibrosis. He has meconium ileus, which is the failure to pass meconium within the first 24 hours of life, and a positive sweat chloride test. Cystic fibrosis is an autosomal recessive disease. To answer the question, you need to understand the Hardy-Weinberg equilibrium equations. To estimate disease prevalence:\np2 + 2pq + q2 = 1\nTo estimate allele prevalence:\np + q = 1\nIn both equations, p refers to the wild type allele and q refers to the mutated allele. In this example, the p allele is dominant and the q allele is recessive. The question asks for the prevalence of the wild type allele (p). Given the information provided, you know the prevalence of people who are not affected. This includes people who are homozygotes for the wild type allele and those that are heterozygotes (p2 + 2pq). You can calculate the prevalence of people with the disease.\nDiseased = q2 = 1 \u2013 (p2 + 2pq) = 1 \u2013 0.91 = 0.09\nThen you are able to determine the prevalence of the mutated allele (q).\nq2 = 0.09 = (0.3)(0.3); therefore q = 0.3\nNow you are able to calculate the prevalence of the wild type allele.\nWild type allele = p = 1 \u2013 q = 1 \u2013 0.3 = 0.7 = 70%</p><p>Hardy-Weinberg equations are p + q = 1 for allele frequency and p2 + 2pq + q2 = 1 for disease frequency.</p>",
+    "main_topic": "Hardy Weinberg Equation Application",
+    "modifier": "70 Percent",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:37708"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

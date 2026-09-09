@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-5601",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Tay-Sachs Disease: Beta-hexosaminidase A Deficiency"
+  },
+  "expected": {
+    "unique_name": "L1_BIOCHEM_009NMB_2",
+    "question_text": "<p>The foster parents of a 5-month-old boy bring their child in for concerns of recent abuse. They recently took the child in but were told that the child was developing well as per his 3-month well-child check. Now they have noticed that he appears to have decreased vision and startles easily. In addition, he doesn't seem to be meeting the milestones they have seen with their previous children. Physical examination reveals no bruising, fractured bones, or signs of obvious trauma. Respiratory, cardiac, musculoskeletal, and abdominal examination are normal. A fundoscopic examination is shown in the exhibit. Which of the following biochemical deficiencies is most associated with this patient\u2019s condition?</p>",
+    "explanation_header": "<p>The correct answer is \u03b2-hexosaminidase A.</p>",
+    "explanation_footer": "<p>Infantile onset Tay-Sachs disease is characterized by normal development until about 5 months of age when relentless neurodegeneration results in death around 5 years of age. Characteristics include a decline in gross motor skills, paralysis, cognitive disability, and blindness. The child will have delays in motor skills such as playing with toys and walking. Hyperacusis, a heightened startle response, is noted secondary to blindness as well as decreased eye contact. A deficiency in \u00df-hexosaminidase A causes Tay-Sachs disease leading to an accumulation of gangliosides in the lysosomes of the central nervous system. \nNote: A key fundoscopic physical exam finding is cherry red spots on the macula of the patient, which is due to the accumulation of lipid in retinal ganglion cells surrounding the macula. Cherry red spots are also observed in Niemann-Pick disease (another sphingolipidosis), but patients with Niemann-Pick exhibit hepatosplenomegaly while those with Tay-Sachs do not.\nTay-Sachs disease is an autosomal recessive, lysosomal storage disease classified as a sphingolipidosis. Along with Tay-Sachs, the other sphingolipidoses include the following:\nNiemann-Pick\nGaucher\nKrabbe\nFabry\nMetachromatic leukodystrophy\nAll are autosomal recessive except for Fabry disease, which is X-linked recessive. Tay-Sachs is most prevalent in individuals with Ashkenazi Jewish, Cajun, and French-Canadians from southeast Quebec descent (carrier frequency 1 in 30; 1 in 3500 live births in each ethnic group).\nAt present, there is no treatment for Tay-Sachs, and most patients die within 3-5 years of birth. The table shows the enzymes affected and the metabolites that accumulate in a number of sphingolipidoses.\nEnzyme Deficiencies and Associated Pathology\n| Disease | Enzyme Affected | Metabolite Accumulated |\n|---|---|---|\n| Fabry | \u03b1-Galactosidase | Globosides |\n| Gaucher | \u03b2-Glucosidase (glucocerebrosidase) | Glucocerebrosides |\n| Krabbe | \u03b2-Galactosidase (galactocerebrosidase) | Galactocerbrosides |\n| Niemann-Pick | Sphingomyelinase | Sphingomyelin |\n| Tay-Sachs | \u03b2-Hexosaminidase A | Ganglioside GM2 |\n| Metachromatic leukodystrophy | Arylsulfatase A | Sulfatides |\nThe below image is a fundoscopic exam showing a cherry red spot (arrow), as seen in Tay Sachs disease. The macula appears bright red because it is surrounded by a milky halo, which is due to the accumulation of lipid in retinal ganglion cells.\nhttps://d2vrujxrqm3l5p.cloudfront.net/d8527881-6b30-4e38-929e-8834b1d924ae.png</p><p>Tay-Sachs disease is due to a deficiency in the enzyme \u03b2-hexosaminidase A. Ganglioside GM2 accumulates leading to rapid and fatal neurodegeneration.</p>",
+    "main_topic": "Tay-Sachs Disease",
+    "modifier": "Beta-hexosaminidase A Deficiency",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:5601"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

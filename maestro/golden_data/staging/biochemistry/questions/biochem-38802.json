@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-38802",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Pentose Phosphate Pathway: Transketolase"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_291",
+    "question_text": "<p>A researcher is studying a novel agent that is hypothesized to interfere with several reactions involved in metabolism. In order to determine whether the drug affects a particular pathway, the researcher develops assays to measure the formation of product or disappearance of reactant for the key reactions of several pathways. When the drug is added, the concentration of products being produced by the hexose monophosphate (HMP) shunt is decreased. If the drug interferes with a nonoxidative step in the HMP shunt, which of the following enzymes is most likely affected?</p>",
+    "explanation_header": "<p>The correct answer is Transketolase.</p>",
+    "explanation_footer": "<p>https://d2vrujxrqm3l5p.cloudfront.net/fffbb3e2-46d7-403f-a3e3-06997052378a.png \nThe hexose monophosphate (HMP) shunt, also known as the pentose phosphate pathway , is a pathway that shunts glucose-6-phosphate away from glycolysis and into the synthesis of other key molecules when glucose is abundant. The rate-limiting step is the irreversible oxidation of glucose-6-phosphate to 6-phosphogluconolactone by glucose-6-phosphate dehydrogenase (G6PD), followed by the hydrolysis of 6-phosphogluconolactone by gluconolactonase and oxidative decarboxylation of the product by 6-phosphogluconate dehydrogenase to produce ribulose-5-phosphate. These oxidative reactions also produce two molecules of NADPH, which is subsequently used in many important reduction reactions, such as the reduction of glutathione in erythrocytes. \nRibulose-5-phosphate is then able to undergo transformation in a series of reversible nonoxidative reactions into ribose-5-phosphate, which is used in nucleic acid synthesis, or several other sugars (such as fructose-6-phosphate and glyceraldehyde-3-phosphate) that can subsequently enter glycolysis. The enzymes participating in these non-oxidative transformations are transketolase and transaldolase .</p><p>The enzymes that catalyze the nonoxidative reactions of the HMP shunt involved in the transformation of ribulose-5-phosphate into other sugars are called transketolase and transaldolase.</p>",
+    "main_topic": "Pentose Phosphate Pathway",
+    "modifier": "Transketolase",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:38802"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

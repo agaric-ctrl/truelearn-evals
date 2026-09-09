@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1011",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Gilbert Syndrome: Reduced Glucuronyl Transferase Activity"
+  },
+  "expected": {
+    "unique_name": "L1_GASTRO_012ECM-r",
+    "question_text": "<p>A 19-year-old male presents to the office stating that his friends have been saying that he sometimes looks \u201ca little yellow.\u201d He is overweight and recently began a new diet plan that includes intermittent fasting. After a short history and physical examination, the physician assures the patient that he is healthy. Laboratory studies reveal an elevated indirect bilirubin. One week later, his bilirubin is normal. Which mechanism best explains the pathogenesis of the most likely diagnosis?</p>",
+    "explanation_header": "<p>The correct answer is reduced glucuronyl transferase activity.</p>",
+    "explanation_footer": "<p>This patient likely has Gilbert syndrome , as indicated by intermittent asymptomatic jaundice exacerbated by fasting. Gilbert syndrome is an inherited disorder that causes transient but usually asymptomatic unconjugated hyperbilirubinemia. Gilbert syndrome is among the most common causes of hyperbilirubinemia and affects ~ 5-7% of the population, with males affected more commonly than females. Affected patients may have a family history of similar symptoms, but absence of a family history does not rule out Gilbert syndrome.\nGilbert syndrome results from decreased bilirubin conjugation due to mildly reduced activity of uridine diphosphate glucuronyl transferase (UDPGT),an enzyme encoded by UGT1A1 . A noncoding mutation in the promoter region of UGT1A1 causes decreased transcription and diminished levels of the resulting protein, leading to UDPGT deficiency. Although baseline levels of UDPGT are sufficient to manage normal bilirubin metabolism, the system becomes overwhelmed during periods of stress. Patients may become jaundiced with fasting, illness, stress, or alcohol consumption. This patient's recent history of fasting is a common trigger for jaundice in patients with Gilbert syndrome.\nGilbert syndrome typically is diagnosed based on clinical history and laboratory evaluation. Genetic testing, while not necessary, may be used for diagnostic confirmation. A clinical history of asymptomatic jaundice during stressful periods and elevated indirect bilirubin with otherwise normal hematology and hepatic workup are strongly suggestive of Gilbert syndrome. It is a benign condition with no treatment required.\nGilbert Syndrome\n| Epidemiology | - Most common disorder of bilirubin glucuronidation - More common in males - Autosomal recessive |\n|---|---|\n| Pathophysiology | - Mutation in UGT1A1 gene - Mildly decreased UDPGT activity - Results in increased unconjugated bilirubin |\n| Clinical features and laboratory findings | - Episodes of asymptomatic jaundice - Jaundice typically follows stress (eg, surgery, infection, fasting) - Normal complete blood count, liver function tests, reticulocyte count, and blood smear |\n| Treatment | - No treatment needed |\n| UDPGT = uridine diphosphate glucuronyl transferase. | |</p><p>Gilbert syndrome is a benign genetic disorder that presents as mild jaundice and asymptomatic, transient rises in unconjugated bilirubin due to low activity of glucuronyl transferase.</p>",
+    "main_topic": "Gilbert Syndrome",
+    "modifier": "Reduced Glucuronyl Transferase Activity",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:1011"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

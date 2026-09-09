@@ -1,0 +1,67 @@
+{
+  "example_id": "biochem-article-minerals-and-trace-elements-table-02",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Minerals_and_Trace_Elements.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Menkes Disease vs Wilson Disease"
+      ],
+      [
+        "",
+        "Menkes Disease (Copper Deficiency)",
+        "Wilson Disease (Copper Excess)"
+      ],
+      [
+        "Epidemiology",
+        "Presents in infancy\nMales > females",
+        "Young adults"
+      ],
+      [
+        "Etiology",
+        "Mutation in ATP7A (Cu-transporting ATPase in intestinal and placental cells)\n(X-linked recessive)",
+        "Mutation in ATP7B (Cu-transporting ATPase in hepatocytes)\n(autosomal recessive, chromosome 13)"
+      ],
+      [
+        "Pathophysiology",
+        "ATP7A loss \u2192 Cu trapped in enterocytes, not exported to blood\nCopper deficiency in tissues (poor intestinal absorption)",
+        "Copper accumulation (hepatic, brain, cornea)"
+      ],
+      [
+        "Clinical Presentation",
+        "Kinky/steely hair (pili torti)\nNeurodegeneration, seizures\nHypotonia, failure to thrive",
+        "Kayser-Fleischer rings\nAsterixis (flapping tremor)\nCirrhosis, hepatic failure\nNeuropsychiatric: dysarthria, gait disturbance, personality change\nHemolytic anemia"
+      ],
+      [
+        "Lab Findings",
+        "\u2193 serum copper\n\u2193 ceruloplasmin",
+        "\u2193 ceruloplasmin\n\u2191 24-hr urinary copper\n\u2191 hepatic copper (liver biopsy)"
+      ],
+      [
+        "Treatment",
+        "Copper histidine (partial benefit)",
+        "Copper chelator D-penicillamine (first-line) or trientine\nZinc (blocks Cu absorption)"
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

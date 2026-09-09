@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-38918",
+  "source_type": "topic",
+  "exam_bank": "USMLE",
+  "question_type": "single question",
+  "input": {
+    "topic": "Lactate Dehydrogenase Dysfunction: Depletion Of NAD+"
+  },
+  "expected": {
+    "unique_name": "S1_Bio_198_1",
+    "question_text": "<p>An investigator is studying the intracellular effects of knocking out the genes for several enzymes important to skeletal muscle cell metabolism. One experiment utilizes mice with a knockout of the gene that codes for lactate dehydrogenase. It is found that these mice have impaired glycolysis during periods of strenuous activity. Which of the following is most likely the direct cause of the reduction in glycolysis?</p>",
+    "explanation_header": "<p>The correct answer is Depletion of NAD +.</p>",
+    "explanation_footer": "<p>https://d2vrujxrqm3l5p.cloudfront.net/b82b2c18-4652-49e7-b28b-8a9d37231dd8.png \nMuscle has a high metabolic rate. In order to continue activity, myocytes must continually synthesize ATP by glycolysis and oxidative phosphorylation. During periods of strenuous activity, oxygen supply may become insufficient to fully support oxidative phosphorylation, and the production of NADH from glycolysis exceeds the ability of the electron transport chain to oxidize NADH to NAD + . The rise in the NADH/NAD + ratio favors reduction of pyruvate formed by glycolysis to lactate by lactate dehydrogenase (LDH). \nLactate is then shunted to the liver for conversion back to pyruvate by lactate dehydrogenase and subsequently enters gluconeogenesis. The glucose produced from lactate is released into the circulation, where it can be utilized by muscle. The linkage of muscle lactate production to liver gluconeogenesis is known as the Cori cycle.\nThe Cori cycle provides glucose for muscle to continue glycolysis and muscle LDH generates the NAD + needed to continue to support glycolysis via anaerobic fermentation. However, this is not as efficient as oxidative phosphorylation in generating ATP, and ATP production drops, and lactate accumulates in muscle, leading to acidosis and cramps.\nIf skeletal muscle cells lack LDH, NADH cannot be oxidized to NAD + and the Cori cycle cannot provide the glucose input. Thus, ATP production via anaerobic fermentation is reduced, ATP production drops, and muscle activity decreases.</p><p>In times of anaerobic respiration, lactate dehydrogenase (LDH) is required to regenerate NAD + , which is required for glycolysis to proceed. In addition, the absence of LDH prevents the Cori cycle from providing the glucose needed to supply anaerobic fermentation.</p>",
+    "main_topic": "Lactate Dehydrogenase Dysfunction",
+    "modifier": "Depletion Of NAD+",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:38918"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

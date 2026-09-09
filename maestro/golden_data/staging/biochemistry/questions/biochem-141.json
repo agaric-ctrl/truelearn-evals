@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-141",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Carcinoid Syndrome - Risk For Deficiency: Niacin"
+  },
+  "expected": {
+    "unique_name": "L1_ENDO_028ECM_1",
+    "question_text": "<p>A 61-year-old female presents to the emergency department with intermittent wheezing, unresponsive to albuterol therapy. She states when the wheezing starts, she also feels flushed, similar to when she would have perimenopausal hot flashes. Although these symptoms only last less than 20 minutes, it concerns her that they have been increasing in frequency over the past months. She also admits to diarrhea during this time frame. She had a total hysterectomy without salpingo-oophorectomy 14 years ago due to fibroids but denies other medical issues. A complete metabolic panel, complete blood count, thyroid-stimulating hormone are all normal. A 24-hour urinalysis reveals elevated 5-HIAA. Given her most likely diagnosis, this patient is at an increased risk for a photosensitive rash due to a deficiency in</p>",
+    "explanation_header": "<p>The correct answer is niacin.</p>",
+    "explanation_footer": "<p>This patient is presenting with bronchospasms, diarrhea, and flushing with an elevated urinary 5-HIAA level consistent with the diagnosis of carcinoid syndrome. This condition may lead to niacin deficiency due to a relative deficiency of tryptophan, the precursor used for the production of both serotonin and niacin. This occurs because patients with carcinoid syndrome have unregulated, overproduction of serotonin, thereby shunting the precursor tryptophan into serotonin and neglecting the production of niacin (see image below). \nNiacin deficiency, also known as pellagra, is associated with symptoms that can be remembered by \"4 Ds\":\nDermatitis: Pellagra, which means \"raw skin,\" is characterized by a photosensitive pigmented dermatitis located in sun-exposed areas.\nDiarrhea: Severe diarrhea may lead to hypovolemia, hypotension,and nutritional deficiencies.\nDementia: Lack of niacin leads to neurologic findings including delusions, encephalopathy, and dementia.\nDeath: Niacin is an essential vitamin, and therefore with prolonged deficiency, death may occur.\nThe image below displays the skin manifestations of pellagra that includes a symmetric dermatitis in skin-exposed areas. The symmetric findings around the neck are referred to as Casal's necklace.\nhttps://d2vrujxrqm3l5p.cloudfront.net/d5340665-e399-4d1a-953a-020fe264a569.png \nIn the United States and other resource-rich countries, pellagra is rare. Besides carcinoid syndrome, it may be seen in those with alcohol use disorder, as a complication of bariatric surgery, anorexia nervosa, or malabsorptive disease and the congenital condition Hartnup syndrome. It is much more common in resource-poor countries.\nThe diagram displays the precursor tryptophan and the shunt to the serotonin side, thereby leading to decreased niacin production.\nhttps://d2vrujxrqm3l5p.cloudfront.net/fedae9b2-9ab7-4766-9bd1-a907aa5d07cf.png</p><p>Carcinoid syndrome may lead to niacin deficiency due to a relative deficiency of tryptophan, the precursor used for the production of both serotonin and niacin, due to unregulated, overproduction of serotonin. This shunts the precursor tryptophan into serotonin, thereby neglecting the production of niacin.</p>",
+    "main_topic": "Carcinoid Syndrome - Risk For Deficiency",
+    "modifier": "Niacin",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:141"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

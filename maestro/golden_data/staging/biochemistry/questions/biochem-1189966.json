@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1189966",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Gardner Syndrome: Mutation In APC (adenomatous Polyposis Coli) Gene"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_6023",
+    "question_text": "<p>A 34-year-old woman presents with a two-week history of rectal bleeding. She reports no other gastrointestinal symptoms. She has noticed blood streaking on the toilet paper following bowel movements, and denies having hemorrhoids. She recalls having extensive dental work as a child, including having a small bony tumor removed from her mandible and multiple dental extractions. She also had three benign cysts removed from her legs as a child. She has no known chronic medical illnesses and does not smoke or drink. Her family history is significant for a mother who died of colorectal cancer at age 53 years. Physical examination reveals a hemodynamically stable woman in no acute distress, and is only significant for well-healed scars in the areas of her previous surgeries. A colonoscopy reveals multiple polyps, which have the histologic appearance shown in the exhibit. Which of the following is the most crucial in the development of this patient\u2019s disorder?</p>",
+    "explanation_header": "<p>The correct answer is Mutation in APC (adenomatous polyposis coli) gene.</p>",
+    "explanation_footer": "<p>Gardner syndrome is an autosomal dominant inherited disorder caused by a mutation in the adenomatous polyposis coli (APC) gene which, in addition to innumerable colonic adenomatous polyps, is associated with osteomas, epidermal inclusion cysts, fibromas, and dental abnormalities. It is considered a subset of familial adenomatous polyposis (FAP).\nThere are three main syndromes associated with mutations in the APC gene. The first is classic FAP, characterized by 100 or more adenomatous colon polyps. These patients may also have polyps elsewhere in the gastrointestinal tract, but at least 100 colon polyps must be present. Histologically, these polyps are identical to sporadic adenomas. Low-grade glandular dysplasia occurs, in which colonic epithelial cell nuclei are hyperchromatic, crowded, and pseudostratified. There is loss of normal goblet cells, and glands become crowded and irregular. Without prophylactic colectomy, 100 percent of these patients will develop colonic adenocarcinoma early in life.\nThe second syndrome associated with mutations in the APC gene is Gardner syndrome. These patients have the polyposis of FAP patients along with osteomas, epidermal inclusion cysts, fibromas and desmoid tumors, and dental abnormalities. The dental abnormalities you should know for the examination are supernumerary and unerupted teeth, dentigerous cysts, and odontomas.\nThe third and least common syndrome associated with APC mutations is Turcot syndrome. These patients have the findings of FAP plus medulloblastomas or gliomas of the central nervous system.\nCongenital failure of phagolysosome formation (choice A) in phagocytic cells occurs in Chediak-Higashi syndrome, a rare autosomal recessive disorder. The typical presentation results from failure of phagosomes and lysosomes to fuse in neutrophils and melanocytes, causing increased susceptibility to infection and oculocutaneous albinism. Microscopically, leukocytes and melanocytes have large granules visible in their cytoplasm which represent the defective phagolysosomes.\nDefects of DNA mismatch repair (choice B) characterize hereditary nonpolyposis colorectal carcinoma (HNPCC), also known as Lynch syndrome. Inherited mutations in genes that encode the proteins responsible for removing defective segments of DNA result in microsatellite instability and an increase in cancer risk. These patients have fewer polyps than FAP patients and may have associated endometrial carcinomas and/or gliomas.\nThe monosomy X (45, XO) genotype (choice C) is characteristic of Turner syndrome. These patients are female and present with failure to develop secondary sex characteristics in puberty; shortness of stature; swelling of the base of the neck (cystic hygroma) and neck webbing; and congenital coarctation of the aorta and bicuspid aortic valve. Gastrointestinal polyps do not occur at greater rates than usual in Turner syndrome.\nA type I collagen defect (choice E) causes osteogenesis imperfecta (OI), the most common inherited disorder of connective tissue. When the fetus survives, it presents early in life with skeletal fragility; blue sclerae; hearing loss; and small, misshapen, discolored teeth. Risk for gastrointestinal polyps is not increased in OI.</p><p>Gardner syndrome is a form of familial adenomatous polyposis (FAP) in which the colon polyps are accompanied by extraintestinal manifestations of osteomas, epidermal inclusion cysts, fibromas, and dental abnormalities. The associated genetic defect is in the adenomatous polyposis coli (APC) gene.</p>",
+    "main_topic": "Gardner Syndrome",
+    "modifier": "Mutation In APC (adenomatous Polyposis Coli) Gene",
+    "question_type": "single question",
+    "question_format": "Image",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:known_hard",
+    "root_id:1189966"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

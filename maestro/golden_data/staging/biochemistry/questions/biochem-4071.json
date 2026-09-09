@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-4071",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Neurofibromatosis Type I: NF1 Tumor Suppressor Gene"
+  },
+  "expected": {
+    "unique_name": "L1_PATH_002NMB-r",
+    "question_text": "<p>A 4-year-old male is brought to the office for a routine physical examination. Physical examination reveals the presence of new hyperpigmented skin macules that vary in color from light brown to dark brown as well as axillary freckling. Slit lamp examination reveals hyperpigmented iris nodules bilaterally. The most likely gene involved is</p>",
+    "explanation_header": "<p>The correct answer is neurofibromatosis type 1.</p>",
+    "explanation_footer": "<p>This patient likely has neurofibromatosis type 1 , as evidenced by his presentation with caf\u00e9 au lait spots (hyperpigmented macules that vary in color), axillary freckling, and Lisch nodules (hyperpigmented iris nodules). Neurofibromatosis type 1 is caused by a loss of function mutation in the neurofibromatosis type 1 ( NF1 ) tumor suppressor gene on chromosome 17. NF1 encodes the protein neurofibromin, which inhibits cell growth and proliferation via inhibition of the Ras signal transduction pathway.\nNeurofibromatosis type 1 is an autosomal dominant neurocutaneous disease; hence, it manifests as neurological deficits and dermatologic features. The most common symptoms include multiple neurofibromas (benign peripheral nerve sheath tumors), caf\u00e9 au lait spots, and Lisch nodules. Other findings include intellectual disability, optic pathway gliomas, pheochromocytomas, and bone involvement (eg, scoliosis, fractures, pseudoarthrosis). Patients with neurofibromatosis type 1 have an average life expectancy of 60 years due to increased mortality from malignant transformation of tumors.\nNeurofibromatosis Type 1\n| Etiology | - Autosomal dominant mutation in NF1 tumor suppressor gene (chromosome 17) - 100% penetrance - Variable expressivity |\n|---|---|\n| Cutaneous features | - Caf\u00e9 au lait spots - Cutaneous neurofibromas - Lisch nodules (pigmented iris hamartomas) |\n| Neurologic features | - Optic gliomas \u2192 \u2193 visual acuity - Meningiomas \u2192 seizures and/or focal neurologic deficits - Intellectual disability |\n| Other features | - Pheochromocytoma - Bone lesions (eg, sphenoid dysplasia) |\n| NF1 = neurofibromatosis type 1. | |\nThe below photograph shows the characteristic finding of Lisch nodules (pigmented iris hamartomas; arrows) in a patient with neurofibromatosis type 1.\nhttps://d2vrujxrqm3l5p.cloudfront.net/dfadae65-2791-44f3-b02b-2a30c945a23e.png</p><p>Neurofibromatosis type 1 is an autosomal dominant condition due to a loss of function mutation in the neurofibromatosis type 1 ( NF1 ) tumor suppressor gene on chromosome 17. Patients can present with caf\u00e9 au lait spots (hyperpigmented macules that vary in color), Lisch nodules (hyperpigmented iris nodules), and multiple neurofibromas (benign peripheral nerve sheath tumors).</p>",
+    "main_topic": "Neurofibromatosis Type I",
+    "modifier": "NF1 Tumor Suppressor Gene",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:best_in_class",
+    "root_id:4071"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

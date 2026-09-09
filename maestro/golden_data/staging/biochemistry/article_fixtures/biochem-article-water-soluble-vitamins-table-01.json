@@ -1,0 +1,52 @@
+{
+  "example_id": "biochem-article-water-soluble-vitamins-table-01",
+  "source_type": "article_fixture",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "article": "Water-Soluble Vitamins.docx",
+    "fixture_type": "table"
+  },
+  "expected": {
+    "rows": [
+      [
+        "Vitamin B1 (Thiamine) Deficiency Syndromes"
+      ],
+      [
+        "Syndrome",
+        "Clinical Features"
+      ],
+      [
+        "Dry Beriberi",
+        "Symmetric sensorimotor peripheral neuropathy with motor weakness\nSlow-onset deficiency"
+      ],
+      [
+        "Wet Beriberi",
+        "High-output cardiac failure with dilated cardiomyopathy\nPeripheral edema and vasodilation\nTachycardia\nAcute-onset deficiency"
+      ],
+      [
+        "Wernicke Encephalopathy",
+        "Triad: confusion, ophthalmoplegia, ataxia (all three present in fewer than 20% of cases)\nMRI: T2 hyperintensities in mammillary bodies and periaqueductal gray\nManagement: give IV thiamine before glucose (glucose alone can precipitate encephalopathy in thiamine-deficient patients)"
+      ],
+      [
+        "Korsakoff Syndrome",
+        "Irreversible\nFollows untreated Wernicke\nAnterograde \u2192 retrograde amnesia\nConfabulation\nPreserved consciousness"
+      ]
+    ]
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "fixture_type:table"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

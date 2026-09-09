@@ -1,0 +1,36 @@
+{
+  "example_id": "biochem-1194596",
+  "source_type": "topic",
+  "exam_bank": "COMLEX",
+  "question_type": "single question",
+  "input": {
+    "topic": "Jaundice: Autosomal Recessive"
+  },
+  "expected": {
+    "unique_name": "CQ_L1_COMSAE_11755",
+    "question_text": "<p>A 2-week-old male is brought to the primary care physician by his mother with a complaint of jaundice. The infant was born via uncomplicated spontaneous vaginal delivery and has had intermittent episodes of jaundice. The infant has been receiving both breastmilk and formula and has produced 10 to 12 wet diapers per day. Vital signs are within normal limits. Physical examination reveals an arousable and groggy infant with significant jaundice throughout the face, chest, and abdomen. Neurologic examination reveals hypotonia and hypotonic reflexes. Laboratory evaluation reveals:\n| Total bilirubin | 34 mg/dL | 0.2-1.2 mg/dL |\n|---|---|---|\n| Direct bilirubin | 1.2 mg/dL | 0.0-0.4 mg/dL |\nWhich of the following is the form of inheritance of this patient\u2019s disorder?</p>",
+    "explanation_header": "<p>The correct answer is Autosomal recessive.</p>",
+    "explanation_footer": "",
+    "main_topic": "Jaundice",
+    "modifier": "Autosomal Recessive",
+    "question_type": "single question",
+    "question_format": "Text",
+    "references": []
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "tier:adversarial",
+    "root_id:1194596"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}

@@ -1,0 +1,34 @@
+{
+  "example_id": "biochem-image-neg-003",
+  "source_type": "image_selection",
+  "exam_bank": "",
+  "question_type": "",
+  "input": {
+    "image_url": "https://d2vrujxrqm3l5p.cloudfront.net/cd28f9eb-bc42-4ce0-aecf-e43826a85adc.png",
+    "candidate_topics": [
+      "Vitamin A Deficiency",
+      "Celiac Disease Is Risk Factor",
+      "Vitamin deficiencies in celiac disease",
+      "COMLEX Level 1"
+    ]
+  },
+  "expected": {
+    "relevant": false,
+    "note": "constructed negative - topics borrowed from a different image (https://d2vrujxrqm3l5p.cloudfront.net/6889a9a0-a8a8-4230-bd13-b9bdb1558eb5.png)"
+  },
+  "tags": [
+    "status:draft_proposal",
+    "subject:Biochemistry",
+    "snapshot_version:2026-08-24T23:15:16.0066833Z",
+    "pair:constructed_negative"
+  ],
+  "ac_ref": null,
+  "sme_verified": {
+    "verified": false,
+    "reviewer_id": null,
+    "verified_at": null
+  },
+  "review_status": "pending_sme_review",
+  "second_reviewer_id": null,
+  "second_reviewed_at": null
+}
