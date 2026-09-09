@@ -41,7 +41,7 @@ class SuiteStructureTests(unittest.TestCase):
 
     def test_uses_echo_provider(self):
         """Confirms no model generates - only the rubric judge makes a call, isolating the judge
-        under test exactly like reference/promptfoo/01_faithfulness_pass_fail.yaml does."""
+        under test exactly like evaluations/faithfulness/promptfoo/01_faithfulness_pass_fail.yaml does."""
         self.assertEqual(self.suite["providers"], [{"id": "echo"}])
 
     def test_rubric_assertion_is_llm_rubric(self):

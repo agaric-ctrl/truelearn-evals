@@ -82,12 +82,12 @@ def main() -> int:
     results = [
         run_demo(
             "DeepEval",
-            ROOT / "reference" / "deepeval" / "faithfulness_demo.py",
+            ROOT / "evaluations" / "faithfulness" / "deepeval" / "faithfulness_demo.py",
             args.deepeval_python, args.timeout_seconds, args.attempts,
         ),
         run_demo(
             "RAGAS",
-            ROOT / "reference" / "ragas" / "ragas_faithfulness.py",
+            ROOT / "evaluations" / "faithfulness" / "ragas" / "ragas_faithfulness.py",
             args.ragas_python, args.timeout_seconds, args.attempts,
         ),
     ]

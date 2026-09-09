@@ -273,7 +273,7 @@ class ResultSchemaTest(unittest.TestCase):
 
     def test_promptfoo_results_normalize_to_shared_schema(self):
         payload = json.loads(
-            (ROOT / "reference" / "data" / "promptfoo_result_fixture.json").read_text()
+            (ROOT / "evaluations" / "faithfulness" / "data" / "promptfoo_result_fixture.json").read_text()
         )
         result = normalize_promptfoo(payload)
 

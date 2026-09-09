@@ -1,0 +1,56 @@
+# Maestro QA/Eval — Full Findings (as of early Sep, this cycle)
+
+Source: Maestro QA AI Test Strategy doc (with team comment threads), team chat discussion across engineering/editorial/planning channels, a "Deep Dive" architecture walkthrough, the Editorial team's live article-generation Claude Project, and this repo's own build-status audit. Individuals are referred to by role, not name, since the facts matter more than attribution — check the original sources if you need to trace a specific claim back to who said it.
+
+This doc supersedes any earlier assumption that Maestro is RAG-based, that an eval harness exists at the strategy level, or that observability tooling has been decided.
+
+---
+
+## 1. Architecture — confirmed
+
+- **Two separate pipelines, different maturity:** question generation (further along, has a working internal playground) and article generation (currently split between a legacy Claude Project already used live by Editorial, and an in-progress Maestro-native service).
+- **Not RAG.** Agentic document-to-prompt merging workflow — authoring rules/PDFs get extracted and merged into prompts. No vector store, no chunking step, no shared infra with other TrueLearn search/retrieval initiatives. An earlier suggestion that Maestro "should use the same Bedrock KB and config" was conditional on Maestro using RAG, and was confirmed inapplicable once that was ruled out.
+- **The application logic (prompt-merging) is owned by Data Science but hasn't been validated or optimized yet — explicitly because no golden test set exists.** This is a real, named blocker on the core generation logic itself, not just on the eval layer around it.
+- **Fail-closed behavior for weak source support is confirmed not defined**, pending clear requirements — not just undocumented, genuinely doesn't exist yet.
+- **Maestro is still a POC, not in production.** No formal release process. SME escalation path, SLA, and rollback authority for a confirmed hallucination are all explicitly undefined, pending Product/Editorial to establish them.
+- **Data Science was redirected to full-stack development this cycle.** This is the stated reason eval-tooling, observability, and architecture-optimization work has stalled — not neglect, a real resourcing tradeoff. Relevant when estimating how much of the near-term build falls to QA/Engineering rather than Data Science.
+
+## 2. Evaluation philosophy — corrected framing
+
+- **Faithfulness and non-contradiction are different checks.** Claim-traceability-to-source doesn't apply to articles as currently built, since the model's own knowledge (not the ~25 retrieved questions) writes the bulk of the content. The retrieved questions constrain terminology and tested associations rather than sourcing the text. Check instead: **(1) contradiction rate** against the retrieved grounding questions, **(2) terminology/tested-association alignment** with the bank.
+- **Bank-fidelity ≠ ground truth for medical accuracy.** New-topic banks have nothing to check against; medicine changes over time; some previously-approved content is itself outdated. An eval that rewards "matches our old content" would penalize correct updates.
+- **Deterministic approximation of several quality dimensions is endorsed, not just proposed**, with specific tools named: markdownlint-style structural/formatting validation, py-readability-metrics-style readability scoring. Worth reconsidering whether density/padding and style/tone checks — previously assumed to need an LLM judge — can move partly or fully to deterministic/hybrid.
+- **A/B testing of architectural variants may become the primary testing focus**: prompt-merging vs. a hypothetical RAG approach, structured vs. unstructured, short vs. long chat history, single-step vs. multi-step generation, sequential vs. draft-review-rewrite loop. This is a **paired/comparative** evaluation design (same input through two variants, judge scores the difference), structurally different from grading one output against an absolute rubric. **Unresolved** whether this replaces or runs alongside existing length/depth/density/style calibration work — flagged, not decided, by the QA lead in the strategy doc's comment thread.
+
+## 3. Golden dataset — ownership and status
+
+- **No eval harness existed at the strategy level, confirmed independently by two separate leads** (Engineering/Platform and Data Science), even though a working harness already exists in this repo (see Section 5) — the repo is ahead of the formal decision, not behind it.
+- **Editorial/SMEs must own curating and versioning golden test data.** QA/Data Science should not unilaterally assemble a golden set from whatever exported content happens to be available — that ownership question is described as the primary blocker to building the evaluation layer, not a nice-to-have.
+- **A path to SME identification exists but isn't finalized**: a Content Team lead has been named as the primary contact to help identify a dedicated Content Creator or SME lead — no one is formally assigned to Maestro content-quality yet.
+- **Proposed sizing** (pending SME/Engineering sign-off, per exam bank/content area): 20-30 best-in-class approved examples, 10-15 known-hard edge cases, 8-10 adversarial cases.
+- **Storage/architecture proposal, not yet decided**: a sidecar eval service running on-demand and in CI/CD, with results stored in S3. This has not been reconciled with the library/pytest-based harness already built in this repo (Section 5) — flag this explicitly rather than assuming either one is "the" direction.
+- **Where SME verdicts should be recorded**: TestRail is a poor conceptual fit (built for pass/fail test-case management, not open-ended content grading with free-text reasoning). This repo's existing harness-generated Excel export/import round-trip already works and should stay the source-of-truth mechanism regardless of the storage-architecture question above. Google Sheets is the more likely upgrade for the SME-facing surface (live collaboration) if/when that's prioritized — not yet decided.
+- **Editorial is already informally feeding back directly to Data Science** on article quality; expected to formalize once Editorial can test directly in the CMS UI rather than staying an ad hoc channel.
+
+## 4. Observability
+
+- **Basic payload/latency logging exists today.**
+- **Tooling direction is a live, unresolved fork**: one lead recommends Langfuse (cited as "industry standard" for end-to-end LLM observability); another recommends NewRelic, specifically because the org already pays for it and is trialing it on other AI features with what's described as full LLM trace capability. Neither has been confirmed as final — don't build against either as if it were decided. If you need observability data for a task, ask which one is actually wired up before assuming.
+- **Planned (not yet implemented) tooling for the evaluation layer itself**: RAGAS for LLM-as-judge and n-gram-based metrics. This matches what's already implemented in this repo's Tier 3 (see Section 5) — a rare point of actual alignment between the strategy-level plan and the existing build.
+- **Nothing currently tracks pass/fail rates, promotion rates, or SME throughput over time.** Per-run reporting exists (for judge comparisons); nothing aggregates across runs. A cheap, unblocked fix: summarize this repo's existing golden-set import outcomes (promoted/blocked/reasons, per bank) and push it somewhere lightweight (a committed file or a chat channel) — doesn't require any of the above forks to be resolved first.
+
+## 5. What's already built in this repo (don't rebuild; audited directly, not inferred)
+
+- **Tier 1** (deterministic checks): working checks for HTML well-formedness, table-duplicate detection, required-field presence, and field-constraint validation. Two checks are intentionally stubbed pending confirmed rules: table-placement validity and references format.
+- **Tier 2**: a blind SME review-pool mechanism (shuffled, identity-hidden, spreadsheet-based grading) that is **already content-shape-agnostic** — it operates on opaque input/expected data, not a type specific to questions. It would already work for a second content type (e.g. articles) today, modulo an ugly raw-data preview instead of a rendered one.
+- **Tier 3**: three independently-implemented judges (two open-source eval frameworks plus a rubric-based LLM judge), deliberately kept separate rather than consolidated, specifically so disagreement between them is itself a signal. A single Claude-only judge was considered and explicitly rejected for this reason — it would use the same underlying mechanism as one of the three already in place, adding maintenance without adding disagreement-detection value.
+- **Generation/ingestion**: a real ingestion seam exists, but the live-API boundary to actually pull a generation from Maestro is stubbed — today the harness has to be fed content, it doesn't yet pull it automatically.
+- **A specific, previously-easy-to-miss finding: the golden-example data model already anticipates a second content type (e.g. "article") as valid, but nothing downstream actually handles it yet** — the Tier 1 gate no-ops entirely for a non-question content type, and the ingestion path would silently skip (not crash on) an article-shaped payload today. The schema saw a second content type coming; the checks and ingestion logic didn't. This is a scoped, well-understood gap, not a blank unknown.
+- **An existing tool for retrieval-quality checking exists but needs a new kind of human-labeled data** (which retrieved results were actually relevant, independent of whether the final output was faithful to them) — this would be a third kind of SME labeling task, layered on top of the first one (Tier 2 content grading) that's already unstaffed. Sequencing/bandwidth question, not a technical one — don't build this out further until someone with authority over reviewer time has weighed in.
+- **A specific unconfirmed inference worth tracking down, not assuming**: two named engineering tickets are suspected (not confirmed) to define the chat-history data shape a stubbed non-overwrite check needs — zero references to those tickets exist anywhere in this repository itself. Confirm with whoever owns those tickets before building against that assumption.
+
+## 6. Test/CI maturity, as last audited
+
+- Automatable today, no blocker: Tier 1 checks, ingestion mock-mode smoke test, judge-vs-judge comparison on synthetic fixtures.
+- Automatable once a specific blocker clears: real ingestion from the live API (needs a real endpoint/auth contract), the two stubbed Tier 1 checks (needs confirmed bank-specific rules), the stubbed non-overwrite check (needs the chat-history shape question resolved), judge-accuracy measurement and scheduled live judge runs (both need real SME-labeled golden data, which doesn't exist yet).
+- Will likely always require a human: SME content grading itself (that's the point, not a gap), any elaboration-vs-strict-grounding policy call, style/tone and density/padding judgments at the margins.

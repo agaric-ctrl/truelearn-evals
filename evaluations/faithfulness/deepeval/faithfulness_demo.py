@@ -6,7 +6,7 @@ known-bad answer, and check that the faithfulness metric scores them correctly.
 
 PLACEHOLDER: the context/grounded/hallucinated content below is hand-written synthetic
 clinical-QA content for exercising the judge mechanism - not TrueLearn content, and not
-reviewed by any clinician. See the root README ("Faithfulness-eval reference methodology").
+reviewed by any clinician. See the root README ("Faithfulness evaluation suite").
 
 Run:  python3 faithfulness_demo.py [--json]
 Needs: ANTHROPIC_API_KEY in the environment.
@@ -17,7 +17,7 @@ import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 from deepeval.test_case import LLMTestCase
 from deepeval.metrics import FaithfulnessMetric

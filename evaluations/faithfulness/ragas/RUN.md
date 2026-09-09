@@ -11,7 +11,7 @@ cd "$(git rev-parse --show-toplevel)"
 python3 -m venv .venv-ragas
 .venv-ragas/bin/pip install -r requirements-ragas.txt
 
-.venv-ragas/bin/python reference/ragas/ragas_faithfulness.py
+.venv-ragas/bin/python evaluations/faithfulness/ragas/ragas_faithfulness.py
 ```
 
 If a different venv (e.g. `.venv-deepeval`) is already active in this shell, run `deactivate` first, or you'll get a `ModuleNotFoundError`.
