@@ -598,6 +598,58 @@ class TableAbbreviationFootnotesTests(unittest.TestCase):
         result = _single(table_abbreviation_footnotes(question, config))
         self.assertEqual(result.status, Status.PASS, result.message)
 
+    # Roman-numeral false-positive fix - found during the real Tier 1 validation run against
+    # Minerals_and_Trace_Elements.docx ("complex II", "factor IX" etc. were misread as
+    # undefined abbreviations). Each case below is a real board-content context, not invented.
+
+    def test_complex_roman_numeral_not_flagged(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><td>Electron transport chain (complex II)</td></tr>"
+            "<tr><td>No abbreviations defined here</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS, result.message)
+
+    def test_factor_roman_numeral_not_flagged(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><td>Deficiency of clotting factor IX</td></tr>"
+            "<tr><td>No abbreviations defined here</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS, result.message)
+
+    def test_type_and_stage_roman_numerals_not_flagged(self):
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><td>Type IV hypersensitivity reaction, Stage III disease</td></tr>"
+            "<tr><td>No abbreviations defined here</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.PASS, result.message)
+
+    def test_bare_roman_numeral_with_no_classifying_word_still_flagged(self):
+        """Per the task's explicit instruction: "a bare 'IV' with no preceding context is
+        genuinely ambiguous" - falls back to flagging, since it might be a real abbreviation."""
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><td>Give IV thiamine before glucose</td></tr>"
+            "<tr><td>No abbreviations defined here</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.FAIL)
+        self.assertIn("IV", result.message)
+
+    def test_real_abbreviation_that_looks_roman_numeral_still_flagged(self):
+        """"MI" (myocardial infarction) is syntactically a valid Roman numeral (M=1000, I=1) but
+        is never actually used that way in this content - this is exactly why a context-guard was
+        chosen over excluding bare Roman numerals outright: with no classifying word before it,
+        "MI" must still be flagged as a real, undefined abbreviation."""
+        question = GeneratedQuestion(explanation_footer=(
+            "<table><tr><td>This finding is diagnostic of an acute MI</td></tr>"
+            "<tr><td>No abbreviations defined here</td></tr></table>"
+        ))
+        result = _single(table_abbreviation_footnotes(question, EvalConfig()))
+        self.assertEqual(result.status, Status.FAIL)
+        self.assertIn("MI", result.message)
+
 
 # ---------------------------------------------------------------------------
 # teaching_case_standard.py - new (docs/qa-context/TIER1_CHECKS_TASK.md)

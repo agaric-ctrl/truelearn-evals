@@ -108,6 +108,8 @@ jobs:
             --out /tmp/maestro-review-pools/ci_smoke.import_summary.md
       - name: Test Maestro golden-set import summary
         run: python -m unittest maestro/test_import_summary.py
+      - name: Test Maestro Editorial-asset staging (docx conversion, tiering, image pairs)
+        run: python -m unittest maestro/test_editorial_staging.py
       - name: Validate committed golden datasets parse
         run: >-
           python -c "

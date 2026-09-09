@@ -14,6 +14,14 @@ whose own text starts with "Case N" (see checks/_case_blocks.py) - flattening he
 what makes "Case 1: ..." detectable by that existing logic without modifying it. This does lose
 heading/body visual distinction if the HTML were ever rendered, which doesn't matter here since
 nothing renders it - only the deterministic checks read it.
+
+BUG FOUND AND FIXED against real content, not caught by initial testing: python-docx's
+row.cells repeats the same underlying cell (same _tc XML element) once per spanned grid column
+for a horizontally-merged cell - confirmed directly against Water-Soluble Vitamins.docx's real
+footnote rows, where a single merged cell spanning all 5 columns showed up as 5 identical `cells`
+entries. A naive iteration duplicated that text 5x in both the table's HTML and its row-data, which
+made table_abbreviation_footnotes.py compare against a garbled repeated string instead of the real
+merged footnote content - see _dedup_merged_cells() below.
 """
 
 from __future__ import annotations
@@ -51,16 +59,37 @@ def _paragraph_html(paragraph: Paragraph) -> str:
     return f"<p>{inner}</p>"
 
 
+def _dedup_merged_cells(row) -> list:
+    """python-docx's row.cells repeats the same underlying cell (same _tc XML element) once per
+    spanned grid column for a horizontally-merged cell - verified directly against the real
+    Water-Soluble Vitamins footnote rows: a single merged cell spanning 5 grid columns showed up
+    as 5 identical `cells` entries (same id(cell._tc)), which is what made the abbreviation-
+    footnote check misread every merged footnote row as N copies of one cell rather than one
+    logical cell. Collapses consecutive duplicates by underlying-element identity so a merged cell
+    contributes exactly one logical cell, matching what a human reading the table actually sees."""
+
+    result = []
+    previous_tc = None
+    for cell in row.cells:
+        if cell._tc is previous_tc:
+            continue
+        result.append(cell)
+        previous_tc = cell._tc
+    return result
+
+
 def _table_html(table: Table) -> str:
     rows_html = []
     for row in table.rows:
-        cells_html = "".join(f"<td>{html.escape(cell.text.strip())}</td>" for cell in row.cells)
+        cells_html = "".join(
+            f"<td>{html.escape(cell.text.strip())}</td>" for cell in _dedup_merged_cells(row)
+        )
         rows_html.append(f"<tr>{cells_html}</tr>")
     return "<table>" + "".join(rows_html) + "</table>"
 
 
 def _table_rows(table: Table) -> list[list[str]]:
-    return [[cell.text.strip() for cell in row.cells] for row in table.rows]
+    return [[cell.text.strip() for cell in _dedup_merged_cells(row)] for row in table.rows]
 
 
 def convert_docx(path) -> ConvertedArticle:

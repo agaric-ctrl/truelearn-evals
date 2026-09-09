@@ -36,3 +36,7 @@ nltk==3.9.2
 # linter (same rule set as the Node markdownlint tool named in the task doc), used to catch stray/
 # leaked markdown syntax in an HTML field. Confirmed no conflict with deepeval/click in this venv.
 pymarkdownlnt==0.9.33
+
+# python-docx: maestro/golden/docx_convert.py only - reads real Editorial reference-article .docx
+# files (paragraphs, styles, bold runs, tables) for docs/qa-context/EDITORIAL_ASSETS_STAGING_TASK.md.
+python-docx==1.2.0
