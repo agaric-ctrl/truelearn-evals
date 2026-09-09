@@ -11,23 +11,34 @@ This file loads automatically at the start of every Claude Code session in this 
 - **Maestro is still a POC, not in production.** No formal release process, no defined SME escalation/rollback authority yet.
 - **Deterministic approximation of length/depth/density/style is explicitly endorsed** by the Engineering/Platform lead, with named tools: markdownlint-style structural validation, py-readability-metrics-style readability scoring.
 
+## Resolved as of Sep 9 (were previously listed as unresolved forks — don't re-litigate)
+
+- **Sidecar eval service vs. library/pytest-based harness: these are complementary, not competing.** Confirmed by Data Science lead (Sep 9): "RAGAS is the framework/library, while sidecar service is the pipeline that would run/orchestrate those RAGAS evaluations." This repo's existing library harness (which already uses RAGAS as one of its three Tier 3 judges) can be the thing a future sidecar service orchestrates — not a rival architecture to it.
+- **A/B testing of architectural variants is confirmed complementary to, not a replacement for, existing calibration checks.** Confirmed by Data Science lead (Sep 9): "I think these two are complementary... we need another subsection for [A/B testing]." Build both; don't treat one as superseding the other.
+
 ## Genuinely unresolved — do not silently pick a side
 
-- **Sidecar eval service** (on-demand + CI/CD, results in S3 — Engineering/Platform lead's proposal) **vs. this repo's existing library/pytest-based harness.** Unreconciled.
-- **Observability tooling: Langfuse vs. NewRelic.** Unresolved between Data Science lead and Engineering/Platform lead.
-- **A/B testing of architectural variants may become the primary testing focus**, not just per-output rubric grading. Unresolved whether this replaces or runs alongside existing calibration checks.
+- **Observability tooling: Langfuse vs. NewRelic.** Still unresolved as of Sep 9 — Engineering/Platform lead asked Data Science lead directly whether Langfuse is used anywhere else; answer was "I don't know... happy to connect on this." Actively being worked, not stalled, but not decided.
 - **Golden dataset ownership**: Editorial/SMEs must own curating and versioning it; QA/Engineering should not unilaterally assemble it.
+
+## PENDING REPLY — question posted Sep 9, 10:31 AM ET, awaiting Data Science confirmation
+
+A live architecture-review meeting (Sep 9) presented a slide claiming **"Grounded in our content — semantic search over 7,345 approved questions, embeddings held in Snowflake"** as a current, shipped property. On the same morning, in writing, the Data Science lead stated: **"Document-to-prompt merging is the current implementation for the POC. Moving to a shared Bedrock KB / RAG infrastructure remains an architectural candidate that we want to benchmark against."**
+
+These directly conflict. Either the semantic-search/Snowflake-embeddings capability shipped very recently (between the doc comment and the meeting), or the meeting slide is describing the not-yet-adopted RAG candidate as if it were current production behavior. **A direct confirmation request was posted Sep 9, 10:31 AM ET, in the same comment thread** (asking whether the slide describes the target/candidate architecture rather than what's live today). As of this doc's last update, no reply yet. **Do not build or revise anything assuming either version is settled until the reply lands** — it determines whether the faithfulness/non-contradiction split (Section 2 of the findings doc, built around "articles are not RAG-sourced") is still correctly scoped. Check this thread for a reply before running Prompt 1 (Tier 3) or Prompt 4 (Comparative) from the build prompts.
 
 ## Full context
 
 - `docs/qa-context/MAESTRO_QA_FINDINGS.md` — comprehensive findings from strategy doc + team discussion, reconciled against what's actually built in this repo.
 
-## Active tasks (currently buildable — see findings doc for why these four and not others)
+## Task status (as of Sep 9)
 
-- `docs/qa-context/TIER1_CHECKS_TASK.md` — deterministic content checks (Tier 1), including the named tools (readability library, markdown linter, n-gram-based redundancy check).
-- `docs/qa-context/TIER3_JUDGES_TASK.md` — non-contradiction + source-coverage judges (Tier 3), built against synthetic fixtures.
-- `docs/qa-context/REPORTING_SUMMARY_TASK.md` — golden-set import throughput summary.
-- `docs/qa-context/COMPARATIVE_AB_TESTING_TASK.md` — scaffold for comparing architectural variants, per Data Science lead's direction that testing scope should center on this. Builds the mechanism only; does not decide whether this replaces or supplements calibration checks.
+- `docs/qa-context/TIER1_CHECKS_TASK.md` — **DONE.** Deterministic content checks (Tier 1), all 7 checks integrated, tested, wired into CI (PR-blocking job + `maestro-tier1-content-report.yml` scheduled/manual report job). Reference only — nothing left to build here.
+- `docs/qa-context/TIER3_JUDGES_TASK.md` — **OPEN.** Non-contradiction + source-coverage judges, built against synthetic fixtures. Confirmed not started (`maestro/judge/` audited directly, no such judges exist under any name). Note: may need a light revisit once the URGENT item above is resolved, since the judges are designed around "articles are not RAG-sourced."
+- `docs/qa-context/REPORTING_SUMMARY_TASK.md` — **OPEN.** Golden-set import throughput summary. Confirmed not started (`.github/workflows/report.yml` is unrelated pre-existing judge-comparison infrastructure, not this).
+- `docs/qa-context/COMPARATIVE_AB_TESTING_TASK.md` — **OPEN, now confirmed necessary (not just proposed).** Data Science lead confirmed this needs its own subsection, complementary to calibration checks. Confirmed not started (`.github/workflows/live-evaluation.yml` is unrelated pre-existing judge-validation infrastructure, not this). Prompt-merging vs. RAG is now the single highest-priority variant pair to scaffold toward, given the URGENT item above.
+- `docs/qa-context/EDITORIAL_ASSETS_STAGING_TASK.md` — **OPEN, not yet created in repo.** Stages Editorial's real question-bank, image-catalog, and reference-article assets as a **draft proposal**, not adopted golden data. Data architecture section corrected against confirmed `maestro/golden_data/` state (see task doc — it's essentially empty, no existing "approved" convention to build alongside).
+- `docs/qa-context/RUNTIME_QUALITY_GATE_TASK.md` — **NEW, scoping only, not yet buildable.** Surfaced by the Sep 9 architecture meeting: the team named "no runtime quality check" as an explicit, undesigned risk in the live article pipeline, with "evaluation and refinement loop" as the proposed mitigation. This is this harness's actual mandate, stated by the team. Blocked on the URGENT item above and on confirming what "verify references" currently does mechanically.
 
 **Still unassigned, flagged not forgotten**: style/tone consistency (needs a fixed-anchor-example architecture, different from every check above) has no owner in any task doc yet. Don't fold it into an existing task — it needs its own design pass.
 

@@ -1,6 +1,6 @@
 # Maestro QA/Eval — Full Findings (as of early Sep, this cycle)
 
-Source: Maestro QA AI Test Strategy doc (with team comment threads), team chat discussion across engineering/editorial/planning channels, a "Deep Dive" architecture walkthrough, the Editorial team's live article-generation Claude Project, and this repo's own build-status audit. Individuals are referred to by role, not name, since the facts matter more than attribution — check the original sources if you need to trace a specific claim back to who said it.
+Source: Maestro QA AI Test Strategy doc (with team comment threads), team chat discussion across #maestro-cms/#the-coretechs/#cms-planning-tl-editorial equivalents, a "Deep Dive" architecture walkthrough, the Editorial team's live article-generation Claude Project, and this repo's own build-status audit. Individuals are referred to by role, not name, since the facts matter more than attribution — check the original sources if you need to trace a specific claim back to who said it.
 
 This doc supersedes any earlier assumption that Maestro is RAG-based, that an eval harness exists at the strategy level, or that observability tooling has been decided.
 
@@ -9,10 +9,10 @@ This doc supersedes any earlier assumption that Maestro is RAG-based, that an ev
 ## 1. Architecture — confirmed
 
 - **Two separate pipelines, different maturity:** question generation (further along, has a working internal playground) and article generation (currently split between a legacy Claude Project already used live by Editorial, and an in-progress Maestro-native service).
-- **Not RAG.** Agentic document-to-prompt merging workflow — authoring rules/PDFs get extracted and merged into prompts. No vector store, no chunking step, no shared infra with other TrueLearn search/retrieval initiatives. An earlier suggestion that Maestro "should use the same Bedrock KB and config" was conditional on Maestro using RAG, and was confirmed inapplicable once that was ruled out.
+- **Not RAG.** Agentic document-to-prompt merging workflow - authoring rules/PDFs get extracted and merged into prompts. No vector store, no chunking step, no shared infra with other TrueLearn search/retrieval initiatives. An earlier suggestion that Maestro "should use the same Bedrock KB and config" was conditional on Maestro using RAG, and was confirmed inapplicable once that was ruled out.
 - **The application logic (prompt-merging) is owned by Data Science but hasn't been validated or optimized yet — explicitly because no golden test set exists.** This is a real, named blocker on the core generation logic itself, not just on the eval layer around it.
 - **Fail-closed behavior for weak source support is confirmed not defined**, pending clear requirements — not just undocumented, genuinely doesn't exist yet.
-- **Maestro is still a POC, not in production.** No formal release process. SME escalation path, SLA, and rollback authority for a confirmed hallucination are all explicitly undefined, pending Product/Editorial to establish them.
+- **Maestro is still a POC, not in production.** No formal release process. **Distinction confirmed Sep 9:** human-authored content already has established Editorial review workflows; it's specifically AI-generated content inside Maestro where the triggers, clinical-review escalation path, error-reporting workflow, SLA, and rollback authority are undefined. Not "no process exists" — "no process exists for AI output specifically." Product/Editorial need to formally define these requirements.
 - **Data Science was redirected to full-stack development this cycle.** This is the stated reason eval-tooling, observability, and architecture-optimization work has stalled — not neglect, a real resourcing tradeoff. Relevant when estimating how much of the near-term build falls to QA/Engineering rather than Data Science.
 
 ## 2. Evaluation philosophy — corrected framing
@@ -54,3 +54,22 @@ This doc supersedes any earlier assumption that Maestro is RAG-based, that an ev
 - Automatable today, no blocker: Tier 1 checks, ingestion mock-mode smoke test, judge-vs-judge comparison on synthetic fixtures.
 - Automatable once a specific blocker clears: real ingestion from the live API (needs a real endpoint/auth contract), the two stubbed Tier 1 checks (needs confirmed bank-specific rules), the stubbed non-overwrite check (needs the chat-history shape question resolved), judge-accuracy measurement and scheduled live judge runs (both need real SME-labeled golden data, which doesn't exist yet).
 - Will likely always require a human: SME content grading itself (that's the point, not a gap), any elaboration-vs-strict-grounding policy call, style/tone and density/padding judgments at the margins.
+
+## 7. Sep 9 update — live meeting findings + doc-comment resolutions
+
+**Doc-comment resolutions (same morning, before/during the meeting):**
+- Sidecar-vs-library architecture fork **resolved as complementary**: RAGAS is the framework already used in this repo's Tier 3; a sidecar service would be the orchestration layer that could run it, not a competing architecture. No rework needed on existing Tier 3 judges.
+- A/B testing scope **resolved as complementary to calibration checks**, confirmed to need its own dedicated subsection rather than replacing anything. The Comparative A/B Testing task doc was scoped correctly in advance of this confirmation.
+- Langfuse vs. NewRelic **remains genuinely unresolved** — actively being worked (the two leads agreed to connect directly), not stalled, but no decision yet.
+
+**URGENT — unresolved conflict, needs a live answer:** A live architecture-review meeting (Sep 9) presented "grounded in our content — semantic search over 7,345 approved questions, embeddings held in Snowflake" as a current property. The same morning, in writing, Data Science stated document-to-prompt merging is still the current POC implementation and a shared Bedrock KB/RAG approach "remains an architectural candidate we want to benchmark against." These conflict. Do not treat either as settled until confirmed directly — this affects whether the faithfulness/non-contradiction split (Section 2) is still correctly scoped.
+
+**New architecture details from the live meeting (article generation pipeline, LangGraph POC):**
+- Confirmed 9-step sequential pipeline: topic → normalize request → retrieve questions → identify template → filter relevance → verify references → draft article → embed images → assemble output → article.
+- Output is **Markdown for Payload**, not docx — a real divergence from the docx-specific styling assumptions in Editorial's legacy Claude Project (fonts, header/footer colors, etc.). Format-agnostic checks (teaching-case ceiling, references format, arrow style, abbreviation footnotes) still apply; docx-specific style checks may now only be relevant to Editorial's separate legacy workflow.
+- References are sourced from **external APIs/websites** per stated requirements — mechanism of "verification" (real citation confirmation vs. format/URL-resolution check only) is unconfirmed, worth a direct follow-up.
+- Images are sourced from **internal question banks only** — no generated images. Validates the image-catalog approach already staged/planned in the Editorial Assets Staging task as generalizable to Maestro's native pipeline, not just Editorial's legacy one.
+- **Articles are associated with specific questions in Payload** (a student missing a question can be linked to a related article) — a genuinely new testing surface not covered by any existing task doc. This is a recommendation-accuracy problem (is the article correctly linked to the right question), distinct from content-quality checking. Not yet scoped anywhere.
+- **Team explicitly named "no runtime quality check" as an open risk**, with "evaluation and refinement loop" as the proposed mitigation — this is the harness's stated mandate from the team itself, not an inferred opportunity. See the new Runtime Quality Gate task doc.
+- Pipeline is confirmed **sequential today; concurrency and fallback loops are proposed** but not yet built — this is a concrete, near-term first use case for the Comparative A/B Testing scaffold once it exists.
+- Prompt authoring instructions live in **S3, managed from Payload, not hardcoded** — externalizes prompt control to Editorial, consistent with the golden-dataset-ownership principle already established. Raises a new open question: should a prompt change in S3 trigger the same kind of re-baseline eval run a model-version bump would? Not yet answered anywhere.
