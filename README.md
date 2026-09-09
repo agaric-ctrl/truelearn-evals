@@ -8,8 +8,10 @@ and the open questions below before treating anything here as settled.
 It has three parts:
 
 1. **`maestro/`** — the first project: a QA/eval harness for **Maestro**, TrueLearn's
-   AI content-generation backend, being integrated into the Payload CMS editorial tool. Future
-   evaluation projects are expected to live as new siblings next to `maestro/`, following the same
+   multi-content-type AI generation backend being integrated into the Payload CMS editorial tool.
+   The harness implemented here is question-shaped today; Maestro's article-generation work is
+   active but does not yet have a confirmed schema or checks in this repo. Future evaluation
+   projects are expected to live as new siblings next to `maestro/`, following the same
    conventions (see below).
 2. **`reference/`** — a supporting reference implementation of claim-decomposition faithfulness
    scoring (Promptfoo, DeepEval, RAGAS, all judged by Claude), used to prototype the "test the
@@ -25,21 +27,62 @@ It has three parts:
 ## Open questions TrueLearn needs to answer
 
 These are tracked throughout the repo (as `EvalConfig`/`SmeRoster` fields that default to
-unconfirmed, and as inline notes on placeholder data) rather than guessed at anywhere. Grounded
-against a real TrueLearn system-architecture briefing (Confluence/Jira/Slack, late Aug 2026) where
-noted — see `maestro/generation/` (below) for where that grounding actually lives in code.
+unconfirmed, and as inline notes on placeholder data) rather than guessed at anywhere. The current
+evidence comes from two internal architecture snapshots: a late-August 2026 briefing that informed
+`maestro/generation/`, and the September 2026 draft
+[Maestro QA AI Test Strategy](https://docs.google.com/document/d/1AaTvVnUhMcdaLpJcp7qOtJ96QpapeRsA9gpadM8maOI/edit).
+The latter contains newer implementation and organizational findings, but also records unresolved
+or conflicting descriptions. This README therefore separates content types and marks those
+conflicts instead of silently choosing one version.
 
-### Resolved by the system briefing
+### Confirmed or materially clarified
 
-- ~~What should Tier 3's real source-of-truth for "source material" be?~~ **Answered:** Maestro
-  grounds *question* generation on a live web search — each generation carries its own
+- **Exam-question generation payload:** the late-August briefing confirmed that a question
+  generation carries its own live web-search
   `references.query` + `results[]` (external URLs like Physiopedia/PubMed, each with a relevance
   `score`), not a fixed internal corpus, and specifically **not** the separate Bedrock Knowledge
   Base (that pipeline is for member-facing search/discovery and supplying images — a different
   system, do not conflate the two). There is no single golden reference set to grade against; each
-  generation's own references are the source. See `maestro/generation/payload.py`.
+  question generation's own references are the candidate source. See
+  `maestro/generation/payload.py`.
+- **No existing Maestro eval harness:** the September strategy comments record that Data Science
+  has no existing Maestro-specific evaluation harness. RAGAS and a sidecar evaluation service are
+  proposed directions, not existing production infrastructure.
+- **Current human feedback:** Editorial is already providing feedback to Data Science informally.
+  The expected next step is to formalize this once Editorial can test through Payload; the exact
+  rubric, ownership, SLA, and rollback/escalation process remain open.
+- **Current observability baseline:** basic payload and latency logging exist. End-to-end LLM
+  tracing and long-term retention do not yet have a confirmed standard: Langfuse is a planned
+  direction and New Relic is an alternative under discussion.
+- **Fail-closed behavior:** confirmed as not currently defined; it remains pending product and
+  engineering requirements.
 
-### Newly surfaced by the same briefing, still open
+### Architecture reconciliation still required
+
+The September strategy records that current Maestro application logic uses an **agentic
+document-to-prompt merging workflow**, not vector search or the member-facing Bedrock Knowledge
+Base. It also records an article-specific correction: long-form article content is written
+primarily from the model's medical knowledge, while retrieved TrueLearn questions constrain
+terminology, tested associations, and image sourcing rather than serving as exhaustive factual
+source material.
+
+That newer description is not yet reconciled with the confirmed web-reference shape for exam
+questions above. These may be separate pipelines by content type, or one source may describe a
+different implementation stage. Until Engineering/Data Science confirm the boundary, this harness
+must not apply the question faithfulness contract wholesale to articles:
+
+- **Questions:** per-generation web references remain the modeled candidate grounding context.
+- **Articles:** strict claim traceability to retrieved questions is not a valid requirement if
+  those questions are constraints rather than the article's factual source. Candidate checks are
+  non-contradiction, terminology/tested-association alignment, structure/style calibration, and
+  SME clinical review — all still proposals pending approved requirements and real payloads.
+- **ISD/member search:** Bedrock Knowledge Base + OpenSearch is related but separate; no shared
+  Maestro retrieval backend is confirmed.
+
+The first architecture task is therefore to obtain sanitized payloads and an authoritative flow
+for initial generation and revision of **each** content type.
+
+### Still open at the data-contract boundary
 
 Code now exists that *handles* both of the following as unconfirmed (`maestro/generation/payload.py`,
 `checks.py`, `maestro/judge/faithfulness.py`'s `build_retrieval_context_from_references()`) — the
@@ -48,8 +91,8 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
 - **Does the generation payload capture retrieved page *text*, or only the URL + relevance score?**
   A faithfulness judge needs actual passage content to check claims against — a URL alone isn't
   gradable without either an already-captured page excerpt or a live fetch (its own reliability/
-  cost/legal question, out of scope until confirmed). This blocks wiring Tier 3 to real generations
-  even after the source-of-truth question above was answered. `ReferenceResult.text` stays `None`
+  cost/legal question, out of scope until confirmed). This blocks wiring Tier 3 to real question
+  generations even though their candidate source shape is modeled. `ReferenceResult.text` stays `None`
   by default; `build_retrieval_context_from_references()` returns `None` (never `[]`) until at
   least one result actually carries text, and any real caller must Skip the judge call on `None`.
 - **Exact shape of `history[]` / `chat_history[]`** (the revision-loop record) beyond the two
@@ -57,10 +100,15 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
   revision instructions like "remove the table from the question stem"). The new revision-loop
   checks (below) only assert what's confirmed and report `chat_history_alignment` as Skipped for
   everything else.
-- **Is Maestro's generation observability (Langfuse or otherwise) actually wired up today**, and
-  what's captured per generation?
-- **Is there a defined fail-closed behavior when web-reference support is weak**, or does Maestro
-  always generate something regardless of source quality?
+- **What does today's basic payload logging actually capture?** Specifically: prompts/templates,
+  model/version and parameters, references or merged documents, generated output, revision links,
+  tokens/cost, errors/retries, retention, and whether QA can query/export it. This could be an
+  additional or earlier ingestion source than the Payload API.
+- **Which observability platform will own the long-term trace?** Langfuse and New Relic are both
+  documented directions; neither is confirmed as the Maestro standard.
+- **What is the generation contract for weak or conflicting support?** The absence of a current
+  fail-closed rule is confirmed; the desired behavior (block, warn, escalate, or generate with a
+  caveat) remains a product/engineering decision.
 
 ### Still open from before
 
@@ -70,6 +118,11 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
   pool? A converter now exists (`maestro/ingestion/`, below) for turning real Maestro generation
   output into `GoldenExample`-shaped candidates once there's a real answer to *this* question and to
   the Payload API question below.
+- **Where do Editorial/SMEs record and version verdicts?** The September strategy assigns them
+  ownership of curating/versioning golden test data, but the storage and review surface remain
+  undecided. The existing repository-generated spreadsheet workflow works as a controlled batch
+  mechanism; TestRail, a structured Google Sheet, an in-Payload workflow, or a sidecar store are
+  options rather than confirmed decisions.
 - **Who are the real SME reviewers per exam bank (USMLE/COMLEX/COMAT)?** `maestro/golden_data/sme_roster.json`
   ships with all three unassigned.
 - **What are Maestro's real Payload API endpoint contracts?** Not finalized as of this writing —
@@ -77,8 +130,13 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
 - **Full field-value contracts**: exact submit rule for Bottom Line, table placement rules, house
   reference style, and complete QuestionType/QuestionFormat enum lists (and whether they vary by
   exam bank) — all represented as unset `EvalConfig` fields in `maestro/models.py`, not hardcoded.
-- **Does Data Science already have an LLM-judge/eval harness** Maestro's Tier 3 work should plug
-  into instead of the from-scratch version built here?
+- **How does article review differ from question review?** Editorial feedback exists informally and
+  the intended article review is expected to live in Payload, but the article rubric, reviewer
+  assignment, handoff fields, escalation path, and promotion contract are not defined here.
+- **Do TL-13978/TL-13979 expose a testable non-overwrite contract?** The strategy identifies them
+  as regenerating individual components and generating missing fields, which makes unchanged-field
+  assertions relevant. They do not, by title alone, confirm the exact `history[]`/`chat_history[]`
+  schema needed to implement `chat_history_alignment`.
 
 ## Repository layout
 
@@ -95,8 +153,8 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
 │   ├── golden_data/                     # committed Tier 2 data - currently a roster placeholder only
 │   ├── review_pools/                    # gitignored scratch output, never committed
 │   ├── judge/                           # Tier 3: 3 experimental judges (deepeval/RAGAS/Promptfoo) + comparison CLI
-│   ├── generation/                      # real Maestro payload model + revision-loop checks
-│   │   ├── payload.py                   # GenerationPayload - honest confirmed/unconfirmed split
+│   ├── generation/                      # question payload model + revision-loop checks
+│   │   ├── payload.py                   # confirmed question subset + raw unconfirmed fields
 │   │   └── checks.py                    # check_generation_payload() - reuses Tier 1 per history[] entry
 │   ├── ingestion/                       # candidate-ingestion seam, up to the Payload API boundary
 │   │   ├── payload_api.py               # PayloadApiConfig + fetch_raw_candidates() (NotImplementedError)
@@ -130,11 +188,14 @@ Two structural notes worth stating explicitly:
 
 ---
 
-# Maestro: TrueLearn's AI content-generation QA harness
+# Maestro: TrueLearn's multi-content-type AI generation QA harness
 
-Three tiers, built in order: deterministic checks (Tier 1) → golden-set schema + SME review pool
-(Tier 2) → experimental LLM-judge scoring (Tier 3, gated on real SME-verified data existing — see
-the open question above about why it was built anyway).
+The implemented harness is currently question-shaped, while Maestro itself is expanding to
+long-form articles. Three tiers were built in order for exam questions: deterministic checks
+(Tier 1) → golden-set schema + SME review pool (Tier 2) → experimental LLM-judge scoring (Tier 3,
+gated on real SME-verified data existing — see the open questions above). Article support is not
+implemented: its schema, grounding contract, deterministic rules, and review rubric still require
+authoritative payloads and Editorial/Engineering decisions.
 
 **Status:** Tier 1 complete — 6 checks, 42 tests. Tier 2 complete — golden-set schema, review-pool
 generator + importer, 20 tests. Tier 3 built — three independently-implemented LLM-judges (deepeval,
@@ -310,12 +371,19 @@ hand-crafted synthetic placeholder cases (`judge/fixtures/synthetic_cases.json`)
 wrote, not real SME judgment. Its agreement with real SME grading has never been measured. Treat
 every verdict it produces as **not evidence** until that changes.
 
-What it judges: a `GeneratedQuestion`'s explanation content (`explanation_header` +
+What it judges today: a `GeneratedQuestion`'s explanation content (`explanation_header` +
 `explanation_footer` + optional `bottom_line`, joined by `judge.faithfulness.build_actual_output()`)
 against a source passage, using `deepeval`'s `FaithfulnessMetric` with Claude as judge — the same
 mechanism the reference methodology's own `reference/deepeval/faithfulness_demo.py` already proves
 out (see below), reused rather than reinvented. It never judges `question_text` — the stem poses a
 problem, it isn't a claim to fact-check.
+
+This contract is **question-specific**. The September strategy says article output is generated
+primarily from model medical knowledge and that retrieved TrueLearn questions constrain it rather
+than exhaustively source it. A strict article faithfulness score against those questions would
+therefore fail by design. No article judge exists here; possible contradiction, terminology/
+tested-association alignment, density/style, and coverage checks remain proposals requiring an
+approved article rubric and real article payloads. Clinical accuracy remains SME-only.
 
 ```bash
 # Requires your own ANTHROPIC_API_KEY and makes real, paid model calls:
@@ -446,17 +514,23 @@ test the comparison logic itself).
 ### Not in this drop
 
 - Non-contradiction and completeness LLM-judge scoring (Tier 3's remaining scope — see above).
-- Any CI wiring for Tier 3, live or offline-live — it's offline-tested only (`test_judge.py`), never
-  actually invoked automatically anywhere.
+- Any automatic **live judge execution** or judge-based content gate. Offline wrapper/config tests
+  run in `validate.yml`; no CI job calls a model or treats a Tier 3 verdict as evidence.
 
-## Generation payload + revision-loop checks (new, alongside Tier 1)
+## Question-generation payload + revision-loop checks (new, alongside Tier 1)
 
-Built after a real TrueLearn system-architecture briefing resolved Tier 3's source-of-truth
-question and surfaced a testable surface that didn't exist yet: Maestro's revision/chat-history
-loop. `maestro/generation/payload.py` models only the *confirmed* subset of the real generation
-payload — `ReferencesPayload` (`query` + `results[]`, each a `url`/`score`/optional `text`) and
+Built after a real TrueLearn system-architecture briefing established a question-generation
+reference shape and surfaced a testable surface that didn't exist yet: Maestro's revision/
+chat-history loop. `maestro/generation/payload.py` models only the *confirmed* subset of that
+question-generation payload — `ReferencesPayload` (`query` + `results[]`, each a
+`url`/`score`/optional `text`) and
 `GenerationPayload` (`history[]` + `chat_history[]`) — leaving every unconfirmed structural detail
 as a raw `dict` rather than a guessed schema, exactly like `EvalConfig` handles unconfirmed rules.
+
+The September strategy documents active work on a Revision Resolution API and per-object chat
+history, plus component-regeneration/missing-field stories. Those are concrete potential unblock
+paths for non-overwrite tests, but this repo still lacks the exact ordering, entry schema, and
+before/after contract. No ticket title is treated as proof of that data contract.
 
 **Status:** data model + 3 checks, offline-tested only (15 tests, `test_generation.py`), not wired
 into `runner.py`'s `DEFAULT_CHECKS` or any gate.
@@ -488,7 +562,7 @@ python3 maestro/generation/checks.py path/to/generation_payload.json --config ma
 
 Not wired into any CI workflow or gate, same as Tier 3 — run by hand.
 
-## Candidate-ingestion seam (new)
+## Question candidate-ingestion seam (new)
 
 Nothing previously converted real Maestro output into the harness's `GeneratedQuestion`/
 `GoldenExample` candidate-batch shape — `maestro/examples/sample_golden_batch.jsonl`'s own
@@ -529,9 +603,16 @@ python3 maestro/golden/generate_pool.py \
   --out-mapping maestro/review_pools/mock_batch.mapping.json
 ```
 
-**Status:** built, offline-tested only (12 tests, `test_ingestion.py`), not wired into any gate.
-Real usage is blocked on the same open question as everywhere else in this section: Maestro's real
-Payload API endpoint/auth contract.
+**Status:** built for question-shaped candidates, offline-tested only (12 tests,
+`test_ingestion.py`), not wired into any gate. Real usage is blocked on Maestro's real Payload API
+endpoint/auth contract or a confirmed export contract from the basic logging that now exists.
+
+This seam does **not** ingest articles today. `generation_payload_to_candidate()` always parses
+`history[0]` as `GeneratedQuestion`; an article-shaped record is returned as skipped. Although
+`GoldenExample.source_type` already permits `article`, the review-pool preview falls back to raw
+JSON and `import_pool.py` deliberately runs no Tier 1 gate for articles because no article schema
+or deterministic contract exists. Add a content-type discriminator and article converter only
+after a sanitized article payload and approved article review contract are available.
 
 ---
 
@@ -1071,18 +1152,48 @@ shaped a decision in Maestro's Tier 3 (above) rather than staying abstract:
   rubric, alongside the existing deepeval one) and `judge/compare_gold_suites.py` to diff any of
   their verdicts on the same cases — `judge/shared.py` split out to make the second/third judge
   possible without a dependency conflict
+- September strategy findings recorded without collapsing content types: no pre-existing Maestro
+  eval harness, basic payload/latency logging exists, Editorial feedback is active but informal,
+  fail-closed behavior is undefined, and article grounding differs materially from the current
+  question-faithfulness contract
 
-### Near term
+### Near term — information and contract first
 
-- Fill in Maestro's open questions (see top of this README): SME roster, golden-data source of
-  truth, real Payload endpoint contracts.
-- Implement the optional capped live multi-judge orchestrator described above.
-- Add provider-specific model configuration and normalized multi-judge outputs.
+- Reconcile Maestro's architecture **by content type**: obtain sanitized initial/revision payloads
+  and authoritative flows for exam questions and articles. Confirm whether live web search applies
+  only to questions and whether document-to-prompt merging/model knowledge applies only to articles.
+- Inventory today's basic payload/latency logging as a potential ingestion source: captured fields,
+  correlation IDs, retention, redaction, export/access for QA, model/version, references or merged
+  documents, revisions, tokens/cost, retries, and errors. Resolve Langfuse vs New Relic ownership.
+- Confirm the Revision Resolution API and per-object chat-history contracts. Define the unchanged-
+  field/non-overwrite behavior for component regeneration before implementing revision assertions.
+- Formalize the existing Editorial feedback loop in Payload: reviewer roles, article-vs-question
+  rubric, approval/revision outcomes, escalation and rollback authority, and where verdicts are
+  stored/versioned. Populate `sme_roster.json` only after those assignments are confirmed.
+- Decide whether real candidate ingestion should read the Payload API, observability exports, or
+  both; then implement only the confirmed endpoint/export and auth contract.
+- Decide golden-set storage and review surface separately from reporting. The current controlled
+  spreadsheet→JSONL path works for batch review; TestRail, structured Sheets, in-Payload review,
+  or a sidecar store remain options pending Editorial/Engineering ownership.
+
+### Near term — after real data and ownership exist
+
+- Measure the existing Tier 3 question-faithfulness judges against real SME grading before adding
+  any judge-based gate.
+- Add golden-set-specific reporting: review throughput, approval/rejection/revision reasons,
+  per-bank/content-type coverage, and aging/stuck pools. Existing judge HTML/reliability tools do
+  not compute these operational metrics.
+- Evaluate retrieval quality for content types that genuinely retrieve evidence. This requires
+  human relevant-vs-retrieved labels and must be weighed against already-limited SME bandwidth.
+- Compute length/depth calibration ranges from approved content by content type; keep the check
+  unset/Skipped until a representative baseline exists.
+- Only then consider a capped scheduled live-judge run with explicit cost, case-count, and alerting
+  limits. Keep it advisory until agreement and drift thresholds are calibrated.
+- Implement the optional capped live multi-judge orchestrator described above if cross-judge runs
+  remain useful after SME validation.
 - Replace starter regression values with reviewed benchmark baselines.
-- Expand synthetic cases for conflicting sources, temporal facts, dosing, and
-  retrieval omissions.
+- Expand synthetic cases for conflicting sources, temporal facts, dosing, and retrieval omissions.
 - Add adjudication fields and a disagreement workflow for reviewer decisions.
-- Measure Maestro Tier 3's real agreement against SME grading once real golden data exists.
 - Run `run_gold_suite.py`, `run_gold_suite_ragas.py`, and the Promptfoo suite live, then feed all
   three's saved `--json` output into `judge/compare_gold_suites.py` to see whether the three judges
   actually agree on the synthetic cases — not done yet, since all three make real paid model calls.
@@ -1102,7 +1213,7 @@ shaped a decision in Maestro's Tier 3 (above) rather than staying abstract:
 - Add controlled experiments for retrieval quality, prompt changes, and model
   upgrades before production adoption.
 - Extend Maestro's Tier 3 to non-contradiction and completeness scoring.
-- Decide real hosting/ownership for this repository (currently private, no git history yet).
+- Decide long-term hosting and organizational ownership for this internal repository.
 - Add the next evaluation project as a sibling to `maestro/`, reusing `tools/` the same way.
 
 The roadmap intentionally keeps live provider calls and clinical/editorial approval
