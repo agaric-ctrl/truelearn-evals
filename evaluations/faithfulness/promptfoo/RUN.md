@@ -8,7 +8,7 @@ fences or explanatory text.
 
 ```bash
 nvm use 24
-cd "$(git rev-parse --show-toplevel)/reference/promptfoo"
+cd "$(git rev-parse --show-toplevel)/evaluations/faithfulness/promptfoo"
 ```
 
 Run the two-case judge test:
@@ -58,8 +58,8 @@ From anywhere inside the repository checkout, normalize the latest Promptfoo
 JSON output for comparison:
 
 ```bash
-cd "$(git rev-parse --show-toplevel)/reference/promptfoo"
-python3 ../../tools/promptfoo_results.py \
+cd "$(git rev-parse --show-toplevel)/evaluations/faithfulness/promptfoo"
+python3 ../../../tools/promptfoo_results.py \
   .promptfoo/output.json \
-  ../../results/promptfoo-results.json
+  ../../../results/promptfoo-results.json
 ```

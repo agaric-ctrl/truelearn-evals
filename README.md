@@ -13,15 +13,15 @@ It has three parts:
    active but does not yet have a confirmed schema or checks in this repo. Future evaluation
    projects are expected to live as new siblings next to `maestro/`, following the same
    conventions (see below).
-2. **`reference/`** — a supporting reference implementation of claim-decomposition faithfulness
-   scoring (Promptfoo, DeepEval, RAGAS, all judged by Claude), used to prototype the "test the
+2. **`evaluations/faithfulness/`** — a reusable, executable suite for claim-decomposition faithfulness scoring
+   (Promptfoo, DeepEval, RAGAS, all judged by Claude), used to prototype the "test the
    judge before trusting it" discipline that Maestro's Tier 3 LLM-judge work (below) is directly
    built on. Its content and fixtures are generic clinical-QA examples, predate any TrueLearn/
    Maestro involvement, and do not represent TrueLearn content, data, or clinical/editorial review
    in any way.
 3. **`tools/`** — shared, project-agnostic infrastructure (normalized result schema, retry with
    backoff, regression gates, reliability analysis, HTML reporting, provider-usage/cost tracking).
-   Used by `reference/`'s demos today, and by `maestro/judge/` directly; available to any future
+   Used by `evaluations/faithfulness/`'s demos today, and by `maestro/judge/` directly; available to any future
    project without needing to be duplicated.
 
 ## Open questions TrueLearn needs to answer
@@ -114,7 +114,7 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
 
 - **Where does golden-set data actually come from?** Right now `maestro/golden_data/` is empty of
   real records. Is there an existing corpus (editorial may already rate generated questions against
-  reference/Claude output) that could seed it, or does every record start from a fresh SME review
+  reference or Claude output) that could seed it, or does every record start from a fresh SME review
   pool? A converter now exists (`maestro/ingestion/`, below) for turning real Maestro generation
   output into `GoldenExample`-shaped candidates once there's a real answer to *this* question and to
   the Payload API question below.
@@ -163,7 +163,7 @@ underlying facts are still open, only the harness's honest-Skip/`None` handling 
 │   ├── docs/
 │   │   └── REVIEW_GUIDE.md              # Maestro's SME review-pool workflow guide
 │   └── test_maestro.py / test_golden.py / test_judge.py / test_generation.py / test_ingestion.py
-├── reference/                            # supporting faithfulness-eval reference methodology
+├── evaluations/faithfulness/            # reusable faithfulness evaluation suite and fixtures
 │   ├── promptfoo/ , deepeval/ , ragas/  # three implementations of the same judge-testing idea
 │   ├── data/                             # reference methodology's own example fixtures
 │   └── docs/
@@ -182,7 +182,7 @@ Two structural notes worth stating explicitly:
   split was undone deliberately — everything is now in one place.
 - **`docs/` was split, not centralized.** A single top-level `docs/` folder used to hold both
   review guides; each guide now lives inside the project it actually documents
-  (`maestro/docs/REVIEW_GUIDE.md`, `reference/docs/CLINICAL_REVIEW_GUIDE.md`) — reserving the
+  (`maestro/docs/REVIEW_GUIDE.md`, `evaluations/faithfulness/docs/CLINICAL_REVIEW_GUIDE.md`) — reserving the
   choice to add a project-agnostic top-level `docs/` for whatever genuinely spans every project,
   once there's more than one to span.
 
@@ -256,7 +256,7 @@ file's placeholder disclaimer instead.
   below), `generate_pool.py` / `import_pool.py` (the two CLIs, see below).
 - `golden_data/` — committed Tier 2 data: a roster placeholder now (see open questions above),
   `{usmle,comlex,comat}.jsonl` once real promotions exist. Named distinctly from this repo's
-  `reference/data/` (a different project's fixtures) to avoid confusion between the two.
+  `evaluations/faithfulness/data/` (a different project's fixtures) to avoid confusion between the two.
 - `review_pools/` — gitignored scratch space for generator/importer output (`.xlsx`, mapping,
   blocked-side files). Never committed.
 - `test_golden.py` — stdlib `unittest`, one `TestCase` class per Tier 2 module.
@@ -374,7 +374,7 @@ every verdict it produces as **not evidence** until that changes.
 What it judges today: a `GeneratedQuestion`'s explanation content (`explanation_header` +
 `explanation_footer` + optional `bottom_line`, joined by `judge.faithfulness.build_actual_output()`)
 against a source passage, using `deepeval`'s `FaithfulnessMetric` with Claude as judge — the same
-mechanism the reference methodology's own `reference/deepeval/faithfulness_demo.py` already proves
+mechanism the reference methodology's own `evaluations/faithfulness/deepeval/faithfulness_demo.py` already proves
 out (see below), reused rather than reinvented. It never judges `question_text` — the stem poses a
 problem, it isn't a claim to fact-check.
 
@@ -410,12 +410,12 @@ actually been run and read by a human, not bundled in alongside the first-ever M
 
 `faithfulness.py`'s deepeval judge is now one of two. `faithfulness_ragas.py` wraps RAGAS's own
 `Faithfulness` metric (`ChatAnthropic` as the judge, via `LangchainLLMWrapper` — reusing
-`reference/ragas/ragas_faithfulness.py`'s exact mechanism) as a second, independently-implemented
+`evaluations/faithfulness/ragas/ragas_faithfulness.py`'s exact mechanism) as a second, independently-implemented
 judge over the identical Maestro content shape. `run_gold_suite_ragas.py` runs it against the same
 `fixtures/synthetic_cases.json` `run_gold_suite.py` uses, so the two verdicts on the same cases can
 be compared with `tools/reliability.py` or `tools/compare_results.py`.
 
-This exists to extend the same "test the judge before trusting it" discipline `reference/` already
+This exists to extend the same "test the judge before trusting it" discipline `evaluations/faithfulness/` already
 teaches: one judge agreeing with itself proves nothing about whether "faithfulness judge" is a sound
 concept for this content; two mechanically-different judges (deepeval's claim-decomposition vs
 ragas's own statement-level scoring) agreeing on the same synthetic cases is a mild confidence
@@ -425,7 +425,7 @@ evidence yet; this only tests judge-vs-judge agreement, not judge-vs-SME agreeme
 
 **Kept in a separate module and a separate venv on purpose:** ragas's `langchain-anthropic`
 dependency upgrades `click` past what deepeval allows (same conflict `requirements-deepeval.txt`/
-`requirements-ragas.txt` already document for `reference/`), so it cannot live in
+`requirements-ragas.txt` already document for `evaluations/faithfulness/`), so it cannot live in
 `requirements-maestro.txt` alongside deepeval. `shared.py` was split out of `faithfulness.py`
 specifically so both judge modules can share `build_actual_output()`/
 `build_retrieval_context_from_references()` without either one requiring the other's conflicting
@@ -442,9 +442,9 @@ python3 -m venv .venv-maestro-ragas
 .venv-maestro-ragas/bin/python maestro/judge/run_gold_suite_ragas.py
 ```
 
-Note: `requirements-ragas.txt` (root, used by `reference/ragas/`) pins `langchain-anthropic==1.5.4`,
+Note: `requirements-ragas.txt` (root, used by `evaluations/faithfulness/ragas/`) pins `langchain-anthropic==1.5.4`,
 which does not exist on PyPI as of this writing (latest published is `0.3.22`) — that looks like a
-pre-existing stale/typo pin in that file, left untouched here since `reference/` is out of this
+pre-existing stale/typo pin in that file, left untouched here since `evaluations/faithfulness/` is out of this
 change's scope. `requirements-maestro-ragas.txt` pins `langchain-anthropic==0.3.22` instead,
 verified by an actual clean install.
 
@@ -458,7 +458,7 @@ isolated from the click conflict.
 
 `judge/promptfoo/synthetic_cases_suite.yaml` is a third, mechanically-different judge over the same
 6 cases: a Promptfoo config using the `echo` provider (so nothing generates — only the rubric judge
-is under test, same discipline as `reference/promptfoo/01_faithfulness_pass_fail.yaml`) with an
+is under test, same discipline as `evaluations/faithfulness/promptfoo/01_faithfulness_pass_fail.yaml`) with an
 `llm-rubric` assertion grading whether every claim in `answer_under_test` is supported by `source`.
 Test `description`s are set to the exact same `case_id` strings `synthetic_cases.json` uses, so its
 normalized output lines up with the other two judges' in `compare_gold_suites.py` (below).
@@ -616,22 +616,22 @@ after a sanitized article payload and approved article review contract are avail
 
 ---
 
-# Reference: faithfulness-eval methodology (supporting material)
+# Faithfulness evaluation suite (supporting methodology)
 
 Everything below predates the Maestro work and was originally built to learn LLM-judge evaluation
 mechanics from the inside rather than from documentation, using generic clinical-QA content — not
 TrueLearn data. It's kept here because Maestro's Tier 3 (above) directly reuses its central
 discipline: **validate the judge on known-label cases before trusting it to grade a real
 generator** — proven three separate ways below (Promptfoo, DeepEval, RAGAS), then carried into
-`reference/deepeval/faithfulness_demo.py`'s exact mechanism when Tier 3 needed a judge of its own.
+`evaluations/faithfulness/deepeval/faithfulness_demo.py`'s exact mechanism when Tier 3 needed a judge of its own.
 
 Every judge in this part of the repo is Claude (Anthropic). All three frameworks default to OpenAI,
 so pointing them at Claude is a deliberate configuration step in each one, documented below.
 
-**All fixtures in this part (`reference/data/*.json`) are hand-written, synthetic, generic
+**All fixtures in this part (`evaluations/faithfulness/data/*.json`) are hand-written, synthetic, generic
 clinical-QA examples — not TrueLearn content, not reviewed by any TrueLearn clinician or editor.**
 Each carries an explicit placeholder note saying so; see the notes on
-`reference/docs/CLINICAL_REVIEW_GUIDE.md` below.
+`evaluations/faithfulness/docs/CLINICAL_REVIEW_GUIDE.md` below.
 
 ## Quickstart
 
@@ -641,9 +641,9 @@ No API key or framework installation is required:
 
 ```bash
 python3 -m unittest tools/test_result_schema.py
-python3 -m py_compile tools/*.py reference/deepeval/*.py reference/ragas/*.py
-python3 tools/retrieval_correctness.py reference/data/metric_cases.json
-python3 tools/compare_results.py reference/data/demo_results.json
+python3 -m py_compile tools/*.py evaluations/faithfulness/deepeval/*.py evaluations/faithfulness/ragas/*.py
+python3 tools/retrieval_correctness.py evaluations/faithfulness/data/metric_cases.json
+python3 tools/compare_results.py evaluations/faithfulness/data/demo_results.json
 ```
 
 ### 2. Install the live framework environments
@@ -652,8 +652,8 @@ Use separate environments because DeepEval and RAGAS have incompatible
 dependency constraints:
 
 ```bash
-python3 -m venv reference/deepeval/.venv-deepeval
-reference/deepeval/.venv-deepeval/bin/pip install -r requirements-deepeval.txt
+python3 -m venv evaluations/faithfulness/deepeval/.venv-deepeval
+evaluations/faithfulness/deepeval/.venv-deepeval/bin/pip install -r requirements-deepeval.txt
 
 python3 -m venv .venv-ragas
 .venv-ragas/bin/pip install -r requirements-ragas.txt
@@ -664,7 +664,7 @@ python3 -m venv .venv-ragas
 ```bash
 export ANTHROPIC_API_KEY=your-key
 python3 tools/run_evals.py \
-  --deepeval-python reference/deepeval/.venv-deepeval/bin/python \
+  --deepeval-python evaluations/faithfulness/deepeval/.venv-deepeval/bin/python \
   --ragas-python .venv-ragas/bin/python
 ```
 
@@ -677,7 +677,7 @@ python3 tools/html_report.py \
   results/report.html
 ```
 
-For Promptfoo, use Node 24 and follow [`reference/promptfoo/RUN.md`](reference/promptfoo/RUN.md).
+For Promptfoo, use Node 24 and follow [`evaluations/faithfulness/promptfoo/RUN.md`](evaluations/faithfulness/promptfoo/RUN.md).
 Live GitHub Actions runs are manual-only and require the repository
 `ANTHROPIC_API_KEY` secret.
 
@@ -782,8 +782,8 @@ A note on why hand-rolled rubrics are risky: an early Promptfoo faithfulness rub
 
 ## Setup
 
-Per-framework run steps are in `reference/promptfoo/RUN.md`, `reference/deepeval/RUN.md`, and
-`reference/ragas/RUN.md`. Highlights:
+Per-framework run steps are in `evaluations/faithfulness/promptfoo/RUN.md`, `evaluations/faithfulness/deepeval/RUN.md`, and
+`evaluations/faithfulness/ragas/RUN.md`. Highlights:
 
 - Node 24+ is required for Promptfoo (Node 22 is rejected).
 - DeepEval and RAGAS conflict on the `click` version if installed in the same virtualenv. Use a separate venv per framework.
@@ -805,7 +805,7 @@ with:
 
 ```bash
 python3 tools/run_evals.py \
-  --deepeval-python reference/deepeval/.venv-deepeval/bin/python \
+  --deepeval-python evaluations/faithfulness/deepeval/.venv-deepeval/bin/python \
   --ragas-python .venv-ragas/bin/python
 ```
 
@@ -840,7 +840,7 @@ follow-up workflow builds and publishes the dependency-free HTML report as the
 
 ## Gold labels and accuracy
 
-Reviewers can label cases in [`reference/data/gold_cases.json`](reference/data/gold_cases.json)
+Reviewers can label cases in [`evaluations/faithfulness/data/gold_cases.json`](evaluations/faithfulness/data/gold_cases.json)
 with the expected faithfulness verdict. **These are hand-written synthetic placeholder cases, not
 TrueLearn content.** The offline metrics helper accepts the
 same cases with a `predicted_pass` field added by a judge adapter:
@@ -858,15 +858,15 @@ claim-level `severity`/`evidence` annotations. They intentionally remain
 `pending_clinician_review`; nothing here represents automated labels
 as clinical approval.
 
-See the [reviewer-workflow guide](reference/docs/CLINICAL_REVIEW_GUIDE.md) and copy the
-[review template](reference/data/clinical_review_template.json). Do not add patient
+See the [reviewer-workflow guide](evaluations/faithfulness/docs/CLINICAL_REVIEW_GUIDE.md) and copy the
+[review template](evaluations/faithfulness/data/clinical_review_template.json). Do not add patient
 identifiers or real clinical notes to this repository.
 
 To score normalized framework output directly, use matching `case_id` values:
 
 ```bash
 python3 tools/gold_accuracy.py \
-  --gold reference/data/demo_gold_cases.json \
+  --gold evaluations/faithfulness/data/demo_gold_cases.json \
   --results results/python-results.json
 ```
 
@@ -949,7 +949,7 @@ Generate a shareable, dependency-free report from normalized results:
 
 ```bash
 python3 tools/html_report.py \
-  reference/data/demo_results.json \
+  evaluations/faithfulness/data/demo_results.json \
   results/report.html
 ```
 
@@ -960,7 +960,7 @@ Promptfoo output is normalized with:
 
 ```bash
 python3 tools/promptfoo_results.py \
-  reference/promptfoo/.promptfoo/output.json \
+  evaluations/faithfulness/promptfoo/.promptfoo/output.json \
   results/promptfoo-result.json
 ```
 
@@ -973,8 +973,8 @@ Store approved metrics in a baseline JSON file and compare new runs:
 
 ```bash
 python3 tools/regression.py \
-  reference/data/regression_baseline.json \
-  reference/data/regression_current.json
+  evaluations/faithfulness/data/regression_baseline.json \
+  evaluations/faithfulness/data/regression_current.json
 ```
 
 The default gates allow at most a five-point accuracy drop and 25% increases in
@@ -985,14 +985,14 @@ latency or estimated cost. A failed gate returns a non-zero exit code for CI.
 Analyze repeated framework runs with:
 
 ```bash
-python3 tools/reliability.py reference/data/reliability_fixture.json
+python3 tools/reliability.py evaluations/faithfulness/data/reliability_fixture.json
 ```
 
 The report shows per-case verdict agreement, verdict flips, mean score, and
 population score standard deviation. Repeated runs expose borderline cases that
 single-run evaluations can hide.
 
-`reference/data/multi_judge_fixture.json` demonstrates comparing three judge models with
+`evaluations/faithfulness/data/multi_judge_fixture.json` demonstrates comparing three judge models with
 the same cases. Replace the fixture with normalized live outputs to measure
 model disagreement before selecting a production judge.
 
@@ -1003,7 +1003,7 @@ same cases to multiple judge models:
 
 ```bash
 python3 tools/run_multi_judge.py \
-  --cases reference/data/gold_cases.json \
+  --cases evaluations/faithfulness/data/gold_cases.json \
   --models judge-a,judge-b,judge-c \
   --max-cases 10
 ```
@@ -1089,11 +1089,11 @@ baselines instead of being hidden inside a single aggregate score.
 
 Faithfulness does not measure whether retrieval found the right evidence or
 whether the answer is medically correct. The starter dataset in
-[`reference/data/metric_cases.json`](reference/data/metric_cases.json) records relevant and
+[`evaluations/faithfulness/data/metric_cases.json`](evaluations/faithfulness/data/metric_cases.json) records relevant and
 retrieved context IDs plus an answer-correctness label. Run:
 
 ```bash
-python3 tools/retrieval_correctness.py reference/data/metric_cases.json
+python3 tools/retrieval_correctness.py evaluations/faithfulness/data/metric_cases.json
 ```
 
 The report includes macro-averaged retrieval precision, recall, F1, and answer
@@ -1144,7 +1144,7 @@ shaped a decision in Maestro's Tier 3 (above) rather than staying abstract:
 - Privacy scanning, schema migrations, HTML reporting, and CI validation
 - Reviewer-workflow placeholders and documentation for both the reference methodology and Maestro
 - Maestro Tier 1 (deterministic checks), Tier 2 (golden set + review pool), Tier 3 (experimental judge)
-- Repo reorganized into `maestro/` (project) + `reference/` (supporting methodology) + `tools/`
+- Repo reorganized into `maestro/` (project) + `evaluations/faithfulness/` (supporting methodology) + `tools/`
   (shared infrastructure), so future evaluation projects have an obvious place to land
 - Maestro's real system-architecture briefing incorporated: `generation/` (real payload model +
   revision-loop checks) and `ingestion/` (candidate-ingestion seam up to the Payload API boundary)
@@ -1202,11 +1202,11 @@ shaped a decision in Maestro's Tier 3 (above) rather than staying abstract:
   whether it scores as expected under a real Promptfoo eval is still unconfirmed.
 - Fix or confirm the stale `langchain-anthropic==1.5.4` pin in the root `requirements-ragas.txt`
   (does not resolve on PyPI as of this writing; `requirements-maestro-ragas.txt` uses `0.3.22`
-  instead) — left as-is since `reference/` is out of this change's scope.
+  instead) — left as-is since `evaluations/faithfulness/` is out of this change's scope.
 
 ### Longer term
 
-- Obtain qualified review for benchmark cases, in both `maestro/` and `reference/`.
+- Obtain qualified review for benchmark cases, in both `maestro/` and `evaluations/faithfulness/`.
 - Add scheduled model and retrieval drift monitoring.
 - Track benchmark versions, judge prompts, and evaluation-run provenance.
 - Build a dashboard for trend, cost, latency, and disagreement analysis.

@@ -4,7 +4,7 @@
 # if it ever changes (small and stable: 6 cases).
 #
 # Uses the `echo` provider so no model generates; we test the JUDGE only - same discipline as
-# reference/promptfoo/01_faithfulness_pass_fail.yaml, applied to Maestro's own content shape
+# evaluations/faithfulness/promptfoo/01_faithfulness_pass_fail.yaml, applied to Maestro's own content shape
 # (explanation_header + explanation_footer, HTML, unstripped - the exact text the Python judges
 # see via build_actual_output(), joined the same way with a blank line).
 #

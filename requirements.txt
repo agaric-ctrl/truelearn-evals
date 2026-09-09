@@ -1,4 +1,4 @@
-# Python dependency references for the reference/deepeval/ and reference/ragas/ scripts.
+# Python dependency references for the evaluations/faithfulness/deepeval/ and evaluations/faithfulness/ragas/ scripts.
 # Promptfoo is a Node tool, run via `npx promptfoo@latest` (no pip needed).
 #
 # NOTE: deepeval and ragas have a known `click` version conflict when installed

@@ -2,7 +2,7 @@
 article) that other things can eventually be scored against. Stored as JSONL (one object per line,
 diff-friendly), one file per exam bank.
 
-review_status mirrors this repo's own reference/data/gold_cases.json pattern: a real, known starting state
+review_status mirrors this repo's own evaluations/faithfulness/data/gold_cases.json pattern: a real, known starting state
 ("pending_sme_review"), not an unconfirmed fact - so it defaults to a literal, not to None the way
 EvalConfig's fields do.
 """

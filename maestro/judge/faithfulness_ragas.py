@@ -50,7 +50,7 @@ async def judge_faithfulness_ragas(
 
     Async, not sync, because ragas's single_turn_ascore is async - using it directly (rather than
     the evaluate() batch runner) sidesteps a batch-runner hang seen in ragas 0.4.x, same reasoning
-    as reference/ragas/ragas_faithfulness.py.
+    as evaluations/faithfulness/ragas/ragas_faithfulness.py.
 
     CaseResult.reason carries only the EXPERIMENTAL_LABEL - unlike deepeval's metric.reason, ragas's
     single_turn_ascore returns a bare float with no per-claim reasoning API. CaseResult.claims is

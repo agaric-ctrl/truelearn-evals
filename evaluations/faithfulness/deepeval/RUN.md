@@ -11,7 +11,7 @@ cd "$(git rev-parse --show-toplevel)"
 python3 -m venv .venv-deepeval
 .venv-deepeval/bin/pip install -r requirements-deepeval.txt
 
-.venv-deepeval/bin/python reference/deepeval/faithfulness_demo.py
+.venv-deepeval/bin/python evaluations/faithfulness/deepeval/faithfulness_demo.py
 ```
 
 If a different venv (e.g. `.venv-ragas`) is already active in this shell, run `deactivate` first, or you'll get `ModuleNotFoundError: No module named 'deepeval'`.

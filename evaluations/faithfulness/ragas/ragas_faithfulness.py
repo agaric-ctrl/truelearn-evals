@@ -7,7 +7,7 @@ OpenAI, so we wrap ChatAnthropic to override it).
 
 PLACEHOLDER: the context/grounded/hallucinated content below is hand-written synthetic
 clinical-QA content for exercising the judge mechanism - not TrueLearn content, and not
-reviewed by any clinician. See the root README ("Faithfulness-eval reference methodology").
+reviewed by any clinician. See the root README ("Faithfulness evaluation suite").
 
 Run:  python3 ragas_faithfulness.py [--json]
 Needs: ANTHROPIC_API_KEY in the environment.
@@ -19,7 +19,7 @@ import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
 from ragas.dataset_schema import SingleTurnSample
 from ragas.metrics import Faithfulness
