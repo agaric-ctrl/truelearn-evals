@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # One command to run Tier 1 (deterministic) checks against real staged content and get a report.
 #
-# This is the eval-content counterpart to run_tests.sh: run_tests.sh answers "does the code work"
+# This is the eval-content counterpart to run_unit_tests.sh: run_unit_tests.sh answers "does the code work"
 # (unit tests, no report beyond pass/fail); this answers "what does Tier 1 find in real staged
 # content" and always produces an HTML report you can open, because these checks are meant to be
 # read by a human (SME/editorial), not just pass/fail'd.
@@ -32,7 +32,7 @@
 #
 # Output: one line per report written, with its path and FAIL count, plus a final summary saying
 # where to look. Exit code is always 0 (Tier 1 FAILs are findings to review, not a broken build -
-# unlike run_tests.sh, this is not a pass/fail gate).
+# unlike run_unit_tests.sh, this is not a pass/fail gate).
 
 set -uo pipefail
 

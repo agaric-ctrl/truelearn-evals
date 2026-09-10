@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# One command to run Maestro tests - either everything, or one file/class/test - and get a
-# clear pass/fail answer.
+# One command to run Maestro's UNIT TESTS - either everything, or one file/class/test - and get a
+# clear pass/fail answer. This proves the CODE works (does a check/judge/script do what its own
+# tests say it should) - it does NOT run the checks against real content. For that, see
+# ./run_evals.sh instead.
 #
 # This exists because remembering two venvs and nine file paths isn't a real interface - and
 # whatever a human runs locally should be exactly what CI runs too, so there's no drift between
@@ -9,10 +11,10 @@
 # Actions UI; this script runs the same suites (or a single target) in one shot for local use.
 #
 # Usage:
-#   ./run_tests.sh                                                        # everything
-#   ./run_tests.sh maestro/test_maestro.py                                # one file
-#   ./run_tests.sh maestro.test_maestro.TableAbbreviationFootnotesTests   # one class (dotted form)
-#   ./run_tests.sh maestro.test_maestro.TableAbbreviationFootnotesTests.test_complex_roman_numeral_not_flagged  # one test
+#   ./run_unit_tests.sh                                                        # everything
+#   ./run_unit_tests.sh maestro/test_maestro.py                                # one file
+#   ./run_unit_tests.sh maestro.test_maestro.TableAbbreviationFootnotesTests   # one class (dotted form)
+#   ./run_unit_tests.sh maestro.test_maestro.TableAbbreviationFootnotesTests.test_complex_roman_numeral_not_flagged  # one test
 #
 # A single target only ever needs one venv, so it's picked automatically: anything under
 # test_judge_ragas (file or dotted form) runs in .venv-maestro-ragas; everything else runs in
