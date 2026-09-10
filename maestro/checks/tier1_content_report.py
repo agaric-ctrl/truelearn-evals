@@ -83,9 +83,20 @@ def _run_checks(question, config: EvalConfig) -> list[CheckResult]:
     return results
 
 
-def _render_sample(filename: str, results: list[CheckResult]) -> str:
+_DEFAULT_INTRO = (
+    "Hand-written placeholder sample content (see maestro/examples/tier1_content_samples/), not "
+    "real Maestro output or real TrueLearn content. Not wired into any promotion or approval gate."
+)
+
+
+def _render_sample(anchor: str, title: str, subtitle: str, results: list[CheckResult]) -> str:
+    # FAILs first: a reader scanning for "what's actually wrong" shouldn't have to wade through a
+    # dozen Skips (most rows, on real content, since most checks Skip until EvalConfig supplies a
+    # real threshold - see the limitations box) to find the one or two rows that matter.
+    ordered = sorted(results, key=lambda r: {Status.FAIL: 0, Status.PASS: 1, Status.SKIPPED: 2}[r.status])
+
     rows = []
-    for result in results:
+    for result in ordered:
         location = " ".join(part for part in (result.field_name, result.sub_check) if part)
         rows.append(
             "<tr>"
@@ -101,8 +112,10 @@ def _render_sample(filename: str, results: list[CheckResult]) -> str:
         f"{counts[Status.FAIL]} failed, {counts[Status.SKIPPED]} skipped, "
         f"{counts[Status.PASS]} passed ({len(results)} total)"
     )
+    subtitle_html = f'<p class="subtitle">{html.escape(subtitle)}</p>' if subtitle else ""
     return f"""
-<h2>{html.escape(filename)}</h2>
+<h2 id="{anchor}">{html.escape(title)}</h2>
+{subtitle_html}
 <p class="summary">{summary}</p>
 <table>
 <thead><tr><th>Status</th><th>Check</th><th>Location</th><th>Message</th></tr></thead>
@@ -111,8 +124,70 @@ def _render_sample(filename: str, results: list[CheckResult]) -> str:
 """
 
 
-def render_report(samples: list[tuple[str, list[CheckResult]]]) -> str:
-    sections = "".join(_render_sample(filename, results) for filename, results in samples)
+def render_report(
+    samples: list[tuple[str, list[CheckResult]]] | list[tuple[str, list[CheckResult], str]],
+    intro: str = _DEFAULT_INTRO,
+) -> str:
+    # Accept either (title, results) or (title, results, subtitle) - callers with no extra
+    # identifying info (e.g. an article's own filename is already meaningful) can omit it.
+    normalized = []
+    for entry in samples:
+        if len(entry) == 3:
+            normalized.append(entry)
+        else:
+            title, results = entry
+            normalized.append((title, results, ""))
+
+    anchors = [f"sample-{i}" for i in range(len(normalized))]
+
+    failing = [
+        (anchor, title, sum(1 for r in results if r.status == Status.FAIL))
+        for anchor, (title, results, _subtitle) in zip(anchors, normalized)
+        if any(r.status == Status.FAIL for r in results)
+    ]
+    fail_counts_by_check: dict[str, int] = {}
+    for _title, results, _subtitle in normalized:
+        for r in results:
+            if r.status == Status.FAIL:
+                fail_counts_by_check[r.check_name] = fail_counts_by_check.get(r.check_name, 0) + 1
+
+    if failing:
+        failing_rows = "".join(
+            f'<tr><td><a href="#{anchor}">{html.escape(title)}</a></td><td>{count}</td></tr>'
+            for anchor, title, count in failing
+        )
+        by_check_rows = "".join(
+            f"<tr><td>{html.escape(check)}</td><td>{count}</td></tr>"
+            for check, count in sorted(fail_counts_by_check.items(), key=lambda kv: -kv[1])
+        )
+        overview = f"""
+<div class="overview">
+<strong>{len(failing)} of {len(normalized)} sample(s) have at least one FAIL.</strong>
+<div class="overview-columns">
+<div>
+<p>Samples with a FAIL (click to jump):</p>
+<table>
+<thead><tr><th>Sample</th><th>FAILs</th></tr></thead>
+<tbody>{failing_rows}</tbody>
+</table>
+</div>
+<div>
+<p>FAILs by check:</p>
+<table>
+<thead><tr><th>Check</th><th>FAILs</th></tr></thead>
+<tbody>{by_check_rows}</tbody>
+</table>
+</div>
+</div>
+</div>
+"""
+    else:
+        overview = '<div class="overview"><strong>No FAILs in any sample.</strong></div>'
+
+    sections = "".join(
+        _render_sample(anchor, title, subtitle, results)
+        for anchor, (title, results, subtitle) in zip(anchors, normalized)
+    )
     limitations = "".join(f"<li>{html.escape(item)}</li>" for item in _LIMITATIONS)
     return f"""<!doctype html>
 <html lang="en">
@@ -130,17 +205,21 @@ th {{ background: #f2f2f2; }}
 .badge.fail {{ background: #fbe4e4; color: #a21d1d; }}
 .badge.skipped {{ background: #eee; color: #555; }}
 .summary {{ color: #555; }}
+.subtitle {{ color: #555; font-style: italic; margin: -0.5rem 0 0.5rem; }}
 .limitations {{ background: #fff8e6; border: 1px solid #e6c95c; border-radius: .25rem; padding: 1rem 1.5rem; }}
+.overview {{ background: #eef4fb; border: 1px solid #a9c6e8; border-radius: .25rem; padding: 1rem 1.5rem; margin-bottom: 1.5rem; }}
+.overview-columns {{ display: flex; gap: 2rem; flex-wrap: wrap; }}
+.overview-columns > div {{ flex: 1 1 300px; }}
 </style>
 </head>
 <body>
 <h1>Maestro Tier 1 Content Checks Report</h1>
-<p>Hand-written placeholder sample content (see maestro/examples/tier1_content_samples/), not real
-Maestro output or real TrueLearn content. Not wired into any promotion or approval gate.</p>
+<p>{intro}</p>
 <div class="limitations">
 <strong>Honest limitations - read before trusting a PASS or FAIL below:</strong>
 <ul>{limitations}</ul>
 </div>
+{overview}
 {sections}
 </body>
 </html>
