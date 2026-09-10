@@ -12,3 +12,4 @@ node_modules/
 .DS_Store
 results/
 maestro/review_pools/
+test-results.log
