@@ -73,8 +73,13 @@ def main() -> int:
             out_path = args.save_converted_json / f"{path.stem}.json"
             out_path.write_text(json.dumps(asdict(question), indent=2), encoding="utf-8")
 
+    intro = (
+        "Real, full reference articles (.docx) from Editorial's Biochemistry asset bundle - not "
+        "placeholder or synthetic content. See docs/qa-context/EDITORIAL_ASSETS_STAGING_TASK.md - "
+        "this is a draft validation run, not an adopted golden dataset or an approval gate."
+    )
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.out.write_text(render_report(samples), encoding="utf-8")
+    args.out.write_text(render_report(samples, intro=intro), encoding="utf-8")
 
     total_fails = sum(1 for _, results in samples for r in results if r.status.value == "fail")
     print(f"Wrote {args.out} ({len(samples)} article(s), {total_fails} FAIL(s) total across all checks).")
