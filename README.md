@@ -9,10 +9,11 @@ content, not TrueLearn data. That reusable work remains in
 now also contains exploratory QA/evaluation tooling for **Maestro**, TrueLearn's AI
 content-generation backend.
 
-None of this is production infrastructure. Maestro remains a POC with no formal release process or
-defined SME escalation and rollback authority. Tier 1 findings do not gate article promotion, the
-five Tier 3 judges have not been validated against real SME judgment, and the repository does not
-connect to live Maestro/Payload output. See Status below for what is built and what remains open.
+This is experimental QA/evaluation tooling, not production infrastructure. Nothing here gates or
+blocks real content today: Tier 1 checks report findings but are not an article-promotion gate, and
+the five Tier 3 LLM judges have not been validated against real SME judgment. The repository does
+not connect to live Maestro/Payload output yet. See Status below for what is built and what remains
+open.
 
 ## Repository layout
 
