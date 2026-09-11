@@ -44,6 +44,9 @@ MAIN_TEST_FILES=(
   maestro/test_judge_promptfoo_suite.py
   maestro/test_import_summary.py
   maestro/test_editorial_staging.py
+  maestro/test_judge_non_contradiction.py
+  maestro/test_judge_source_coverage.py
+  maestro/test_comparative.py
 )
 
 if [ ! -x ".venv-maestro/bin/python" ]; then

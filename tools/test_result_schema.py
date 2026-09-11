@@ -271,6 +271,14 @@ class ResultSchemaTest(unittest.TestCase):
 
         self.assertEqual(errors, [])
 
+    def test_comparative_ab_live_workflow_has_required_safeguards(self):
+        errors = validate_workflow(
+            ROOT / ".github" / "workflows" / "maestro-comparative-ab-report.yml",
+            live=True,
+        )
+
+        self.assertEqual(errors, [])
+
     def test_promptfoo_results_normalize_to_shared_schema(self):
         payload = json.loads(
             (ROOT / "evaluations" / "faithfulness" / "data" / "promptfoo_result_fixture.json").read_text()

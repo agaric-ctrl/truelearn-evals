@@ -1,0 +1,79 @@
+[
+  {
+    "case_id": "covers_both_anaphylaxis_facts",
+    "exam_bank": "USMLE",
+    "question_type": "single question",
+    "topic": "First-line treatment of anaphylaxis",
+    "source": [
+      "Epinephrine is the first-line treatment for anaphylaxis.",
+      "It should be administered intramuscularly without delay."
+    ],
+    "generated": {
+      "explanation_header": "<p>The correct treatment is intramuscular epinephrine.</p>",
+      "explanation_footer": "<p>Epinephrine is first-line for anaphylaxis and should be given intramuscularly right away, without waiting for other interventions.</p>",
+      "bottom_line": null
+    },
+    "expected_pass": true,
+    "review_status": "synthetic_not_sme_reviewed",
+    "reviewer": "synthetic-fixture-author",
+    "_placeholder": "Hand-written synthetic case for the source-coverage judge, not real SME judgment. Both source facts (drug of choice, route/urgency) are restated."
+  },
+  {
+    "case_id": "covers_single_source_fact",
+    "exam_bank": "COMLEX",
+    "question_type": "single question",
+    "topic": "Definition of hyponatremia",
+    "source": [
+      "A serum sodium below 135 mEq/L is classified as hyponatremia."
+    ],
+    "generated": {
+      "explanation_header": "<p>This patient's serum sodium of 128 mEq/L meets the definition of hyponatremia.</p>",
+      "explanation_footer": "<p>Hyponatremia is defined as a serum sodium below 135 mEq/L.</p>",
+      "bottom_line": null
+    },
+    "expected_pass": true,
+    "review_status": "synthetic_not_sme_reviewed",
+    "reviewer": "synthetic-fixture-author",
+    "_placeholder": "Hand-written synthetic case for the source-coverage judge, not real SME judgment."
+  },
+  {
+    "case_id": "omits_hyperkalemia_danger_progression",
+    "exam_bank": "USMLE",
+    "question_type": "single question",
+    "topic": "ECG findings and management of hyperkalemia",
+    "source": [
+      "Hyperkalemia can cause peaked T waves on ECG.",
+      "Severe, untreated hyperkalemia can progress to a sine-wave pattern and cardiac arrest.",
+      "Treatment includes calcium gluconate to stabilize the cardiac membrane."
+    ],
+    "generated": {
+      "explanation_header": "<p>Hyperkalemia classically produces peaked T waves on ECG.</p>",
+      "explanation_footer": "<p>Calcium gluconate is given to stabilize the cardiac membrane.</p>",
+      "bottom_line": null
+    },
+    "expected_pass": false,
+    "review_status": "synthetic_not_sme_reviewed",
+    "reviewer": "synthetic-fixture-author",
+    "_placeholder": "Hand-written synthetic case for the source-coverage judge, not real SME judgment. Silently omits the most clinically important fact in the source - that untreated hyperkalemia progresses to a life-threatening sine-wave pattern/cardiac arrest - the exact kind of obvious, expected-to-see omission this judge exists to catch."
+  },
+  {
+    "case_id": "omits_most_of_warfarin_mechanism",
+    "exam_bank": "COMAT",
+    "question_type": "single question",
+    "topic": "Mechanism and monitoring of warfarin",
+    "source": [
+      "Warfarin inhibits vitamin K epoxide reductase.",
+      "This reduces synthesis of clotting factors II, VII, IX, and X.",
+      "Warfarin's effect is monitored using INR."
+    ],
+    "generated": {
+      "explanation_header": "<p>Warfarin works by inhibiting vitamin K epoxide reductase.</p>",
+      "explanation_footer": "<p>This is why it is used as an anticoagulant.</p>",
+      "bottom_line": null
+    },
+    "expected_pass": false,
+    "review_status": "synthetic_not_sme_reviewed",
+    "reviewer": "synthetic-fixture-author",
+    "_placeholder": "Hand-written synthetic case for the source-coverage judge, not real SME judgment. Only 1 of 3 source facts is covered - which clotting factors are affected and how the effect is monitored (INR) are both silently dropped."
+  }
+]

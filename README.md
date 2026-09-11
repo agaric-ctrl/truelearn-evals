@@ -29,50 +29,76 @@ Code session in this repo) — read it first for anything Maestro-related. `docs
 the full detail behind it: findings from TrueLearn's own architecture discussions, and one task doc
 per major piece of work, each stating its own status.
 
-## What's built
+## Status
 
-- **Tier 1 (deterministic checks)** — 13 rule-based checks against a generated question or article
-  (required fields, HTML validity, table duplication, reference format, readability, markdown
-  hygiene, and more — see `maestro/checks/`). Runs on every PR. Also runs against **real** staged
-  Editorial content (see below) via `./run_evals.sh`, which produces a readable HTML report.
-- **Tier 2 (golden set)** — schema + SME review-pool generate/import workflow
-  (`maestro/golden/`), so approved content can become a reference set other things get scored
-  against.
-- **Tier 3 (LLM judges) — experimental.** Three independently-implemented judges (deepeval, RAGAS,
-  a Promptfoo rubric) for faithfulness scoring, plus a script to compare their verdicts against each
-  other. Validated only against 6 hand-written synthetic cases — **not real SME judgment** — off by
-  default, not wired into any gate. Treat every verdict as not-yet-evidence.
-- **Real Editorial content, staged as a draft proposal** — real question-bank/image-catalog/
-  reference-article assets from Editorial's Biochemistry bank, tiered and run through Tier 1 for
-  real (`maestro/golden_data/`, `docs/qa-context/EDITORIAL_ASSETS_STAGING_TASK.md`). Explicitly not
-  adopted golden data — promotion is blocked on SME assignment, same as Tier 2 above.
-- **Golden-set import reporting** — a plain-language throughput summary (approved/rejected/why) for
-  a review-pool import run, for an SME/editorial audience (`maestro/golden/import_summary.py`).
-- **Local dev tooling** — `run_unit_tests.sh` (one command for the whole test suite, or one file/class/
-  test) and `run_evals.sh` (one command for a real Tier 1 content report), both mirroring what CI
-  actually runs so there's no "passed for me" vs. "passed in CI" drift.
+### Done
 
-## What's not built yet
+- **Tier 1 deterministic checks** — 13 checks in `maestro/checks/`, run via `maestro/runner.py`;
+  PR-blocking in `validate.yml`.
+- **Tier 1 run against real content** — `./run_evals.sh` converts Editorial's 3 real Biochemistry
+  `.docx` articles and checks the 71 staged questions, writing two HTML reports.
+- **Tier 2 golden set** — `GoldenExample` schema + blind SME review pool as an Excel round-trip
+  (`generate_pool.py` exports, `import_pool.py` re-imports and gates on Tier 1).
+- **Golden-set import summary** — `import_pool.py --outcomes-json` feeds `import_summary.py`, which
+  writes an approved/rejected/why markdown summary; runs in the existing CI smoke test.
+- **Editorial assets staged** — `stage_editorial_assets.py` tiered the real question bank into 71
+  drafts, 40 image-relevance pairs, 33 article fixtures, under `golden_data/staging/`, checksummed
+  against a manifest.
+- **Tier 3 faithfulness judges (3)** — deepeval, RAGAS, and a Promptfoo rubric, independently
+  implemented so disagreement between them is itself a signal; `compare_gold_suites.py` diffs them.
+- **Tier 3 non-contradiction judge** — custom Claude prompt returning structured JSON (no packaged
+  metric in either framework does contradiction); threshold `MAX_ALLOWED_CONTRADICTIONS = 0`.
+- **Tier 3 source-coverage judge** — custom Claude prompt decomposing the source and scoring
+  covered/total; threshold `COVERAGE_THRESHOLD = 0.8`. **Exam questions only — not valid for
+  articles** (see `source_coverage.py`'s SCOPE section).
+- **Comparative (A/B) scaffold** — `maestro/comparative/`: variant pair in, Tier 1 + available
+  judges run per side, side-by-side HTML diff out. Manual-dispatch workflow only. No logic picks a
+  winner.
+- **Test + eval runners** — `run_unit_tests.sh` (241 tests across two venvs) and `run_evals.sh`,
+  running the same commands CI runs.
 
-- **No connection to live Maestro.** Everything above runs against synthetic fixtures or a static
-  snapshot of real Editorial content — nothing here calls Maestro/Payload in real time. The seam for
-  it exists (`maestro/ingestion/`) but its `fetch_raw_candidates()` deliberately raises
-  `NotImplementedError`: the real API endpoint, auth scheme, and response shape aren't confirmed yet.
-- **Tier 3's remaining judges** (non-contradiction, source-coverage) — not started.
-- **Comparative A/B testing** (e.g. prompt-merging vs. RAG) — not started.
-- **A runtime quality gate** (block/flag content before it ships) — scoping only, blocked on an
-  unresolved architecture question (see `maestro/CLAUDE.md`).
-- **Several Tier 1 checks can't actually fail yet** — readability, redundancy, and parts of the
-  reference-format check always report "Skipped" because no one has confirmed a real target value
-  (a reading-level range, a citation style, etc.). See
-  `docs/qa-context/EDITORIAL_TIER1_THRESHOLDS_QUESTIONS.md` — a live, open set of questions for
-  Editorial that would unblock these.
-- **An SME roster.** `maestro/golden_data/sme_roster.json` ships with all three exam banks
-  unassigned — nothing can be promoted to golden data without a real person grading it.
+### Not done
 
-For the full, current list of open questions and decisions still needed from TrueLearn (not
-guessed at anywhere in this repo), see `docs/qa-context/MAESTRO_QA_FINDINGS.md` and the top of
-`maestro/CLAUDE.md` — both are kept current; this README isn't the place to duplicate them.
+- **Runtime Quality Gate** — scoping doc only; blocked on the two Pending questions below.
+- **Terminology / tested-association alignment for articles** — the check articles need in place of
+  source-coverage. No task doc, no owner.
+- **Style/tone consistency check** — needs a fixed-anchor-example design, unlike every existing
+  check; deliberately not folded into another task.
+- **Live Payload ingestion** — `ingestion/payload_api.py`'s `fetch_raw_candidates()` raises
+  `NotImplementedError`; stopped deliberately at the unconfirmed API boundary rather than guessing
+  an endpoint.
+- **Articles through the golden-set gate** — `import_pool.py` runs no Tier 1 gate for articles and
+  ingestion skips article-shaped payloads; article checks currently run outside that path.
+- **Judges validated against real SME grading** — deferred until graded golden data exists; all 5
+  are validated only against hand-written synthetic fixtures.
+- **Promptfoo suite run live** — verified only against its fixture; no Node in the dev environment,
+  and it is never auto-run in CI.
+- **Prompt-merging vs. RAG comparison** — the scaffold's intended first use; both variants must
+  exist in Maestro before a real pair can be built.
+- **Retrieval-quality tier** — needs relevant-vs-retrieved human labels, a third labeling task on
+  top of one that is already unstaffed.
+
+### Pending
+
+- **Is article grounding document-to-prompt merging or RAG?** A Sep 9 architecture-review slide
+  claimed shipped semantic search over 7,345 questions with Snowflake embeddings; the Data Science
+  lead said in writing the same morning that merging is current and RAG is a benchmark candidate.
+  Asked directly Sep 9, 10:31 AM ET — no reply yet. Tier 3 and the A/B scaffold were built on the
+  merging interpretation.
+- **What does the pipeline's "verify references" step do?** Real citation confirmation, or
+  format/URL-resolution only — unconfirmed. Blocks the Runtime Quality Gate scope.
+- **Tier 1 threshold values from Editorial** — reading-level range, redundancy tolerance, citation
+  style, capped citation types, excluded sources, table placement, whether Bottom Line is required.
+  Until these are set, readability, density/redundancy, table-placement, and parts of
+  `references_format` and `field_constraints` always report Skipped. Asked in
+  `docs/qa-context/EDITORIAL_TIER1_THRESHOLDS_QUESTIONS.md`; no answer yet.
+- **Does the 3–5 references rule apply to individual questions?** All 71 staged questions fail it
+  with 0 references; the rule may have been written for articles. Flagged in the same doc.
+- **Who are the SME reviewers?** `golden_data/sme_roster.json` has all three exam banks unassigned,
+  so nothing has been promoted to golden data (`golden_data/*.jsonl` does not exist yet). A Content
+  Team lead was named as the contact; no one is formally assigned.
+- **Langfuse or NewRelic for tracing?** Unresolved as of Sep 9; the two leads agreed to connect
+  directly. Nothing in the repo depends on the answer yet.
 
 ## Quickstart
 

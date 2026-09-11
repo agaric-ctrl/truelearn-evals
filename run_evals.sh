@@ -10,11 +10,11 @@
 #   - Tier 2 (SME review-pool generation/import - maestro/golden/generate_pool.py,
 #     import_pool.py) is a separate, human-in-the-loop workflow, not a "run and get a report"
 #     step - not folded in here.
-#   - Tier 3 (LLM judges: deepeval/RAGAS/Promptfoo - maestro/judge/) is NOT run here either. Those
-#     make real, billed Anthropic API calls and need ANTHROPIC_API_KEY set - that's a deliberate,
-#     explicit opt-in, not something that should fire every time someone wants a Tier 1 report.
-#     See docs/qa-context/TIER3_JUDGES_TASK.md for status (still OPEN as of this writing) and
-#     maestro/judge/ for how to run an individual judge directly once it's built out.
+#   - Tier 3 (LLM judges: deepeval/RAGAS/Promptfoo + non-contradiction/source-coverage -
+#     maestro/judge/, all 5 now built per docs/qa-context/TIER3_JUDGES_TASK.md) is NOT run here
+#     either. Those make real, billed Anthropic API calls and need ANTHROPIC_API_KEY set - that's a
+#     deliberate, explicit opt-in, not something that should fire every time someone wants a Tier 1
+#     report. See maestro/judge/run_gold_suite*.py to run an individual judge directly by hand.
 #   TODO (tracked, not done): once Tier 2/3 have their own "run and get output" shape decided,
 #   give run_evals.sh a --tier flag (or a sibling script) rather than silently expanding this one.
 #

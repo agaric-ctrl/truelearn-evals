@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-LIVE_WORKFLOW_NAMES = {"faithfulness-framework-evaluation.yml"}
+LIVE_WORKFLOW_NAMES = {"faithfulness-framework-evaluation.yml", "maestro-comparative-ab-report.yml"}
 
 
 def validate_workflow(path: Path, *, live: bool) -> list[str]:

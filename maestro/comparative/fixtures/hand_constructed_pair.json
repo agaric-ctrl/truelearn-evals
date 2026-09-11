@@ -1,0 +1,49 @@
+{
+  "pair_id": "hand_constructed_terse_vs_verbose_metoprolol",
+  "input": {
+    "topic": "Mechanism of metoprolol",
+    "exam_bank": "COMAT"
+  },
+  "variant_a": {
+    "label": "terse",
+    "output": {
+      "unique_name": "L1_CARDIO_metoprolol_terse",
+      "question_text": "<p>A patient is started on a medication that selectively blocks beta-1 adrenergic receptors. Which of the following effects is expected?</p>",
+      "explanation_header": "<p>Metoprolol blocks beta-1 receptors.</p>",
+      "explanation_footer": "<p>This reduces heart rate.</p>",
+      "main_topic": "Cardiovascular pharmacology",
+      "modifier": "",
+      "question_type": "single question",
+      "question_format": "multiple choice",
+      "references": [
+        "Smith J. Beta blockers in cardiovascular disease. J Cardiol. 2020;10:1-5."
+      ],
+      "bottom_line": null
+    },
+    "source": [
+      "Metoprolol is a beta-1 selective adrenergic antagonist that decreases heart rate and myocardial oxygen demand by blocking beta-1 receptors in the heart."
+    ]
+  },
+  "variant_b": {
+    "label": "verbose",
+    "output": {
+      "unique_name": "L1_CARDIO_metoprolol_verbose",
+      "question_text": "<p>A patient is started on a medication that selectively blocks beta-1 adrenergic receptors. Which of the following effects is expected?</p>",
+      "explanation_header": "<p>Metoprolol is a cardioselective beta-1 adrenergic receptor antagonist, meaning it preferentially blocks beta-1 over beta-2 receptors at clinically used doses.</p>",
+      "explanation_footer": "<p>By selectively blocking beta-1 receptors in the heart, metoprolol decreases heart rate, myocardial contractility, and myocardial oxygen demand, which is beneficial in conditions such as hypertension, stable angina, and heart failure with reduced ejection fraction.</p>",
+      "main_topic": "Cardiovascular pharmacology",
+      "modifier": "",
+      "question_type": "single question",
+      "question_format": "multiple choice",
+      "references": [
+        "Smith J. Beta blockers in cardiovascular disease. J Cardiol. 2020;10:1-5.",
+        "Jones A. Cardioselectivity of adrenergic antagonists. Pharmacol Rev. 2019;5:100-110."
+      ],
+      "bottom_line": null
+    },
+    "source": [
+      "Metoprolol is a beta-1 selective adrenergic antagonist that decreases heart rate and myocardial oxygen demand by blocking beta-1 receptors in the heart."
+    ]
+  },
+  "_placeholder": "Hand-constructed per docs/qa-context/COMPARATIVE_AB_TESTING_TASK.md point 4 - validates the scaffold mechanism itself (variant loading, Tier 1 diffing, judge orchestration), not a real Maestro-generated variant pair. Both variants deliberately share the same source material since the axis under test here is phrasing length/style, not retrieval strategy - contrast with maestro/comparative/variants.py's module docstring, which explains why source is modeled per-variant rather than shared for exactly the opposite case (prompt-merging vs RAG, where the grounding material itself would differ)."
+}

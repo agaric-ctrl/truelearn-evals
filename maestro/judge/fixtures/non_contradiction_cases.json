@@ -1,0 +1,74 @@
+[
+  {
+    "case_id": "consistent_beta_blocker_mechanism",
+    "exam_bank": "COMAT",
+    "question_type": "single question",
+    "topic": "Mechanism of metoprolol",
+    "source": [
+      "Metoprolol is a beta-1 selective adrenergic antagonist that decreases heart rate and myocardial oxygen demand."
+    ],
+    "generated": {
+      "explanation_header": "<p>Metoprolol selectively blocks beta-1 adrenergic receptors.</p>",
+      "explanation_footer": "<p>This reduces heart rate and myocardial oxygen demand, consistent with its beta-1 selectivity.</p>",
+      "bottom_line": null
+    },
+    "expected_pass": true,
+    "review_status": "synthetic_not_sme_reviewed",
+    "reviewer": "synthetic-fixture-author",
+    "_placeholder": "Hand-written synthetic case for the non-contradiction judge, not real SME judgment."
+  },
+  {
+    "case_id": "unsupported_addition_but_not_contradictory",
+    "exam_bank": "USMLE",
+    "question_type": "single question",
+    "topic": "First-line treatment of anaphylaxis",
+    "source": [
+      "Epinephrine is the first-line treatment for anaphylaxis and should be administered intramuscularly without delay."
+    ],
+    "generated": {
+      "explanation_header": "<p>The correct treatment is intramuscular epinephrine.</p>",
+      "explanation_footer": "<p>Supplemental oxygen and IV fluids may also be given as supportive care.</p>",
+      "bottom_line": null
+    },
+    "expected_pass": true,
+    "review_status": "synthetic_not_sme_reviewed",
+    "reviewer": "synthetic-fixture-author",
+    "_placeholder": "Deliberately included to prove faithfulness != non-contradiction (docs/qa-context/MAESTRO_QA_FINDINGS.md Section 2): the supportive-care sentence is NOT stated in the source (a faithfulness judge could reasonably flag it as an unsupported addition), but it does not CONFLICT with anything the source says either - so the non-contradiction judge should still pass this case even though a faithfulness judge might not."
+  },
+  {
+    "case_id": "contradicted_beta_blocker_selectivity",
+    "exam_bank": "COMAT",
+    "question_type": "single question",
+    "topic": "Mechanism of metoprolol",
+    "source": [
+      "Metoprolol is a beta-1 selective adrenergic antagonist that decreases heart rate and myocardial oxygen demand."
+    ],
+    "generated": {
+      "explanation_header": "<p>Metoprolol is a beta-2 selective adrenergic antagonist that primarily targets bronchial smooth muscle.</p>",
+      "explanation_footer": "<p>This makes it useful for reducing bronchoconstriction.</p>",
+      "bottom_line": null
+    },
+    "expected_pass": false,
+    "review_status": "synthetic_not_sme_reviewed",
+    "reviewer": "synthetic-fixture-author",
+    "_placeholder": "Hand-written synthetic case for the non-contradiction judge, not real SME judgment. Beta-1 vs beta-2 selectivity is a direct, unambiguous contradiction of the source."
+  },
+  {
+    "case_id": "contradicted_hyponatremia_direction",
+    "exam_bank": "COMLEX",
+    "question_type": "single question",
+    "topic": "Definition of hyponatremia",
+    "source": [
+      "A serum sodium below 135 mEq/L is classified as hyponatremia."
+    ],
+    "generated": {
+      "explanation_header": "<p>This patient's elevated serum sodium meets the definition of hyponatremia.</p>",
+      "explanation_footer": "<p>Hyponatremia is defined as a serum sodium above 135 mEq/L.</p>",
+      "bottom_line": null
+    },
+    "expected_pass": false,
+    "review_status": "synthetic_not_sme_reviewed",
+    "reviewer": "synthetic-fixture-author",
+    "_placeholder": "Hand-written synthetic case for the non-contradiction judge, not real SME judgment. 'Above' directly reverses the source's 'below' - an unambiguous directional contradiction."
+  }
+]

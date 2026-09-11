@@ -10,7 +10,7 @@ The team presented a confirmed 9-step LangGraph pipeline (topic → normalize re
 
 Two open items from the same meeting/day must be answered first, because they change what this task actually builds:
 
-1. **The RAG-vs-prompt-merging conflict** (`CLAUDE.md`'s URGENT section). If grounding genuinely changed to semantic-search/RAG-style retrieval, the "verify references" node's inputs and the whole faithfulness/non-contradiction framing may look different than assumed.
+1. **The RAG-vs-prompt-merging conflict** (`CLAUDE.md`'s PENDING REPLY section). If grounding genuinely changed to semantic-search/RAG-style retrieval, the "verify references" node's inputs and the whole faithfulness/non-contradiction framing may look different than assumed.
 2. **What "verify references" mechanically does today.** The meeting claimed "no fabricated citations — every source verified against live references before drafting begins," but didn't specify whether that means real citation verification (author/title/journal/year confirmed to exist and match, Editorial's current standard) or a lighter check (URL resolves, format matches). This task cannot be scoped correctly without knowing which.
 
 **Do not guess at either of these to make progress.** Flag them and wait, or scope only the parts of this task that don't depend on the answer (see below).
