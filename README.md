@@ -2,18 +2,17 @@
 
 ## Experimental
 
-This repo grew out of a personal side project ([evaluations/faithfulness/](evaluations/faithfulness/))
-built to learn how LLM-judge evaluation actually works, using generic clinical-QA content, not
-TrueLearn data. That project is still here, still referenced, and still useful on its own — see its
-[own README](evaluations/faithfulness/README.md) for what it is and how to run it. Everything below
-covers exploratory QA/evaluation work for **Maestro**, TrueLearn's AI content-generation backend.
+This repository began as a personal experiment in LLM-judge evaluation using generic clinical-QA
+content, not TrueLearn data. That reusable work remains in
+[`evaluations/faithfulness/`](evaluations/faithfulness/); its
+[README](evaluations/faithfulness/README.md) explains what it does and how to run it. The repository
+now also contains exploratory QA/evaluation tooling for **Maestro**, TrueLearn's AI
+content-generation backend.
 
-This is experimental QA/evaluation tooling, not production infrastructure. Maestro itself is
-still a POC — no formal release process, no defined SME escalation/rollback authority. Nothing
-here gates or blocks real content today: Tier 1 checks report findings but aren't a promotion
-gate for articles, and none of the five Tier 3 LLM judges have been validated against real SME
-judgment — every judge verdict is explicitly labeled not-yet-evidence. No part of this repo
-connects to live Maestro/Payload output yet. See Status below for exactly what's built vs. open.
+None of this is production infrastructure. Maestro remains a POC with no formal release process or
+defined SME escalation and rollback authority. Tier 1 findings do not gate article promotion, the
+five Tier 3 judges have not been validated against real SME judgment, and the repository does not
+connect to live Maestro/Payload output. See Status below for what is built and what remains open.
 
 ## Repository layout
 
