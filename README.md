@@ -80,11 +80,11 @@ per major piece of work, each stating its own status.
 
 ### Pending
 
-- **Is article grounding document-to-prompt merging or RAG?** A Sep 9 architecture-review slide
-  claimed shipped semantic search over 7,345 questions with Snowflake embeddings; the Data Science
-  lead said in writing the same day that merging is current and RAG is a benchmark candidate.
-  Asked directly on Sep 9 — no reply yet. Tier 3 and the A/B scaffold were built on the
-  merging interpretation.
+- **Is article grounding document-to-prompt merging or RAG?** An architecture-review slide
+  described semantic search over 7,345 questions with Snowflake embeddings as shipped, while the
+  Data Science lead separately stated that document-to-prompt merging is current and RAG remains
+  a benchmark candidate. Clarification has been requested and is still pending. Tier 3 and the
+  A/B scaffold currently follow the document-to-prompt merging interpretation.
 - **What does the pipeline's "verify references" step do?** Real citation confirmation, or
   format/URL-resolution only — unconfirmed. Blocks the Runtime Quality Gate scope.
 - **Tier 1 threshold values from Editorial** — reading-level range, redundancy tolerance, citation
