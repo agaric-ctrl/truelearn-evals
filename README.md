@@ -10,6 +10,15 @@ TrueLearn data. That project is still here, still referenced, and still useful o
 is about the project that came after it: a real QA/eval harness for **Maestro**, TrueLearn's
 AI content-generation backend being integrated into the Payload CMS editorial tool.
 
+## Experimental
+
+This is an experimental QA/evaluation harness, not production infrastructure. Maestro itself is
+still a POC — no formal release process, no defined SME escalation/rollback authority. Nothing
+here gates or blocks real content today: Tier 1 checks report findings but aren't a promotion
+gate for articles, and none of the five Tier 3 LLM judges have been validated against real SME
+judgment — every judge verdict is explicitly labeled not-yet-evidence. No part of this repo
+connects to live Maestro/Payload output yet. See Status below for exactly what's built vs. open.
+
 ## Repository layout
 
 ```
