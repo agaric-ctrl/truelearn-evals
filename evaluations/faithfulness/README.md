@@ -1,26 +1,25 @@
 # Faithfulness Evaluation Suite
 
-This is where TrueLearn Evals began, before Maestro existed: a personal side project to learn how
-LLM-judge evaluation actually works — mechanically, from the inside — rather than from
-documentation, using generic clinical-QA content, not TrueLearn data. `maestro/` (see the
-[repository root README](../../README.md)) grew out of applying what this project proved.
+This directory contains an experimental suite for understanding and comparing LLM-based
+faithfulness evaluation. It uses known-label grounded and adversarial cases to examine how
+Promptfoo, DeepEval, and RAGAS judge whether generated claims are supported by supplied source
+material.
 
-It's kept here, and still actively referenced, because Maestro's Tier 3 directly reuses its central
-discipline: **validate the judge on known-label cases before trusting it to grade a real
-generator** — proven three separate ways below (Promptfoo, DeepEval, RAGAS), then carried forward
-into `deepeval/faithfulness_demo.py`'s exact mechanism when Maestro's Tier 3 needed a judge of its
-own.
+The central practice is simple: evaluate the judge on cases with expected outcomes before using
+it to assess generated content. Results from this suite informed the separate Maestro work, but
+they do not validate Maestro or establish clinical correctness. See the
+[repository README](../../README.md) for the relationship between the two projects.
 
-Every judge in this part of the repo is Claude (Anthropic). All three frameworks default to OpenAI,
-so pointing them at Claude is a deliberate configuration step in each one, documented below.
+All live judges are configured to use Claude (Anthropic), even though the three frameworks default
+to OpenAI. Live runs therefore require an `ANTHROPIC_API_KEY`, make paid model calls, and remain
+manual. Offline checks do not require provider credentials.
 
-**All fixtures in this project (`data/*.json`) are hand-written, synthetic, generic clinical-QA
-examples — not TrueLearn content, not reviewed by any TrueLearn clinician or editor.** Each carries
-an explicit placeholder note saying so; see the notes on `docs/CLINICAL_REVIEW_GUIDE.md` below.
+All files under `data/` are hand-written, synthetic, generic clinical-QA fixtures. They are not
+TrueLearn content and have not been reviewed by a TrueLearn clinician or editor. See
+[`docs/CLINICAL_REVIEW_GUIDE.md`](docs/CLINICAL_REVIEW_GUIDE.md) for the placeholder review
+workflow and its limitations.
 
-**A note on the commands throughout this doc:** they're written assuming your current directory is
-the repository root (e.g. `evaluations/faithfulness/deepeval/*.py`, `tools/run_evals.py`), the same
-as every command elsewhere in this repo — not this file's own folder.
+Commands in this document assume the current directory is the repository root, not this folder.
 
 ## Quickstart
 
