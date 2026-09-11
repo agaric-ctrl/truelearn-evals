@@ -6,10 +6,9 @@ This repo grew out of a personal side project ([evaluations/faithfulness/](evalu
 built to learn how LLM-judge evaluation actually works, using generic clinical-QA content, not
 TrueLearn data. That project is still here, still referenced, and still useful on its own — see its
 [own README](evaluations/faithfulness/README.md) for what it is and how to run it. Everything below
-is about the project that came after it: a real QA/eval harness for **Maestro**, TrueLearn's
-AI content-generation backend being integrated into the Payload CMS editorial tool.
+covers exploratory QA/evaluation work for **Maestro**, TrueLearn's AI content-generation backend.
 
-This is an experimental QA/evaluation harness, not production infrastructure. Maestro itself is
+This is experimental QA/evaluation tooling, not production infrastructure. Maestro itself is
 still a POC — no formal release process, no defined SME escalation/rollback authority. Nothing
 here gates or blocks real content today: Tier 1 checks report findings but aren't a promotion
 gate for articles, and none of the five Tier 3 LLM judges have been validated against real SME
@@ -20,7 +19,7 @@ connects to live Maestro/Payload output yet. See Status below for exactly what's
 
 ```
 .
-├── maestro/                    # Maestro QA/eval harness (the active project - see below)
+├── maestro/                    # exploratory Maestro QA/eval tooling (the active project)
 ├── evaluations/faithfulness/   # the side project this repo started as - own README, still used
 ├── tools/                      # shared infrastructure (result schema, retries, HTML reports, ...)
 │                               # - used by both projects above
