@@ -1,7 +1,6 @@
 # TrueLearn Evals
 
-TrueLearn's home for AI-content evaluation harnesses. This is **internal work in progress, not a
-released product** — see [LICENSE](LICENSE).
+## Experimental
 
 This repo grew out of a personal side project ([evaluations/faithfulness/](evaluations/faithfulness/))
 built to learn how LLM-judge evaluation actually works, using generic clinical-QA content, not
@@ -9,8 +8,6 @@ TrueLearn data. That project is still here, still referenced, and still useful o
 [own README](evaluations/faithfulness/README.md) for what it is and how to run it. Everything below
 is about the project that came after it: a real QA/eval harness for **Maestro**, TrueLearn's
 AI content-generation backend being integrated into the Payload CMS editorial tool.
-
-## Experimental
 
 This is an experimental QA/evaluation harness, not production infrastructure. Maestro itself is
 still a POC — no formal release process, no defined SME escalation/rollback authority. Nothing
